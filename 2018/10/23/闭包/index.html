@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Maple&#39;s Blog">
 <meta property="og:description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。def test():     print(&amp;quot;---maple---&amp;quot;)   # 调用函数 test()  # 引用函数 func = test  print(id(test)) print(id(func))  # 通过引用调用函数 f">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-23T08:40:12.314Z">
+<meta property="og:updated_time" content="2018-10-23T09:10:00.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
 <meta name="twitter:description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。def test():     print(&amp;quot;---maple---&amp;quot;)   # 调用函数 test()  # 引用函数 func = test  print(id(test)) print(id(func))  # 通过引用调用函数 f">
@@ -324,7 +324,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T16:40:12+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T17:10:00+08:00">
                 2018-10-23
               </time>
             
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  532
+                  580
                 </span>
               
 
@@ -452,7 +452,7 @@ func()
 
     return line_int  # 此处的line_int是函数line_out()中指向line_int()函数的引用
 
-
+# 由于Python的传递都是引用传递,又因为在Python中给一个变量传递什么引用,它就指向什么,所以 变量 line_1 和 line_2 都指向 line_int() 函数.
 # line_1 是line_int() 函数的引用
 line_1 = line_out(1, 2)
 
@@ -542,8 +542,8 @@ print(line_2(2))
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/23/Sublime-Text 3 配置中文环境/" rel="next" title="Sublime-Text 3 配置中文环境">
-                <i class="fa fa-chevron-left"></i> Sublime-Text 3 配置中文环境
+              <a href="/2018/10/23/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/" rel="next" title="Ubuntu 16.04 安装 Sublime-Text 3 完整教程">
+                <i class="fa fa-chevron-left"></i> Ubuntu 16.04 安装 Sublime-Text 3 完整教程
               </a>
             
           </div>
@@ -551,10 +551,6 @@ print(line_2(2))
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/23/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/" rel="prev" title="Ubuntu 16.04 安装 Sublime-Text 3 完整教程">
-                Ubuntu 16.04 安装 Sublime-Text 3 完整教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -741,7 +737,7 @@ print(line_2(2))
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.7k</span>
+    <span title="Site words total count">1.8k</span>
   
 </div>
 
