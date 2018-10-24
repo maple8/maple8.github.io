@@ -325,7 +325,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T22:10:20+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T23:05:30+08:00">
                 2018-10-24
               </time>
             
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  580
+                  576
                 </span>
               
 
@@ -427,35 +427,14 @@
       
         
           
-          预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。def test():
-    print(&quot;---maple---&quot;)
-
-
-# 调用函数
-test()
-
-# 引用函数
-func = test
-
-print(id(test))
-print(id(func))
-
-# 通过引用调用函数
-func() 
+          预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。123456789101112131415def test():    print("---maple---")# 调用函数test()# 引用函数func = testprint(id(test))print(id(func))# 通过引用调用函数func()
 输出结果:
 ---maple---
 140149779047152
 140149779047152
 ---maple---
 
-知识点： 闭包什么是闭包？定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包.接下来看一个闭包的例子:
-def line_out(a, b):
-    def line_int(x):
-    return a * x + b
-
-    return line_int  # 此处的line_int是函数line_out()中指向line_int()函数的引用
-
-# 由于Python的传递都是引用传
+知识点： 闭包什么是闭包？定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包.接下来看一个闭包的例子:12345678910111213141516def line_out(a, b):    def line_int(x):	return a * x + b    return line_int  # 此处的line_int是函数line_out()中指向line_int()函数的引用# 由于Pytho
           ...
           <!--noindex-->
           <div class="post-button text-center">

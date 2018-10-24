@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。def test():     print(&amp;quot;---maple---&amp;quot;)   # 调用函数 test()  # 引用函数 func = test  print(id(test)) print(id(func))  # 通过引用调用函数 f">
+<meta name="description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。123456789101112131415def test():    print(&quot;---maple---&quot;)# 调用函数test()# 引用函数func = testprint(id(test))print(id(func))# 通过引用调用函数func">
 <meta name="keywords" content="Python 3 , 闭包, 引用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="闭包">
 <meta property="og:url" content="http://yoursite.com/2018/10/24/闭包/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。def test():     print(&amp;quot;---maple---&amp;quot;)   # 调用函数 test()  # 引用函数 func = test  print(id(test)) print(id(func))  # 通过引用调用函数 f">
+<meta property="og:description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。123456789101112131415def test():    print(&quot;---maple---&quot;)# 调用函数test()# 引用函数func = testprint(id(test))print(id(func))# 通过引用调用函数func">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-24T14:10:20.169Z">
+<meta property="og:updated_time" content="2018-10-24T15:05:30.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。def test():     print(&amp;quot;---maple---&amp;quot;)   # 调用函数 test()  # 引用函数 func = test  print(id(test)) print(id(func))  # 通过引用调用函数 f">
+<meta name="twitter:description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。123456789101112131415def test():    print(&quot;---maple---&quot;)# 调用函数test()# 引用函数func = testprint(id(test))print(id(func))# 通过引用调用函数func">
 
 
 
@@ -324,7 +324,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T22:10:20+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T23:05:30+08:00">
                 2018-10-24
               </time>
             
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  580
+                  576
                 </span>
               
 
@@ -424,45 +424,15 @@
       
 
       
-        <h4 id="预备知识点-函数引用"><a href="#预备知识点-函数引用" class="headerlink" title="预备知识点: 函数引用"></a>预备知识点: 函数引用</h4><h5 id="在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。"><a href="#在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。" class="headerlink" title="在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。"></a>在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。</h5><pre><code>def test():
-    print(&quot;---maple---&quot;)
-
-
-# 调用函数
-test()
-
-# 引用函数
-func = test
-
-print(id(test))
-print(id(func))
-
-# 通过引用调用函数
-func() 
-</code></pre><p>输出结果:</p>
+        <h4 id="预备知识点-函数引用"><a href="#预备知识点-函数引用" class="headerlink" title="预备知识点: 函数引用"></a>预备知识点: 函数引用</h4><h5 id="在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。"><a href="#在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。" class="headerlink" title="在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。"></a>在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"---maple---"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">test()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引用函数</span></span><br><span class="line">func = test</span><br><span class="line"></span><br><span class="line">print(id(test))</span><br><span class="line">print(id(func))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过引用调用函数</span></span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
 <pre><code>---maple---
 140149779047152
 140149779047152
 ---maple---
 </code></pre><hr>
-<h4 id="知识点：-闭包"><a href="#知识点：-闭包" class="headerlink" title="知识点： 闭包"></a>知识点： 闭包</h4><h5 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h5><h5 id="定义：-在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包"><a href="#定义：-在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包" class="headerlink" title="定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包."></a>定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包.</h5><p>接下来看一个闭包的例子:</p>
-<pre><code>def line_out(a, b):
-    def line_int(x):
-    return a * x + b
-
-    return line_int  # 此处的line_int是函数line_out()中指向line_int()函数的引用
-
-# 由于Python的传递都是引用传递,又因为在Python中给一个变量传递什么引用,它就指向什么,所以 变量 line_1 和 line_2 都指向 line_int() 函数.
-# line_1 是line_int() 函数的引用
-line_1 = line_out(1, 2)
-
-# line_2 也是line_int() 函数的引用
-line_2 = line_out(11, 22)
-
-# 通过引用调用功能函数line_int(x),并将实参传递给形参x
-print(line_1(2))
-print(line_2(2))
-</code></pre><p>输出结果:</p>
+<h4 id="知识点：-闭包"><a href="#知识点：-闭包" class="headerlink" title="知识点： 闭包"></a>知识点： 闭包</h4><h5 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h5><h5 id="定义：-在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包"><a href="#定义：-在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包" class="headerlink" title="定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包."></a>定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包.</h5><p>接下来看一个闭包的例子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">line_out</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">line_int</span><span class="params">(x)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> a * x + b</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> line_int  <span class="comment"># 此处的line_int是函数line_out()中指向line_int()函数的引用</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 由于Python的传递都是引用传递,又因为在Python中给一个变量传递什么引用,它就指向什么,所以 变量 line_1 和 line_2 都指向 line_int() 函数.</span></span><br><span class="line"><span class="comment"># line_1 是line_int() 函数的引用</span></span><br><span class="line">line_1 = line_out(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># line_2 也是line_int() 函数的引用</span></span><br><span class="line">line_2 = line_out(<span class="number">11</span>, <span class="number">22</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过引用调用功能函数line_int(x),并将实参传递给形参x</span></span><br><span class="line">print(line_1(<span class="number">2</span>))</span><br><span class="line">print(line_2(<span class="number">2</span>))</span><br></pre></td></tr></table></figure></p>
+<p>输出结果:</p>
 <pre><code>4
 44
 </code></pre><p>在上述例子中,函数line_int()和变量a,b构成闭包.在创建闭包的时候,我们通过line_out()的参数a,b确定了两个变量的取值,这样我们就确定了闭包函数的最终形式: y = x + 2 和 y = 11 x + 22. 我们只需要修改参数a,b的值,就可以获得不同的直线方程.由此,我们可以知道闭包具有提高代码的复用性的功能.<br>如果没有闭包,那么我们每次创建直线函数的时候都需要说明三个变量a,b,x. 这样的话,我们就需要更多的参数传递,也减少了代码的可移植性.</p>
