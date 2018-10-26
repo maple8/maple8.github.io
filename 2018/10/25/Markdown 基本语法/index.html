@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python 3,闭包,引用,">
+  <meta name="keywords" content="Markdown,">
 
 
 
@@ -79,20 +79,27 @@
 
 
 
-<meta name="description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。123456789101112131415def test():    print(&quot;---maple---&quot;)# 调用函数test()# 引用函数func = testprint(id(test))print(id(func))# 通过引用调用函数fun">
-<meta name="keywords" content="Python 3,闭包,引用">
+<meta name="description" content="简述:Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。认识 MarkdownMarkdow">
+<meta name="keywords" content="Markdown">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「Python 进阶篇」Part 1 -- 闭包">
-<meta property="og:url" content="http://yoursite.com/2018/10/26/「Python 进阶篇」Part 1 -- 闭包/index.html">
+<meta property="og:title" content="Markdown 基础篇">
+<meta property="og:url" content="http://yoursite.com/2018/10/25/Markdown 基本语法/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。123456789101112131415def test():    print(&quot;---maple---&quot;)# 调用函数test()# 引用函数func = testprint(id(test))print(id(func))# 通过引用调用函数fun">
+<meta property="og:description" content="简述:Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。认识 MarkdownMarkdow">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/uploads/solong.jpg">
-<meta property="og:updated_time" content="2018-10-26T08:01:48.803Z">
+<meta property="og:image" content="http://yoursite.com/uploads/Mou.png">
+<meta property="og:image" content="http://yoursite.com/uploads/Remarkable.png">
+<meta property="og:image" content="http://yoursite.com/uploads/Markdownpad2.png">
+<meta property="og:image" content="http://yoursite.com/uploads/image_link.png">
+<meta property="og:image" content="http://yoursite.com/uploads/list_image.png">
+<meta property="og:image" content="http://yoursite.com/uploads/table_code.png">
+<meta property="og:image" content="http://yoursite.com/uploads/table.png">
+<meta property="og:image" content="http://yoursite.com/uploads/gongshi.png">
+<meta property="og:updated_time" content="2018-10-26T08:10:45.418Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「Python 进阶篇」Part 1 -- 闭包">
-<meta name="twitter:description" content="预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。123456789101112131415def test():    print(&quot;---maple---&quot;)# 调用函数test()# 引用函数func = testprint(id(test))print(id(func))# 通过引用调用函数fun">
-<meta name="twitter:image" content="http://yoursite.com/uploads/solong.jpg">
+<meta name="twitter:title" content="Markdown 基础篇">
+<meta name="twitter:description" content="简述:Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。认识 MarkdownMarkdow">
+<meta name="twitter:image" content="http://yoursite.com/uploads/Mou.png">
 
 
 
@@ -122,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/26/「Python 进阶篇」Part 1 -- 闭包/">
+  <link rel="canonical" href="http://yoursite.com/2018/10/25/Markdown 基本语法/">
 
 
 
 
 
-  <title>「Python 进阶篇」Part 1 -- 闭包 | Maple's Blog</title>
+  <title>Markdown 基础篇 | Maple's Blog</title>
   
 
 
@@ -297,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/26/「Python 进阶篇」Part 1 -- 闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/Markdown 基本语法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -314,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">「Python 进阶篇」Part 1 -- 闭包</h1>
+          <h1 class="post-title" itemprop="name headline">Markdown 基础篇</h1>
         
 
         <div class="post-meta">
@@ -326,8 +333,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-26T16:01:48+08:00">
-                2018-10-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T00:00:00+08:00">
+                2018-10-25
               </time>
             
 
@@ -349,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-进阶篇/" itemprop="url" rel="index">
-                    <span itemprop="name">Python 进阶篇</span>
+                  <a href="/categories/Ubuntu-文本编辑工具/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu 文本编辑工具</span>
                   </a>
                 </span>
 
@@ -367,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/26/「Python 进阶篇」Part 1 -- 闭包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/26/「Python 进阶篇」Part 1 -- 闭包/" itemprop="commentCount"></span>
+                <a href="/2018/10/25/Markdown 基本语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/25/Markdown 基本语法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,22 +403,78 @@
       
 
       
-        <p><img src="/uploads/solong.jpg" alt=""></p>
-<h4 id="预备知识点-函数引用"><a href="#预备知识点-函数引用" class="headerlink" title="预备知识点: 函数引用"></a>预备知识点: 函数引用</h4><h5 id="在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。"><a href="#在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。" class="headerlink" title="在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。"></a>在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"---maple---"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">test()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引用函数</span></span><br><span class="line">func = test</span><br><span class="line"></span><br><span class="line">print(id(test))</span><br><span class="line">print(id(func))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过引用调用函数</span></span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
-<p>输出结果:</p>
-<pre><code>---maple---
-140149779047152
-140149779047152
----maple---
-</code></pre><hr>
-<h4 id="知识点：-闭包"><a href="#知识点：-闭包" class="headerlink" title="知识点： 闭包"></a>知识点： 闭包</h4><h5 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h5><h5 id="定义：-在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包"><a href="#定义：-在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包" class="headerlink" title="定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包."></a>定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包.</h5><p>接下来看一个闭包的例子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">line_out</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">line_int</span><span class="params">(x)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> a * x + b</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> line_int  <span class="comment"># 此处的line_int是函数line_out()中指向line_int()函数的引用</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 由于Python的传递都是引用传递,又因为在Python中给一个变量传递什么引用,它就指向什么,所以 变量 line_1 和 line_2 都指向 line_int() 函数.</span></span><br><span class="line"><span class="comment"># line_1 是line_int() 函数的引用</span></span><br><span class="line">line_1 = line_out(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># line_2 也是line_int() 函数的引用</span></span><br><span class="line">line_2 = line_out(<span class="number">11</span>, <span class="number">22</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过引用调用功能函数line_int(x),并将实参传递给形参x</span></span><br><span class="line">print(line_1(<span class="number">2</span>))</span><br><span class="line">print(line_2(<span class="number">2</span>))</span><br></pre></td></tr></table></figure></p>
-<p>输出结果:</p>
-<pre><code>4
-44
-</code></pre><p>在上述例子中,函数line_int()和变量a,b构成闭包.在创建闭包的时候,我们通过line_out()的参数a,b确定了两个变量的取值,这样我们就确定了闭包函数的最终形式: y = x + 2 和 y = 11 x + 22. 我们只需要修改参数a,b的值,就可以获得不同的直线方程.由此,我们可以知道闭包具有提高代码的复用性的功能.<br>如果没有闭包,那么我们每次创建直线函数的时候都需要说明三个变量a,b,x. 这样的话,我们就需要更多的参数传递,也减少了代码的可移植性.</p>
-<h4 id="小结-闭包的优缺点"><a href="#小结-闭包的优缺点" class="headerlink" title="小结: 闭包的优缺点"></a>小结: 闭包的优缺点</h4><h5 id="优点"><a href="#优点" class="headerlink" title="优点:"></a>优点:</h5><p>1 . 闭包具有提高代码的复用性的优点;<br>2 . 占用的内存空间少;</p>
-<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h5><p>1 . 只能实现一些简单的功能,不能进行大型的开发;<br>2 . 由于闭包引用了外部函数的局部变量,导致外部函数的局部变量没有及时的释放,消耗内存;</p>
+        <h4 id="简述"><a href="#简述" class="headerlink" title="简述:"></a>简述:</h4><h5 id="Markdown-是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，-Markdown-的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML-标记语言来说，Markdown-可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。"><a href="#Markdown-是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，-Markdown-的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML-标记语言来说，Markdown-可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。" class="headerlink" title="Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。"></a>Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。</h5><h4 id="认识-Markdown"><a href="#认识-Markdown" class="headerlink" title="认识 Markdown"></a>认识 Markdown</h4><p>Markdown 是一种用来写作的轻量级「标记语言」，它用简洁的语法代替排版，而不像一般我们用的字处理软件 Word 或 Pages 有大量的排版、字体设置。它使我们专心于码字，用「标记」语法，来代替常见的排版格式。例如此文从内容到格式，甚至插图，键盘就可以通通搞定了。</p>
+<h4 id="使用-Markdown-的优点"><a href="#使用-Markdown-的优点" class="headerlink" title="使用 Markdown 的优点"></a>使用 Markdown 的优点</h4><p>1 . 专注你的文字内容而不是排版样式，安心写作。<br>2 . 轻松的导出 HTML、PDF 和本身的 .md 文件。<br>3 . 纯文本内容，兼容所有的文本编辑器与字处理软件。<br>4 . 随时修改你的文章版本，不必像字处理软件生成若干文件版本导致混乱。<br>5 . 可读、直观、学习成本低。</p>
+<h4 id="选用什么编辑工具"><a href="#选用什么编辑工具" class="headerlink" title="选用什么编辑工具?"></a>选用什么编辑工具?</h4><p>以下推荐的 Markdown 编辑器在各自的平台上都是号称最好的 Markdown 编辑器哈，当然，还有很多其他很好的编辑器，如 Typora, dilinger, 简书等等…</p>
+<h5 id="mac-OS-平台"><a href="#mac-OS-平台" class="headerlink" title="mac OS 平台"></a>mac OS 平台</h5><p>推荐使用 Mou，支持实时预览，左边是你编辑 Markdown 语言，右边会实时的生成预览效果。<br><img src="/uploads/Mou.png" alt=""></p>
+<h5 id="Linux-平台"><a href="#Linux-平台" class="headerlink" title="Linux 平台"></a>Linux 平台</h5><p>推荐使用 Remarkable,支持实时预览，左边是你编辑 Markdown 语言，右边会实时的生成预览效果。<br><img src="/uploads/Remarkable.png" alt=""><br>Remarkable 百度网盘下载链接：<br>链接: <a href="https://pan.baidu.com/s/1eECyN92vZGsNdA6dR4SPww" target="_blank" rel="noopener">https://pan.baidu.com/s/1eECyN92vZGsNdA6dR4SPww</a> 提取码: 6w4t</p>
+<h5 id="Windows-平台"><a href="#Windows-平台" class="headerlink" title="Windows 平台"></a>Windows 平台</h5><p>推荐使用 MarkdownPad2, 支持实时预览，左边是你编辑 Markdown 语言，右边会实时的生成预览效果。<br><img src="/uploads/Markdownpad2.png" alt=""><br>Markdonwpad2 百度网盘下载链接：<br>链接: <a href="https://pan.baidu.com/s/1N3PWW0kE6wOfFPxxdSCuxg" target="_blank" rel="noopener">https://pan.baidu.com/s/1N3PWW0kE6wOfFPxxdSCuxg</a> 提取码: i4ht</p>
 <hr>
+<h4 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h4><h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><p>如果你是一个 coder, 需要在文章里优雅的引用代码，在 Markdown 下实现也非常简单, 有下述三种方法:</p>
+<p>1 . 用两个` 符号把中间的代码包裹起来，如: `code`, 实现的效果如下:<br><code>code</code></p>
+<p>2 . 使用如下结构:<br>```bash(说明是终端代码,可以是 Python等代码格式)<br>code..<br>```<br>其中 code.. 是代码, 实现效果如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p>
+<p>3 . 在所有的代码前面使用 4 空格缩进, 实现如上相同的效果:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(num)</span>:</span></span><br><span class="line">	print(num)</span><br><span class="line"></span><br><span class="line">a=test(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<h5 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h5><p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可.</p>
+<p># 一级标题</p>
+<p>## 二级标题</p>
+<p>### 三级标题</p>
+<p>#### 四级标题</p>
+<p>##### 五级标题</p>
+<p>###### 六级标题</p>
+<p>Markdonw中总共有六级标题，建议在井号后加一个空格，这是最标准的 Markdown 语法。</p>
+<p><strong>注: 部分标题还有其他的表示方法,如下:</strong></p>
+<p>一级标题<br>=(至少一个,可以有多个)</p>
+<p>二级标题<br>- (中划线)(至少一个,可以有多个)</p>
+<p>##二级标题##</p>
+<p>###三级标题###</p>
+<h5 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h5><p>Markdown 的粗体和斜体也非常简单，用两个 <code>*</code> 或下划线 <code>_</code> 包含一段文本就是粗体的语法，用一个 <code>*</code> 或下划线 <code>_</code> 包含一段文本就是斜体的语法, 三个 <code>*</code> 或下划线 <code>_</code> 包含一段文本就是 [粗体+斜体].<br>*斜体文本<em>　　　或　　　_斜体文本_<br>\</em>*粗体文本**　　　或　　　__粗体文本__<br>***粗斜体文本***　　　或　　　___粗斜体文本___</p>
+<h5 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h5><p>图片链接:<br>　　![图片名称](http://图片网址)</p>
+<p>网页链接 :<br>　　[链接名称](http://链接网址)<br><img src="/uploads/image_link.png" alt=""></p>
+<h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><p>如果你需要引用别处的句子，那么就要用引用的格式,只需要在文本前加入<code>&gt;</code> 这种尖括号（大于号）即可,实现效果如下:</p>
+<blockquote>
+<p>一切都是最好的安排!<br>    　　　　　－maple
+    　　　　　</p>
+</blockquote>
+<h5 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h5><p>如果需要在 Markdown中输入空格,需要切换输入法为全角模式, 然后按 <code>sapce</code> 才会显示空格,一般的输入法切换全角是 <code>shift + space</code> 实现,在半角模式下 space 是无法实现输入空格的;还可以通过输入以下字符串实现空格:</p>
+<ul>
+<li>半方大的空白’&amp;ensp’;或’&amp;#8194’;</li>
+<li>全方大的空白’&amp;emsp’;或’&amp;#8195’;</li>
+<li>不断行的空白格’&amp;nbsp’;或’&amp;#160’;</li>
+</ul>
+<h5 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h5><p>1 . 普通无序列表<br>- : 列表文本前使用—减号+空格<br>+ : 列表文本前使用—加号+空格<br>* : 列表文本前使用—星号+空格</p>
+<p>2 . 普通有序列表<br>列表前使用: 数字+空格<br> Markdown 会自动帮你添加数字,而且 不用担心数字不对，显示的时候 Markdown 会自动修改.</p>
+<p> <img src="/uploads/list_image.png" alt=""></p>
+<h5 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h5><p>表格<br>表格是我觉得 Markdown 比较累人的地方，例子如下：<br>代码如图：<br><img src="/uploads/table_code.png" alt=""><br>生成的表格如图：<br> <img src="/uploads/table.png" alt=""></p>
+<h5 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h5><p>分割线的语法只需要另起一行，连续输入三个星号 <code>***</code>或者三个中划线<code>---</code> 即可，如下：</p>
+<hr>
+<hr>
+<h5 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h5><p>如果另起一行，只需在当前行结尾加 2 个空格，如果是要起一个新段落，只需要空出一行即可。</p>
+<h4 id="Markdown-高级语法"><a href="#Markdown-高级语法" class="headerlink" title="Markdown 高级语法"></a>Markdown 高级语法</h4><h5 id="符号转义"><a href="#符号转义" class="headerlink" title="符号转义"></a>符号转义</h5><p>如果你的描述中需要用到 markdown 的符号，比如<code>_</code>  <code>#</code> <code>*</code> 等，但又不想它被转义，这时候可以在这些符号前加反斜杠，如 <code>\_</code> <code>\ #</code> <code>\*</code> 进行避免。</p>
+<p> \_不想这里的文本变斜体_<br> \*\ *不想这里的文本被加粗**</p>
+<h5 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h5><p>支持 jsfiddle、gist、runjs、优酷视频，直接填写 url，在其之后会自动添加预览点击会展开相关内容。</p>
+<p>http://{url_of_the_fiddle}/embedded/[{tabs}/[{style}]]/<br><a href="https://gist.github.com/{gist_id}/" target="_blank" rel="noopener">https://gist.github.com/{gist_id}/</a><br><a href="http://runjs.cn/detail/{id}/" target="_blank" rel="noopener">http://runjs.cn/detail/{id}/</a><br><a href="http://v.youku.com/v_show/id_{video_id}.html" target="_blank" rel="noopener">http://v.youku.com/v_show/id_{video_id}.html</a></p>
+<h5 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h5><p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染。如：</p>
+<pre><code>$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $$
+
+$$
+x \href{why-equal.html}{=} y^2 + 1
+$$
+同时也支持 HTML 属性，如：
+
+$$ (x+1)^2 = \class{hidden}{(x+1)(x+1)} $$
+</code></pre><p><img src="/uploads/gongshi.png" alt=""></p>
+<h5 id="行内-HTML-元素"><a href="#行内-HTML-元素" class="headerlink" title="行内 HTML 元素"></a>行内 HTML 元素</h5><p>目前只支持部分段内 HTML 元素效果，包括<code>&lt;kdb&gt; &lt;b&gt; &lt;i&gt; &lt;em&gt; &lt;sup&gt; &lt;sub&gt; &lt;br&gt;</code> ，如:</p>
+<ol>
+<li><p>键位显示<br>使用 <code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt;</code>重启电脑</p>
+</li>
+<li><p>代码块<br>使用 <code>&lt;pre&gt;&lt;/pre&gt;</code> 元素同样可以形成代码块</p>
+</li>
+<li><p>粗斜体<br><code>&lt;b&gt;</code> Markdown 在此处同样适用，如 <em>加粗</em> <code>&lt;/b&gt;</code></p>
+</li>
+</ol>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>到这里，Markdown 的基本语法在日常的使用中基本就没什么大问题了，只要多加练习，配合好用的工具，写起东西来肯定会行云流水的哈。更多的语法规则，请参见官方文档,如下链接：<br><a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">Markdown 官方文档</a></p>
+<hr>
+<p>参考资源：<br><a href="https://sspai.com/post/25137" target="_blank" rel="noopener">认识与入门 Markdown</a><br><a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">Markdown 编辑器语法指南</a></p>
 
       
     </div>
@@ -472,11 +535,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python-3/" rel="tag"><i class="fa fa-tag"></i> Python 3</a>
-          
-            <a href="/tags/闭包/" rel="tag"><i class="fa fa-tag"></i> 闭包</a>
-          
-            <a href="/tags/引用/" rel="tag"><i class="fa fa-tag"></i> 引用</a>
+            <a href="/tags/Markdown/" rel="tag"><i class="fa fa-tag"></i> Markdown</a>
           
         </div>
       
@@ -489,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/26/Markdown 基本语法/" rel="next" title="Markdown 基础篇">
-                <i class="fa fa-chevron-left"></i> Markdown 基础篇
+              <a href="/2018/10/24/「Python 进阶篇」Part 1 -- 闭包/" rel="next" title="「Python 进阶篇」Part 1 -- 闭包">
+                <i class="fa fa-chevron-left"></i> 「Python 进阶篇」Part 1 -- 闭包
               </a>
             
           </div>
@@ -654,7 +713,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#预备知识点-函数引用"><span class="nav-number">1.</span> <span class="nav-text">预备知识点: 函数引用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。"><span class="nav-number">1.1.</span> <span class="nav-text">在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识点：-闭包"><span class="nav-number">2.</span> <span class="nav-text">知识点： 闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是闭包？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是闭包？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定义：-在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包"><span class="nav-number">2.2.</span> <span class="nav-text">定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包.</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结-闭包的优缺点"><span class="nav-number">3.</span> <span class="nav-text">小结: 闭包的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优点"><span class="nav-number">3.1.</span> <span class="nav-text">优点:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">3.2.</span> <span class="nav-text">缺点:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Markdown-是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，-Markdown-的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML-标记语言来说，Markdown-可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。"><span class="nav-number">1.1.</span> <span class="nav-text">Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#认识-Markdown"><span class="nav-number">2.</span> <span class="nav-text">认识 Markdown</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-Markdown-的优点"><span class="nav-number">3.</span> <span class="nav-text">使用 Markdown 的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选用什么编辑工具"><span class="nav-number">4.</span> <span class="nav-text">选用什么编辑工具?</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#mac-OS-平台"><span class="nav-number">4.1.</span> <span class="nav-text">mac OS 平台</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux-平台"><span class="nav-number">4.2.</span> <span class="nav-text">Linux 平台</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Windows-平台"><span class="nav-number">4.3.</span> <span class="nav-text">Windows 平台</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Markdown-基本语法"><span class="nav-number">5.</span> <span class="nav-text">Markdown 基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码"><span class="nav-number">5.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标题"><span class="nav-number">5.2.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#粗体和斜体"><span class="nav-number">5.3.</span> <span class="nav-text">粗体和斜体</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#链接"><span class="nav-number">5.4.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#引用"><span class="nav-number">5.5.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空格"><span class="nav-number">5.6.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表"><span class="nav-number">5.7.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表格"><span class="nav-number">5.8.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分割线"><span class="nav-number">5.9.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#换行"><span class="nav-number">5.10.</span> <span class="nav-text">换行</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Markdown-高级语法"><span class="nav-number">6.</span> <span class="nav-text">Markdown 高级语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#符号转义"><span class="nav-number">6.1.</span> <span class="nav-text">符号转义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展"><span class="nav-number">6.2.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#公式"><span class="nav-number">6.3.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行内-HTML-元素"><span class="nav-number">6.4.</span> <span class="nav-text">行内 HTML 元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
