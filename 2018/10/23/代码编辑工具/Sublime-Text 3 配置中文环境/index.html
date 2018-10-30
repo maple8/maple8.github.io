@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Maple&#39;s Blog">
 <meta property="og:description" content="简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/uploads/Sublime-Text.png">
-<meta property="og:updated_time" content="2018-10-30T07:21:12.194Z">
+<meta property="og:image" content="http://phe7ff7o6.bkt.clouddn.com/Sublime-Text.png">
+<meta property="og:updated_time" content="2018-10-30T07:39:38.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sublime-Text 3 配置中文环境">
 <meta name="twitter:description" content="简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了">
-<meta name="twitter:image" content="http://yoursite.com/uploads/Sublime-Text.png">
+<meta name="twitter:image" content="http://phe7ff7o6.bkt.clouddn.com/Sublime-Text.png">
 
 
 
@@ -410,7 +410,7 @@
         <h3 id="简述"><a href="#简述" class="headerlink" title="简述:"></a>简述:</h3><h3 id="本教程主要是配置-Sublime-Text-3-的语言环境-如果您不是使用Ubuntu-16-04-安装-Sublime-Text-3-完整教程里面的方法安装的话-可能打开的-Sublime-Text-3-界面是默认英文设置的-没关系-下面就教您怎么将界面语言设置成英文的"><a href="#本教程主要是配置-Sublime-Text-3-的语言环境-如果您不是使用Ubuntu-16-04-安装-Sublime-Text-3-完整教程里面的方法安装的话-可能打开的-Sublime-Text-3-界面是默认英文设置的-没关系-下面就教您怎么将界面语言设置成英文的" class="headerlink" title="本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的."></a>本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用<a href="https://maple8.github.io/2018/10/23/Ubuntu%2016.04%20%E5%AE%89%E8%A3%85%20Sublime-Text%20%203%20%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">Ubuntu 16.04 安装 Sublime-Text 3 完整教程</a>里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.</h3><h4 id="1-安装-Sublime-Text-3-推荐参考如下教程-因为安装完成之后的界面默认就是中文的-就可以省略配置的过程了哈"><a href="#1-安装-Sublime-Text-3-推荐参考如下教程-因为安装完成之后的界面默认就是中文的-就可以省略配置的过程了哈" class="headerlink" title="1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:"></a>1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:</h4><p><a href="https://maple8.github.io/2018/10/23/Ubuntu%2016.04%20%E5%AE%89%E8%A3%85%20Sublime-Text%20%203%20%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">Ubuntu 16.04 安装 Sublime-Text 3 完整教程</a> </p>
 <h4 id="2-终端输入如下命令打开-Sublime-Text-3"><a href="#2-终端输入如下命令打开-Sublime-Text-3" class="headerlink" title="2. 终端输入如下命令打开 Sublime-Text 3:"></a>2. 终端输入如下命令打开 Sublime-Text 3:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl</span><br></pre></td></tr></table></figure>
 <h4 id="3-安装package-control组件"><a href="#3-安装package-control组件" class="headerlink" title="3. 安装package control组件:"></a>3. 安装package control组件:</h4><p>按Ctrl+ `(此符号为tab按键上面的按键) 调出console(位于界面的最下方),输入此快捷键需要注意避免热键冲突.<br>粘贴以下代码到console中,然后回车并等待(可能会出现 Sublime-Text 3 出现未响应的情况,因为是后台正在进行插件安装包的下载和安装,不用担心,继续等待即可)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), <span class="string">'wb'</span>).write(urllib.request.urlopen( <span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="built_in">read</span>())</span><br></pre></td></tr></table></figure></p>
-<h4 id="4-安装完成之后-重启-Sublime-Text-3-有时候不重启也可以哈-如果在-Perferences-gt-中看到-package-control-这一项-如下图-，则说明安装成功"><a href="#4-安装完成之后-重启-Sublime-Text-3-有时候不重启也可以哈-如果在-Perferences-gt-中看到-package-control-这一项-如下图-，则说明安装成功" class="headerlink" title="4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功."></a>4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功.</h4><p><img src="/uploads/Sublime-Text.png" alt=""> </p>
+<h4 id="4-安装完成之后-重启-Sublime-Text-3-有时候不重启也可以哈-如果在-Perferences-gt-中看到-package-control-这一项-如下图-，则说明安装成功"><a href="#4-安装完成之后-重启-Sublime-Text-3-有时候不重启也可以哈-如果在-Perferences-gt-中看到-package-control-这一项-如下图-，则说明安装成功" class="headerlink" title="4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功."></a>4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功.</h4><p><img src="http://phe7ff7o6.bkt.clouddn.com/Sublime-Text.png" alt=""> </p>
 <h4 id="5-用Package-Control安装插件："><a href="#5-用Package-Control安装插件：" class="headerlink" title="5. 用Package Control安装插件："></a>5. 用Package Control安装插件：</h4><p>按下 Ctrl+Shift+P 调出命令面板 ,在命令面板中输入 install,会弹出多个提示选项, 点击 Install Package 选项并回车，然后在弹出的提示框中输入 ChineseLocation, 便可进行安装.</p>
 <h4 id="6-安装完成之后-重启-Sublime-Text-3-就可以看到界面变成中文的了哈"><a href="#6-安装完成之后-重启-Sublime-Text-3-就可以看到界面变成中文的了哈" class="headerlink" title="6. 安装完成之后,重启 Sublime-Text 3, 就可以看到界面变成中文的了哈."></a>6. 安装完成之后,重启 Sublime-Text 3, 就可以看到界面变成中文的了哈.</h4><hr>
 <p> 参考资源<br><a href="https://blog.csdn.net/wxl1555/article/details/69941451" target="_blank" rel="noopener">Sublime Text 3安装及常用插件安装</a></p>
@@ -583,7 +583,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -688,7 +688,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15k</span>
+    <span title="Site words total count">14.8k</span>
   
 </div>
 
