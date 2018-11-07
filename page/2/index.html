@@ -82,7 +82,7 @@
 <meta name="description" content="Everything is the best arrangement">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Maple&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
 <meta property="og:description" content="Everything is the best arrangement">
 <meta property="og:locale" content="default">
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/「Python 番外篇」-- JSON/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/「Python 进阶篇」Part 1 -- 闭包/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/07/「Python 番外篇」-- JSON/" itemprop="url">「Python 番外篇」-- JSON</a></h1>
+                <a class="post-title-link" href="/2018/10/24/「Python 进阶篇」Part 1 -- 闭包/" itemprop="url">「Python 进阶篇」Part 1 -- 闭包</a></h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T00:00:00+08:00">
-                2018-11-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T00:00:00+08:00">
+                2018-10-24
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-番外篇/" itemprop="url" rel="index">
-                    <span itemprop="name">Python 番外篇</span>
+                  <a href="/categories/Python-进阶篇/" itemprop="url" rel="index">
+                    <span itemprop="name">Python 进阶篇</span>
                   </a>
                 </span>
 
@@ -367,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/07/「Python 番外篇」-- JSON/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/07/「Python 番外篇」-- JSON/" itemprop="commentCount"></span>
+                <a href="/2018/10/24/「Python 进阶篇」Part 1 -- 闭包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/24/「Python 进阶篇」Part 1 -- 闭包/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -398,14 +398,18 @@
       
         
           
-          简述:很多程序多要求用户输入信息,而程序会将这些信息都保存在列表或字典等数据结构中.当程序被关闭的时候,这些数据就会被释放,如果我们想要吧这些信息保存下来,一种简单的方法就是使用JSON模块来存储数据.
-JSON 数据格式JSON(JavaScript Object Notation)是一种轻量级的数据交换格式,这种轻便格式很有用,也很容易学.JSON最初是为JavaScript开发的,但随后成了一种常见的数据格式,被众多语言采用,如JavaScript,Java,Python…
-JSON 模块JSON 模块让我们能够将简单的Python数据结构中的数据转存到为文件中(当然,直接使用文件的读写功能也是可以实现的),并在程序中再次运行的时候加载该文件中的数据.我们还可以使用json在Python程序之间进行数据的分享.更重要的是JSON数据格式并非Python所独有的,这让我们能够把以JSON格式存储的数据和使用其他编程语言的人分享.
-JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和json.load().json.dump(): 用于存储数据到指定的j
+          预备知识点: 函数引用在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。在创建一个函数的时候, 这个函数名就是一个引用,用于指向这个函数. 我们可以通过这个引用去调用它指向的方法, 也可以将这个引用传递给其他的变量,然后利用其他的变量去调用该引用指向的方法. 对于一个变量来说, 我们给它传递什么引用,它就指向什么.123456789101112131415def test():    print("---maple---")# 调用函数test()# 引用函数func = testprint(id(test))print(id(func))# 通过引用调用函数func()
+输出结果:
+---maple---
+140149779047152
+140149779047152
+---maple---
+
+知识点： 闭包什么是闭包？定义： 在函数的内部再定义一个函数，并且这个函数用到了外部函数中的变量，那么就将这个函数及其用到的变量称为闭包.接下来看一个闭包的例子:12345678910111213141516def line
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/07/「Python 番外篇」-- JSON/#more" rel="contents">
+            <a class="btn" href="/2018/10/24/「Python 进阶篇」Part 1 -- 闭包/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -464,7 +468,7 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/「Python 进阶篇」Part 2 -- 装饰器/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -483,7 +487,7 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /" itemprop="url">「HTML 入门篇」Part 3 -- 制作个性化简历</a></h1>
+                <a class="post-title-link" href="/2018/10/24/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="url">「Python 进阶篇」Part 2 -- 装饰器</a></h1>
         
 
         <div class="post-meta">
@@ -495,8 +499,8 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
-                2018-10-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T00:00:00+08:00">
+                2018-10-24
               </time>
             
 
@@ -518,8 +522,8 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML-入门篇/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML 入门篇</span>
+                  <a href="/categories/Python-进阶篇/" itemprop="url" rel="index">
+                    <span itemprop="name">Python 进阶篇</span>
                   </a>
                 </span>
 
@@ -536,8 +540,8 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /" itemprop="commentCount"></span>
+                <a href="/2018/10/24/「Python 进阶篇」Part 2 -- 装饰器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/24/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -567,13 +571,12 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
       
         
           
-          页面布局页面布局概述布局也可以叫做排版，它指的是把文字和图片等元素按照我们的意愿有机地排列在页面上，布局的方式分为两种：
-1 . table布局：通过table元素将页面空间划分成若干个单元格，将文字或图片等元素放入单元格中，隐藏表格的边框，从而实现布局。这种布局方式也叫传统布局，目前主要使用在EDM(广告邮件中的页面)中，主流的布局方式不用这种。2 . HTML+CSS布局(DIV+CSS)：主要通过CSS样式设置来布局文字或图片等元素，需要用到CSS盒子模型、盒子类型、CSS浮动、CSS定位、CSS背景图定位等知识来布局，它比传统布局要复杂，目前是主流的布局方式。
-table布局table来做整体页面的布局，布局的技巧归纳为如下几点：1、按照设计图的尺寸设置表格的宽高以及单元格的宽高2、将表格border、cellpadding、cellspacing全部设置为0，表格的边框和间距就不占有页面空间，它只起到划分空间的作用3、针对局部复杂的布局，可以在单元格里面再嵌套表格，嵌套表格划分局部的空间4、单元格中的元素或者嵌套的表格用align和valign设置对齐方式5、通过属性或者cs
-          ...
+          尚未更新…
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /#more" rel="contents">
+            <a class="btn" href="/2018/10/24/「Python 进阶篇」Part 2 -- 装饰器/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -632,7 +635,7 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/Sublime-Text 3 配置中文环境/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -651,7 +654,7 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/" itemprop="url">「HTML 入门篇」Part 2 -- HTML 基础</a></h1>
+                <a class="post-title-link" href="/2018/10/23/Sublime-Text 3 配置中文环境/" itemprop="url">Sublime-Text 3 配置中文环境</a></h1>
         
 
         <div class="post-meta">
@@ -663,8 +666,8 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
-                2018-10-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T00:00:00+08:00">
+                2018-10-23
               </time>
             
 
@@ -686,1106 +689,8 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML-入门篇/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML 入门篇</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          顾名思义,HTML称为超文本标记语言, 里面就是超链接和标签. 所以呢,在HTML的程序中充满着各种各样的标签,所以程序看以来可能会觉得很乱, 但是没关系,只要记住一个原则,所有的标签都是成对出现的, 虽然代码在格式上没有缩进的要求,但是为了方便查看,我们在编写程序的时候就应该有相应的代码缩进. 这样,后面维护代码的时候就不会乱了哈.
-HTML基础标签html注释：html文档代码中可以插入注释，注释是对代码的说明和解释，注释的内容不会显示在页面上，html代码中插入注释的方法是：1&lt;!-- 这是一段注释  --&gt;
-html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5&gt;、&lt;h6&gt;,标签可以在网页上定义6种级别的标题。6种级别的标题表示文档的6级目录层级关系，比如说：&lt;h1&gt;用作主标题，其后是&lt;h2&gt;，再其次是&lt;h3&gt;，以此类推。搜索引擎会使用标题将网页的结构和内容编制索引，所以网页上使用标题是很重要的。1234567&lt;!-- 六级标题 --&gt;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/Python/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/29/Python/" itemprop="url">Python 进阶篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
-                2018-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/29/Python/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/Python/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://phe7ff7o6.bkt.clouddn.com/python1.jpeg" width="933" height="575" alt="python" align="center"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/Python/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/HTML/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/29/HTML/" itemprop="url">HTML 入门篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
-                2018-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/29/HTML/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/HTML/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://phe7ff7o6.bkt.clouddn.com/html1.jpeg" width="1000" height="375" alt="git" align="center"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/HTML/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/" itemprop="url">「HTML 入门篇」Part 1 -- 关于HTML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
-                2018-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML-入门篇/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML 入门篇</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          html概述HTML 是 HyperText Mark-up Language 的首字母简写，意思是超文本标记语言. 超文本指的是超链接，标记指的是标签，是一种用来制作网页的语言，这种语言由一个个的标签组成，用这种语言制作的文件保存的是一个文本文件，文件的扩展名为html或者htm，一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件渲染成网页显示出来.
-html基本结构一个html的基本结构如下：12345678910&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;    &lt;head&gt;                    &lt;meta charset="UTF-8"&gt;        &lt;title&gt;网页标题&lt;/title&gt;    &lt;/head&gt;    &lt;body&gt;          网页显示内容    &lt;/body&gt;&lt;/html&gt;
-第一行是文档声明，第二行“&lt;h
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/Linux/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/29/Linux/" itemprop="url">Linux 篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
-                2018-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/29/Linux/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/Linux/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://phe7ff7o6.bkt.clouddn.com/Linux.png" width="1000" height="500" alt="git" align="center"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/Linux/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/" itemprop="url">「Linux 篇」Part 2 -- 文件和目录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-28T00:00:00+08:00">
-                2018-10-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-篇/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux 篇</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><blockquote class="blockquote-center">在Linux中，人们常说：<br>＂一切皆文件＂</blockquote><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /" itemprop="url">「Linux 篇」Part 1 -- OS 起源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-26T00:00:00+08:00">
-                2018-10-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-篇/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux 篇</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          操作系统（Operation System，简称OS）操作系统(Operating System,OS)是管理和控制计算机硬件与软件资源的计算机程序，是直接运行在“裸机”上的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。名词解释: 裸机没有安装操作系统的计算机，通常被称为 裸机如果想在 裸机 上运行自己所编写的程序，就必须用机器语言书写程序,可惜机器语言人类看不懂,所以就需要操作系统.如果计算机上安装了操作系统，就可以在操作系统上安装支持的高级语言环境，用高级语言开发程序.如: Java, Python, C++ …
-操作系统的作用1 . 操作系统是现代计算机系统中 最基本和最重要 的系统软件.2 . 操作系统配置在计算机硬件上的第一层软件，是对硬件系统的首次扩展.3 . 操作系统主要作用是管理好硬件设备，并为用户和应用程序提供一个简单的接口，以便于使用.4 . 操作系统为大量的应用软件提供支持,诸如编译程序、数据库管理系统.
-不同应用领域的主流操作系统
-桌面操作系统
-服务器操作系统
-嵌入式操作系统
-移
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/Markdown 完全篇/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/25/Markdown 完全篇/" itemprop="url">Markdown 完全篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T00:00:00+08:00">
-                2018-10-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/文本编辑工具/" itemprop="url" rel="index">
-                    <span itemprop="name">文本编辑工具</span>
+                  <a href="/categories/代码编辑工具/" itemprop="url" rel="index">
+                    <span itemprop="name">代码编辑工具</span>
                   </a>
                 </span>
 
@@ -1795,8 +700,8 @@ html基本结构一个html的基本结构如下：12345678910&lt;!DOCTYPE html&g
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/文本编辑工具/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
+                  <a href="/categories/代码编辑工具/Sublime-Text-3/" itemprop="url" rel="index">
+                    <span itemprop="name">Sublime-Text 3</span>
                   </a>
                 </span>
 
@@ -1813,8 +718,8 @@ html基本结构一个html的基本结构如下：12345678910&lt;!DOCTYPE html&g
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/25/Markdown 完全篇/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/25/Markdown 完全篇/" itemprop="commentCount"></span>
+                <a href="/2018/10/23/Sublime-Text 3 配置中文环境/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/23/Sublime-Text 3 配置中文环境/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1844,13 +749,372 @@ html基本结构一个html的基本结构如下：12345678910&lt;!DOCTYPE html&g
       
         
           
-          简述:Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。认识 MarkdownMarkdown 是一种用来写作的轻量级「标记语言」，它用简洁的语法代替排版，而不像一般我们用的字处理软件 Word 或 Pages 有大量的排版、字体设置。它使我们专心于码字，用「标记」语法，来代替常见的排版格式。例如此文从内容到格式，甚至插图，键盘就可以通通搞定了。
-使用 Markdown 的优点1 . 专注你的文字内容而不是排版样式，安心写作。2 . 轻松的导出 HTML、PDF 和本身的 .md 文件。3 . 纯文本内容，兼容所有的文本编辑器与字处理软件。4 . 随时修改你的文章版本，不必像字处理软件生成若干文件版本导致混乱。5 . 可读、直观、学习成本低。
-选用什么编辑工具?以下推荐的 Markd
+          简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:Ubuntu 16.04 安装 Sublime-Text 3 完整教程 
+2. 终端输入如下命令打开 Sublime-Text 3:1subl
+3. 安装package control组件:按Ctrl+ `(此符号为tab按键上面的按键) 调出console(位于界面的最下方),输入此快捷键需要注意避免热键冲突.粘贴以下代码到console中,然后回车并等待(可能会出现 Sublime-Text 3 出现未响应的情况,因为是后台正在进行插件安装包的下载和安装,不用担心,继续等待即可)：1import urllib.request,os; pf = 'Package Control.subl
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/25/Markdown 完全篇/#more" rel="contents">
+            <a class="btn" href="/2018/10/23/Sublime-Text 3 配置中文环境/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/Sublime - Text 3 无法输入中文解决方案/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/23/Sublime - Text 3 无法输入中文解决方案/" itemprop="url">Sublime-Text 3 无法输入中文解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T00:00:00+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码编辑工具/" itemprop="url" rel="index">
+                    <span itemprop="name">代码编辑工具</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码编辑工具/Sublime-Text-3/" itemprop="url" rel="index">
+                    <span itemprop="name">Sublime-Text 3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/23/Sublime - Text 3 无法输入中文解决方案/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/23/Sublime - Text 3 无法输入中文解决方案/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          简述本教程是解决 Ubuntu 16.04 操作系统下安装的 Sublime-Text 3 无法输入中文的问题. 想要在 Ubuntu 操作系统中安装 Sublime-Text 3 有多种方法, 比如: 在Ubuntu 的软件商店里面直接安装; Sublime-Text 在官网下载 .deb包,然后安装; 还有通过终端命令安装等. 本文是针对后两种方法的, 因为第一种方法的安装路径不在 /opt/sublime_text路径下, 当然,如果你能找到安装路径,该方法也是可以用的,只要对命令中的路径做出相应的调整就好. 当然了,解决不能输入中文的方法有很多,以下只是其中一种.1 . 利用 git 工具从 github 上下载我们需要的开源文件,打开终端，输入：
+1git clone http://github.com/lyfeyaj/sublime-text-imfix.git
+以上命令会将文件下载到当前文件(终端输入 pwd 查看当前位置)中,默认是在用户的家目录中,也可以改变,只要在指定的文件夹中打开终端就好.
+如果出现提示说没有 git 工具, 那么请先终端输入以下命令进行安装 gi
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/23/Sublime - Text 3 无法输入中文解决方案/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/" itemprop="url">Ubuntu 16.04 安装 Sublime-Text 3 完整教程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T00:00:00+08:00">
+                2018-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码编辑工具/" itemprop="url" rel="index">
+                    <span itemprop="name">代码编辑工具</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码编辑工具/Sublime-Text-3/" itemprop="url" rel="index">
+                    <span itemprop="name">Sublime-Text 3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          简述:Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.1. 打开Ubuntu终端,依次输入以下命令:Install the GPG key:1wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+ Ensure apt is set up to work with https sources:1sudo apt-get install apt-transport-https
+ Select the channel to use:1.Stable1echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublim
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1899,7 +1163,7 @@ html基本结构一个html的基本结构如下：12345678910&lt;!DOCTYPE html&g
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 
