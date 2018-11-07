@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Sublime-Text 3,Ubuntu16.04,">
+  <meta name="keywords" content="Python 3,JSON,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="简述:Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.1. 打开Ubuntu终端,依次输入以下命令:Install the GPG key:1wget -qO">
-<meta name="keywords" content="Sublime-Text 3,Ubuntu16.04">
+<meta name="description" content="简述:很多程序多要求用户输入信息,而程序会将这些信息都保存在列表或字典等数据结构中.当程序被关闭的时候,这些数据就会被释放,如果我们想要吧这些信息保存下来,一种简单的方法就是使用JSON模块来存储数据. JSON 数据格式JSON(JavaScript Object Notation)是一种轻量级的数据交换格式,这种轻便格式很有用,也很容易学.JSON最初是为JavaScript开发的,但随后成了">
+<meta name="keywords" content="Python 3,JSON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu 16.04 安装 Sublime-Text 3 完整教程">
-<meta property="og:url" content="http://yoursite.com/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/index.html">
+<meta property="og:title" content="「Python 番外篇」-- JSON">
+<meta property="og:url" content="http://yoursite.com/2018/11/07/「Python 番外篇」-- JSON/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="简述:Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.1. 打开Ubuntu终端,依次输入以下命令:Install the GPG key:1wget -qO">
+<meta property="og:description" content="简述:很多程序多要求用户输入信息,而程序会将这些信息都保存在列表或字典等数据结构中.当程序被关闭的时候,这些数据就会被释放,如果我们想要吧这些信息保存下来,一种简单的方法就是使用JSON模块来存储数据. JSON 数据格式JSON(JavaScript Object Notation)是一种轻量级的数据交换格式,这种轻便格式很有用,也很容易学.JSON最初是为JavaScript开发的,但随后成了">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-30T07:39:54.400Z">
+<meta property="og:updated_time" content="2018-11-07T04:58:14.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu 16.04 安装 Sublime-Text 3 完整教程">
-<meta name="twitter:description" content="简述:Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.1. 打开Ubuntu终端,依次输入以下命令:Install the GPG key:1wget -qO">
+<meta name="twitter:title" content="「Python 番外篇」-- JSON">
+<meta name="twitter:description" content="简述:很多程序多要求用户输入信息,而程序会将这些信息都保存在列表或字典等数据结构中.当程序被关闭的时候,这些数据就会被释放,如果我们想要吧这些信息保存下来,一种简单的方法就是使用JSON模块来存储数据. JSON 数据格式JSON(JavaScript Object Notation)是一种轻量级的数据交换格式,这种轻便格式很有用,也很容易学.JSON最初是为JavaScript开发的,但随后成了">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/07/「Python 番外篇」-- JSON/">
 
 
 
 
 
-  <title>Ubuntu 16.04 安装 Sublime-Text 3 完整教程 | Maple's Blog</title>
+  <title>「Python 番外篇」-- JSON | Maple's Blog</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/「Python 番外篇」-- JSON/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu 16.04 安装 Sublime-Text 3 完整教程</h1>
+          <h1 class="post-title" itemprop="name headline">「Python 番外篇」-- JSON</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T00:00:00+08:00">
-                2018-10-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T00:00:00+08:00">
+                2018-11-07
               </time>
             
 
@@ -347,19 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/代码编辑工具/" itemprop="url" rel="index">
-                    <span itemprop="name">代码编辑工具</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/代码编辑工具/Sublime-Text-3/" itemprop="url" rel="index">
-                    <span itemprop="name">Sublime-Text 3</span>
+                  <a href="/categories/Python-番外篇/" itemprop="url" rel="index">
+                    <span itemprop="name">Python 番外篇</span>
                   </a>
                 </span>
 
@@ -376,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/" itemprop="commentCount"></span>
+                <a href="/2018/11/07/「Python 番外篇」-- JSON/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/07/「Python 番外篇」-- JSON/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,36 +394,13 @@
       
 
       
-        <h3 id="简述"><a href="#简述" class="headerlink" title="简述:"></a>简述:</h3><h4 id="Sublime-Text-3-是一款非常好用的高级文本编辑器-可运行在Linux，Windows和Mac-OS-。它支持几乎所有的代码格式-并能够在编辑代码的时候给予自动提示-是一款很值得推荐的代码文编编辑器-本教程是针对-Ubuntu-和-Debian-系统-下面就让我们进入安装教程吧"><a href="#Sublime-Text-3-是一款非常好用的高级文本编辑器-可运行在Linux，Windows和Mac-OS-。它支持几乎所有的代码格式-并能够在编辑代码的时候给予自动提示-是一款很值得推荐的代码文编编辑器-本教程是针对-Ubuntu-和-Debian-系统-下面就让我们进入安装教程吧" class="headerlink" title="Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧."></a>Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.</h4><h4 id="1-打开Ubuntu终端-依次输入以下命令"><a href="#1-打开Ubuntu终端-依次输入以下命令" class="headerlink" title="1. 打开Ubuntu终端,依次输入以下命令:"></a>1. 打开Ubuntu终端,依次输入以下命令:</h4><p>Install the GPG key:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></p>
-<p> Ensure apt is set up to work with https sources:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apt-transport-https</span><br></pre></td></tr></table></figure></p>
-<p> Select the channel to use:<br>1.Stable<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb https://download.sublimetext.com/ apt/stable/"</span> | sudo tee /etc/apt/sources.list.d/sublime-text.list</span><br></pre></td></tr></table></figure></p>
-<p>2.Dev<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb https://download.sublimetext.com/ apt/dev/"</span> | sudo tee /etc/apt/sources.list.d/sublime-text.list</span><br></pre></td></tr></table></figure></p>
-<p>Update apt sources and install Sublime Text:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sublime-text</span><br></pre></td></tr></table></figure>
-<h4 id="2-步骤1执行完之后-如果没有报错-便说明-Sublime-Text-3-已经安装成功了-我们可以通过按下super键打开搜索-输入关键字进行搜索并打开-也可以打开终端-输入subl命令快速打开-此时会提示需要输入-“注册码”-粘贴以下注册码-复制到提示框中即可"><a href="#2-步骤1执行完之后-如果没有报错-便说明-Sublime-Text-3-已经安装成功了-我们可以通过按下super键打开搜索-输入关键字进行搜索并打开-也可以打开终端-输入subl命令快速打开-此时会提示需要输入-“注册码”-粘贴以下注册码-复制到提示框中即可" class="headerlink" title="2. 步骤1执行完之后,如果没有报错,便说明 Sublime-Text 3 已经安装成功了,我们可以通过按下super键打开搜索,输入关键字进行搜索并打开,也可以打开终端,输入subl命令快速打开,此时会提示需要输入 “注册码”,粘贴以下注册码,复制到提示框中即可:"></a>2. 步骤1执行完之后,如果没有报错,便说明 Sublime-Text 3 已经安装成功了,我们可以通过按下<code>super</code>键打开搜索,输入关键字进行搜索并打开,也可以打开终端,输入<code>subl</code>命令快速打开,此时会提示需要输入 “注册码”,粘贴以下注册码,复制到提示框中即可:</h4><pre><code>----- BEGIN LICENSE -----
-sgbteam
-Single User License
-EA7E-1153259
-8891CBB9 F1513E4F 1A3405C1 A865D53F
-115F202E 7B91AB2D 0D2A40ED 352B269B
-76E84F0B CD69BFC7 59F2DFEF E267328F
-215652A3 E88F9D8F 4C38E3BA 5B2DAAE4
-969624E7 DC9CD4D5 717FB40C 1B9738CF
-20B3C4F1 E917B5B3 87C38D9C ACCE7DD8
-5F7EF854 86B9743C FADC04AA FB0DA5C0
-F913BE58 42FEA319 F954EFDD AE881E0B
------- END LICENSE ------
-</code></pre><h4 id="3-现在可以正常使用-Sublime-Text-3-了-此时打开的主界面默认是设置成中文的-如果不喜欢的话-可以在菜单栏的-“帮助”中选择Language进行语言设置-便可以更换语言支持"><a href="#3-现在可以正常使用-Sublime-Text-3-了-此时打开的主界面默认是设置成中文的-如果不喜欢的话-可以在菜单栏的-“帮助”中选择Language进行语言设置-便可以更换语言支持" class="headerlink" title="3. 现在可以正常使用 Sublime-Text 3 了,此时打开的主界面默认是设置成中文的,如果不喜欢的话,可以在菜单栏的 “帮助”中选择Language进行语言设置,便可以更换语言支持."></a>3. 现在可以正常使用 Sublime-Text 3 了,此时打开的主界面默认是设置成中文的,如果不喜欢的话,可以在菜单栏的 “帮助”中选择<code>Language</code>进行语言设置,便可以更换语言支持.</h4><h4 id="4-Sublime-Text-3-默认是不支持输入中文的-当打开Sublime-Text-3-的时候-可以进行英文输入-但是并不能切换中文输入法-即使通过点击电脑右上角的输入法强行切换到中文输入法-输入的也还是英文-以下是解决方案"><a href="#4-Sublime-Text-3-默认是不支持输入中文的-当打开Sublime-Text-3-的时候-可以进行英文输入-但是并不能切换中文输入法-即使通过点击电脑右上角的输入法强行切换到中文输入法-输入的也还是英文-以下是解决方案" class="headerlink" title="4. Sublime-Text 3 默认是不支持输入中文的,当打开Sublime-Text 3 的时候,可以进行英文输入,但是并不能切换中文输入法,即使通过点击电脑右上角的输入法强行切换到中文输入法,输入的也还是英文.以下是解决方案:"></a>4. Sublime-Text 3 默认是不支持输入中文的,当打开Sublime-Text 3 的时候,可以进行英文输入,但是并不能切换中文输入法,即使通过点击电脑右上角的输入法强行切换到中文输入法,输入的也还是英文.以下是解决方案:</h4><p>1.下载我们需要的文件，打开终端，输入(该命令会下载文件到用户的家目录中,也可以手动指定位置,当然在下面的命令中需要做出相应的调整)：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> http://github.com/lyfeyaj/sublime-text-imfix.git</span><br></pre></td></tr></table></figure>
-<p>2.将subl移动到/usr/bin/，并且将sublime-imfix.so移动到/opt/sublime_text/（sublime的安装目录），终端输入为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/sublime-text-imfix</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp ./src/subl /usr/bin/</span><br></pre></td></tr></table></figure>
-<p>3.用subl命令试试能不能启动sublime，如果成功启动的话，应该就可以输入中文了。终端输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl</span><br></pre></td></tr></table></figure>
-<h4 id="至此-便可以在-Sublime-Text-3-使用中文输入法了-谢谢浏览"><a href="#至此-便可以在-Sublime-Text-3-使用中文输入法了-谢谢浏览" class="headerlink" title="至此,便可以在 Sublime-Text 3 使用中文输入法了,谢谢浏览!"></a>至此,便可以在 Sublime-Text 3 使用中文输入法了,谢谢浏览!</h4><h4 id="如果想详细了解-Sublime-Text-3-的使用方法-请浏览-Sublime-Text-3-的官方网站-附链接-如下"><a href="#如果想详细了解-Sublime-Text-3-的使用方法-请浏览-Sublime-Text-3-的官方网站-附链接-如下" class="headerlink" title="如果想详细了解 Sublime-Text 3 的使用方法,请浏览 Sublime-Text 3 的官方网站,附链接,如下:"></a>如果想详细了解 Sublime-Text 3 的使用方法,请浏览 Sublime-Text 3 的官方网站,附链接,如下:</h4><p><a href="http://www.sublimetextcn.com/" target="_blank" rel="noopener">Sublime-Text 3 中文官方文档</a></p>
+        <h4 id="简述"><a href="#简述" class="headerlink" title="简述:"></a>简述:</h4><p><strong>很多程序多要求用户输入信息,而程序会将这些信息都保存在列表或字典等数据结构中.当程序被关闭的时候,这些数据就会被释放,如果我们想要吧这些信息保存下来,一种简单的方法就是使用JSON模块来存储数据.</strong></p>
+<h4 id="JSON-数据格式"><a href="#JSON-数据格式" class="headerlink" title="JSON 数据格式"></a>JSON 数据格式</h4><p><strong>JSON(JavaScript Object Notation)是一种轻量级的数据交换格式,这种轻便格式很有用,也很容易学.JSON最初是为JavaScript开发的,但随后成了一种常见的数据格式,被众多语言采用,如JavaScript,Java,Python…</strong></p>
+<h4 id="JSON-模块"><a href="#JSON-模块" class="headerlink" title="JSON 模块"></a>JSON 模块</h4><p><strong>JSON 模块让我们能够将简单的Python数据结构中的数据转存到为文件中(当然,直接使用文件的读写功能也是可以实现的),并在程序中再次运行的时候加载该文件中的数据.我们还可以使用json在Python程序之间进行数据的分享.更重要的是JSON数据格式并非Python所独有的,这让我们能够把以JSON格式存储的数据和使用其他编程语言的人分享.</strong></p>
+<h4 id="JSON-的使用"><a href="#JSON-的使用" class="headerlink" title="JSON 的使用"></a>JSON 的使用</h4><p>JSON数据格式的使用主要是有两个函数: json.dump()和json.load().<br><strong>json.dump()</strong>: 用于存储数据到指定的json文件中<br>该函数需要两个参数:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一: 需要存储的数据<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二: 可用于存储数据的文件对象<br><strong>json.load():</strong> 用于将存储在json文件中的数据读取出来<br>该函数需要一个参数:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一: 可用于读取数据的文件对象</p>
+<h4 id="Python-代码"><a href="#Python-代码" class="headerlink" title="Python 代码"></a>Python 代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">num = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dump</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""存储数据方法"""</span></span><br><span class="line">    file_name = <span class="string">'./num.json'</span></span><br><span class="line">    <span class="comment"># 以写方式打开文件(如果文件不存在,就创建)</span></span><br><span class="line">    <span class="keyword">with</span> open(file_name, <span class="string">"w"</span>) <span class="keyword">as</span> f_write:</span><br><span class="line">        json.dump(num, f_write)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""读取数据方法"""</span></span><br><span class="line">    file_name = <span class="string">'./num.json'</span></span><br><span class="line">    <span class="comment"># 以读方式打开文件(默认就是读"r")</span></span><br><span class="line">    <span class="keyword">with</span> open(file_name) <span class="keyword">as</span> f_read:</span><br><span class="line">        num = json.load(f_read)</span><br><span class="line">    print(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment"># dump()</span></span><br><span class="line">    load()</span><br></pre></td></tr></table></figure>
+<p>对于用户生成的数据,使用json保存大有裨益,如果不以某种方式进行存储的话,等到程序的进行结束的时候所有的用户数据都会丢失.接下来看一个json在保存用户数据中的应用:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">file_name = <span class="string">'./username.json'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 用列表保存用户名字符串</span></span><br><span class="line">    user_name_list = list()</span><br><span class="line">    <span class="comment"># 用户输入</span></span><br><span class="line">    user_name = input(<span class="string">"请输入您的姓名:"</span>)</span><br><span class="line">    <span class="keyword">try</span>:  <span class="comment"># 打开文件</span></span><br><span class="line">        <span class="keyword">with</span> open(file_name) <span class="keyword">as</span> f_read:</span><br><span class="line">            user_name_list = json.load(f_read)</span><br><span class="line">    <span class="keyword">except</span> FileNotFoundError:  <span class="comment"># 文件不存在</span></span><br><span class="line">        user_name_list.append(user_name)</span><br><span class="line">        <span class="keyword">with</span> open(file_name, <span class="string">"w"</span>) <span class="keyword">as</span> f_write:</span><br><span class="line">            json.dump(user_name_list, f_write)</span><br><span class="line">        print(<span class="string">"%s, Welcome !"</span> % user_name)</span><br><span class="line">    <span class="keyword">else</span>:  <span class="comment"># 判断用户</span></span><br><span class="line">        <span class="keyword">if</span> user_name <span class="keyword">in</span> user_name_list:</span><br><span class="line">            print(<span class="string">"%s, Welcome back !"</span> % user_name)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            user_name_list.append(user_name)</span><br><span class="line">            <span class="keyword">with</span> open(file_name, <span class="string">"w"</span>) <span class="keyword">as</span> f_write:</span><br><span class="line">                json.dump(user_name_list, f_write)</span><br><span class="line">            print(<span class="string">"%s, Welcome !"</span> % user_name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p> 参考资源:<br><a href="https://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime-Text 3 官方下载资源</a><br><a href="https://blog.csdn.net/lrb730515372/article/details/61819276?utm_source=blogxgwz4" target="_blank" rel="noopener">解决Ubuntu下Sublime Text 3无法输入中文</a><br><a href="https://blog.csdn.net/qq_29819449/article/details/80130327" target="_blank" rel="noopener">Sublime Text3 注册码激活码(持续更新中2018-6-29)</a></p>
 
       
     </div>
@@ -495,9 +461,9 @@ F913BE58 42FEA319 F954EFDD AE881E0B
       
         <div class="post-tags">
           
-            <a href="/tags/Sublime-Text-3/" rel="tag"><i class="fa fa-tag"></i> Sublime-Text 3</a>
+            <a href="/tags/Python-3/" rel="tag"><i class="fa fa-tag"></i> Python 3</a>
           
-            <a href="/tags/Ubuntu16-04/" rel="tag"><i class="fa fa-tag"></i> Ubuntu16.04</a>
+            <a href="/tags/JSON/" rel="tag"><i class="fa fa-tag"></i> JSON</a>
           
         </div>
       
@@ -510,15 +476,15 @@ F913BE58 42FEA319 F954EFDD AE881E0B
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /" rel="next" title="「HTML 入门篇」Part 3 -- 制作个性化简历">
+                <i class="fa fa-chevron-left"></i> 「HTML 入门篇」Part 3 -- 制作个性化简历
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/23/Sublime-Text 3 配置中文环境/" rel="prev" title="Sublime-Text 3 配置中文环境">
-                Sublime-Text 3 配置中文环境 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -671,7 +637,7 @@ F913BE58 42FEA319 F954EFDD AE881E0B
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sublime-Text-3-是一款非常好用的高级文本编辑器-可运行在Linux，Windows和Mac-OS-。它支持几乎所有的代码格式-并能够在编辑代码的时候给予自动提示-是一款很值得推荐的代码文编编辑器-本教程是针对-Ubuntu-和-Debian-系统-下面就让我们进入安装教程吧"><span class="nav-number">1.1.</span> <span class="nav-text">Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-打开Ubuntu终端-依次输入以下命令"><span class="nav-number">1.2.</span> <span class="nav-text">1. 打开Ubuntu终端,依次输入以下命令:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-步骤1执行完之后-如果没有报错-便说明-Sublime-Text-3-已经安装成功了-我们可以通过按下super键打开搜索-输入关键字进行搜索并打开-也可以打开终端-输入subl命令快速打开-此时会提示需要输入-“注册码”-粘贴以下注册码-复制到提示框中即可"><span class="nav-number">1.3.</span> <span class="nav-text">2. 步骤1执行完之后,如果没有报错,便说明 Sublime-Text 3 已经安装成功了,我们可以通过按下super键打开搜索,输入关键字进行搜索并打开,也可以打开终端,输入subl命令快速打开,此时会提示需要输入 “注册码”,粘贴以下注册码,复制到提示框中即可:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-现在可以正常使用-Sublime-Text-3-了-此时打开的主界面默认是设置成中文的-如果不喜欢的话-可以在菜单栏的-“帮助”中选择Language进行语言设置-便可以更换语言支持"><span class="nav-number">1.4.</span> <span class="nav-text">3. 现在可以正常使用 Sublime-Text 3 了,此时打开的主界面默认是设置成中文的,如果不喜欢的话,可以在菜单栏的 “帮助”中选择Language进行语言设置,便可以更换语言支持.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Sublime-Text-3-默认是不支持输入中文的-当打开Sublime-Text-3-的时候-可以进行英文输入-但是并不能切换中文输入法-即使通过点击电脑右上角的输入法强行切换到中文输入法-输入的也还是英文-以下是解决方案"><span class="nav-number">1.5.</span> <span class="nav-text">4. Sublime-Text 3 默认是不支持输入中文的,当打开Sublime-Text 3 的时候,可以进行英文输入,但是并不能切换中文输入法,即使通过点击电脑右上角的输入法强行切换到中文输入法,输入的也还是英文.以下是解决方案:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#至此-便可以在-Sublime-Text-3-使用中文输入法了-谢谢浏览"><span class="nav-number">1.6.</span> <span class="nav-text">至此,便可以在 Sublime-Text 3 使用中文输入法了,谢谢浏览!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果想详细了解-Sublime-Text-3-的使用方法-请浏览-Sublime-Text-3-的官方网站-附链接-如下"><span class="nav-number">1.7.</span> <span class="nav-text">如果想详细了解 Sublime-Text 3 的使用方法,请浏览 Sublime-Text 3 的官方网站,附链接,如下:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON-数据格式"><span class="nav-number">2.</span> <span class="nav-text">JSON 数据格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON-模块"><span class="nav-number">3.</span> <span class="nav-text">JSON 模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON-的使用"><span class="nav-number">4.</span> <span class="nav-text">JSON 的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-代码"><span class="nav-number">5.</span> <span class="nav-text">Python 代码</span></a></li></ol></div>
             
 
           </div>
