@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[「Git篇」Part 1 -- Git 简介]]></title>
+    <url>%2F2018%2F11%2F13%2F%E3%80%8CGit%E7%AF%87%E3%80%8DPart%201%20--%20Git%20%E7%AE%80%E4%BB%8B%2F</url>
+    <content type="text"><![CDATA[Git 简史git是目前世界上最先进的分布式版本控制系统。Linus在1991年创建了开源的Linux，从此，Linux系统不断发展，已经成为最大的服务器系统软件了。Linus虽然创建了Linux，但Linux的壮大是靠全世界热心志愿者参与的共同成果，这么多人在世界各地为Linux编写代码，那Linux的代码是如何管理的呢？事实是，在2002年以前，世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后由Linus本人通过手工方式合并代码！你也许会想，为什么Linus不把Linux代码放到版本控制系统里呢？不是有CVS、SVN这些免费的版本控制系统吗？因为Linus坚定地反对CVS和SVN，因为这些集中式的版本控制系统不但速度慢，而且必须联网才能使用。有一些商用的版本控制系统，虽然比CVS、SVN好用，但那是付费的，和Linux的开源精神不符。不过，到了2002年，Linux系统已经发展了十年了，代码库之大让Linus很难继续通过手工方式管理了，同时社区的弟兄们也对这种方式表达了强烈不满，于是Linus选择了一个商业版本控制系统BitKeeper，BitKeeper的东家BitMover公司出于人道主义精神，授权Linux社区免费使用这个版本控制系统,这样一来就解决了这个问题。但是,安定团结的大好局面在2005年被打破了，原因是Linux社区牛人聚集，不免沾染了一些梁山好汉的江湖习气。开发Samba的Andrew试图破解BitKeeper的协议(这么干的其实也不只他一个,很多牛人都试图这么干过)，被BitMover公司发现了，于是BitMover公司怒了，收回了Linux社区的免费使用权。Linus可以向BitMover公司道个歉，保证以后严格管教弟兄们，嗯，其实这是不可能的。所以,实际情况是这样的：Linus花了两周时间用C写了一个分布式版本控制系统，这就是Git！一个月之内，Linux系统的所有源码已经由Git管理了！牛是怎么定义的呢？大家可以体会一下。Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。历史就是这么偶然，如果不是当年BitMover公司威胁Linux社区，可能现在我们就没有免费而超级好用的Git了。 Git 的特点 版本控制：可以解决多人同时开发的代码问题，也可以解决找回历史代码的问题。 分布式：Git是分布式版本控制系统，同一个Git仓库，可以分布到不同的机器上。首先找一台电脑充当服务器的角色，每天24小时开机，其他每个人都从这个“服务器”仓库克隆一份到自己的电脑上，并且各自把各自的提交推送到服务器仓库里，也从服务器仓库中拉取别人的提交。可以自己搭建这台服务器，也可以使用GitHub网站。]]></content>
+      <categories>
+        <category>&lt;b&gt;Git 篇&lt;/b&gt;</category>
+        <category>「Git篇」Part 1 -- Git 简介</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>分布式管理系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[「Python 进阶篇」Part 3 -- 再议装饰器]]></title>
     <url>%2F2018%2F11%2F10%2F%E3%80%8CPython%20%E8%BF%9B%E9%98%B6%E7%AF%87%E3%80%8DPart%203%20--%20%E5%86%8D%E8%AE%AE%E8%A3%85%E9%A5%B0%E5%99%A8%2F</url>
     <content type="text"></content>
@@ -128,9 +141,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Sublime-Text 3 无法输入中文解决方案]]></title>
-    <url>%2F2018%2F10%2F23%2FSublime%20-%20Text%203%20%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
-    <content type="text"><![CDATA[简述本教程是解决 Ubuntu 16.04 操作系统下安装的 Sublime-Text 3 无法输入中文的问题. 想要在 Ubuntu 操作系统中安装 Sublime-Text 3 有多种方法, 比如: 在Ubuntu 的软件商店里面直接安装; Sublime-Text 在官网下载 .deb包,然后安装; 还有通过终端命令安装等. 本文是针对后两种方法的, 因为第一种方法的安装路径不在 /opt/sublime_text路径下, 当然,如果你能找到安装路径,该方法也是可以用的,只要对命令中的路径做出相应的调整就好. 当然了,解决不能输入中文的方法有很多,以下只是其中一种.1 . 利用 git 工具从 github 上下载我们需要的开源文件,打开终端，输入： 1git clone http://github.com/lyfeyaj/sublime-text-imfix.git 以上命令会将文件下载到当前文件(终端输入 pwd 查看当前位置)中,默认是在用户的家目录中,也可以改变,只要在指定的文件夹中打开终端就好. 如果出现提示说没有 git 工具, 那么请先终端输入以下命令进行安装 git :1sudo apt-get install git 2 . 将subl移动到/usr/bin/，并且将sublime-imfix.so(位于上面下载的文件中)移动到/opt/sublime_text/（sublime的安装目录），终端依次输入以下命令：123cd ~/sublime-text-imfixsudo cp ./lib/libsublime-imfix.so /opt/sublime_text/sudo cp ./src/subl /usr/bin/ 3 . 用subl命令试试能不能启动 Sublime -Text，如果成功启动的话，应该就可以输入中文了。终端输入：1subl 至此,我们就可以在 Sublime-Text中输入中文了.但是呢,这只是一种暂时性的可以,可能哪天就不好使了,博主自己就是这样的,上述步骤执行完成之后是可以输入中文了,过几天就不行了.所以,还需要执行以下步骤.4 . 新建一个shell脚本,在 Sublime-Text中 新建文件,然后输入以下代码:12#!/bin/bashLD_PRELOAD=/opt/sublime_text/libsublime-imfix.so subl 然后将文件另存为sublime（注意：没有后缀），并放到/home文件夹中,此过程有可能因为权限问题无法直接保存，我们可以先保存到其他文件夹，然后在终端用sudo cp命令复制到/home文件夹下面。 5 . 到这里就所有的工作都完成了,终端输入subl启动 Sublime-Text, 然后就可以愉快的使用了哈. 说明如果您的 Sublime-Text 是旧版本的话(就是每次打开都会提示有新的版本,询问是否需要安装), 通过以上教程也是可以正常输入中文的,但是,文字的排版的话,每行中的中文和英文及其他符号无法完美对齐, 这是一个bug啊,只能通过 Sublime-Text 官方提供更好的中文支持了. 参考资源:解决Ubuntu下Sublime Text 3无法输入中文]]></content>
+    <title><![CDATA[Sublime-Text 3 配置中文环境]]></title>
+    <url>%2F2018%2F10%2F23%2FSublime-Text%203%20%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:Ubuntu 16.04 安装 Sublime-Text 3 完整教程 2. 终端输入如下命令打开 Sublime-Text 3:1subl 3. 安装package control组件:按Ctrl+ `(此符号为tab按键上面的按键) 调出console(位于界面的最下方),输入此快捷键需要注意避免热键冲突.粘贴以下代码到console中,然后回车并等待(可能会出现 Sublime-Text 3 出现未响应的情况,因为是后台正在进行插件安装包的下载和安装,不用担心,继续等待即可)：1import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read()) 4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功. 5. 用Package Control安装插件：按下 Ctrl+Shift+P 调出命令面板 ,在命令面板中输入 install,会弹出多个提示选项, 点击 Install Package 选项并回车，然后在弹出的提示框中输入 ChineseLocation, 便可进行安装. 6. 安装完成之后,重启 Sublime-Text 3, 就可以看到界面变成中文的了哈. 参考资源Sublime Text 3安装及常用插件安装]]></content>
       <categories>
         <category>&lt;b&gt;代码编辑工具&lt;/b&gt;</category>
         <category>&lt;b&gt;Sublime-Text 3&lt;/b&gt;</category>
@@ -141,9 +154,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Sublime-Text 3 配置中文环境]]></title>
-    <url>%2F2018%2F10%2F23%2FSublime-Text%203%20%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E7%8E%AF%E5%A2%83%2F</url>
-    <content type="text"><![CDATA[简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:Ubuntu 16.04 安装 Sublime-Text 3 完整教程 2. 终端输入如下命令打开 Sublime-Text 3:1subl 3. 安装package control组件:按Ctrl+ `(此符号为tab按键上面的按键) 调出console(位于界面的最下方),输入此快捷键需要注意避免热键冲突.粘贴以下代码到console中,然后回车并等待(可能会出现 Sublime-Text 3 出现未响应的情况,因为是后台正在进行插件安装包的下载和安装,不用担心,继续等待即可)：1import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read()) 4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功. 5. 用Package Control安装插件：按下 Ctrl+Shift+P 调出命令面板 ,在命令面板中输入 install,会弹出多个提示选项, 点击 Install Package 选项并回车，然后在弹出的提示框中输入 ChineseLocation, 便可进行安装. 6. 安装完成之后,重启 Sublime-Text 3, 就可以看到界面变成中文的了哈. 参考资源Sublime Text 3安装及常用插件安装]]></content>
+    <title><![CDATA[Sublime-Text 3 无法输入中文解决方案]]></title>
+    <url>%2F2018%2F10%2F23%2FSublime%20-%20Text%203%20%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[简述本教程是解决 Ubuntu 16.04 操作系统下安装的 Sublime-Text 3 无法输入中文的问题. 想要在 Ubuntu 操作系统中安装 Sublime-Text 3 有多种方法, 比如: 在Ubuntu 的软件商店里面直接安装; Sublime-Text 在官网下载 .deb包,然后安装; 还有通过终端命令安装等. 本文是针对后两种方法的, 因为第一种方法的安装路径不在 /opt/sublime_text路径下, 当然,如果你能找到安装路径,该方法也是可以用的,只要对命令中的路径做出相应的调整就好. 当然了,解决不能输入中文的方法有很多,以下只是其中一种.1 . 利用 git 工具从 github 上下载我们需要的开源文件,打开终端，输入： 1git clone http://github.com/lyfeyaj/sublime-text-imfix.git 以上命令会将文件下载到当前文件(终端输入 pwd 查看当前位置)中,默认是在用户的家目录中,也可以改变,只要在指定的文件夹中打开终端就好. 如果出现提示说没有 git 工具, 那么请先终端输入以下命令进行安装 git :1sudo apt-get install git 2 . 将subl移动到/usr/bin/，并且将sublime-imfix.so(位于上面下载的文件中)移动到/opt/sublime_text/（sublime的安装目录），终端依次输入以下命令：123cd ~/sublime-text-imfixsudo cp ./lib/libsublime-imfix.so /opt/sublime_text/sudo cp ./src/subl /usr/bin/ 3 . 用subl命令试试能不能启动 Sublime -Text，如果成功启动的话，应该就可以输入中文了。终端输入：1subl 至此,我们就可以在 Sublime-Text中输入中文了.但是呢,这只是一种暂时性的可以,可能哪天就不好使了,博主自己就是这样的,上述步骤执行完成之后是可以输入中文了,过几天就不行了.所以,还需要执行以下步骤.4 . 新建一个shell脚本,在 Sublime-Text中 新建文件,然后输入以下代码:12#!/bin/bashLD_PRELOAD=/opt/sublime_text/libsublime-imfix.so subl 然后将文件另存为sublime（注意：没有后缀），并放到/home文件夹中,此过程有可能因为权限问题无法直接保存，我们可以先保存到其他文件夹，然后在终端用sudo cp命令复制到/home文件夹下面。 5 . 到这里就所有的工作都完成了,终端输入subl启动 Sublime-Text, 然后就可以愉快的使用了哈. 说明如果您的 Sublime-Text 是旧版本的话(就是每次打开都会提示有新的版本,询问是否需要安装), 通过以上教程也是可以正常输入中文的,但是,文字的排版的话,每行中的中文和英文及其他符号无法完美对齐, 这是一个bug啊,只能通过 Sublime-Text 官方提供更好的中文支持了. 参考资源:解决Ubuntu下Sublime Text 3无法输入中文]]></content>
       <categories>
         <category>&lt;b&gt;代码编辑工具&lt;/b&gt;</category>
         <category>&lt;b&gt;Sublime-Text 3&lt;/b&gt;</category>
