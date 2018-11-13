@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Sublime-Text 3,Ubuntu16.04,">
+  <meta name="keywords" content="Git,分布式管理系统,">
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了">
-<meta name="keywords" content="Sublime-Text 3,Ubuntu16.04">
+<meta name="description" content="Git的基本功能介绍Git 有什么作用呢? 只看它的名字”最好的分布式管理系统”,感觉挺厉害的样子,那在我们的实际中有什么优势呢?在我们的实际中,我们创建了一个文件,然后过段时间发现了某些错误,我们修改一下并另存为一个新版本, 然后又过了一段时间又觉得写得不是很好,修改并另存为一个新版本,再然后…; 我们一个文件的维护的流程大致是: 草稿版-&amp;gt;修订版本1-&amp;gt;修订版本2-&amp;gt;修订版本">
+<meta name="keywords" content="Git,分布式管理系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sublime-Text 3 配置中文环境">
-<meta property="og:url" content="http://yoursite.com/2018/10/23/Sublime-Text 3 配置中文环境/index.html">
+<meta property="og:title" content="「Git篇」Part 2 -- Git 基本使用">
+<meta property="og:url" content="http://yoursite.com/2018/11/13/「Git篇」Part 2 -- Git 基本使用/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了">
+<meta property="og:description" content="Git的基本功能介绍Git 有什么作用呢? 只看它的名字”最好的分布式管理系统”,感觉挺厉害的样子,那在我们的实际中有什么优势呢?在我们的实际中,我们创建了一个文件,然后过段时间发现了某些错误,我们修改一下并另存为一个新版本, 然后又过了一段时间又觉得写得不是很好,修改并另存为一个新版本,再然后…; 我们一个文件的维护的流程大致是: 草稿版-&amp;gt;修订版本1-&amp;gt;修订版本2-&amp;gt;修订版本">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://phe7ff7o6.bkt.clouddn.com/Sublime-Text.png">
-<meta property="og:updated_time" content="2018-11-08T13:24:38.691Z">
+<meta property="og:image" content="http://phe7ff7o6.bkt.clouddn.com/git1.png">
+<meta property="og:updated_time" content="2018-11-13T02:56:06.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sublime-Text 3 配置中文环境">
-<meta name="twitter:description" content="简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了">
-<meta name="twitter:image" content="http://phe7ff7o6.bkt.clouddn.com/Sublime-Text.png">
+<meta name="twitter:title" content="「Git篇」Part 2 -- Git 基本使用">
+<meta name="twitter:description" content="Git的基本功能介绍Git 有什么作用呢? 只看它的名字”最好的分布式管理系统”,感觉挺厉害的样子,那在我们的实际中有什么优势呢?在我们的实际中,我们创建了一个文件,然后过段时间发现了某些错误,我们修改一下并另存为一个新版本, 然后又过了一段时间又觉得写得不是很好,修改并另存为一个新版本,再然后…; 我们一个文件的维护的流程大致是: 草稿版-&amp;gt;修订版本1-&amp;gt;修订版本2-&amp;gt;修订版本">
+<meta name="twitter:image" content="http://phe7ff7o6.bkt.clouddn.com/git1.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/23/Sublime-Text 3 配置中文环境/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/13/「Git篇」Part 2 -- Git 基本使用/">
 
 
 
 
 
-  <title>Sublime-Text 3 配置中文环境 | Maple's Blog</title>
+  <title>「Git篇」Part 2 -- Git 基本使用 | Maple's Blog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/Sublime-Text 3 配置中文环境/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/「Git篇」Part 2 -- Git 基本使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Sublime-Text 3 配置中文环境</h1>
+          <h1 class="post-title" itemprop="name headline">「Git篇」Part 2 -- Git 基本使用</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T00:00:00+08:00">
-                2018-10-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-13T10:56:06+08:00">
+                2018-11-13
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-代码编辑工具-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>代码编辑工具</b></span>
+                  <a href="/categories/b-Git-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Git 篇</b></span>
                   </a>
                 </span>
 
@@ -360,8 +360,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-代码编辑工具-b/b-Sublime-Text-3-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Sublime-Text 3</b></span>
+                  <a href="/categories/b-Git-篇-b/「Git篇」Part-2-Git-基本使用/" itemprop="url" rel="index">
+                    <span itemprop="name">「Git篇」Part 2 -- Git 基本使用</span>
                   </a>
                 </span>
 
@@ -378,8 +378,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/23/Sublime-Text 3 配置中文环境/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/23/Sublime-Text 3 配置中文环境/" itemprop="commentCount"></span>
+                <a href="/2018/11/13/「Git篇」Part 2 -- Git 基本使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/13/「Git篇」Part 2 -- Git 基本使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,13 +407,89 @@
       
 
       
-        <h3 id="简述"><a href="#简述" class="headerlink" title="简述:"></a>简述:</h3><h3 id="本教程主要是配置-Sublime-Text-3-的语言环境-如果您不是使用Ubuntu-16-04-安装-Sublime-Text-3-完整教程里面的方法安装的话-可能打开的-Sublime-Text-3-界面是默认英文设置的-没关系-下面就教您怎么将界面语言设置成英文的"><a href="#本教程主要是配置-Sublime-Text-3-的语言环境-如果您不是使用Ubuntu-16-04-安装-Sublime-Text-3-完整教程里面的方法安装的话-可能打开的-Sublime-Text-3-界面是默认英文设置的-没关系-下面就教您怎么将界面语言设置成英文的" class="headerlink" title="本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的."></a>本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用<a href="https://maple8.github.io/2018/10/23/Ubuntu%2016.04%20%E5%AE%89%E8%A3%85%20Sublime-Text%20%203%20%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">Ubuntu 16.04 安装 Sublime-Text 3 完整教程</a>里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.</h3><h4 id="1-安装-Sublime-Text-3-推荐参考如下教程-因为安装完成之后的界面默认就是中文的-就可以省略配置的过程了哈"><a href="#1-安装-Sublime-Text-3-推荐参考如下教程-因为安装完成之后的界面默认就是中文的-就可以省略配置的过程了哈" class="headerlink" title="1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:"></a>1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:</h4><p><a href="https://maple8.github.io/2018/10/23/Ubuntu%2016.04%20%E5%AE%89%E8%A3%85%20Sublime-Text%20%203%20%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">Ubuntu 16.04 安装 Sublime-Text 3 完整教程</a> </p>
-<h4 id="2-终端输入如下命令打开-Sublime-Text-3"><a href="#2-终端输入如下命令打开-Sublime-Text-3" class="headerlink" title="2. 终端输入如下命令打开 Sublime-Text 3:"></a>2. 终端输入如下命令打开 Sublime-Text 3:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl</span><br></pre></td></tr></table></figure>
-<h4 id="3-安装package-control组件"><a href="#3-安装package-control组件" class="headerlink" title="3. 安装package control组件:"></a>3. 安装package control组件:</h4><p>按Ctrl+ `(此符号为tab按键上面的按键) 调出console(位于界面的最下方),输入此快捷键需要注意避免热键冲突.<br>粘贴以下代码到console中,然后回车并等待(可能会出现 Sublime-Text 3 出现未响应的情况,因为是后台正在进行插件安装包的下载和安装,不用担心,继续等待即可)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), <span class="string">'wb'</span>).write(urllib.request.urlopen( <span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="built_in">read</span>())</span><br></pre></td></tr></table></figure></p>
-<h4 id="4-安装完成之后-重启-Sublime-Text-3-有时候不重启也可以哈-如果在-Perferences-gt-中看到-package-control-这一项-如下图-，则说明安装成功"><a href="#4-安装完成之后-重启-Sublime-Text-3-有时候不重启也可以哈-如果在-Perferences-gt-中看到-package-control-这一项-如下图-，则说明安装成功" class="headerlink" title="4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功."></a>4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功.</h4><p><img src="http://phe7ff7o6.bkt.clouddn.com/Sublime-Text.png" alt=""> </p>
-<h4 id="5-用Package-Control安装插件："><a href="#5-用Package-Control安装插件：" class="headerlink" title="5. 用Package Control安装插件："></a>5. 用Package Control安装插件：</h4><p>按下 Ctrl+Shift+P 调出命令面板 ,在命令面板中输入 install,会弹出多个提示选项, 点击 Install Package 选项并回车，然后在弹出的提示框中输入 ChineseLocation, 便可进行安装.</p>
-<h4 id="6-安装完成之后-重启-Sublime-Text-3-就可以看到界面变成中文的了哈"><a href="#6-安装完成之后-重启-Sublime-Text-3-就可以看到界面变成中文的了哈" class="headerlink" title="6. 安装完成之后,重启 Sublime-Text 3, 就可以看到界面变成中文的了哈."></a>6. 安装完成之后,重启 Sublime-Text 3, 就可以看到界面变成中文的了哈.</h4><hr>
-<p> 参考资源<br><a href="https://blog.csdn.net/wxl1555/article/details/69941451" target="_blank" rel="noopener">Sublime Text 3安装及常用插件安装</a></p>
+        <h4 id="Git的基本功能介绍"><a href="#Git的基本功能介绍" class="headerlink" title="Git的基本功能介绍"></a>Git的基本功能介绍</h4><p>Git 有什么作用呢? 只看它的名字”最好的分布式管理系统”,感觉挺厉害的样子,那在我们的实际中有什么优势呢?<br>在我们的实际中,我们创建了一个文件,然后过段时间发现了某些错误,我们修改一下并另存为一个新版本, 然后又过了一段时间又觉得写得不是很好,修改并另存为一个新版本,再然后…; 我们一个文件的维护的流程大致是: 草稿版-&gt;修订版本1-&gt;修订版本2-&gt;修订版本3-&gt;…-&gt;最终版本; 就像我这边做的项目一样,一个900多行的PLC程序已经修改了将近20个版本了. 对于这20个版本,前前后后花了一个半月,其中的那些地方做了修改早已经不记得了. 如果有这个一个工具帮我们记录每个版本, 并且记录每个版本中修改的不同的地方,这样就会让我们再次进行修改的时候的工作显得很有条理. 而Git就是这样的一个工具. 当然这里只是结合自身的情况举了一个小例子,目前还没发现有人会将PLC程序存入Git中,主要就是说一下Git的功能哈.</p>
+<h4 id="Git-安装与配置"><a href="#Git-安装与配置" class="headerlink" title="Git 安装与配置"></a>Git 安装与配置</h4><p>安装命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
+<p>安装成功后，运行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git</span><br></pre></td></tr></table></figure></p>
+<p>会出现<code>git</code>的常用方法介绍,说明<code>git</code>安装成功,接下来就可以使用了.</p>
+<h5 id="创建一个版本库"><a href="#创建一个版本库" class="headerlink" title="创建一个版本库"></a>创建一个版本库</h5><p>在指定目录中新建一个子目录git_test，在git_test目录下创建一个版本库，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
+<p>然后在目录中可以看到创建了一个<code>.git</code>隐藏目录，这就是版本库目录。</p>
+<h5 id="版本创建与回退"><a href="#版本创建与回退" class="headerlink" title="版本创建与回退"></a>版本创建与回退</h5><p>1 . 在git_test目录下创建一个文件<code>code.txt</code>，编辑内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the first line</span><br></pre></td></tr></table></figure></p>
+<p>2 . 使用下面两条命令创建一个版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add code.txt</span><br><span class="line">git commit –m &apos;版本1&apos;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>‘版本1’: 只是创建的版本的说明信息,什么都可以,即使和前面写过的一样都是OK的,但是不推荐,因为没有区分度.</p>
+</blockquote>
+<p>3 . 使用如下命令查看版本记录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></p>
+<p>4 . 继续编辑<code>code.txt</code>，在里面增加一行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the second line</span><br></pre></td></tr></table></figure></p>
+<p>5 . 使用如下命令再创建一个版本并查看版本记录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add code.txt</span><br><span class="line">git commit -m &apos;版本2&apos;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>后面的新版本是以前面的旧版本为基础的,新版本不是将旧版本完全复制,而是记录了在旧版本基础上的修改内容.</p>
+</blockquote>
+<p>6 . 现在若想回到某一个版本，可以使用如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>HEAD是指向版本的指针</p>
+</blockquote>
+<p>其中<code>HEAD</code>表示当前最新版本，<code>HEAD^</code>表示当前版本的前一个本,<code>HEAD^^</code>表示当前版本的前前个版本，依次类推,但是太麻烦了,好在还可以使用<code>HEAD~数字</code>格式表示当前的版本:<br><code>HEAD~1</code>:表示当前版本的前一个版本;<br><code>HEAD~100</code>:表示当前版本的前100版本;<br>现在若觉得想回到版本1，可以使用如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure></p>
+<p>执行命令后使用<code>git log</code>查看版本记录，发现现在只能看到版本1的记录，<code>cat code.txt</code>查看文件内容，现在只有一行，也就是第一个版本中code.txt的内容。</p>
+<p>7 . 假如我们现在又想回到版本2，怎么办？<br>因为<code>HEAD</code>是版本指针,如果指向了旧版本,再想接着指向新版本就不好使了,所以这里需要使用版本号,输入如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 版本号</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>版本号其实不用全部拿过来,只要拿出可以识别是这个版本的部分即可</p>
+</blockquote>
+<p>从上面创建版本2之后输入的<code>git log</code>中可以看到版本2的版本号.</p>
+<p>8 . 在终端执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset -- hard e1c4c2e80f6bf6478089b43a207a64ea55b152cb</span><br></pre></td></tr></table></figure></p>
+<p>现在发现版本2回来了。可以使员工<code>cat code.txt</code>查看其里面的内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">the first line</span><br><span class="line">the second line</span><br></pre></td></tr></table></figure></p>
+<p>9 . 假如上面的终端已经关了,那要怎么回退版本?<br>我们执行如下命令将版本回退到版本1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure></p>
+<p>下面把终端关了，然后再打开终端，发现之前版本2的版本号看不到了,那么我们通过版本号访问版本的方法就不好使了.这时就要使用<code>git reflog</code>命令可以查看我们的操作记录:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure></p>
+<p>这样可以看到版本2的版本号，我们再使用如下命令进行版本回退，版本重新回到了版本2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset -- hard e1c4c2e80</span><br></pre></td></tr></table></figure></p>
+<h4 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h4><h5 id="工作区-Working-Directory"><a href="#工作区-Working-Directory" class="headerlink" title="工作区(Working Directory)"></a>工作区(Working Directory)</h5><p>工作区就是电脑中的目录，比如我们的<code>git_test</code>，就是一个工作区。</p>
+<h5 id="版本库-Repository"><a href="#版本库-Repository" class="headerlink" title="版本库(Repository)"></a>版本库(Repository)</h5><p>工作区中有一个隐藏目录<code>.git</code>，这个不是工作区，而是git的版本库。git的版本库里存了很多东西，其中最重要的就是称为stage(或者叫index)的 <strong>暂存区</strong>，还有git为我们自动创建的第一个分支 <strong>master</strong>，以及指向master的一个指针叫 <strong>HEAD</strong>。因为我们创建git版本库时，git自动为我们创建了唯一一个master分支，所以，现在使用<code>git commit</code>就是往master分支上提交更改。<br>简单理解为: 需要提交的文件修改之后,使用<code>git add</code>通通放到暂存区，然后，使用<code>git commit</code>一次性提交暂存区的所有修改。<br><img src="http://phe7ff7o6.bkt.clouddn.com/git1.png" alt=""><br>前面讲了我们把文件往git版本库里添加的时候，是分两步执行的：</p>
+<ul>
+<li>第一步是用<code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区；</li>
+<li>第二步是用<code>git commi</code>t提交更改，实际上就是把暂存区的所有内容提交到当前分支;</li>
+</ul>
+<p>1 . 下面在<code>git_test</code>目录下再创建一个文件<code>code2.txt</code>，然后编辑内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the code2 first line</span><br></pre></td></tr></table></figure></p>
+<p>2 . 然后再次编辑<code>code.txt</code>内容，在其中加入一行，编辑后内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">the code2 first line</span><br><span class="line">the code2 second line</span><br></pre></td></tr></table></figure></p>
+<p>3 . 使用如下命令查看当前工作树的状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<p>上面提示我们code.txt被修改，而code2.txt没有被跟踪。</p>
+<p>4 . 接下来我们使用如下命令把<code>code.txt</code>和<code>code2.txt</code>加入到暂存区，然后再执行<code>git status</code>命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add code.txt</span><br><span class="line">git add code2.txt</span><br><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<p>结果表明<code>git add</code>命令是把所有准备提交的修改存放到暂存区。</p>
+<p>5 . 然后，执行<code>git commit</code>就可以一次性把暂存区的所有修改提交到分支并创建一个版本。</p>
+<p>6 . 一旦提交后，如果你又没有对工作区做任何修改，那么工作区就是“干净”的。执行如下命令可以发现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<h4 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h4><p><strong>git管理文件的修改，它只会提交暂存区的修改来创建版本,即如果修改的版本没有提交至暂存区就不会创建版本记录.</strong><br>1 . 编辑<code>code.txt</code>，并使用<code>git add</code> 命令将其添加到暂存区中:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the third line</span><br></pre></td></tr></table></figure></p>
+<p>2 . 继续编辑code.txt，并在其中添加一行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the forth line</span><br></pre></td></tr></table></figure></p>
+<p>3 . <code>git commit</code>创建一个版本，并使用<code>git status</code>查看，发现第二次修改<code>code.txt</code>内容之后，并没有将其添加的工作区，所以创建版本的时候并没有被提交.</p>
+<h4 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h4><p>1 . 继续上面的操作，提示我们可以使用<code>git checkout -- &lt;文件名&gt;</code>来丢弃工作区的改动,即没有添加至暂存区的改动。执行如下命令，发现工作区干净了，第二次的改动内容也没了:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- code.txt</span><br><span class="line">cat code.txt</span><br><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<p>2 . 我们继续编辑<code>code.txt</code>，并在其中添加如下内容，并将其添加的暂存区:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the new line</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add code.txt</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p>3 . git告诉我们，用命令<code>git reset HEAD文件名</code>可以把暂存区的修改撤销掉，重新放回工作区:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD code.txt</span><br></pre></td></tr></table></figure></p>
+<p>4 . 现在若想丢弃code.txt的修改，执行如下命令即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- code.txt</span><br><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<p><strong>小结：</strong><br>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令: <code>git checkout -- filename</code><br>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步:</p>
+<ul>
+<li>第一步用命令:<code>git reset HEAD filename</code>，将暂存区的修改撤销回工作区,然后就回到了场景1;</li>
+<li>第二步按场景1操作。</li>
+</ul>
+<h4 id="对比文件的不同"><a href="#对比文件的不同" class="headerlink" title="对比文件的不同"></a>对比文件的不同</h4><h5 id="对比工作区和某个版本中文件的不同"><a href="#对比工作区和某个版本中文件的不同" class="headerlink" title="对比工作区和某个版本中文件的不同"></a>对比工作区和某个版本中文件的不同</h5><p>1 .  编辑<code>code.txt</code>,添加一行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the new line</span><br></pre></td></tr></table></figure></p>
+<p>2 . 现在要对比工作区中<code>code.txt</code>和HEAD版本中<code>code.txt</code>的不同;使用如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff HEAD -- code.txt</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>版本库中的最新版本,也可以是旧版本.</p>
+</blockquote>
+<p><strong>对比结果分析: 其前面没有+/-的是两个文件都有的内容,有+的是工作区的中文件特有的内容;有-的是HEAD版本特有的内容;</strong></p>
+<p>3 . 使用如下命令丢弃工作区的改动:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- code.txt</span><br><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<h5 id="对比两个版本间文件的不同"><a href="#对比两个版本间文件的不同" class="headerlink" title="对比两个版本间文件的不同"></a>对比两个版本间文件的不同</h5><p>现在要对比<code>HEAD</code>和<code>HEAD^</code>版本中<code>code.txt</code>的不同，使用如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff HEAD HEAD^ --code.txt</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>- 代表<code>HEAD</code>版本; + 代表<code>HEAD^</code> 版本</p>
+</blockquote>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><p><strong>创建文件/编辑文件/删除文件都是对工作区的改动</strong><br>1 . 我们把目录中的code2.txt删除:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm code2.txt</span><br></pre></td></tr></table></figure></p>
+<p>这个时候，git知道删除了文件，因此，工作区和版本库就不一致了，<code>git status</code>命令会立刻提示哪些文件被删除了。</p>
+<p>2 . 现在你有两个选择:<br><strong>一是确实要从版本库中删除该文件，那就用命令:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm 文件名</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure></p>
+<p><strong>另一种情况是删错了，可以直接使用:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- code2.txt</span><br></pre></td></tr></table></figure></p>
+<p>这样文件code2.txt又回来了。</p>
+<blockquote>
+<p><strong>如果创建的一个文件从未添加进暂存区过,也就是未跟踪文件,不小心被删除了,那就是删除了,git是无法找回的,如果是很重要的文件,那就停止操作电脑了,不要再往硬盘里面写入文件了,立马去网上搜索扫描硬盘的软件,将误删除的文件扫描出来进行恢复,因为我们通常的删除操作只是抹掉了文件的显示,其内容其实还在硬盘中. 当然,这种扫描软件不是免费的,哈哈.</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch code4.txt</span><br><span class="line">gedit code4.txt</span><br><span class="line">rm code4.txt</span><br></pre></td></tr></table></figure>
+<p>执行以上代码之后,如果要找回code4.txt, 现在只有去网上搜索扫描软件了…</p>
+<p><strong>小结<br>命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。</strong></p>
+<hr>
 
       
     </div>
@@ -474,9 +550,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Sublime-Text-3/" rel="tag"><i class="fa fa-tag"></i> Sublime-Text 3</a>
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           
-            <a href="/tags/Ubuntu16-04/" rel="tag"><i class="fa fa-tag"></i> Ubuntu16.04</a>
+            <a href="/tags/分布式管理系统/" rel="tag"><i class="fa fa-tag"></i> 分布式管理系统</a>
           
         </div>
       
@@ -489,8 +565,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/22/Ubuntu 16.04 安装 Sublime-Text  3 完整教程/" rel="next" title="Ubuntu 16.04 安装 Sublime-Text 3 完整教程">
-                <i class="fa fa-chevron-left"></i> Ubuntu 16.04 安装 Sublime-Text 3 完整教程
+              <a href="/2018/11/13/「Git篇」Part 1 -- Git 简介/" rel="next" title="「Git篇」Part 1 -- Git 简介">
+                <i class="fa fa-chevron-left"></i> 「Git篇」Part 1 -- Git 简介
               </a>
             
           </div>
@@ -498,10 +574,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/23/Sublime - Text 3 无法输入中文解决方案/" rel="prev" title="Sublime-Text 3 无法输入中文解决方案">
-                Sublime-Text 3 无法输入中文解决方案 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本教程主要是配置-Sublime-Text-3-的语言环境-如果您不是使用Ubuntu-16-04-安装-Sublime-Text-3-完整教程里面的方法安装的话-可能打开的-Sublime-Text-3-界面是默认英文设置的-没关系-下面就教您怎么将界面语言设置成英文的"><span class="nav-number">2.</span> <span class="nav-text">本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-安装-Sublime-Text-3-推荐参考如下教程-因为安装完成之后的界面默认就是中文的-就可以省略配置的过程了哈"><span class="nav-number">2.1.</span> <span class="nav-text">1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-终端输入如下命令打开-Sublime-Text-3"><span class="nav-number">2.2.</span> <span class="nav-text">2. 终端输入如下命令打开 Sublime-Text 3:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-安装package-control组件"><span class="nav-number">2.3.</span> <span class="nav-text">3. 安装package control组件:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-安装完成之后-重启-Sublime-Text-3-有时候不重启也可以哈-如果在-Perferences-gt-中看到-package-control-这一项-如下图-，则说明安装成功"><span class="nav-number">2.4.</span> <span class="nav-text">4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-用Package-Control安装插件："><span class="nav-number">2.5.</span> <span class="nav-text">5. 用Package Control安装插件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-安装完成之后-重启-Sublime-Text-3-就可以看到界面变成中文的了哈"><span class="nav-number">2.6.</span> <span class="nav-text">6. 安装完成之后,重启 Sublime-Text 3, 就可以看到界面变成中文的了哈.</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Git的基本功能介绍"><span class="nav-number">1.</span> <span class="nav-text">Git的基本功能介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-安装与配置"><span class="nav-number">2.</span> <span class="nav-text">Git 安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建一个版本库"><span class="nav-number">2.1.</span> <span class="nav-text">创建一个版本库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#版本创建与回退"><span class="nav-number">2.2.</span> <span class="nav-text">版本创建与回退</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作区和暂存区"><span class="nav-number">3.</span> <span class="nav-text">工作区和暂存区</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#工作区-Working-Directory"><span class="nav-number">3.1.</span> <span class="nav-text">工作区(Working Directory)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#版本库-Repository"><span class="nav-number">3.2.</span> <span class="nav-text">版本库(Repository)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管理修改"><span class="nav-number">4.</span> <span class="nav-text">管理修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销修改"><span class="nav-number">5.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对比文件的不同"><span class="nav-number">6.</span> <span class="nav-text">对比文件的不同</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对比工作区和某个版本中文件的不同"><span class="nav-number">6.1.</span> <span class="nav-text">对比工作区和某个版本中文件的不同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对比两个版本间文件的不同"><span class="nav-number">6.2.</span> <span class="nav-text">对比两个版本间文件的不同</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文件"><span class="nav-number">7.</span> <span class="nav-text">删除文件</span></a></li></ol></div>
             
 
           </div>
