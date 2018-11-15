@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/「Git篇」Part 2 -- Git 基本使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/14/「Git篇」Part 2 -- Git 基本使用/" itemprop="url">「Git篇」Part 2 -- Git 基本使用</a></h1>
+                <a class="post-title-link" href="/2018/11/15/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/" itemprop="url">「Python 番外篇」-- Python开发的10个Tips</a></h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-14T08:09:47+08:00">
-                2018-11-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T21:13:51+08:00">
+                2018-11-15
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Git-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Git 篇</b></span>
+                  <a href="/categories/b-Python-番外篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Python 番外篇</b></span>
                   </a>
                 </span>
 
@@ -360,8 +360,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Git-篇-b/「Git篇」Part-2-Git-基本使用/" itemprop="url" rel="index">
-                    <span itemprop="name">「Git篇」Part 2 -- Git 基本使用</span>
+                  <a href="/categories/b-Python-番外篇-b/「Python-番外篇」-Python开发的10个Tips/" itemprop="url" rel="index">
+                    <span itemprop="name">「Python 番外篇」-- Python开发的10个Tips</span>
                   </a>
                 </span>
 
@@ -378,8 +378,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/14/「Git篇」Part 2 -- Git 基本使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/14/「Git篇」Part 2 -- Git 基本使用/" itemprop="commentCount"></span>
+                <a href="/2018/11/15/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/15/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,11 +409,22 @@
       
         
           
-          Git的基本功能介绍Git 有什么作用呢? 只看它的名字”最好的分布式管理系统”,感觉挺厉害的样子,那在我们的实际中有什么优势呢?在我们的实际中,我们创建了一个文件,然后过段时间发现了某些错误,我们修改一下并另存为一个新版本, 然后又过了一段时间又觉得写得不是很好,修改并另存为一个新版本,再然后…; 我们一个文件的维护的流程大致是: 草稿版-&gt;修订版本1-&gt;修订版本2-&gt;修订版本3-&gt;…-&gt;最终版本; 就像我这边做的项目一样,一个900多行的PLC程序已经修改了将近20个版本了. 对于这20多个版本,前前后后花了一个半月,其中的哪些地方做了修改早已经不记得了. 如果有这样一个工具帮我们记录每个版本, 并且记录每个版本中修改的不同的地方,这样就会让我们再次进行修改的时候的工作显得很有条理. 而Git就是这样的一个工具. 当然这里只是结合自身的情况举了一个小例子,Git是追踪不了PLC的程序格式的哈,Git只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等,这里要说一下我们常用的微软的Word,这个是二进制的格式,所以无法利用Git进行追踪.这里
+          对于Python，有许多学习的贴士和技巧。其中一些是初学这门语言常常会犯的错误，下面就一起来看看这10个tips,你了解多少呢？
+
+注意：假设用的是Python 3
+
+1. 列表推导式你有一个list：1bag = [1, 2, 3, 4, 5]
+现在你想让所有元素翻倍，让它看起来是这个样子：1[2, 4, 6, 8, 10]
+大多初学者，根据之前语言的经验会大概这样来做:123bag = [1, 2, 3, 4, 5] for i in range(len(bag)):     bag[i] = bag[i] * 2
+但是有更好的方法：1bag = [elem * 2 for elem in bag]
+很简洁对不对？这叫做 Python的列表推导式。
+2. 遍历列表还是上面的列表。如果可能尽量避免这样做：123bag = [1, 2, 3, 4, 5] for i in range(len(bag)):     print(bag[i])
+取而代之的应该是这样：123bag = [1, 2, 3, 4, 5] for i in bag:     print(i)
+如果x是一个列表，你
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/14/「Git篇」Part 2 -- Git 基本使用/#more" rel="contents">
+            <a class="btn" href="/2018/11/15/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -459,6 +470,8 @@
         
     
         
+    
+        
             
 
   
@@ -472,7 +485,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/「Git篇」Part 1 -- Git 简介/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -491,7 +504,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/13/「Git篇」Part 1 -- Git 简介/" itemprop="url">「Git篇」Part 1 -- Git 简介</a></h1>
+                <a class="post-title-link" href="/2018/11/15/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="url">「Python 进阶篇」Part 2 -- 装饰器</a></h1>
         
 
         <div class="post-meta">
@@ -503,185 +516,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-13T07:57:09+08:00">
-                2018-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Git-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Git 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Git-篇-b/「Git篇」Part-1-Git-简介/" itemprop="url" rel="index">
-                    <span itemprop="name">「Git篇」Part 1 -- Git 简介</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/13/「Git篇」Part 1 -- Git 简介/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/13/「Git篇」Part 1 -- Git 简介/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://phe7ff7o6.bkt.clouddn.com/git.png" width="1000" height="375" alt="git" align="center"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/13/「Git篇」Part 1 -- Git 简介/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/10/「Python 进阶篇」Part 2 -- 装饰器/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/10/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="url">「Python 进阶篇」Part 2 -- 装饰器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T13:55:13+08:00">
-                2018-11-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T20:41:25+08:00">
+                2018-11-15
               </time>
             
 
@@ -732,8 +568,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/10/「Python 进阶篇」Part 2 -- 装饰器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/10/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="commentCount"></span>
+                <a href="/2018/11/15/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/15/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -773,7 +609,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/10/「Python 进阶篇」Part 2 -- 装饰器/#more" rel="contents">
+            <a class="btn" href="/2018/11/15/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -832,7 +668,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/「Python 番外篇」-- JSON/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Git篇/「Git篇」Part 2 -- Git 基本使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -851,7 +687,359 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/07/「Python 番外篇」-- JSON/" itemprop="url">「Python 番外篇」-- JSON</a></h1>
+                <a class="post-title-link" href="/2018/11/15/Git篇/「Git篇」Part 2 -- Git 基本使用/" itemprop="url">「Git篇」Part 2 -- Git 基本使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T20:40:16+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Git-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Git 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Git-篇-b/「Git篇」Part-2-Git-基本使用/" itemprop="url" rel="index">
+                    <span itemprop="name">「Git篇」Part 2 -- Git 基本使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/15/Git篇/「Git篇」Part 2 -- Git 基本使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/15/Git篇/「Git篇」Part 2 -- Git 基本使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Git的基本功能介绍Git 有什么作用呢? 只看它的名字”最好的分布式管理系统”,感觉挺厉害的样子,那在我们的实际中有什么优势呢?在我们的实际中,我们创建了一个文件,然后过段时间发现了某些错误,我们修改一下并另存为一个新版本, 然后又过了一段时间又觉得写得不是很好,修改并另存为一个新版本,再然后…; 我们一个文件的维护的流程大致是: 草稿版-&gt;修订版本1-&gt;修订版本2-&gt;修订版本3-&gt;…-&gt;最终版本; 就像我这边做的项目一样,一个900多行的PLC程序已经修改了将近20个版本了. 对于这20多个版本,前前后后花了一个半月,其中的哪些地方做了修改早已经不记得了. 如果有这样一个工具帮我们记录每个版本, 并且记录每个版本中修改的不同的地方,这样就会让我们再次进行修改的时候的工作显得很有条理. 而Git就是这样的一个工具. 当然这里只是结合自身的情况举了一个小例子,Git是追踪不了PLC的程序格式的哈,Git只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等,这里要说一下我们常用的微软的Word,这个是二进制的格式,所以无法利用Git进行追踪.这里
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/15/Git篇/「Git篇」Part 2 -- Git 基本使用/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Git篇/「Git篇」Part 1 -- Git 简介/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/Git篇/「Git篇」Part 1 -- Git 简介/" itemprop="url">「Git篇」Part 1 -- Git 简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T20:40:16+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Git-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Git 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Git-篇-b/「Git篇」Part-1-Git-简介/" itemprop="url" rel="index">
+                    <span itemprop="name">「Git篇」Part 1 -- Git 简介</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/15/Git篇/「Git篇」Part 1 -- Git 简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/15/Git篇/「Git篇」Part 1 -- Git 简介/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="http://phe7ff7o6.bkt.clouddn.com/git.png" width="1000" height="375" alt="git" align="center"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/15/Git篇/「Git篇」Part 1 -- Git 简介/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/Python番外篇/「Python 番外篇」-- JSON/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/07/Python番外篇/「Python 番外篇」-- JSON/" itemprop="url">「Python 番外篇」-- JSON</a></h1>
         
 
         <div class="post-meta">
@@ -915,8 +1103,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/07/「Python 番外篇」-- JSON/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/07/「Python 番外篇」-- JSON/" itemprop="commentCount"></span>
+                <a href="/2018/11/07/Python番外篇/「Python 番外篇」-- JSON/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/07/Python番外篇/「Python 番外篇」-- JSON/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -953,7 +1141,7 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/07/「Python 番外篇」-- JSON/#more" rel="contents">
+            <a class="btn" href="/2018/11/07/Python番外篇/「Python 番外篇」-- JSON/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1012,7 +1200,7 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/HTML篇/「HTML 入门篇」Part 1 -- 关于HTML/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -1031,365 +1219,7 @@ JSON 的使用JSON数据格式的使用主要是有两个函数: json.dump()和j
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/" itemprop="url">「HTML 入门篇」Part 2 -- HTML 基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
-                2018-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-HTML-入门篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>HTML 入门篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-HTML-入门篇-b/「HTML-入门篇」Part-2-HTML-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">「HTML 入门篇」Part 2 -- HTML 基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          顾名思义,HTML称为超文本标记语言, 里面就是超链接和标签. 所以呢,在HTML的程序中充满着各种各样的标签,所以程序看以来可能会觉得很乱, 但是没关系,只要记住一个原则,所有的标签都是成对出现的, 虽然代码在格式上没有缩进的要求,但是为了方便查看,我们在编写程序的时候就应该有相应的代码缩进. 这样,后面维护代码的时候就不会乱了哈.
-HTML基础标签html注释：html文档代码中可以插入注释，注释是对代码的说明和解释，注释的内容不会显示在页面上，html代码中插入注释的方法是：1&lt;!-- 这是一段注释  --&gt;
-html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5&gt;、&lt;h6&gt;,标签可以在网页上定义6种级别的标题。6种级别的标题表示文档的6级目录层级关系，比如说：&lt;h1&gt;用作主标题，其后是&lt;h2&gt;，再其次是&lt;h3&gt;，以此类推。搜索引擎会使用标题将网页的结构和内容编制索引，所以网页上使用标题是很重要的。1234567&lt;!-- 六级标题 --&gt;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/「HTML 入门篇」Part 2 -- HTML 基础语法/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /" itemprop="url">「HTML 入门篇」Part 3 -- 制作个性化简历</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
-                2018-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-HTML-入门篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>HTML 入门篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-HTML-入门篇-b/「HTML-入门篇」Part-3-制作个性化简历/" itemprop="url" rel="index">
-                    <span itemprop="name">「HTML 入门篇」Part 3 -- 制作个性化简历</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          页面布局页面布局概述布局也可以叫做排版，它指的是把文字和图片等元素按照我们的意愿有机地排列在页面上，布局的方式分为两种：
-1 . table布局：通过table元素将页面空间划分成若干个单元格，将文字或图片等元素放入单元格中，隐藏表格的边框，从而实现布局。这种布局方式也叫传统布局，目前主要使用在EDM(广告邮件中的页面)中，主流的布局方式不用这种。2 . HTML+CSS布局(DIV+CSS)：主要通过CSS样式设置来布局文字或图片等元素，需要用到CSS盒子模型、盒子类型、CSS浮动、CSS定位、CSS背景图定位等知识来布局，它比传统布局要复杂，目前是主流的布局方式。
-table布局table来做整体页面的布局，布局的技巧归纳为如下几点：1、按照设计图的尺寸设置表格的宽高以及单元格的宽高2、将表格border、cellpadding、cellspacing全部设置为0，表格的边框和间距就不占有页面空间，它只起到划分空间的作用3、针对局部复杂的布局，可以在单元格里面再嵌套表格，嵌套表格划分局部的空间4、单元格中的元素或者嵌套的表格用align和valign设置对齐方式5、通过属性或者cs
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/「HTML 入门篇」Part 3 -- 制作个人简历 /#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/" itemprop="url">「HTML 入门篇」Part 1 -- 关于HTML</a></h1>
+                <a class="post-title-link" href="/2018/10/29/HTML篇/「HTML 入门篇」Part 1 -- 关于HTML/" itemprop="url">「HTML 入门篇」Part 1 -- 关于HTML</a></h1>
         
 
         <div class="post-meta">
@@ -1453,8 +1283,8 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/" itemprop="commentCount"></span>
+                <a href="/2018/10/29/HTML篇/「HTML 入门篇」Part 1 -- 关于HTML/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/HTML篇/「HTML 入门篇」Part 1 -- 关于HTML/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1486,7 +1316,7 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
           <p><img src="http://phe7ff7o6.bkt.clouddn.com/html1.jpeg" width="1000" height="375" alt="git" align="center"><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/「HTML 基础篇」Part 1 -- 关于HTML/#more" rel="contents">
+            <a class="btn" href="/2018/10/29/HTML篇/「HTML 入门篇」Part 1 -- 关于HTML/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1545,7 +1375,7 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/HTML篇/「HTML 入门篇」Part 3 -- 制作个人简历 /">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -1564,7 +1394,365 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/" itemprop="url">「Linux 篇」Part 2 -- 文件和目录</a></h1>
+                <a class="post-title-link" href="/2018/10/29/HTML篇/「HTML 入门篇」Part 3 -- 制作个人简历 /" itemprop="url">「HTML 入门篇」Part 3 -- 制作个性化简历</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
+                2018-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-HTML-入门篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>HTML 入门篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-HTML-入门篇-b/「HTML-入门篇」Part-3-制作个性化简历/" itemprop="url" rel="index">
+                    <span itemprop="name">「HTML 入门篇」Part 3 -- 制作个性化简历</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/29/HTML篇/「HTML 入门篇」Part 3 -- 制作个人简历 /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/HTML篇/「HTML 入门篇」Part 3 -- 制作个人简历 /" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          页面布局页面布局概述布局也可以叫做排版，它指的是把文字和图片等元素按照我们的意愿有机地排列在页面上，布局的方式分为两种：
+1 . table布局：通过table元素将页面空间划分成若干个单元格，将文字或图片等元素放入单元格中，隐藏表格的边框，从而实现布局。这种布局方式也叫传统布局，目前主要使用在EDM(广告邮件中的页面)中，主流的布局方式不用这种。2 . HTML+CSS布局(DIV+CSS)：主要通过CSS样式设置来布局文字或图片等元素，需要用到CSS盒子模型、盒子类型、CSS浮动、CSS定位、CSS背景图定位等知识来布局，它比传统布局要复杂，目前是主流的布局方式。
+table布局table来做整体页面的布局，布局的技巧归纳为如下几点：1、按照设计图的尺寸设置表格的宽高以及单元格的宽高2、将表格border、cellpadding、cellspacing全部设置为0，表格的边框和间距就不占有页面空间，它只起到划分空间的作用3、针对局部复杂的布局，可以在单元格里面再嵌套表格，嵌套表格划分局部的空间4、单元格中的元素或者嵌套的表格用align和valign设置对齐方式5、通过属性或者cs
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/29/HTML篇/「HTML 入门篇」Part 3 -- 制作个人简历 /#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/HTML篇/「HTML 入门篇」Part 2 -- HTML 基础语法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/29/HTML篇/「HTML 入门篇」Part 2 -- HTML 基础语法/" itemprop="url">「HTML 入门篇」Part 2 -- HTML 基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T00:00:00+08:00">
+                2018-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-HTML-入门篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>HTML 入门篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-HTML-入门篇-b/「HTML-入门篇」Part-2-HTML-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">「HTML 入门篇」Part 2 -- HTML 基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/29/HTML篇/「HTML 入门篇」Part 2 -- HTML 基础语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/29/HTML篇/「HTML 入门篇」Part 2 -- HTML 基础语法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          顾名思义,HTML称为超文本标记语言, 里面就是超链接和标签. 所以呢,在HTML的程序中充满着各种各样的标签,所以程序看以来可能会觉得很乱, 但是没关系,只要记住一个原则,所有的标签都是成对出现的, 虽然代码在格式上没有缩进的要求,但是为了方便查看,我们在编写程序的时候就应该有相应的代码缩进. 这样,后面维护代码的时候就不会乱了哈.
+HTML基础标签html注释：html文档代码中可以插入注释，注释是对代码的说明和解释，注释的内容不会显示在页面上，html代码中插入注释的方法是：1&lt;!-- 这是一段注释  --&gt;
+html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5&gt;、&lt;h6&gt;,标签可以在网页上定义6种级别的标题。6种级别的标题表示文档的6级目录层级关系，比如说：&lt;h1&gt;用作主标题，其后是&lt;h2&gt;，再其次是&lt;h3&gt;，以此类推。搜索引擎会使用标题将网页的结构和内容编制索引，所以网页上使用标题是很重要的。1234567&lt;!-- 六级标题 --&gt;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/29/HTML篇/「HTML 入门篇」Part 2 -- HTML 基础语法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/28/Linux篇/「Linux 篇」Part 2 -- 文件和目录/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/28/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" itemprop="url">「Linux 篇」Part 2 -- 文件和目录</a></h1>
         
 
         <div class="post-meta">
@@ -1628,8 +1816,8 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/" itemprop="commentCount"></span>
+                <a href="/2018/10/28/Linux篇/「Linux 篇」Part 2 -- 文件和目录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/28/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1661,182 +1849,7 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
           <p><blockquote class="blockquote-center">在Linux中，人们常说：<br>＂一切皆文件＂</blockquote><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/28/「Linux 篇」Part 2 -- 文件和目录/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /" itemprop="url">「Linux 篇」Part 1 -- OS 起源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-26T00:00:00+08:00">
-                2018-10-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Linux-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Linux 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Linux-篇-b/「Linux-篇」Part-1-OS-起源/" itemprop="url" rel="index">
-                    <span itemprop="name">「Linux 篇」Part 1 -- OS 起源</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://phe7ff7o6.bkt.clouddn.com/Linux.png" width="1000" height="500" alt="git" align="center"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/26/「Linux 篇」Part 1 -- OS 起源 /#more" rel="contents">
+            <a class="btn" href="/2018/10/28/Linux篇/「Linux 篇」Part 2 -- 文件和目录/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1933,7 +1946,7 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1944,7 +1957,7 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2022,7 +2035,7 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.3k</span>
+    <span title="Site words total count">22k</span>
   
 </div>
 
