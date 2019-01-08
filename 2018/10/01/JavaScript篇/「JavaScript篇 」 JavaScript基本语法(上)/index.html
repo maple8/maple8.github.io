@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javascript,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JavaScript简介JavaScript是一种轻量级、解释型的Web脚本语言，是运行在浏览器端的脚步语言，JavaScript主要解决的是前端与用户交互的问题，包括使用交互与数据交互。 JavaScript是浏览器解释执行的，由于所有的浏览器都已经嵌入了JavaScript引擎，所以不需要安装任何的运行环境便可对其进行开发。 前端三大语言   HTML：页面结构，主要针对网页的内容 CSS：页">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「JavaScript篇 」 JavaScript基本语法(上)">
+<meta property="og:url" content="http://yoursite.com/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="JavaScript简介JavaScript是一种轻量级、解释型的Web脚本语言，是运行在浏览器端的脚步语言，JavaScript主要解决的是前端与用户交互的问题，包括使用交互与数据交互。 JavaScript是浏览器解释执行的，由于所有的浏览器都已经嵌入了JavaScript引擎，所以不需要安装任何的运行环境便可对其进行开发。 前端三大语言   HTML：页面结构，主要针对网页的内容 CSS：页">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-08T11:35:57.659Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「JavaScript篇 」 JavaScript基本语法(上)">
+<meta name="twitter:description" content="JavaScript简介JavaScript是一种轻量级、解释型的Web脚本语言，是运行在浏览器端的脚步语言，JavaScript主要解决的是前端与用户交互的问题，包括使用交互与数据交互。 JavaScript是浏览器解释执行的，由于所有的浏览器都已经嵌入了JavaScript引擎，所以不需要安装任何的运行环境便可对其进行开发。 前端三大语言   HTML：页面结构，主要针对网页的内容 CSS：页">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/">
+
+
+
+
+
+  <title>「JavaScript篇 」 JavaScript基本语法(上) | Maple's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Maple's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">「JavaScript篇 」 JavaScript基本语法(上)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T00:00:00+08:00">
+                2018-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-JavaScript-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JavaScript 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-JavaScript-篇-b/「JavaScript篇-」-JavaScript基本语法-上/" itemprop="url" rel="index">
+                    <span itemprop="name">「JavaScript篇 」 JavaScript基本语法(上)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h3><p>JavaScript是一种轻量级、解释型的Web脚本语言，是运行在浏览器端的脚步语言，JavaScript主要解决的是前端与用户交互的问题，包括使用交互与数据交互。 JavaScript是浏览器解释执行的，由于所有的浏览器都已经嵌入了JavaScript引擎，所以不需要安装任何的运行环境便可对其进行开发。</p>
+<p><strong>前端三大语言 </strong></p>
+<ol>
+<li>HTML：页面结构，主要针对网页的内容</li>
+<li>CSS：页面表现，元素大小、颜色、位置、隐藏或显示、部分动画效果</li>
+<li>JavaScript：页面行为，部分动画效果、页面与用户的交互、页面功能</li>
+</ol>
+<h3 id="JavaScript嵌入页面的方式"><a href="#JavaScript嵌入页面的方式" class="headerlink" title="JavaScript嵌入页面的方式"></a>JavaScript嵌入页面的方式</h3><ol>
+<li><p>行间事件（主要用于事件）,一般不推荐这样的用法，书写很容易出现错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> name=<span class="string">""</span> onclick=<span class="string">"alert('ok！');"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>页面script标签嵌入，可以直接将JavaScript代码直接放入网页文档中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt; </span><br><span class="line">	alert(<span class="string">'ok！'</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>外部引入，通过属性src指定文件的URL（统一资源定位符）即可，使用外部JavaScript文件，能够增强JavaScript模块化开发的程度，提高代码的复用性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/index.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>一般来说，JavaScript代码可以嵌入到网页中的任何位置，但考虑到HTML文档的DOM结构模型规范性，建议将JavaScript脚本写在<code>&lt;head&gt;...&lt;/head&gt;</code>标签和<code>&lt;body&gt;...&lt;/body&gt;</code>标签之间。每个网页都可以包含多个JavaScript的<code>&lt;script&gt;</code>标签，每个标签包含的代码被称为JavaScript的脚本块，一般将相同或相近的代码放在一个脚本块中，而不同功能的代码分别放在不同的脚本块中会更加便于管理。适当时可以将通用的脚本模块放在单独的JavaScript脚本块中。</p>
+<blockquote>
+<p><code>&lt;script&gt;</code>标签包含了两个属性：<br>type：设置标签包含脚本属于什么文本类型，如text/javascript属性值表示JavaScript代码类型的文本，默认的值就是text/javascript，所以可以省略。<br>language：设置标签包含脚本属于什么语言类型，JavaScript属性值表示JavaScript语言类型，该属性值主要适应早起浏览器的解析，因为他们会忽略掉type属性声明。</p>
+</blockquote>
+<p><strong>在实际的开发过程中，可以省略这两个属性设置，因为浏览器默认<code>&lt;script&gt;</code>标签就是JavaScript脚本。所以使用以下两种标签都是一样的：</strong><br>省略type属性的标签：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Visual Studio Code自动补全的标签 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>没有省略type属性的标签：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Sublime Text自动补全的标签 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>实例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- 第二种方式嵌入js的方式：页面script标签嵌入 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	  <span class="comment">// alert是系统的内置的一个函数，功能就是弹出一个弹框</span></span></span><br><span class="line"><span class="undefined">	  /* JavaScript alert()函数</span></span><br><span class="line"><span class="undefined">	　　alert--弹出消息对话框(对话框中有一个OK按钮)</span></span><br><span class="line"><span class="undefined">	　　alert函数语法：alert(str); 纯文本信息*/</span></span><br><span class="line"><span class="actionscript">	alert(<span class="string">'一切都是最好的安排！'</span>)</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- 第三种方式嵌入js的方式：外部引入，也就是从导入其他路径下的.js文件 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/hello.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 第一种嵌入js的方式： 行间事件（主要用于事件） --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"点击"</span> <span class="attr">onclick</span>=<span class="string">"alert('Maple')"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="变量和数值类型"><a href="#变量和数值类型" class="headerlink" title="变量和数值类型"></a>变量和数值类型</h3><p>JavaScript 是一种弱类型语言，在定义变量的时候不需要声明变量的数值类型，一个变量可以存储任何类型的值，不过这不等于JavaScript不区分数据类型，JavaScript的变量类型由它的值来决定。 定义变量需要用关键字 ‘var’。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> iNum = <span class="number">123</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr = <span class="string">'asd'</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>同时定义多个变量可以用”,”隔开，共用一个‘var’关键字即可：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> iNum = <span class="number">45</span>,sTr=<span class="string">'qwe'</span>,sCount=<span class="string">'68'</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> iNum=iNum2=<span class="number">3</span>; </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>弱类型语言：就是对变量的类型要求不是很严格的语言。</p>
+</blockquote>
+<h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><p>在JavaScript中，数据存在两种截然不同的存储方式，一种是直接存储方式，称为值类型数据；另外一种是存储数据的在内存空间中的地址来间接保存数据，称为引用型数据。<br>JavaScript中有3种基本数据类型、2中特殊数据类型和3种复杂数据类型。<br><strong>基本数据类型：</strong></p>
+<ol>
+<li>number： 数字类型</li>
+<li>string： 字符串类型</li>
+<li>boolean： 布尔类型 ，值为true 或 false</li>
+</ol>
+<p><strong>特殊数据类型：</strong></p>
+<ol>
+<li>undefined： undefined类型，变量声明时未初始化，它的值就是undefined</li>
+<li>null： null类型，表示空对象，如果定义的变量将来准备保存对象，可以将变量初始化为null,在页面上获取不到对象，返回的值就是null</li>
+</ol>
+<p><strong>复杂数据类型：</strong></p>
+<ol>
+<li>Object：对象类型</li>
+<li>Array：数组类型</li>
+<li>Function：函数类型</li>
+</ol>
+<p>定义变量实例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- script标签嵌入js --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">		<span class="comment">// 定义变量</span></span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> iNum = <span class="number">12</span>;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> sStr = <span class="string">"Maple"</span>;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> iNum = <span class="number">12</span>, sStr = <span class="string">"Maple"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">		<span class="comment">// 定义一个变量的时候没有初始化，那么这个变量的值就是undefined</span></span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> iNum2;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">		<span class="comment">//null类型</span></span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> iNum3 = <span class="literal">null</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">		<span class="comment">// alert(iNum);</span></span></span><br><span class="line"><span class="actionscript">		<span class="comment">// alert(sStr);</span></span></span><br><span class="line"><span class="undefined">		alert(iNum2);</span></span><br><span class="line"><span class="undefined">		alert(iNum3);</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h4><p><strong>命名规范：</strong></p>
+<ul>
+<li>JavaScript严格区分大小写；</li>
+<li>名称中的字符必须是字母、数字、下划线（_）或者美元符号（$），且第一个字符不能是数字；</li>
+<li>名称不能是JavaScript的关键字或保留字；</li>
+</ul>
+<p><strong>匈牙利命名风格：</strong><br>对象o： Object 比如：oDiv<br>数组a： Array 比如：aItems<br>字符串s： String 比如：sUserName<br>整数i： Integer 比如：iItemCount<br>布尔值b： Boolean 比如：bIsComplete<br>浮点数f： Float 比如：fPrice<br>函数fn： Function 比如：fnHandler<br>正则表达式re： RegExp 比如：reEmailCheck</p>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>JavaScript数值是不区分整型和浮点型，所有数值都是以浮点型数值来表示的。<br><strong>数值类型–&gt;字符串类型</strong><br>使用toString()方法可以将数值类型转换为字符串类型。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> iValue = <span class="number">99</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> sValue=iValue.toString();</span></span><br><span class="line"><span class="actionscript">        alert(<span class="keyword">typeof</span> sValue); <span class="comment">//弹出string </span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>将数值转换为字符串有一种便捷方法：使用数值和空字符串相加，即可把数值转换为字符串。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> fValue = <span class="number">99</span> + <span class="string">""</span>;</span></span><br><span class="line"><span class="actionscript">	alert(<span class="keyword">typeof</span> fValue); <span class="comment">//弹出string</span></span></span><br><span class="line"><span class="undefined"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>数值类型–&gt;布尔类型</strong><br>布尔类型数据只有两个值：true和false，分别表示逻辑的真和假。布尔值多用在比较运算中，或者作为条件语句或运算符的条件使用。<br>要把数值类型转换为布尔类型，在值得前面添加两个感叹号即可：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> iValue = <span class="number">99</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> bValue = !!iValue;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="keyword">typeof</span> iValue); <span class="comment">//弹出number</span></span></span><br><span class="line"><span class="actionscript">        alert(<span class="keyword">typeof</span> bValue); <span class="comment">//弹出boolean</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>任何非0数字转换为布尔值后为true，而0转换为布尔值为false。<br>任何非空字符串转换为布尔值后为true，而空字符串转换为布尔类型的false。</p>
+</blockquote>
+<p><strong>布尔类型–&gt;数值类型</strong><br>将布尔类型转换为数值类型，true为1，false为0。便捷方法是将布尔类型值乘以数值1即可。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> bValue = <span class="literal">true</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> iValue = bValue * <span class="number">1</span>;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="keyword">typeof</span> iValue); <span class="comment">//弹出number</span></span></span><br><span class="line"><span class="actionscript">        alert(<span class="keyword">typeof</span> bValue); <span class="comment">//弹出boolean</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>布尔类型–&gt;字符串类型</strong><br>布尔类型转换为字符串类型，则true–&gt;”true”, false–&gt;”false”。便捷方法是和空字符串相加。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> bValue = <span class="literal">true</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> iValue = bValue+<span class="string">""</span>;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="keyword">typeof</span> iValue); <span class="comment">//弹出string</span></span></span><br><span class="line"><span class="actionscript">        alert(<span class="keyword">typeof</span> bValue); <span class="comment">//弹出boolean</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>隐式转换 “==” 和 “-”</strong><br>自动类型转换，JavaScript中的 == 运算符会将两边的数值进行自动类型转换，在自动类型转换的过程总，JavaScript一般遵循：如果某个类型的值被用于需要其他类型的值的环境中，JavaScript就自动将这个值转换成所需要的类型。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">if</span>(<span class="string">'3'</span>==<span class="number">3</span>)</span></span><br><span class="line"><span class="undefined">	&#123;</span></span><br><span class="line"><span class="actionscript">		alert(<span class="string">'相等'</span>);</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">// 弹出'相等'</span></span></span><br><span class="line"><span class="actionscript">	alert(<span class="string">'10'</span><span class="number">-3</span>);  <span class="comment">// 弹出7</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>浮点数溢出问题<br>JavaScript在执行数值运算的时候，常会出现浮点数溢出问题，如：0.1+0.2不等于0.3<br>alert(parseFloat(‘5.6’)+2.3);  // 弹出7.8999999999999995<br>alert(0.1+0.2); //弹出 0.3000000000000004<br>解决方法：先将结果扩大100倍，最后再取整。<br>alert((0.1<em>100+0.2</em>100)/100); //弹出0.3<br>alert((parseFloat(‘5.6’)<em>100+2.3</em>100)/100); //弹出7.9</p>
+</blockquote>
+<h3 id="JavaScript注释"><a href="#JavaScript注释" class="headerlink" title="JavaScript注释"></a>JavaScript注释</h3><p>JavaScript有两种注释：单行注释和多行注释（也称为 块注释）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt; </span><br><span class="line">	<span class="comment">// 单行注释</span></span><br><span class="line">	<span class="keyword">var</span> iNum = <span class="number">123</span>;</span><br><span class="line">	<span class="comment">/*  </span></span><br><span class="line"><span class="comment">	    多行注释</span></span><br><span class="line"><span class="comment">	    1、...</span></span><br><span class="line"><span class="comment">	    2、...</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="keyword">var</span> sTr = <span class="string">'abc123'</span>;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="JavaScript语句"><a href="#JavaScript语句" class="headerlink" title="JavaScript语句"></a>JavaScript语句</h3><h4 id="JavaScript表达式语句"><a href="#JavaScript表达式语句" class="headerlink" title="JavaScript表达式语句"></a>JavaScript表达式语句</h4><p>javascript在表达式的尾部添加一个分号就会形成一个表达式语句，JavaScript默认的独立的一行表达式也是表达式语句，表达式语句是最简单、最基本的语句。这种语句一般按着从上到下的顺序依次执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt; </span><br><span class="line">	<span class="keyword">var</span> iNum = <span class="number">123</span>;</span><br><span class="line">	<span class="keyword">var</span> iNum1 = <span class="number">45</span></span><br><span class="line">	<span class="keyword">var</span> sTr = <span class="string">'abc123'</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fnAlert</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    alert(sTr);</span><br><span class="line">&#125;;</span><br><span class="line">	fnAlert();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="选择语句和运算符"><a href="#选择语句和运算符" class="headerlink" title="选择语句和运算符"></a>选择语句和运算符</h4><p>通过条件来控制程序的走向，就需要用到条件语句。JavaScript的条件语句有：if，if…else, if …else if … else if… else…, switch，针对不同的需要进行选择。<br>运算符 </p>
+<ul>
+<li>算术运算符： +(加)、 -(减)、 *(乘)、 /(除)、 %(求余)</li>
+<li>赋值运算符：=、 +=、 -=、 *=、 /=、 %=</li>
+<li>条件运算符：&gt;、&gt;=、&lt;、&lt;=、==、!=、&amp;&amp;(而且)、||(或者)、!(否)</li>
+<li>三元运算符：？：，相当于if…else…<blockquote>
+<p>还有一个特殊的运算符===,这个运算符和两个等号运算符有点不一样，JavaScript在使用两个等号运算符进行运算的时候会自动对运算符左右两边的数值进行类型转换，而三个等号运算符是不会自动进行类型转换的，该运算符一开始就判断左右两边的数值是否是相同类型的，如果不是相同类型的就直接返回false，不用再继续执行判断内容了。</p>
+</blockquote>
+</li>
+</ul>
+<p>if else语句：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var iNum01 = 3;</span><br><span class="line">var iNum02 = 5;</span><br><span class="line">var sTr;</span><br><span class="line">if(iNum01&gt;iNum02)&#123;</span><br><span class="line">    sTr = '大于';</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    sTr = '小于';</span><br><span class="line">&#125;</span><br><span class="line">alert(sTr);</span><br></pre></td></tr></table></figure></p>
+<p>多重if else语句：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var iNow = 1;</span><br><span class="line">if(iNow==1)</span><br><span class="line">&#123;</span><br><span class="line">    ... ;</span><br><span class="line">&#125;</span><br><span class="line">else if(iNow==2)</span><br><span class="line">&#123;</span><br><span class="line">    ... ;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    ... ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>switch语句（语法格式和Java一样） ：（多重if else语句可以换成性能更高的switch语句）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var iNow = 1;</span><br><span class="line"></span><br><span class="line">switch (iNow)&#123;</span><br><span class="line">    case 1:</span><br><span class="line">        ...;</span><br><span class="line">        break;</span><br><span class="line">    case 2:</span><br><span class="line">        ...;</span><br><span class="line">        break;    </span><br><span class="line">    default:</span><br><span class="line">        ...;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><p>程序中进行有规律的重复性操作，需要用到循环语句。<br>for循环（语法格式和Java一样）：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0;i<span class="tag">&lt;<span class="name">len;i++)</span></span></span><br><span class="line"><span class="tag">&#123;</span></span><br><span class="line"><span class="tag">    <span class="attr">......</span></span></span><br><span class="line"><span class="tag">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>JavaScript还有foreach增强型for循环，不过执行的结果和其他语言的foreach循环不大一样，使用foreach遍历数组的时候，返回的时候索引值。</p>
+</blockquote>
+<p>while循环：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i=0;</span><br><span class="line"></span><br><span class="line">while(i<span class="tag">&lt;<span class="name">8)&#123;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">......</span></span></span><br><span class="line"><span class="tag">    <span class="attr">i</span>++;</span></span><br><span class="line"><span class="tag">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>do…while循环：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i=0;</span><br><span class="line"></span><br><span class="line">do&#123;</span><br><span class="line">    ......</span><br><span class="line">    i++;</span><br><span class="line">&#125;while(i<span class="tag">&lt;<span class="name">8);</span></span></span><br></pre></td></tr></table></figure></p>
+<h4 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h4><p>跳转语句能够从所在的分支、循环或从函数调用返回的语句跳出。JavaScript中的跳转语句有3种：break语句，continue语句，return语句。<br>break语句用来退出循环或者switch语句，语法格式如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> iNum=<span class="number">0</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">if</span>(iNum&gt;<span class="number">50</span>) <span class="keyword">break</span>;</span></span><br><span class="line"><span class="undefined">		iNum++;</span></span><br><span class="line"><span class="javascript">		<span class="built_in">document</span>.write(iNum);</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>continue语句的用法和break相似，不过continue语句不会退出整个循环，只是退出当前的一次循环，然后接着下一次的循环继续执行，语法格式如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> iNum=<span class="number">0</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span></span><br><span class="line"><span class="undefined">		iNum++;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">if</span>(iNum%<span class="number">2</span>==<span class="number">0</span>) <span class="keyword">continue</span>;</span></span><br><span class="line"><span class="javascript">		<span class="built_in">document</span>.write(iNum);</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>return语句用来返回函数的返回值，并结束函数的执行。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">fnAdd</span><span class="params">(iNum01,iNum02)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> iRs = iNum01 + iNum02;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> iRs;</span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">'here!'</span>);<span class="comment">//该语句不会执行，因为return语句之后函数就已经结束了，后面的代码都不会执行</span></span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript"><span class="keyword">var</span> iCount = fnAdd(<span class="number">3</span>,<span class="number">4</span>);</span></span><br><span class="line"><span class="actionscript">alert(iCount);  <span class="comment">//弹出7</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>JavaScript字符串有Unicode字符、数字、标点符号等组成的字符序列，字符串必须使用单引号或是双引号包括起来，和Python中一样，单引号中可以包括双引号，双引号中可以包括单引号，所有的字符应该在同一行内书写。<br>字符串处理方法<br>1、字符串合并操作：“ + ”<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> iNum01 = <span class="number">12</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> iNum02 = <span class="number">24</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sNum03 = <span class="string">'12'</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr = <span class="string">'abc'</span>;</span></span><br><span class="line"><span class="actionscript">	alert(iNum01+iNum02);  <span class="comment">//弹出36</span></span></span><br><span class="line"><span class="actionscript">	alert(iNum01+sNum03);  <span class="comment">//弹出1212 数字和字符串相加等同于字符串相加</span></span></span><br><span class="line"><span class="actionscript">	alert(sNum03+sTr);     <span class="comment">// 弹出12abc</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>2、parseInt() 将数字字符串转化为整数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sNum01 = <span class="string">'12'</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sNum02 = <span class="string">'24'</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sNum03 = <span class="string">'12.32'</span>;</span></span><br><span class="line"><span class="actionscript">	alert(sNum01+sNum02);  <span class="comment">//弹出1224</span></span></span><br><span class="line"><span class="javascript">	alert(<span class="built_in">parseInt</span>(sNum01)+<span class="built_in">parseInt</span>(sNum02))  <span class="comment">//弹出36</span></span></span><br><span class="line"><span class="actionscript">	alert(sNum03)   <span class="comment">//弹出数字12 将字符串小数转化为数字整数</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3、parseFloat() 将数字字符串转化为小数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sNum03 = <span class="string">'12.32'</span></span></span><br><span class="line"><span class="javascript">	alert(<span class="built_in">parseFloat</span>(sNum03));  <span class="comment">//弹出 12.32 将字符串小数转化为数字小数</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用parseInt()和parseFloat()需要注意的地方，需要转换的字符串应该是数字字符串，如果字符串中包含了非数字，返回的结果如下：<br>alert( parseInt(‘123abc’) );  // 弹出123<br>alert( parseInt(‘abc123’) );  // 弹出NaN</p>
+</blockquote>
+<p>将字符串转换为数值还有一种常见的便捷方法，让字符串和数值1相乘，即可把字符串转换为数值。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> sStr = <span class="string">"123.45"</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> fValue = sStr * <span class="number">1</span>;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="keyword">typeof</span> fValue); <span class="comment">//弹出number</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>4、split(sStr) 使用给定的字符串把一个字符串分隔成字符串组成的数组。特别的是给定一个空字符串””，可以将字符串的所有字符转换成一个字符数组。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr = <span class="string">'2017-4-22'</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> aRr = sTr.split(<span class="string">"-"</span>);</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> aRr2= sTr.split(<span class="string">""</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	alert(aRr);  <span class="comment">//弹出['2017','4','2']</span></span></span><br><span class="line"><span class="actionscript">	alert(aRr2);  <span class="comment">//弹出['2','0','1','7','-','4','-','2','2']</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>5、charAt(index) 根据索引值获取字符串中的某一个字符。字符串操作和数组操作类似，都可以通过索引来获取其中的元素。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sId = <span class="string">"#div1"</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr = sId.charAt(<span class="number">0</span>);</span></span><br><span class="line"><span class="actionscript">	alert(sTr); <span class="comment">//弹出 #</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>6、indexOf() 查找字符串是否含有某字符串，并返回该字符串第一次出现的位置索引。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr = <span class="string">"abcdefgh"</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> iNum = sTr.indexOf(<span class="string">"c"</span>);</span></span><br><span class="line"><span class="actionscript">	alert(iNum); <span class="comment">//弹出2</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>7、substring() 截取字符串 用法： substring(start,end)（不包括end）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr = <span class="string">"abcdefghijkl"</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr2 = sTr.substring(<span class="number">3</span>,<span class="number">5</span>);</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr3 = sTr.substring(<span class="number">1</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	alert(sTr2); <span class="comment">//弹出 de</span></span></span><br><span class="line"><span class="actionscript">	alert(sTr3); <span class="comment">//弹出 bcdefghijkl</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>8、toUpperCase() 字符串转大写<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr = <span class="string">"abcdef"</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr2 = sTr.toUpperCase();</span></span><br><span class="line"><span class="actionscript">	alert(sTr2); <span class="comment">//弹出ABCDEF</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>9、toLowerCase() 字符串转小写<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr = <span class="string">"ABCDEF"</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> sTr2 = sTr.toLowerCase();</span></span><br><span class="line"><span class="actionscript">	alert(sTr2); <span class="comment">//弹出abcdef</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>字符串方法实例：<br><strong>字符串反转</strong><br>使用字符串的切割和连接方法，和数组的反转方法。采用链式编程，如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> str = <span class="string">"maple一切都是最好的安排"</span>;</span></span><br><span class="line"><span class="actionscript">        alert(str.split(<span class="string">""</span>));</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//链式编程</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> str2 = str.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        alert(str2);<span class="comment">//弹出 排安的好最是都切一elpam</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	<div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+
+	
+	</div>
+
+
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢您的支持,我会继续努力哦!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="Maple WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="Maple Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" rel="next" title="「Linux 篇」Part 2 -- 文件和目录">
+                <i class="fa fa-chevron-left"></i> 「Linux 篇」Part 2 -- 文件和目录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/03/JavaScript篇/「JavaScript篇 」变量作用域和封闭函数/" rel="prev" title="「JavaScript篇 」变量作用域和封闭函数">
+                「JavaScript篇 」变量作用域和封闭函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/solong.jpg" alt="Maple">
+            
+              <p class="site-author-name" itemprop="name">Maple</p>
+              <p class="site-description motion-element" itemprop="description">Everything is the best arrangement</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/maple8" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Maple_eitba@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript简介"><span class="nav-number">1.</span> <span class="nav-text">JavaScript简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript嵌入页面的方式"><span class="nav-number">2.</span> <span class="nav-text">JavaScript嵌入页面的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量和数值类型"><span class="nav-number">3.</span> <span class="nav-text">变量和数值类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值类型"><span class="nav-number">3.1.</span> <span class="nav-text">数值类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命名"><span class="nav-number">3.2.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型转换"><span class="nav-number">3.3.</span> <span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript注释"><span class="nav-number">4.</span> <span class="nav-text">JavaScript注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript语句"><span class="nav-number">5.</span> <span class="nav-text">JavaScript语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript表达式语句"><span class="nav-number">5.1.</span> <span class="nav-text">JavaScript表达式语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择语句和运算符"><span class="nav-number">5.2.</span> <span class="nav-text">选择语句和运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环语句"><span class="nav-number">5.3.</span> <span class="nav-text">循环语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跳转语句"><span class="nav-number">5.4.</span> <span class="nav-text">跳转语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">6.</span> <span class="nav-text">字符串</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Maple</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">46.6k</span>
+  
+</div>
+
+
+<!--
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'hMg5NCWeR1lTOKVL5mtI2x3v-gzGzoHsz',
+        appKey: 'gq49CSjQbQpJ1db62nBCsRkj',
+        placeholder: '说点什么吧...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

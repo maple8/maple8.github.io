@@ -85,11 +85,11 @@
 <meta property="og:url" content="http://yoursite.com/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://phe7ff7o6.bkt.clouddn.com/python1.jpeg">
-<meta property="og:updated_time" content="2018-11-10T05:30:08.118Z">
+<meta property="og:image" content="http://yoursite.com/uploads/python1.jpeg">
+<meta property="og:updated_time" content="2019-01-08T11:54:31.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「Python 进阶篇」Part 1 -- 闭包">
-<meta name="twitter:image" content="http://phe7ff7o6.bkt.clouddn.com/python1.jpeg">
+<meta name="twitter:image" content="http://yoursite.com/uploads/python1.jpeg">
 
 
 
@@ -404,7 +404,7 @@
       
 
       
-        <p><img src="http://phe7ff7o6.bkt.clouddn.com/python1.jpeg" width="933" height="575" alt="python" align="center"><br><a id="more"></a></p>
+        <p><img src="/uploads/python1.jpeg" width="933" height="575" alt="python" align="center"><br><a id="more"></a></p>
 <h4 id="预备知识点-函数引用"><a href="#预备知识点-函数引用" class="headerlink" title="预备知识点: 函数引用"></a>预备知识点: 函数引用</h4><h5 id="在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。"><a href="#在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为-引用-的东西。" class="headerlink" title="在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。"></a>在Python中，变量、方法、类等都是对象，都可以用一个变量名来指向它，该变量名就是我们常常见到并称之为 引用 的东西。</h5><p>在创建一个函数的时候, 这个函数名就是一个引用,用于指向这个函数. 我们可以通过这个引用去调用它指向的方法, 也可以将这个引用传递给其他的变量,然后利用其他的变量去调用该引用指向的方法. 对于一个变量来说, 我们给它传递什么引用,它就指向什么.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"---maple---"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">test()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引用函数</span></span><br><span class="line">func = test</span><br><span class="line"></span><br><span class="line">print(id(test))</span><br><span class="line">print(id(func))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过引用调用函数</span></span><br><span class="line">func()</span><br></pre></td></tr></table></figure></p>
 <p>输出结果:</p>
 <pre><code>---maple---
@@ -422,7 +422,7 @@
 <h5 id="外部函数变量"><a href="#外部函数变量" class="headerlink" title="外部函数变量"></a>外部函数变量</h5><p>闭包中说的外部函数的变量,对于内部函数来说这个变量就是一个全局变量,对于全局变量,如果需要对其进行操作的话,需要使用关键字<code>global</code>,否侧结果只是在函数中创建了一个和全部变量同名的局部变量而已. 因此,对于外部函数的变量,如果想要对其进行修改的话,也有关键字: <code>nonlocal</code>(这个关键字只有Python3里面才有); 下面看一段代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">counter</span><span class="params">(start=<span class="number">0</span>)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">incr</span><span class="params">()</span>:</span></span><br><span class="line">    	<span class="comment"># 表示是外部函数变量</span></span><br><span class="line">        <span class="keyword">nonlocal</span> start</span><br><span class="line">        start += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> start</span><br><span class="line">    <span class="keyword">return</span> incr</span><br><span class="line"></span><br><span class="line">c1 = counter(<span class="number">5</span>)</span><br><span class="line">print(c1())</span><br><span class="line">print(c1())</span><br><span class="line"></span><br><span class="line">c2 = counter(<span class="number">50</span>)</span><br><span class="line">print(c2())</span><br><span class="line">print(c2())</span><br><span class="line"></span><br><span class="line">print(c1())</span><br><span class="line">print(c1())</span><br><span class="line"></span><br><span class="line">print(c2())</span><br><span class="line">print(c2())</span><br></pre></td></tr></table></figure></p>
 <p>输出结果:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">51</span></span><br><span class="line"><span class="number">52</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">53</span></span><br><span class="line"><span class="number">54</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="小结-闭包的优缺点"><a href="#小结-闭包的优缺点" class="headerlink" title="小结: 闭包的优缺点"></a>小结: 闭包的优缺点</h4><h5 id="优点"><a href="#优点" class="headerlink" title="优点:"></a>优点:</h5><p>1 . 闭包具有提高代码的复用性的优点;<br>2 . 占用的内存空间少;</p>
-<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h5><p>1 . 只能实现一些简单的功能,不能进行大型的开发;<br>2 . 由于闭包引用了外部函数的局部变量,导致外部函数的局部变量没有及时的释放,消耗内存;<br><strong>闭包一般不会单独的使用,就像上面说的,闭包并不能进行大型的开发,所以呢,它一般都是作为基础和装饰器一起使用的,如果有兴趣了解装饰器的话,请浏览下面的链接哦.</strong><br><a href="https://maple8.github.io/2018/10/24/%E3%80%8CPython%20%E8%BF%9B%E9%98%B6%E7%AF%87%E3%80%8DPart%202%20--%20%E8%A3%85%E9%A5%B0%E5%99%A8/" target="_blank" rel="noopener">「Python 进阶篇」Part 2 – 装饰器</a></p>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h5><p>1 . 只能实现一些简单的功能,不能进行大型的开发;<br>2 . 由于闭包引用了外部函数的局部变量,导致外部函数的局部变量没有及时的释放,消耗内存;<br><strong>闭包一般不会单独的使用,就像上面说的,闭包并不能进行大型的开发,所以呢,它一般都是作为基础和装饰器一起使用的,如果有兴趣了解装饰器的话,请浏览下面的链接.</strong><br><a href="https://maple8.github.io/2018/10/24/%E3%80%8CPython%20%E8%BF%9B%E9%98%B6%E7%AF%87%E3%80%8DPart%202%20--%20%E8%A3%85%E9%A5%B0%E5%99%A8/" target="_blank" rel="noopener">「Python 进阶篇」Part 2 – 装饰器</a></p>
 <hr>
 
       
@@ -511,8 +511,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/25/文本编辑器/Markdown 完全篇/" rel="prev" title="Markdown 完全篇">
-                Markdown 完全篇 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/" rel="prev" title="「Python 进阶篇」Part 2 -- 装饰器">
+                「Python 进阶篇」Part 2 -- 装饰器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -595,7 +595,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -606,7 +606,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -617,7 +617,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -686,7 +686,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -700,7 +700,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22k</span>
+    <span title="Site words total count">46.6k</span>
   
 </div>
 
