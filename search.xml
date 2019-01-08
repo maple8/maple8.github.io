@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[「JavaScript篇 」Part 3 -- DOM]]></title>
+    <url>%2F2019%2F01%2F08%2FJavaScript%E7%AF%87%2F%E3%80%8CJavaScript%E7%AF%87%20%E3%80%8DPart%203%20--%20DOM%20%2F</url>
+    <content type="text"><![CDATA[DOMHTML DOM prompt() 方法prompt() 方法用于显示可提示用户进行输入的对话框。语法: prompt(text,defaultText)参数 :text – 可选,，要在对话框中显示的提示文本(纯文本，而不是 HTML 格式的文本）。defaultText –可选，默认的输入文本。如果用户单击提示框的取消按钮，则返回 null。如果用户单击确认按钮，则返回输入字段当前显示的文本。在用户点击确定按钮或取消按钮把对话框关闭之前，它将阻止用户对浏览器的所有输入。在调用 prompt() 时，将暂停对 JavaScript 代码的执行，在用户作出响应之前，不会执行下一条语句。1234567891011121314151617181920212223242526272829303132&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt; &lt;script&gt; var sAge = prompt("您好，请输入想要查询的球员姓名", ""); switch (sAge) &#123; case 'LBJ': case 'James': alert("勒布朗.詹姆斯：洛杉矶-湖人"); break; case 'KI': case 'Kyrie': alert("凯里.欧文：波士顿-凯尔特人"); break; case 'PG': case 'Pour': alert("保罗.乔治：俄克拉荷马-雷霆") break; default: alert("您输入的内容错误!"); &#125; &lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt; alert() 弹出个提示框 （确定）confirm() 弹出个确认框 （确定，取消）prompt() 弹出个输入框 让你输入东西 使用消息框使用警告、提示和确认可以使用警告、确认和提示消息框来获得用户的输入。这些消息框是 window 对象的接口方法。由于 window 对象位于对象层次的顶层，因此实际应用中不必使用这些消息框的全名（例如 “window.alert()”），不过采用全名是一个好注意，这样有助于您记住这些消息框属于哪个对象。 警告消息框alert 方法有一个参数，即希望对用户显示的文本字符串。该字符串不是 HTML 格式。该消息框提供了一个“确定”按钮让用户关闭该消息框，并且该消息框是模式对话框，也就是说，用户必须先关闭该消息框然后才能继续进行操作。 window.alert(“欢迎！请按“确定”继续。”);确认消息框使用确认消息框可向用户问一个“是-或-否”问题，并且用户可以选择单击“确定”按钮或者单击“取消”按钮。confirm 方法的返回值为 true 或 false。该消息框也是模式对话框：用户必须在响应该对话框（单击一个按钮）将其关闭后，才能进行下一步操作。 var truthBeTold = window.confirm(“单击“确定”继续。单击“取消”停止。”);if (truthBeTold) {window.alert(“欢迎访问我们的 Web 页！”);} else window.alert(“再见啦！”);提示消息框提示消息框提供了一个文本字段，用户可以在此字段输入一个答案来响应您的提示。该消息框有一个“确定”按钮和一个“取消”按钮。如果您提供了一个辅助字符串参数，则提示消息框将在文本字段显示该辅助字符串作为默认响应。否则，默认文本为 &quot;&lt;undefined&gt;&quot;。 与alert( ) 和 confirm( ) 方法类似，prompt 方法也将显示一个模式消息框。用户在继续操作之前必须先关闭该消息框 var theResponse = window.prompt(“欢迎？”,”请在此输入您的姓名。”);window.confirm 参数就只有一个.显示提示框的信息.按确定,返回true; 按取消返回false.1234&lt;script&gt; var bln = window.confirm("确定吗?"); alert(bln) &lt;/script&gt; window.alert参数,只有一个,显示警告框的信息;无返回值.123&lt;script&gt; window.alert("确定.") &lt;/script&gt; window.prompt参数,有两个,第一个参数,显示提示输入框的信息.第二个参数,用于显示输入框的默认值.返回,用户输入的值.1234567891011121314151617181920212223&lt;script&gt; var str = window.prompt("请输入密码","password") alert(str); &lt;/script&gt; &lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;script language="javascript" type="text/javascript"&gt; var yanzhengma = window.prompt("输入验证码", "") if( yanzhengma == 123 ) &#123; alert("ok"); &#125; else &#123; alert("false"); &#125;&lt;/script&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>&lt;b&gt;JavaScript 篇&lt;/b&gt;</category>
+        <category>「JavaScript篇 」Part 3 -- DOM</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>DOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[「JavaScript篇 」Part 2 -- BOM]]></title>
+    <url>%2F2019%2F01%2F08%2FJavaScript%E7%AF%87%2F%E3%80%8CJavaScript%E7%AF%87%20%E3%80%8DPart%202%20--%20BOM%2F</url>
+    <content type="text"><![CDATA[BOM概述获取元素使用内置对象document上的getElementById方法来获取页面上设置了 id 属性的元素，获取到的是一个 html对象，然后将它赋值给一个object类型的变量，比如：12345&lt;script type="text/javascript"&gt; var oDiv = document.getElementById('div1');&lt;/script&gt;....&lt;div id="div1"&gt;这是一个div元素&lt;/div&gt; 上面的语句就这样把javascript写在元素的上面，会出错，因为HTML页面是从上往下加载执行的，javascript在页面上获取元素div1的时候，元素div1还没有加载，所以就会报错，解决方法有两种：第一种方法：将javascript放到页面最下边不过这种方法不推荐使用，格式上不太严谨。12345678....&lt;div id="div1"&gt;这是一个div元素&lt;/div&gt;....&lt;script type="text/javascript"&gt; var oDiv = document.getElementById('div1');&lt;/script&gt;&lt;/body&gt; 第二种方法：将javascript语句放到window.onload触发的函数中这样一来，JavaScript获取元素的语句就会在整个页面加载完后才执行，就不会出错了。123456789&lt;script type="text/javascript"&gt; window.onload = function()&#123; var oDiv = document.getElementById('div1'); &#125;&lt;/script&gt;....&lt;div id="div1"&gt;这是一个div元素&lt;/div&gt;]]></content>
+      <categories>
+        <category>&lt;b&gt;JavaScript 篇&lt;/b&gt;</category>
+        <category>「JavaScript篇 」Part 2 -- BOM</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>BOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Visual Studio Code常用设置]]></title>
+    <url>%2F2019%2F01%2F08%2F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%2FVisual%20Studio%20Code%E5%B8%B8%E7%94%A8%E8%AE%BE%E7%BD%AE%20%2F</url>
+    <content type="text"><![CDATA[常用插件 view in browser一个用于在浏览器打开文件的插件,支持多个浏览器版本,安装完成之后在设置里面设置默认的浏览器,如下是设置为谷歌浏览器为默认浏览器: 1"view-in-browser.customBrowser": "chrome", 该插件的默认快捷键: Ctrl + F1 但是,该插件不稳定,可能会出现不能使用的情况. open in browser该插件相比于上一个插件来说更稳定,而且相对使用比较简单,该插件会自动设置默认的浏览器,谷歌浏览器.所以,开发者安装该插件之后便可使用,前提是计算机上已经安装chrome浏览器,如果没有安装,也可以手动设置默认浏览器.该插件的默认快捷键:Alt + B : 使用默认浏览器打开文件;Alt + Shift + B: 自定义浏览器打开文件;]]></content>
+      <categories>
+        <category>&lt;b&gt;代码编辑工具&lt;/b&gt;</category>
+        <category>Visual Studio Code常用设置</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PyCharm常用快捷键]]></title>
     <url>%2F2019%2F01%2F08%2F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%2FPyCharm%E5%B8%B8%E7%94%A8%E8%AE%BE%E7%BD%AE%2F</url>
     <content type="text"></content>
@@ -11,6 +49,24 @@
       <tags>
         <tag>PyCharm</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[「摄影篇」一江 | 一畔 | 灰]]></title>
+    <url>%2F2019%2F01%2F08%2F%E6%91%84%E5%BD%B1%E7%AF%87%2F%E3%80%8C%E6%91%84%E5%BD%B1%E7%AF%87%E3%80%8D%E4%B8%80%E6%B1%9F.%E4%B8%80%E7%95%94.%E7%81%B0%2F</url>
+    <content type="text"><![CDATA[天各一方]]></content>
+      <categories>
+        <category>&lt;b&gt;摄影篇&lt;/b&gt;</category>
+        <category>「摄影篇」一江 | 一畔 | 灰</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[「摄影篇」一江 | 一畔 | 彩]]></title>
+    <url>%2F2019%2F01%2F08%2F%E6%91%84%E5%BD%B1%E7%AF%87%2F%E3%80%8C%E6%91%84%E5%BD%B1%E7%AF%87%E3%80%8D%E4%B8%80%E6%B1%9F.%E4%B8%80%E7%95%94%2F</url>
+    <content type="text"><![CDATA[在水一方]]></content>
+      <categories>
+        <category>&lt;b&gt;摄影篇&lt;/b&gt;</category>
+        <category>「摄影篇」一江 | 一畔 | 彩</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[「Python 进阶篇」Part 3 -- 再议装饰器]]></title>
@@ -24,62 +80,6 @@
         <tag>Python 3</tag>
         <tag>装饰器</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[「JavaScript篇 」Part 3 -- DOM]]></title>
-    <url>%2F2019%2F01%2F04%2FJavaScript%E7%AF%87%2F%E3%80%8CJavaScript%E7%AF%87%20%E3%80%8DPart%203%20--%20DOM%20%2F</url>
-    <content type="text"><![CDATA[DOMHTML DOM prompt() 方法prompt() 方法用于显示可提示用户进行输入的对话框。语法: prompt(text,defaultText)参数 :text – 可选,，要在对话框中显示的提示文本(纯文本，而不是 HTML 格式的文本）。defaultText –可选，默认的输入文本。如果用户单击提示框的取消按钮，则返回 null。如果用户单击确认按钮，则返回输入字段当前显示的文本。在用户点击确定按钮或取消按钮把对话框关闭之前，它将阻止用户对浏览器的所有输入。在调用 prompt() 时，将暂停对 JavaScript 代码的执行，在用户作出响应之前，不会执行下一条语句。1234567891011121314151617181920212223242526272829303132&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt; &lt;script&gt; var sAge = prompt("您好，请输入想要查询的球员姓名", ""); switch (sAge) &#123; case 'LBJ': case 'James': alert("勒布朗.詹姆斯：洛杉矶-湖人"); break; case 'KI': case 'Kyrie': alert("凯里.欧文：波士顿-凯尔特人"); break; case 'PG': case 'Pour': alert("保罗.乔治：俄克拉荷马-雷霆") break; default: alert("您输入的内容错误!"); &#125; &lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt; alert() 弹出个提示框 （确定）confirm() 弹出个确认框 （确定，取消）prompt() 弹出个输入框 让你输入东西 使用消息框使用警告、提示和确认可以使用警告、确认和提示消息框来获得用户的输入。这些消息框是 window 对象的接口方法。由于 window 对象位于对象层次的顶层，因此实际应用中不必使用这些消息框的全名（例如 “window.alert()”），不过采用全名是一个好注意，这样有助于您记住这些消息框属于哪个对象。 警告消息框alert 方法有一个参数，即希望对用户显示的文本字符串。该字符串不是 HTML 格式。该消息框提供了一个“确定”按钮让用户关闭该消息框，并且该消息框是模式对话框，也就是说，用户必须先关闭该消息框然后才能继续进行操作。 window.alert(“欢迎！请按“确定”继续。”);确认消息框使用确认消息框可向用户问一个“是-或-否”问题，并且用户可以选择单击“确定”按钮或者单击“取消”按钮。confirm 方法的返回值为 true 或 false。该消息框也是模式对话框：用户必须在响应该对话框（单击一个按钮）将其关闭后，才能进行下一步操作。 var truthBeTold = window.confirm(“单击“确定”继续。单击“取消”停止。”);if (truthBeTold) {window.alert(“欢迎访问我们的 Web 页！”);} else window.alert(“再见啦！”);提示消息框提示消息框提供了一个文本字段，用户可以在此字段输入一个答案来响应您的提示。该消息框有一个“确定”按钮和一个“取消”按钮。如果您提供了一个辅助字符串参数，则提示消息框将在文本字段显示该辅助字符串作为默认响应。否则，默认文本为 &quot;&lt;undefined&gt;&quot;。 与alert( ) 和 confirm( ) 方法类似，prompt 方法也将显示一个模式消息框。用户在继续操作之前必须先关闭该消息框 var theResponse = window.prompt(“欢迎？”,”请在此输入您的姓名。”);window.confirm 参数就只有一个.显示提示框的信息.按确定,返回true; 按取消返回false.1234&lt;script&gt; var bln = window.confirm("确定吗?"); alert(bln) &lt;/script&gt; window.alert参数,只有一个,显示警告框的信息;无返回值.123&lt;script&gt; window.alert("确定.") &lt;/script&gt; window.prompt参数,有两个,第一个参数,显示提示输入框的信息.第二个参数,用于显示输入框的默认值.返回,用户输入的值.1234567891011121314151617181920212223&lt;script&gt; var str = window.prompt("请输入密码","password") alert(str); &lt;/script&gt; &lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;script language="javascript" type="text/javascript"&gt; var yanzhengma = window.prompt("输入验证码", "") if( yanzhengma == 123 ) &#123; alert("ok"); &#125; else &#123; alert("false"); &#125;&lt;/script&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
-      <categories>
-        <category>&lt;b&gt;JavaScript 篇&lt;/b&gt;</category>
-        <category>「JavaScript篇 」Part 3 -- DOM</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-        <tag>DOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[「JavaScript篇 」Part 2 -- BOM]]></title>
-    <url>%2F2019%2F01%2F04%2FJavaScript%E7%AF%87%2F%E3%80%8CJavaScript%E7%AF%87%20%E3%80%8DPart%202%20--%20BOM%2F</url>
-    <content type="text"><![CDATA[BOM概述获取元素使用内置对象document上的getElementById方法来获取页面上设置了 id 属性的元素，获取到的是一个 html对象，然后将它赋值给一个object类型的变量，比如：12345&lt;script type="text/javascript"&gt; var oDiv = document.getElementById('div1');&lt;/script&gt;....&lt;div id="div1"&gt;这是一个div元素&lt;/div&gt; 上面的语句就这样把javascript写在元素的上面，会出错，因为HTML页面是从上往下加载执行的，javascript在页面上获取元素div1的时候，元素div1还没有加载，所以就会报错，解决方法有两种：第一种方法：将javascript放到页面最下边不过这种方法不推荐使用，格式上不太严谨。12345678....&lt;div id="div1"&gt;这是一个div元素&lt;/div&gt;....&lt;script type="text/javascript"&gt; var oDiv = document.getElementById('div1');&lt;/script&gt;&lt;/body&gt; 第二种方法：将javascript语句放到window.onload触发的函数中这样一来，JavaScript获取元素的语句就会在整个页面加载完后才执行，就不会出错了。123456789&lt;script type="text/javascript"&gt; window.onload = function()&#123; var oDiv = document.getElementById('div1'); &#125;&lt;/script&gt;....&lt;div id="div1"&gt;这是一个div元素&lt;/div&gt;]]></content>
-      <categories>
-        <category>&lt;b&gt;JavaScript 篇&lt;/b&gt;</category>
-        <category>「JavaScript篇 」Part 2 -- BOM</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-        <tag>BOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Visual Studio Code常用设置]]></title>
-    <url>%2F2019%2F01%2F03%2F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%2FVisual%20Studio%20Code%E5%B8%B8%E7%94%A8%E8%AE%BE%E7%BD%AE%20%2F</url>
-    <content type="text"><![CDATA[常用插件 view in browser一个用于在浏览器打开文件的插件,支持多个浏览器版本,安装完成之后在设置里面设置默认的浏览器,如下是设置为谷歌浏览器为默认浏览器: 1"view-in-browser.customBrowser": "chrome", 该插件的默认快捷键: Ctrl + F1 但是,该插件不稳定,可能会出现不能使用的情况. open in browser该插件相比于上一个插件来说更稳定,而且相对使用比较简单,该插件会自动设置默认的浏览器,谷歌浏览器.所以,开发者安装该插件之后便可使用,前提是计算机上已经安装chrome浏览器,如果没有安装,也可以手动设置默认浏览器.该插件的默认快捷键:Alt + B : 使用默认浏览器打开文件;Alt + Shift + B: 自定义浏览器打开文件;]]></content>
-      <categories>
-        <category>&lt;b&gt;代码编辑工具&lt;/b&gt;</category>
-        <category>Visual Studio Code常用设置</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[「摄影篇」一江 | 一畔 | 灰]]></title>
-    <url>%2F2018%2F12%2F25%2F%E6%91%84%E5%BD%B1%E7%AF%87%2F%E3%80%8C%E6%91%84%E5%BD%B1%E7%AF%87%E3%80%8D%E4%B8%80%E6%B1%9F.%E4%B8%80%E7%95%94.%E7%81%B0%2F</url>
-    <content type="text"><![CDATA[天各一方]]></content>
-      <categories>
-        <category>&lt;b&gt;摄影篇&lt;/b&gt;</category>
-        <category>「摄影篇」一江 | 一畔 | 灰</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[「摄影篇」一江 | 一畔 | 彩]]></title>
-    <url>%2F2018%2F12%2F25%2F%E6%91%84%E5%BD%B1%E7%AF%87%2F%E3%80%8C%E6%91%84%E5%BD%B1%E7%AF%87%E3%80%8D%E4%B8%80%E6%B1%9F.%E4%B8%80%E7%95%94%2F</url>
-    <content type="text"><![CDATA[在水一方]]></content>
-      <categories>
-        <category>&lt;b&gt;摄影篇&lt;/b&gt;</category>
-        <category>「摄影篇」一江 | 一畔 | 彩</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[Markdown 完全篇]]></title>
@@ -121,19 +121,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Sublime-Text 3 无法输入中文解决方案]]></title>
-    <url>%2F2018%2F10%2F23%2F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%2FSublime%20-%20Text%203%20%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
-    <content type="text"><![CDATA[简述本教程是解决 Ubuntu 16.04 操作系统下安装的 Sublime-Text 3 无法输入中文的问题. 想要在 Ubuntu 操作系统中安装 Sublime-Text 3 有多种方法, 比如: 在Ubuntu 的软件商店里面直接安装; Sublime-Text 在官网下载 .deb包,然后安装; 还有通过终端命令安装等. 本文是针对后两种方法的, 因为第一种方法的安装路径不在 /opt/sublime_text路径下, 当然,如果你能找到安装路径,该方法也是可以用的,只要对命令中的路径做出相应的调整就好. 当然了,解决不能输入中文的方法有很多,以下只是其中一种.1 . 利用 git 工具从 github 上下载我们需要的开源文件,打开终端，输入： 1git clone http://github.com/lyfeyaj/sublime-text-imfix.git 以上命令会将文件下载到当前文件(终端输入 pwd 查看当前位置)中,默认是在用户的家目录中,也可以改变,只要在指定的文件夹中打开终端就好. 如果出现提示说没有 git 工具, 那么请先终端输入以下命令进行安装 git :1sudo apt-get install git 2 . 将subl移动到/usr/bin/，并且将sublime-imfix.so(位于上面下载的文件中)移动到/opt/sublime_text/（sublime的安装目录），终端依次输入以下命令：123cd ~/sublime-text-imfixsudo cp ./lib/libsublime-imfix.so /opt/sublime_text/sudo cp ./src/subl /usr/bin/ 3 . 用subl命令试试能不能启动 Sublime -Text，如果成功启动的话，应该就可以输入中文了。终端输入：1subl 至此,我们就可以在 Sublime-Text中输入中文了.但是呢,这只是一种暂时性的可以,可能哪天就不好使了,博主自己就是这样的,上述步骤执行完成之后是可以输入中文了,过几天就不行了.所以,还需要执行以下步骤.4 . 新建一个shell脚本,在 Sublime-Text中 新建文件,然后输入以下代码:12#!/bin/bashLD_PRELOAD=/opt/sublime_text/libsublime-imfix.so subl 然后将文件另存为sublime（注意：没有后缀），并放到/home文件夹中,此过程有可能因为权限问题无法直接保存，我们可以先保存到其他文件夹，然后在终端用sudo cp命令复制到/home文件夹下面。 5 . 到这里就所有的工作都完成了,终端输入subl启动 Sublime-Text, 然后就可以愉快的使用了哈. 说明如果您的 Sublime-Text 是旧版本的话(就是每次打开都会提示有新的版本,询问是否需要安装), 通过以上教程也是可以正常输入中文的,但是,文字的排版的话,每行中的中文和英文及其他符号无法完美对齐, 这是一个bug啊,只能通过 Sublime-Text 官方提供更好的中文支持了. 参考资源:解决Ubuntu下Sublime Text 3无法输入中文]]></content>
-      <categories>
-        <category>&lt;b&gt;代码编辑工具&lt;/b&gt;</category>
-        <category>&lt;b&gt;Sublime-Text 3&lt;/b&gt;</category>
-      </categories>
-      <tags>
-        <tag>Sublime-Text 3</tag>
-        <tag>Ubuntu16.04</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Sublime-Text 3 配置中文环境]]></title>
     <url>%2F2018%2F10%2F23%2F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%2FSublime-Text%203%20%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:Ubuntu 16.04 安装 Sublime-Text 3 完整教程 2. 终端输入如下命令打开 Sublime-Text 3:1subl 3. 安装package control组件:按Ctrl+ `(此符号为tab按键上面的按键) 调出console(位于界面的最下方),输入此快捷键需要注意避免热键冲突.粘贴以下代码到console中,然后回车并等待(可能会出现 Sublime-Text 3 出现未响应的情况,因为是后台正在进行插件安装包的下载和安装,不用担心,继续等待即可)：1import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read()) 4. 安装完成之后,重启 Sublime-Text 3 (有时候不重启也可以哈),如果在 Perferences -&gt; 中看到 package control 这一项(如下图)，则说明安装成功. 5. 用Package Control安装插件：按下 Ctrl+Shift+P 调出命令面板 ,在命令面板中输入 install,会弹出多个提示选项, 点击 Install Package 选项并回车，然后在弹出的提示框中输入 ChineseLocation, 便可进行安装. 6. 安装完成之后,重启 Sublime-Text 3, 就可以看到界面变成中文的了哈. 参考资源Sublime Text 3安装及常用插件安装]]></content>
@@ -147,9 +134,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Ubuntu 16.04 安装 Sublime-Text 3 完整教程]]></title>
-    <url>%2F2018%2F10%2F22%2F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%2FUbuntu%2016.04%20%E5%AE%89%E8%A3%85%20Sublime-Text%20%203%20%E5%AE%8C%E6%95%B4%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[简述:Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.1. 打开Ubuntu终端,依次输入以下命令:Install the GPG key:1wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - Ensure apt is set up to work with https sources:1sudo apt-get install apt-transport-https Select the channel to use:1.Stable1echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list 2.Dev1echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list Update apt sources and install Sublime Text:1sudo apt-get update 1sudo apt-get install sublime-text 2. 步骤1执行完之后,如果没有报错,便说明 Sublime-Text 3 已经安装成功了,我们可以通过按下super键打开搜索,输入关键字进行搜索并打开,也可以打开终端,输入subl命令快速打开,此时会提示需要输入 “注册码”,粘贴以下注册码,复制到提示框中即可:----- BEGIN LICENSE ----- sgbteam Single User License EA7E-1153259 8891CBB9 F1513E4F 1A3405C1 A865D53F 115F202E 7B91AB2D 0D2A40ED 352B269B 76E84F0B CD69BFC7 59F2DFEF E267328F 215652A3 E88F9D8F 4C38E3BA 5B2DAAE4 969624E7 DC9CD4D5 717FB40C 1B9738CF 20B3C4F1 E917B5B3 87C38D9C ACCE7DD8 5F7EF854 86B9743C FADC04AA FB0DA5C0 F913BE58 42FEA319 F954EFDD AE881E0B ------ END LICENSE ------ 3. 现在可以正常使用 Sublime-Text 3 了,此时打开的主界面默认是设置成中文的,如果不喜欢的话,可以在菜单栏的 “帮助”中选择Language进行语言设置,便可以更换语言支持.4. Sublime-Text 3 默认是不支持输入中文的,当打开Sublime-Text 3 的时候,可以进行英文输入,但是并不能切换中文输入法,即使通过点击电脑右上角的输入法强行切换到中文输入法,输入的也还是英文.以下是解决方案:1.下载我们需要的文件，打开终端，输入(该命令会下载文件到用户的家目录中,也可以手动指定位置,当然在下面的命令中需要做出相应的调整)： 1git clone http://github.com/lyfeyaj/sublime-text-imfix.git 2.将subl移动到/usr/bin/，并且将sublime-imfix.so移动到/opt/sublime_text/（sublime的安装目录），终端输入为： 1cd ~/sublime-text-imfix 1sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/ 1sudo cp ./src/subl /usr/bin/ 3.用subl命令试试能不能启动sublime，如果成功启动的话，应该就可以输入中文了。终端输入： 1subl 至此,便可以在 Sublime-Text 3 使用中文输入法了,谢谢浏览!如果想详细了解 Sublime-Text 3 的使用方法,请浏览 Sublime-Text 3 的官方网站,附链接,如下:Sublime-Text 3 中文官方文档 参考资源:Sublime-Text 3 官方下载资源解决Ubuntu下Sublime Text 3无法输入中文Sublime Text3 注册码激活码(持续更新中2018-6-29)]]></content>
+    <title><![CDATA[Sublime-Text 3 无法输入中文解决方案]]></title>
+    <url>%2F2018%2F10%2F23%2F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%2FSublime%20-%20Text%203%20%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[简述本教程是解决 Ubuntu 16.04 操作系统下安装的 Sublime-Text 3 无法输入中文的问题. 想要在 Ubuntu 操作系统中安装 Sublime-Text 3 有多种方法, 比如: 在Ubuntu 的软件商店里面直接安装; Sublime-Text 在官网下载 .deb包,然后安装; 还有通过终端命令安装等. 本文是针对后两种方法的, 因为第一种方法的安装路径不在 /opt/sublime_text路径下, 当然,如果你能找到安装路径,该方法也是可以用的,只要对命令中的路径做出相应的调整就好. 当然了,解决不能输入中文的方法有很多,以下只是其中一种.1 . 利用 git 工具从 github 上下载我们需要的开源文件,打开终端，输入： 1git clone http://github.com/lyfeyaj/sublime-text-imfix.git 以上命令会将文件下载到当前文件(终端输入 pwd 查看当前位置)中,默认是在用户的家目录中,也可以改变,只要在指定的文件夹中打开终端就好. 如果出现提示说没有 git 工具, 那么请先终端输入以下命令进行安装 git :1sudo apt-get install git 2 . 将subl移动到/usr/bin/，并且将sublime-imfix.so(位于上面下载的文件中)移动到/opt/sublime_text/（sublime的安装目录），终端依次输入以下命令：123cd ~/sublime-text-imfixsudo cp ./lib/libsublime-imfix.so /opt/sublime_text/sudo cp ./src/subl /usr/bin/ 3 . 用subl命令试试能不能启动 Sublime -Text，如果成功启动的话，应该就可以输入中文了。终端输入：1subl 至此,我们就可以在 Sublime-Text中输入中文了.但是呢,这只是一种暂时性的可以,可能哪天就不好使了,博主自己就是这样的,上述步骤执行完成之后是可以输入中文了,过几天就不行了.所以,还需要执行以下步骤.4 . 新建一个shell脚本,在 Sublime-Text中 新建文件,然后输入以下代码:12#!/bin/bashLD_PRELOAD=/opt/sublime_text/libsublime-imfix.so subl 然后将文件另存为sublime（注意：没有后缀），并放到/home文件夹中,此过程有可能因为权限问题无法直接保存，我们可以先保存到其他文件夹，然后在终端用sudo cp命令复制到/home文件夹下面。 5 . 到这里就所有的工作都完成了,终端输入subl启动 Sublime-Text, 然后就可以愉快的使用了哈. 说明如果您的 Sublime-Text 是旧版本的话(就是每次打开都会提示有新的版本,询问是否需要安装), 通过以上教程也是可以正常输入中文的,但是,文字的排版的话,每行中的中文和英文及其他符号无法完美对齐, 这是一个bug啊,只能通过 Sublime-Text 官方提供更好的中文支持了. 参考资源:解决Ubuntu下Sublime Text 3无法输入中文]]></content>
       <categories>
         <category>&lt;b&gt;代码编辑工具&lt;/b&gt;</category>
         <category>&lt;b&gt;Sublime-Text 3&lt;/b&gt;</category>
@@ -172,6 +159,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Ubuntu 16.04 安装 Sublime-Text 3 完整教程]]></title>
+    <url>%2F2018%2F10%2F22%2F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%2FUbuntu%2016.04%20%E5%AE%89%E8%A3%85%20Sublime-Text%20%203%20%E5%AE%8C%E6%95%B4%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[简述:Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.1. 打开Ubuntu终端,依次输入以下命令:Install the GPG key:1wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - Ensure apt is set up to work with https sources:1sudo apt-get install apt-transport-https Select the channel to use:1.Stable1echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list 2.Dev1echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list Update apt sources and install Sublime Text:1sudo apt-get update 1sudo apt-get install sublime-text 2. 步骤1执行完之后,如果没有报错,便说明 Sublime-Text 3 已经安装成功了,我们可以通过按下super键打开搜索,输入关键字进行搜索并打开,也可以打开终端,输入subl命令快速打开,此时会提示需要输入 “注册码”,粘贴以下注册码,复制到提示框中即可:----- BEGIN LICENSE ----- sgbteam Single User License EA7E-1153259 8891CBB9 F1513E4F 1A3405C1 A865D53F 115F202E 7B91AB2D 0D2A40ED 352B269B 76E84F0B CD69BFC7 59F2DFEF E267328F 215652A3 E88F9D8F 4C38E3BA 5B2DAAE4 969624E7 DC9CD4D5 717FB40C 1B9738CF 20B3C4F1 E917B5B3 87C38D9C ACCE7DD8 5F7EF854 86B9743C FADC04AA FB0DA5C0 F913BE58 42FEA319 F954EFDD AE881E0B ------ END LICENSE ------ 3. 现在可以正常使用 Sublime-Text 3 了,此时打开的主界面默认是设置成中文的,如果不喜欢的话,可以在菜单栏的 “帮助”中选择Language进行语言设置,便可以更换语言支持.4. Sublime-Text 3 默认是不支持输入中文的,当打开Sublime-Text 3 的时候,可以进行英文输入,但是并不能切换中文输入法,即使通过点击电脑右上角的输入法强行切换到中文输入法,输入的也还是英文.以下是解决方案:1.下载我们需要的文件，打开终端，输入(该命令会下载文件到用户的家目录中,也可以手动指定位置,当然在下面的命令中需要做出相应的调整)： 1git clone http://github.com/lyfeyaj/sublime-text-imfix.git 2.将subl移动到/usr/bin/，并且将sublime-imfix.so移动到/opt/sublime_text/（sublime的安装目录），终端输入为： 1cd ~/sublime-text-imfix 1sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/ 1sudo cp ./src/subl /usr/bin/ 3.用subl命令试试能不能启动sublime，如果成功启动的话，应该就可以输入中文了。终端输入： 1subl 至此,便可以在 Sublime-Text 3 使用中文输入法了,谢谢浏览!如果想详细了解 Sublime-Text 3 的使用方法,请浏览 Sublime-Text 3 的官方网站,附链接,如下:Sublime-Text 3 中文官方文档 参考资源:Sublime-Text 3 官方下载资源解决Ubuntu下Sublime Text 3无法输入中文Sublime Text3 注册码激活码(持续更新中2018-6-29)]]></content>
+      <categories>
+        <category>&lt;b&gt;代码编辑工具&lt;/b&gt;</category>
+        <category>&lt;b&gt;Sublime-Text 3&lt;/b&gt;</category>
+      </categories>
+      <tags>
+        <tag>Sublime-Text 3</tag>
+        <tag>Ubuntu16.04</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[「Python 番外篇」-- Python开发的10个Tips]]></title>
     <url>%2F2018%2F10%2F12%2FPython%E7%95%AA%E5%A4%96%E7%AF%87%2F%E3%80%8CPython%20%E7%95%AA%E5%A4%96%E7%AF%87%E3%80%8D--%20Python%E5%BC%80%E5%8F%91%E7%9A%8410%E4%B8%AATips%2F</url>
     <content type="text"><![CDATA[对于Python，有许多学习的贴士和技巧。其中一些是初学这门语言常常会犯的错误，下面就一起来看看这10个tips,你了解多少呢？ 注意：假设用的是Python 3 1. 列表推导式你有一个list：1bag = [1, 2, 3, 4, 5] 现在你想让所有元素翻倍，让它看起来是这个样子：1[2, 4, 6, 8, 10] 大多初学者，根据之前语言的经验会大概这样来做:123bag = [1, 2, 3, 4, 5] for i in range(len(bag)): bag[i] = bag[i] * 2 但是有更好的方法：1bag = [elem * 2 for elem in bag] 很简洁对不对？这叫做 Python的列表推导式。 2. 遍历列表还是上面的列表。如果可能尽量避免这样做：123bag = [1, 2, 3, 4, 5] for i in range(len(bag)): print(bag[i]) 取而代之的应该是这样：123bag = [1, 2, 3, 4, 5] for i in bag: print(i) 如果x是一个列表，你可以对它的元素进行迭代。多数情况下你不需要各元素的索引，但如果你非要这样做，那就用enumerate函数。它像下边的样子：123bag = [1, 2, 3, 4, 5] for index, element in enumerate(bag): print(index, element) 非常直观明了。 3. 元素互换如果你是从java或者C语言转到Python来，可能会习惯于这样：123456a = 5 b = 10# 交换 a 和 btmp = a a = b b = tmp 但Python提供了一个更自然更好的方法！1234a = 5 b = 10 # 交换a 和 ba, b = b, a 4. 初始化列表假如你要一个是10个整数0的列表，你可能首先想到：123bag = [] for _ in range(10): bag.append(0) 换个方式吧：1bag = [0] * 10 看，多优雅。 注意：如果你列表包含了列表，这样做会产生浅拷贝。 举个例子：12bag_of_bags = [[0]] * 5 # [[0], [0], [0], [0], [0]] bag_of_bags[0][0] = 1 # [[1], [1], [1], [1], [1]] Oops！所有的列表都改变了，而我们只是想要改变第一个列表。改一改啦：1234bag_of_bags = [[0] for _ in range(5)] # [[0], [0], [0], [0], [0]]bag_of_bags[0][0] = 1 # [[1], [0], [0], [0], [0]] “过早优化是万恶之源”问问自己，初始化一个列表是必须的吗？ 5. 构造字符串你会经常需要打印字符串。要是有很多变量，避免下面这样：12345name = "Raymond" age = 22 born_in = "Oakland, CA" string = "Hello my name is " + name + "and I'm " + str(age) + " years old. I was born in " + born_in + "." print(string) 额，这看起来多乱呀？你可以用个漂亮简洁的方法来代替，.format,这样做：12345name = "Raymond" age = 22 born_in = "Oakland, CA" string = "Hello my name is &#123;0&#125; and I'm &#123;1&#125; years old. I was born in &#123;2&#125;.".format(name, age, born_in) print(string) 6. 返回tuplesPython允许你在一个函数中返回多个元素，这让生活更简单。但是在解包元组的时候出出线这样的常见错误：123456def binary(): return 0, 1result = binary() zero = result[0] one = result[1] 这是没必要的，你完全可以换成这样：1234def binary(): return 0, 1zero, one = binary() 这叫做 拆包.要是你需要所有的元素被返回，用个下划线_：1zero, _ = binary() 就是这么高效率！ 7. 访问Dicts你也会经常给dicts中写入key，value（键，值）。如果你试图访问一个不存在的于dict的key，可能会为了避免KeyError错误，你会倾向于这样做：12345678910111213countr = &#123;&#125; bag = [2, 3, 1, 2, 5, 6, 7, 9, 2, 7] for i in bag: if i in countr: countr[i] += 1 else: countr[i] = 1for i in range(10): if i in countr: print("Count of &#123;&#125;: &#123;&#125;".format(i, countr[i])) else: print("Count of &#123;&#125;: &#123;&#125;".format(i, 0)) 但是，用get()是个更好的办法。1234567countr = &#123;&#125; bag = [2, 3, 1, 2, 5, 6, 7, 9, 2, 7] for i in bag: countr[i] = countr.get(i, 0) + 1for i in range(10): print("Count of &#123;&#125;: &#123;&#125;".format(i, countr.get(i, 0))) 当然你也可以用setdefault来代替。 这还用一个更简单却多费点开销的办法：12345bag = [2, 3, 1, 2, 5, 6, 7, 9, 2, 7] countr = dict([(num, bag.count(num)) for num in bag])for i in range(10): print("Count of &#123;&#125;: &#123;&#125;".format(i, countr.get(i, 0))) 你也可以用dict推导式。1countr = &#123;num: bag.count(num) for num in bag&#125; 这两种方法开销大是因为它们在每次count被调用时都会对列表遍历。 8. 使用库现有的库只需导入你就可以做你真正想做的了。还是说前面的例子，我们建一个函数来数一个数字在列表中出现的次数。那么，已经有一个库就可以做这样的事情。123456from collections import Counter bag = [2, 3, 1, 2, 5, 6, 7, 9, 2, 7] countr = Counter(bag)for i in range(10): print("Count of &#123;&#125;: &#123;&#125;".format(i, countr[i])) 一些用库的理由： 代码是正确而且经过测试的。 它们的算法可能会是最优的，这样就跑的更快。 抽象化：它们指向明确而且文档友好，你可以专注于那些还没有被实现的。 最后，它都已经在那儿了，你不用再造轮子了。 9. 在列表中切片/步进你可以指定start的点和stop点，就像这样list[start:stop:step]。我们取出列表中的前5个元素：123bag = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] for elem in bag[:5]: print(elem) 这就是切片，我们指定stop点是5，再停止前就会从列表中取出5个元素。要是最后5个元素怎么做？123bag = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] for elem in bag[-5:]: print(elem) 没看明白吗？-5意味着从列表的结尾取出5个元素。如果你想对列表中元素间隔操作，你可能会这样做：1234bag = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] for index, elem in enumerate(bag): if index % 2 == 0: print(elem) 但是你应该这样来做：123456bag = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] for elem in bag[::2]: print(elem)# 或者用 rangesbag = list(range(0,10,2)) print(bag) 这就是列表中的步进。list[::2]意思是遍历列表同时两步取出一个元素。你可以用list[::-1]很酷的翻转列表,这个在OpenCV中也是常用功能。 10. tab键还是空格键长时间来看，将tab和空格混在一起会带来很多不必要的麻烦，你会看到IndentationError: unexpected indent。不管你选择tab键还是空格键，你应该在你的文件和项目中一直保持使用。一个使用空格而不是tab的原因是，tab不是在所有编辑器中都一样的。视呢所用的编辑器，tab可能会被当作2到8个空格。你也可以在写代码时用空格来定义tab。这样你可以自己选择用几个空格来当做tab。大多数Python用户是用4个空格。]]></content>
@@ -181,6 +181,18 @@
       </categories>
       <tags>
         <tag>Python 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[「JavaScript篇 」闭包函数]]></title>
+    <url>%2F2018%2F10%2F06%2FJavaScript%E7%AF%87%2F%E3%80%8CJavaScript%E7%AF%87%20%E3%80%8D%E9%97%AD%E5%8C%85%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[闭包函数闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因为这些变量也是该表达式的一部分。闭包函数就是外部函数被调用之后，它的变量不会消失，任然被内部函数所使用，而且所有的内部函数都拥有对外部函数的访问权限。]]></content>
+      <categories>
+        <category>&lt;b&gt;JavaScript 篇&lt;/b&gt;</category>
+        <category>「JavaScript篇 」闭包函数</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -389,18 +401,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[「HTML 篇」Part 2 -- HTML 基础]]></title>
-    <url>%2F2018%2F09%2F01%2FHTML%E7%AF%87%2F%E3%80%8CHTML%20%E7%AF%87%E3%80%8DPart%202%20--%20HTML%20%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[顾名思义,HTML称为超文本标记语言, 里面就是超链接和标签. 所以呢,在HTML的程序中充满着各种各样的标签,所以程序看以来可能会觉得很乱, 但是没关系,只要记住一个原则,所有的标签都是成对出现的, 虽然代码在格式上没有缩进的要求,但是为了方便查看,我们在编写程序的时候就应该有相应的代码缩进. 这样,后面维护代码的时候就不会乱了哈. HTML基础标签html注释：html文档代码中可以插入注释，注释是对代码的说明和解释，注释的内容不会显示在页面上，html代码中插入注释的方法是：1&lt;!-- 这是一段注释 --&gt; html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5&gt;、&lt;h6&gt;,标签可以在网页上定义6种级别的标题。6种级别的标题表示文档的6级目录层级关系，比如说：&lt;h1&gt;用作主标题，其后是&lt;h2&gt;，再其次是&lt;h3&gt;，以此类推。搜索引擎会使用标题将网页的结构和内容编制索引，所以网页上使用标题是很重要的。1234567&lt;!-- 六级标题 --&gt;&lt;h1&gt;个人主页&lt;/h1&gt;&lt;h2&gt;二级标题&lt;/h2&gt;&lt;h3&gt;三级标题&lt;/h3&gt;&lt;h4&gt;四级标题&lt;/h4&gt;&lt;h5&gt;五级标题&lt;/h5&gt;&lt;h6&gt;六级标题&lt;/h6&gt; html段落标签&lt;p&gt;标签定义一个文本段落，一个段落含有默认的上下间距，段落之间会用这种默认间距隔开，代码如下：1234567891011121314151617&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;段落&lt;/title&gt;&lt;/head&gt;&lt;body&gt; ` &lt;p&gt;`HTML是 HyperText Mark-up Language 的首字母简写，意思是超文本标记语言，超 文本指的是超链接，标记指的是标签，是一种用来制作网页的语言，这种语言由一个个的 标签组成，用这种语言制作的文件保存的是一个文本文件，文件的扩展名为html或者htm。 &lt;/p&gt; &lt;p&gt;一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用文本的方 式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件渲染成网页，显示的网 页可以从一个网页链接跳转到另外一个网页。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; html换行标签代码中成段的文字，直接在代码中回车换行，在渲染成网页时候不认这种换行，如果真想换行，可以在代码的段落中插入&lt;br /&gt;来强制换行，代码如下：12345678910111213&lt;p&gt; 一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用&lt;br /&gt; 文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件&lt;br /&gt; 渲染成网页，显示的网页可以从一个网页链接跳转到另外一个网页。&lt;/p&gt;或:&lt;!--块标签,里面可以嵌套其他的标签--&gt;&lt;div&gt; &lt;h1&gt;html概述&lt;/h1&gt; 很多人可能在电视或电影中看到过类似的场景，黑客面对一个黑色的屏幕，&lt;br /&gt;上面飘着密密麻麻的字符，梆梆一顿敲，就完成了窃取资料的任务。&lt;/div&gt; html字符实体1 . 空格: &amp;nbsp; 如果文字间想空多个空格，在代码中空多个空格，在渲染成网页时只会显示一个空格，如果想显示多个空格，可以使用空格的字符实体,代码如下：123456&lt;!-- 在段落前想缩进两个文字的空格，使用空格的字符实体：&amp;nbsp; --&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用&lt;br /&gt;文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件&lt;br /&gt;渲染成网页，显示的网页可以从一个网页链接跳转到另外一个网页。&lt;/p&gt; 2 . &lt;和&gt;: &amp;lt;和&amp;gt; 在网页上显示 “&lt;” 和 “&gt;” 会误认为是标签，想在网页上显示“&lt;”和“&gt;”可以使用它们的字符实体，比如：123456&lt;!-- &lt;br&gt;或&lt;br /&gt;换行标签 --&gt;&lt;p&gt; &lt;!-- &lt; 的字符实体 &amp;lt, &gt; 的字符实体 &amp;gt --&gt; 3 &amp;lt; 5&lt;br&gt; 10 &amp;gt; 5&lt;/p&gt; 其实,还有很多其他的字符实体,上述三种是最常用的,其他的需要的时候再去查看一个官方文档就好了哈. html块标签、含样式的标签1 . html块标签&lt;div&gt; 标签 块元素，表示一块内容，没有具体的语义。&lt;span&gt;标签 行内元素，表示一行中的一小段内容，没有具体的语义。 1234567891011&lt;div&gt; &lt;i&gt; HTML是 HyperText Mark-up Language 的首字母简写&lt;br /&gt; &lt;/i&gt; 一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件渲染成网页，显示的网页可以从一个网页链接跳转到另外一个网页。&lt;/div&gt;&lt;span&gt; HTML是 HyperText Mark-up Language 的首字母简写，&lt;br /&gt;意思是超文本标记语言，超文本指的是超链接，标记指的是标签，是一种用来制作网页的语言，这种语言由一个个的标签组成，用这种语言制作的文件保存的是一个文本文件，文件的扩展名为html或者htm。&lt;br /&gt;&lt;/span&gt; 2 . 样式和语义的标签&lt;em&gt; 标签 行内元素，表示语气中的强调词&lt;i&gt;标签 行内元素，表示专业词汇&lt;b&gt; 标签 行内元素，表示文档中的关键字或者产品名&lt;strong&gt;标签 行内元素，表示非常重要的内容123&lt;em&gt; Maple Everythin is the best arrangement!&lt;/em&gt; 3 . 语义化的标签语义化的标签，就是在布局的时候多使用有语义的标签，搜索引擎在爬网的时候能认识这些标签，理解文档的结构，方便网站的收录。比如：h1标签是表示标题，p标签是表示段落，ul、li标签是表示列表，a标签表示链接，dl、dt、dd表示定义列表等，语义化的标签不多。123456789101112&lt;!-- 定义列表,通常用于属于的定义 --&gt;&lt;h3&gt;前端三大块&lt;/h3&gt;&lt;dl&gt; &lt;dt&gt;html&lt;/dt&gt; &lt;dd&gt;负责页面的结构&lt;/dd&gt; &lt;dt&gt;css&lt;/dt&gt; &lt;dd&gt;负责页面的表现&lt;/dd&gt; &lt;dt&gt;javascript&lt;/dt&gt; &lt;dd&gt;负责页面的行为&lt;/dd&gt;&lt;/dl&gt; HTML 阶级标签html图像标签、绝对路径和相对路径1 . html图像标签&lt;img&gt;标签可以在网页上插入一张图片，它是独立使用的标签，它的常用属性有：src属性: 定义图片的引用地址alt属性: 定义图片加载失败时显示的文字，搜索引擎会使用这个文字收录图片、盲人读屏软件会读取这个文字让盲人识别图片，所以此属性非常重要。&lt;img src=&quot;images/pic.jpg&quot; alt=&quot;产品图片&quot; /&gt; 2 . 绝对路径和相对路径像网页上插入图片这种外部文件，需要定义文件的引用地址，引用外部文件还包括引用外部样式表，javascript等等，引用地址分为绝对地址和相对地址。绝对地址: 相对于磁盘的位置去定位文件的地址.相对地址： 相对于引用文件本身去定位被引用的文件地址.绝对地址在整体文件迁移时会因为磁盘和顶层目录的改变而找不到文件，相对路径就没有这个问题。相对路径的定义技巧：“ ./ ” 表示当前文件所在目录下，比如：“./pic.jpg” 表示当前目录下的pic.jpg的图片，这个使用时可以省略.“ ../ ” 表示当前文件所在目录下的上一级目录，比如：“../images/pic.jpg” 表示当前目录下的上一级目录下的images文件夹中的pic.jpg的图片. html链接标签&lt;a&gt;标签可以在网页上定义一个链接地址，它的常用属性有：href属性 定义跳转的地址title属性 定义鼠标悬停时弹出的提示文字框target属性 定义链接窗口打开的位置target=”_self” 缺省值 新页面替换原来的页面，在原来位置打开target=”_blank” 新页面会在新开的一个浏览器窗口打开12345678910111213141516171819202122&lt;br&gt; &lt;br&gt; &lt;!-- 图片标签 --&gt; &lt;h2&gt;图片&lt;/h2&gt; &lt;img src="images/bike_loading.gif" alt="加载中..."&gt; &lt;br&gt; &lt;br&gt; &lt;!-- 链接标签 --&gt; &lt;h2&gt;添加网络链接,显示文字作为链接对象,点击文字就可以实现跳转&lt;/h2&gt; &lt;a href="https://maple8.github.io" title="跳转至Maple's Blog" target="_blank"&gt;我的博客&lt;/a&gt; &lt;br&gt; &lt;br&gt; &lt;h2&gt;用图片做链接,用图片作为显示对象,点击图片就可以实现网站的跳转&lt;/h2&gt; &lt;a href="https://maple8.github.io" target="_blank"&gt;&lt;img src="/home/maple/Pictures/M.jpg" alt="Maple's Blog"&gt;&lt;/a&gt; &lt;br&gt; &lt;br&gt; &lt;h2&gt;就是目前还不知道这个链接是做什么用的,就可以先实现跳转至网页的开头,点击就会实现跳转至网页的顶部,一般的网页右下角的向上的小箭头就可以利用这个链接实现.&lt;/h2&gt; &lt;!-- # 表示链接到网页的顶部 --&gt; &lt;a href="#"&gt;这是一个缺省链接&lt;/a&gt; html列表1 . 有序列表在网页上定义一个有编号的内容列表可以用&lt;ol&gt;、&lt;li&gt;配合使用来实现，代码如下：12345&lt;ol&gt; &lt;li&gt;列表文字一&lt;/li&gt; &lt;li&gt;列表文字二&lt;/li&gt; &lt;li&gt;列表文字三&lt;/li&gt;&lt;/ol&gt; 在网页上生成的列表，每条项目上会按1、2、3编号，有序列表在实际开发中较少使用。 2 . 无序列表在网页上定义一个无编号的内容列表可以用&lt;ul&gt;、&lt;li&gt;配合使用来实现，代码如下：12345&lt;ul&gt; &lt;li&gt;&lt;a href="#"&gt;新闻标题一&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="#"&gt;新闻标题二&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="#"&gt;新闻标题三&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt; 在网页上生成的列表，每条项目上会有一个小图标，这个小图标在不同浏览器上显示效果不同，所以一般会用样式去掉默认的小图标，如果需要图标，可以用样式自定义图标，从而达到在不同浏览器上显示的效果相同,实际开发中一般用这种列表。 3 . 定义列表定义列表通常用于术语的定义。&lt;dl&gt;标签表示列表的整体。&lt;dt&gt;标签定义术语的题目。&lt;dd&gt;标签是术语的解释。一个&lt;dl&gt;中可以有多个题目和解释，代码如下：123456789101112&lt;h3&gt;前端三大块&lt;/h3&gt;&lt;dl&gt; &lt;dt&gt;html&lt;/dt&gt; &lt;dd&gt;负责页面的结构&lt;/dd&gt; &lt;dt&gt;css&lt;/dt&gt; &lt;dd&gt;负责页面的表现&lt;/dd&gt; &lt;dt&gt;javascript&lt;/dt&gt; &lt;dd&gt;负责页面的行为&lt;/dd&gt;&lt;/dl&gt; html表格1 . &lt;table&gt;标签：声明一个表格，它的常用属性如下：border属性 定义表格的边框，设置值是数值cellpadding属性 定义单元格内容与边框的距离，设置值是数值cellspacing属性 定义单元格与单元格之间的距离，设置值是数值align属性 设置整体表格相对于浏览器窗口的水平对齐方式,设置值有：left | center | right 2 . &lt;tr&gt;标签：定义表格中的一行 3 . &lt;td&gt;和&lt;th&gt;标签：定义一行中的一个单元格，td代表普通单元格，th表示表头单元格，它们的常用属性如下：align 设置单元格中内容的水平对齐方式,设置值有：left | center | rightvalign 设置单元格中内容的垂直对齐方式 top | middle | bottomcolspan 设置单元格水平合并，设置值是数值rowspan 设置单元格垂直合并，设置值是数值 html表单表单用于搜集不同类型的用户输入，表单由不同类型的标签组成，相关标签及属性用法如下： 1 . &lt;form&gt;标签 定义整体的表单区域action属性 定义表单数据提交地址method属性 定义表单提交的方式，一般有“get”方式和“post”方式2 . &lt;label&gt;标签 为表单元素定义文字标注3 . &lt;input&gt;标签 定义通用的表单元素type属性 type=”text” 定义单行文本输入框 type=”password” 定义密码输入框 type=”radio” 定义单选框 type=”checkbox” 定义复选框 type=”file” 定义上传文件 type=”submit” 定义提交按钮 type=”reset” 定义重置按钮 type=”button” 定义一个普通按钮 type=”image” 定义图片作为提交按钮，用src属性定义图片地址 type=”hidden” 定义一个隐藏的表单域，用来存储值 value属性 定义表单元素的值 name属性 定义表单元素的名称，此名称是提交数据时的键名 4 . &lt;textarea&gt;标签 定义多行文本输入框5 . &lt;select&gt;标签 定义下拉表单元素6 . &lt;option&gt;标签 与&lt;select&gt;标签配合，定义下拉表单元素中的选项12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head lang="en"&gt; &lt;meta charset="utf-8"&gt; &lt;title&gt;表单&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;h1&gt;注册表单&lt;/h1&gt; &lt;!-- 定义整体的表单区域 --&gt; &lt;form action=""&gt; &lt;p&gt; &lt;!-- 输入框 --&gt; &lt;label&gt;用户名:&lt;/label&gt; &lt;input type="text" name="username" /&gt; &lt;/p&gt; &lt;p&gt; &lt;!-- type="password": 自动使用掩码 --&gt; &lt;label&gt;密&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;码:&lt;/label&gt; &lt;input type="password" name=""&gt; &lt;/p&gt; &lt;br&gt; &lt;!-- 单选框 --&gt; &lt;div&gt; &lt;label&gt;性别:&lt;/label&gt; &lt;input type="radio" name="gender"&gt;男 &lt;input type="radio" name="gender"&gt;女 &lt;/div&gt; &lt;br&gt; &lt;!-- 多选框 --&gt; &lt;div&gt; &lt;label&gt;爱好:&lt;/label&gt; &lt;input type="checkbox" name=""&gt;篮球 &lt;input type="checkbox" name=""&gt;羽毛球 &lt;input type="checkbox" name=""&gt;健身 &lt;input type="checkbox" name=""&gt;Python &lt;/div&gt; &lt;br&gt; &lt;div&gt; &lt;label&gt;上传文件:&lt;/label&gt; &lt;input type="file" name=""&gt; &lt;br&gt; &lt;div&gt; &lt;label&gt;个人介绍:&lt;/label&gt; &lt;textarea&gt; 一切都是最好的安排 &lt;/textarea&gt; &lt;/div&gt; &lt;br&gt; &lt;div&gt; &lt;label&gt;下拉框: &lt;/label&gt; &lt;select&gt; &lt;option&gt;北京&lt;/option&gt; &lt;option&gt;浙江&lt;/option&gt; &lt;option&gt;河南&lt;/option&gt; &lt;option&gt;江西&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;br&gt; &lt;div&gt; &lt;input type="submit" name="" value="确定"&gt; &lt;/div&gt; &lt;br&gt; &lt;div&gt; &lt;input type="reset" name="" value="重置"&gt; &lt;/div&gt; &lt;br&gt; &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
-      <categories>
-        <category>&lt;b&gt;HTML 篇&lt;/b&gt;</category>
-        <category>「HTML 篇」Part 2 -- HTML 基础</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[「Java篇」char区分中英文]]></title>
     <url>%2F2018%2F09%2F01%2FJava%E7%AF%87%2F%E3%80%8CJava%E7%AF%87%E3%80%8Dchar%E5%8C%BA%E5%88%86%E4%B8%AD%E8%8B%B1%E6%96%87%20%2F</url>
     <content type="text"><![CDATA[char类型如何区分存储的是字符是中文字符还是英文字符?123456789101112131415161718192021222324252627282930/** * 问题: 使用Scanner从键盘输入一行,去掉其中重复的字符,然后打印各个字符. * &lt;font color=#FF0000&gt; 引申问题: 英文字符和中文字符是怎么存储的,有什么不同点吗? &lt;/font&gt; * 分析: * 1. 创建输入Scanner对象 * 2. 将键盘录入的字符串转换为字符数组 String.toCharArray() * 3. 创建HashSet集合,并将字符数组存入集合当中 * 4. 遍历输出集合 */ public static void main(String[] args) &#123; //创建键盘输入对象 Scanner scanner = new Scanner(System.in); //创建HashSet集合对象 HashSet&lt;Character&gt; characters = new HashSet&lt;&gt;(); //键盘录入 System.out.println("请输入一个字符串:"); String line = scanner.nextLine(); //将键盘录入的字符串转换为字符数组 char[] arr = line.toCharArray(); System.out.println(arr.length); //遍历数组并将字符数组存入集合 for (char c : arr) &#123; characters.add(c);//自动装箱 //验证char类型的范围 System.out.println(c + "十进制: " + (int) c); System.out.println(c + "十六进制: " + Integer.toHexString((int) c)); &#125; //输出 System.out.println(characters); &#125; Java中的char是基本数据类型,. char是按照字符存储的,不管英文还是中文,固定占用2个字节,用来储存Unicode字符,unicode编码字符集中包含了汉字，所以，char型变量中可以存储汉字.不过,如果某个特殊的汉字没有被包含在unicode编码字符集中,那么这个char型变量中就不能存储这个特殊汉字.Unicode是国际组织制定的可以容纳世界上所有文字和符号的字符编码方案。目前的Unicode字符分为17组编排，0x0000 至 0x10FFFF，每组称为平面（Plane），而每平面拥有65536个码位:0~65535，共1114112个。然而目前只用了少数平面。UTF-8、UTF-16、UTF-32都是将数字转换到程序数据的编码方案。 中文字符:十六进制: [ 0x0391 , 0xFFE5];十进制[19968,40869]; 英文字符:十六进制:[ 0x0000 , 0x00FF];大写字母：十六进制: [0x41,0x5a];十进制: [65, 90]小写字母：十六进制: [0x61,0x7a];十进制: [97, 122]; 数字：十六进制: [0x30,0x39];十进制[48, 57]; 其中,123 //验证char类型的范围System.out.println(c + "十进制: " + (int) c);System.out.println(c + "十六进制: " + Integer.toHexString((int) c)); 就是验证字符的范围,并以十进制和十六进制进行输出:1234567891011121314请输入一个字符串:Maple5M十进制: 77M十六进制: 4da十进制: 97a十六进制: 61p十进制: 112p十六进制: 70l十进制: 108l十六进制: 6ce十进制: 101e十六进制: 65[p, a, e, l, M]]]></content>
@@ -411,6 +411,18 @@
       <tags>
         <tag>Java</tag>
         <tag>char</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[「HTML 篇」Part 2 -- HTML 基础]]></title>
+    <url>%2F2018%2F09%2F01%2FHTML%E7%AF%87%2F%E3%80%8CHTML%20%E7%AF%87%E3%80%8DPart%202%20--%20HTML%20%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[顾名思义,HTML称为超文本标记语言, 里面就是超链接和标签. 所以呢,在HTML的程序中充满着各种各样的标签,所以程序看以来可能会觉得很乱, 但是没关系,只要记住一个原则,所有的标签都是成对出现的, 虽然代码在格式上没有缩进的要求,但是为了方便查看,我们在编写程序的时候就应该有相应的代码缩进. 这样,后面维护代码的时候就不会乱了哈. HTML基础标签html注释：html文档代码中可以插入注释，注释是对代码的说明和解释，注释的内容不会显示在页面上，html代码中插入注释的方法是：1&lt;!-- 这是一段注释 --&gt; html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5&gt;、&lt;h6&gt;,标签可以在网页上定义6种级别的标题。6种级别的标题表示文档的6级目录层级关系，比如说：&lt;h1&gt;用作主标题，其后是&lt;h2&gt;，再其次是&lt;h3&gt;，以此类推。搜索引擎会使用标题将网页的结构和内容编制索引，所以网页上使用标题是很重要的。1234567&lt;!-- 六级标题 --&gt;&lt;h1&gt;个人主页&lt;/h1&gt;&lt;h2&gt;二级标题&lt;/h2&gt;&lt;h3&gt;三级标题&lt;/h3&gt;&lt;h4&gt;四级标题&lt;/h4&gt;&lt;h5&gt;五级标题&lt;/h5&gt;&lt;h6&gt;六级标题&lt;/h6&gt; html段落标签&lt;p&gt;标签定义一个文本段落，一个段落含有默认的上下间距，段落之间会用这种默认间距隔开，代码如下：1234567891011121314151617&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;段落&lt;/title&gt;&lt;/head&gt;&lt;body&gt; ` &lt;p&gt;`HTML是 HyperText Mark-up Language 的首字母简写，意思是超文本标记语言，超 文本指的是超链接，标记指的是标签，是一种用来制作网页的语言，这种语言由一个个的 标签组成，用这种语言制作的文件保存的是一个文本文件，文件的扩展名为html或者htm。 &lt;/p&gt; &lt;p&gt;一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用文本的方 式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件渲染成网页，显示的网 页可以从一个网页链接跳转到另外一个网页。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; html换行标签代码中成段的文字，直接在代码中回车换行，在渲染成网页时候不认这种换行，如果真想换行，可以在代码的段落中插入&lt;br /&gt;来强制换行，代码如下：12345678910111213&lt;p&gt; 一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用&lt;br /&gt; 文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件&lt;br /&gt; 渲染成网页，显示的网页可以从一个网页链接跳转到另外一个网页。&lt;/p&gt;或:&lt;!--块标签,里面可以嵌套其他的标签--&gt;&lt;div&gt; &lt;h1&gt;html概述&lt;/h1&gt; 很多人可能在电视或电影中看到过类似的场景，黑客面对一个黑色的屏幕，&lt;br /&gt;上面飘着密密麻麻的字符，梆梆一顿敲，就完成了窃取资料的任务。&lt;/div&gt; html字符实体1 . 空格: &amp;nbsp; 如果文字间想空多个空格，在代码中空多个空格，在渲染成网页时只会显示一个空格，如果想显示多个空格，可以使用空格的字符实体,代码如下：123456&lt;!-- 在段落前想缩进两个文字的空格，使用空格的字符实体：&amp;nbsp; --&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用&lt;br /&gt;文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件&lt;br /&gt;渲染成网页，显示的网页可以从一个网页链接跳转到另外一个网页。&lt;/p&gt; 2 . &lt;和&gt;: &amp;lt;和&amp;gt; 在网页上显示 “&lt;” 和 “&gt;” 会误认为是标签，想在网页上显示“&lt;”和“&gt;”可以使用它们的字符实体，比如：123456&lt;!-- &lt;br&gt;或&lt;br /&gt;换行标签 --&gt;&lt;p&gt; &lt;!-- &lt; 的字符实体 &amp;lt, &gt; 的字符实体 &amp;gt --&gt; 3 &amp;lt; 5&lt;br&gt; 10 &amp;gt; 5&lt;/p&gt; 其实,还有很多其他的字符实体,上述三种是最常用的,其他的需要的时候再去查看一个官方文档就好了哈. html块标签、含样式的标签1 . html块标签&lt;div&gt; 标签 块元素，表示一块内容，没有具体的语义。&lt;span&gt;标签 行内元素，表示一行中的一小段内容，没有具体的语义。 1234567891011&lt;div&gt; &lt;i&gt; HTML是 HyperText Mark-up Language 的首字母简写&lt;br /&gt; &lt;/i&gt; 一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件渲染成网页，显示的网页可以从一个网页链接跳转到另外一个网页。&lt;/div&gt;&lt;span&gt; HTML是 HyperText Mark-up Language 的首字母简写，&lt;br /&gt;意思是超文本标记语言，超文本指的是超链接，标记指的是标签，是一种用来制作网页的语言，这种语言由一个个的标签组成，用这种语言制作的文件保存的是一个文本文件，文件的扩展名为html或者htm。&lt;br /&gt;&lt;/span&gt; 2 . 样式和语义的标签&lt;em&gt; 标签 行内元素，表示语气中的强调词&lt;i&gt;标签 行内元素，表示专业词汇&lt;b&gt; 标签 行内元素，表示文档中的关键字或者产品名&lt;strong&gt;标签 行内元素，表示非常重要的内容123&lt;em&gt; Maple Everythin is the best arrangement!&lt;/em&gt; 3 . 语义化的标签语义化的标签，就是在布局的时候多使用有语义的标签，搜索引擎在爬网的时候能认识这些标签，理解文档的结构，方便网站的收录。比如：h1标签是表示标题，p标签是表示段落，ul、li标签是表示列表，a标签表示链接，dl、dt、dd表示定义列表等，语义化的标签不多。123456789101112&lt;!-- 定义列表,通常用于属于的定义 --&gt;&lt;h3&gt;前端三大块&lt;/h3&gt;&lt;dl&gt; &lt;dt&gt;html&lt;/dt&gt; &lt;dd&gt;负责页面的结构&lt;/dd&gt; &lt;dt&gt;css&lt;/dt&gt; &lt;dd&gt;负责页面的表现&lt;/dd&gt; &lt;dt&gt;javascript&lt;/dt&gt; &lt;dd&gt;负责页面的行为&lt;/dd&gt;&lt;/dl&gt; HTML 阶级标签html图像标签、绝对路径和相对路径1 . html图像标签&lt;img&gt;标签可以在网页上插入一张图片，它是独立使用的标签，它的常用属性有：src属性: 定义图片的引用地址alt属性: 定义图片加载失败时显示的文字，搜索引擎会使用这个文字收录图片、盲人读屏软件会读取这个文字让盲人识别图片，所以此属性非常重要。&lt;img src=&quot;images/pic.jpg&quot; alt=&quot;产品图片&quot; /&gt; 2 . 绝对路径和相对路径像网页上插入图片这种外部文件，需要定义文件的引用地址，引用外部文件还包括引用外部样式表，javascript等等，引用地址分为绝对地址和相对地址。绝对地址: 相对于磁盘的位置去定位文件的地址.相对地址： 相对于引用文件本身去定位被引用的文件地址.绝对地址在整体文件迁移时会因为磁盘和顶层目录的改变而找不到文件，相对路径就没有这个问题。相对路径的定义技巧：“ ./ ” 表示当前文件所在目录下，比如：“./pic.jpg” 表示当前目录下的pic.jpg的图片，这个使用时可以省略.“ ../ ” 表示当前文件所在目录下的上一级目录，比如：“../images/pic.jpg” 表示当前目录下的上一级目录下的images文件夹中的pic.jpg的图片. html链接标签&lt;a&gt;标签可以在网页上定义一个链接地址，它的常用属性有：href属性 定义跳转的地址title属性 定义鼠标悬停时弹出的提示文字框target属性 定义链接窗口打开的位置target=”_self” 缺省值 新页面替换原来的页面，在原来位置打开target=”_blank” 新页面会在新开的一个浏览器窗口打开12345678910111213141516171819202122&lt;br&gt; &lt;br&gt; &lt;!-- 图片标签 --&gt; &lt;h2&gt;图片&lt;/h2&gt; &lt;img src="images/bike_loading.gif" alt="加载中..."&gt; &lt;br&gt; &lt;br&gt; &lt;!-- 链接标签 --&gt; &lt;h2&gt;添加网络链接,显示文字作为链接对象,点击文字就可以实现跳转&lt;/h2&gt; &lt;a href="https://maple8.github.io" title="跳转至Maple's Blog" target="_blank"&gt;我的博客&lt;/a&gt; &lt;br&gt; &lt;br&gt; &lt;h2&gt;用图片做链接,用图片作为显示对象,点击图片就可以实现网站的跳转&lt;/h2&gt; &lt;a href="https://maple8.github.io" target="_blank"&gt;&lt;img src="/home/maple/Pictures/M.jpg" alt="Maple's Blog"&gt;&lt;/a&gt; &lt;br&gt; &lt;br&gt; &lt;h2&gt;就是目前还不知道这个链接是做什么用的,就可以先实现跳转至网页的开头,点击就会实现跳转至网页的顶部,一般的网页右下角的向上的小箭头就可以利用这个链接实现.&lt;/h2&gt; &lt;!-- # 表示链接到网页的顶部 --&gt; &lt;a href="#"&gt;这是一个缺省链接&lt;/a&gt; html列表1 . 有序列表在网页上定义一个有编号的内容列表可以用&lt;ol&gt;、&lt;li&gt;配合使用来实现，代码如下：12345&lt;ol&gt; &lt;li&gt;列表文字一&lt;/li&gt; &lt;li&gt;列表文字二&lt;/li&gt; &lt;li&gt;列表文字三&lt;/li&gt;&lt;/ol&gt; 在网页上生成的列表，每条项目上会按1、2、3编号，有序列表在实际开发中较少使用。 2 . 无序列表在网页上定义一个无编号的内容列表可以用&lt;ul&gt;、&lt;li&gt;配合使用来实现，代码如下：12345&lt;ul&gt; &lt;li&gt;&lt;a href="#"&gt;新闻标题一&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="#"&gt;新闻标题二&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="#"&gt;新闻标题三&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt; 在网页上生成的列表，每条项目上会有一个小图标，这个小图标在不同浏览器上显示效果不同，所以一般会用样式去掉默认的小图标，如果需要图标，可以用样式自定义图标，从而达到在不同浏览器上显示的效果相同,实际开发中一般用这种列表。 3 . 定义列表定义列表通常用于术语的定义。&lt;dl&gt;标签表示列表的整体。&lt;dt&gt;标签定义术语的题目。&lt;dd&gt;标签是术语的解释。一个&lt;dl&gt;中可以有多个题目和解释，代码如下：123456789101112&lt;h3&gt;前端三大块&lt;/h3&gt;&lt;dl&gt; &lt;dt&gt;html&lt;/dt&gt; &lt;dd&gt;负责页面的结构&lt;/dd&gt; &lt;dt&gt;css&lt;/dt&gt; &lt;dd&gt;负责页面的表现&lt;/dd&gt; &lt;dt&gt;javascript&lt;/dt&gt; &lt;dd&gt;负责页面的行为&lt;/dd&gt;&lt;/dl&gt; html表格1 . &lt;table&gt;标签：声明一个表格，它的常用属性如下：border属性 定义表格的边框，设置值是数值cellpadding属性 定义单元格内容与边框的距离，设置值是数值cellspacing属性 定义单元格与单元格之间的距离，设置值是数值align属性 设置整体表格相对于浏览器窗口的水平对齐方式,设置值有：left | center | right 2 . &lt;tr&gt;标签：定义表格中的一行 3 . &lt;td&gt;和&lt;th&gt;标签：定义一行中的一个单元格，td代表普通单元格，th表示表头单元格，它们的常用属性如下：align 设置单元格中内容的水平对齐方式,设置值有：left | center | rightvalign 设置单元格中内容的垂直对齐方式 top | middle | bottomcolspan 设置单元格水平合并，设置值是数值rowspan 设置单元格垂直合并，设置值是数值 html表单表单用于搜集不同类型的用户输入，表单由不同类型的标签组成，相关标签及属性用法如下： 1 . &lt;form&gt;标签 定义整体的表单区域action属性 定义表单数据提交地址method属性 定义表单提交的方式，一般有“get”方式和“post”方式2 . &lt;label&gt;标签 为表单元素定义文字标注3 . &lt;input&gt;标签 定义通用的表单元素type属性 type=”text” 定义单行文本输入框 type=”password” 定义密码输入框 type=”radio” 定义单选框 type=”checkbox” 定义复选框 type=”file” 定义上传文件 type=”submit” 定义提交按钮 type=”reset” 定义重置按钮 type=”button” 定义一个普通按钮 type=”image” 定义图片作为提交按钮，用src属性定义图片地址 type=”hidden” 定义一个隐藏的表单域，用来存储值 value属性 定义表单元素的值 name属性 定义表单元素的名称，此名称是提交数据时的键名 4 . &lt;textarea&gt;标签 定义多行文本输入框5 . &lt;select&gt;标签 定义下拉表单元素6 . &lt;option&gt;标签 与&lt;select&gt;标签配合，定义下拉表单元素中的选项12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head lang="en"&gt; &lt;meta charset="utf-8"&gt; &lt;title&gt;表单&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;h1&gt;注册表单&lt;/h1&gt; &lt;!-- 定义整体的表单区域 --&gt; &lt;form action=""&gt; &lt;p&gt; &lt;!-- 输入框 --&gt; &lt;label&gt;用户名:&lt;/label&gt; &lt;input type="text" name="username" /&gt; &lt;/p&gt; &lt;p&gt; &lt;!-- type="password": 自动使用掩码 --&gt; &lt;label&gt;密&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;码:&lt;/label&gt; &lt;input type="password" name=""&gt; &lt;/p&gt; &lt;br&gt; &lt;!-- 单选框 --&gt; &lt;div&gt; &lt;label&gt;性别:&lt;/label&gt; &lt;input type="radio" name="gender"&gt;男 &lt;input type="radio" name="gender"&gt;女 &lt;/div&gt; &lt;br&gt; &lt;!-- 多选框 --&gt; &lt;div&gt; &lt;label&gt;爱好:&lt;/label&gt; &lt;input type="checkbox" name=""&gt;篮球 &lt;input type="checkbox" name=""&gt;羽毛球 &lt;input type="checkbox" name=""&gt;健身 &lt;input type="checkbox" name=""&gt;Python &lt;/div&gt; &lt;br&gt; &lt;div&gt; &lt;label&gt;上传文件:&lt;/label&gt; &lt;input type="file" name=""&gt; &lt;br&gt; &lt;div&gt; &lt;label&gt;个人介绍:&lt;/label&gt; &lt;textarea&gt; 一切都是最好的安排 &lt;/textarea&gt; &lt;/div&gt; &lt;br&gt; &lt;div&gt; &lt;label&gt;下拉框: &lt;/label&gt; &lt;select&gt; &lt;option&gt;北京&lt;/option&gt; &lt;option&gt;浙江&lt;/option&gt; &lt;option&gt;河南&lt;/option&gt; &lt;option&gt;江西&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;br&gt; &lt;div&gt; &lt;input type="submit" name="" value="确定"&gt; &lt;/div&gt; &lt;br&gt; &lt;div&gt; &lt;input type="reset" name="" value="重置"&gt; &lt;/div&gt; &lt;br&gt; &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>&lt;b&gt;HTML 篇&lt;/b&gt;</category>
+        <category>「HTML 篇」Part 2 -- HTML 基础</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
