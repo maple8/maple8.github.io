@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/Java篇/「Java 篇」会话/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/" itemprop="url">Sublime-Text 3 配置中文环境</a></h1>
+                <a class="post-title-link" href="/2018/11/16/Java篇/「Java 篇」会话/" itemprop="url">「Java 篇」会话</a></h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T00:00:00+08:00">
-                2018-10-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-16T00:00:00+08:00">
+                2018-11-16
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-代码编辑工具-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>代码编辑工具</b></span>
+                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java篇</b></span>
                   </a>
                 </span>
 
@@ -360,8 +360,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-代码编辑工具-b/b-Sublime-Text-3-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Sublime-Text 3</b></span>
+                  <a href="/categories/b-Java篇-b/「Java-篇」会话/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 篇」会话</span>
                   </a>
                 </span>
 
@@ -378,8 +378,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/" itemprop="commentCount"></span>
+                <a href="/2018/11/16/Java篇/「Java 篇」会话/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/16/Java篇/「Java 篇」会话/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,13 +409,17 @@
       
         
           
-          简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:Ubuntu 16.04 安装 Sublime-Text 3 完整教程 
-2. 终端输入如下命令打开 Sublime-Text 3:1subl
-3. 安装package control组件:按Ctrl+ `(此符号为tab按键上面的按键) 调出console(位于界面的最下方),输入此快捷键需要注意避免热键冲突.粘贴以下代码到console中,然后回车并等待(可能会出现 Sublime-Text 3 出现未响应的情况,因为是后台正在进行插件安装包的下载和安装,不用担心,继续等待即可)：1import urllib.request,os; pf = 'Package Control.subl
+          会话技术存储客户端的状态日常生活中我们经常上网购物，那么在网站的购物系统中，用户将购买的商品信息存储到哪里呢？因为Http协议是无状态的，也就是说每个客户端访问服务器端资源时，服务器并不知道该客户端是谁，所以，就引入了会话技术来识别客户端的状态。
+
+会话技术是帮助服务器记住客户端状态（区分客户端）
+
+会话技术从打开一个浏览器访问某个站点开始，到关闭整个浏览器的过程为止，称为一次会话（可以包含很多次请求）。因为会话所用的内存是在浏览器内部开辟的，所以只有浏览器全部关闭才结束会话。会话技术就是记录这次会话中客户端的状态与数据。会话技术分为Cookie和Session，它们各有特点：Cookie： 数据存储在客户端本地，减少服务器端的存储压力，但安全性不好，客户端可以清除cookie；Session： 将数据存储到服务器端，安全性相对好，但增加服务器的压力；
+CookieCookie技术是将用户的数据存储到客户端的技术，主要介绍两个方面内容：第一：服务器端怎样将一个Cookie发送到客户端；第二：服务器端怎样接受客户端携带的Cookie；
+服务器端向客户端发送一个Cookie1)  创建Co
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/#more" rel="contents">
+            <a class="btn" href="/2018/11/16/Java篇/「Java 篇」会话/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -423,6 +427,1278 @@
         
       
     </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Java篇/「Java 篇」HttpServletResponse & HttpServletRequest/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/Java篇/「Java 篇」HttpServletResponse & HttpServletRequest/" itemprop="url">「Java 篇」HttpServletResponse & HttpServletRequest</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T00:00:00+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java篇-b/「Java-篇」HttpServletResponse-HttpServletRequest/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 篇」HttpServletResponse & HttpServletRequest</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/15/Java篇/「Java 篇」HttpServletResponse & HttpServletRequest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/15/Java篇/「Java 篇」HttpServletResponse & HttpServletRequest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          HttpServletResponse &amp; HttpServletRequestHttpServletResponse &amp; HttpServletRequest概述创建Servlet对象时会覆盖service( )方法，或doGet( )和doPost( ),  这些方法都有两个参数，一个为代表请求的request参数和一个代表响应的response参数。service( )方法中的response的类型是ServletResponse,request的类型是ServletRequest，而doGet( )和doPost( )方法的response的类型是HttpServletResponse，request的类型是HttpServletRequest，HttpServletRequest和HttpServletResponse分别是ServletRequest和ServletResponse的子接口，功能和方法更加强大。
+response &amp; request 的运行流程
+Http响应response代表响应，所以可以通过该对象分别设置Http响应的响应行，响应
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/15/Java篇/「Java 篇」HttpServletResponse & HttpServletRequest/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Java篇/「Java 篇」Servlet/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/Java篇/「Java 篇」Servlet/" itemprop="url">「Java 篇」Servlet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T00:00:00+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java篇-b/「Java-篇」Servlet/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 篇」Servlet</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/11/Java篇/「Java 篇」Servlet/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/11/Java篇/「Java 篇」Servlet/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Servlet简介ServletServlet 是运行在服务器端的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端的请求,并响应给浏览器动态资源。servlet的实质就是java代码，通过java的API动态的向客户端输出内容。servlet规范：包含三个技术点
+
+servlet技术
+filter技术—过滤器
+listener技术—监听器
+
+快速实现Servlet底层的实现步骤如下：
+
+创建类实现Servlet接口
+实现接口的方法—init(),service(),destory()等方法
+在web.xml进行servlet的配置在实际开发中，我们不会直接去实现Servlet接口，因为servlet接口的方法太多，如果直接实现servlet接口，需要重写的方法太多，代码会出现冗余。所以，我们一般创建类继承HttpServlet；实际的实现步骤：（eclipse、IDEA等IDE都有servlet模板）
+创建类继承HttpServlet类
+覆盖doGet和doPost
+在web.xml中进行servlet的配置(eclipse中会自动配置，IDEA中也会自动配置，但是只
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/11/Java篇/「Java 篇」Servlet/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/Java番外篇/「Java 番外篇」外网访问tomcat项目部署/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/08/Java番外篇/「Java 番外篇」外网访问tomcat项目部署/" itemprop="url">「Java 番外篇」外网访问tomcat项目部署</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T00:00:00+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java番外篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java番外篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java番外篇-b/「Java-番外篇」外网访问tomcat项目部署/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 番外篇」外网访问tomcat项目部署</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/08/Java番外篇/「Java 番外篇」外网访问tomcat项目部署/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/08/Java番外篇/「Java 番外篇」外网访问tomcat项目部署/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          内网穿透内网穿透,即NAT穿透,网络连接时的术语,计算机处于LAN（局域网或内网）下时，WAN（广域网或外网）和LAN下的计算机节点需要连接通信，有时会出现不支持内网穿透，这是百度百科对于内网穿透的解释。简单地说，就是连接内网（局域网）的计算机不能直接被外网的计算机访问到，所以利用tomcat在个人计算机上部署的Web项目也无法直接被外网的用户访问，如果想要让外网能够访问内网的计算机就需要使用到内网穿透技术。
+
+实际的项目都是部署在服务器上的，这里是针对的是本地测试Web的方法
+
+natapp就是提供内网穿透的软件，简单快捷，而且免费（既然是免费的，使用的权限就会受到限制，系统给用户的分配的域名如果被收费的VIP用于占用了，免费用户就不能使用该域名了，即使正在使用，也会被强制下线，而且免费用户的域名是系统随机分配的，也就是说每次使用该软件得到的域名都是不一样的，即用于访问部署的项目的域名是不一样的）。
+NATAPP 的使用
+在NATAPP官网注册账号并实名认证NATAPP 官网
+
+登录之后， 购买免费隧道
+
+根据需要，选择隧道协议 Web/TCP/IP，tomcat部署的项目选择Web
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/08/Java番外篇/「Java 番外篇」外网访问tomcat项目部署/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/01/Java篇/「Java 篇」HTTP 协议/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/01/Java篇/「Java 篇」HTTP 协议/" itemprop="url">「Java 篇」HTTP 协议</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-01T00:00:00+08:00">
+                2018-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java篇-b/「Java-篇」HTTP-协议/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 篇」HTTP 协议</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/01/Java篇/「Java 篇」HTTP 协议/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/01/Java篇/「Java 篇」HTTP 协议/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Http协议简述Http协议HTTP，超文本传输协议（HyperText Transfer Protocol) 是互联网上应用最为广泛的一种网络协议。所有的 WWW 文件都必须遵守这个标准。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。
+Http协议的组成Http协议由Http请求和Http响应组成，当用户在浏览器中输入网址访问某个网站时，用户的浏览器会将请求封装成一个Http请求发送给服务器站点，服务器接收到请求后会组织响应数据，并将其封装成一个Http响应返回给浏览器。所以，Http协议是一种请求并响应的通信协议，没有请求就没有响应。
+Http请求编写一个form.html的表单页面，如下：123456789101112131415&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;title&gt;form&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;form action="/log
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/01/Java篇/「Java 篇」HTTP 协议/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="url">「Python 进阶篇」Part 2 -- 装饰器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T00:00:00+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Python-进阶篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Python 进阶篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Python-进阶篇-b/「Python-进阶篇」Part-2-装饰器/" itemprop="url" rel="index">
+                    <span itemprop="name">「Python 进阶篇」Part 2 -- 装饰器</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          装饰器装饰器是程序开发中经常会用到的一个功能，用好了装饰器，开发效率如虎添翼，所以这也是Python面试中必问的问题，但对于好多初次接触这个知识点的人来讲，这个功能有点绕，所以在自学时直接绕过去了，然后去公司面试的时候问到了,嗯…, 这就很尴尬了. Python中的装饰器就类似与C++中的指针,地位是相同的,都是自类变成语言中的标志性的知识点.前面的闭包知识点中讲到了函数的引用,简单地说: 函数名仅仅是个变量，只不过指向了定义的函数而已，所以才能通过 函数名()调用，如果 函数名=xxx 被修改了，那么当在执行 函数名()时，调用的就不是之前的那个函数了,一个变量名, 我们给它什么引用,它就指向什么.
+开放封闭原则:写代码要遵循开放封闭原则，虽然这个原则是用的面向对象开发，但是也适用于函数式编程，简单来说，它规定已经实现的功能代码不允许被修改，但可以被扩展，即：
+
+封闭： 已实现的功能代码块
+开放： 对扩展开发
+
+装饰器的内部执行原理1234567891011def w1(func):    def inner():        # 验证1        # 验证2        #
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/文本编辑器/Markdown 完全篇/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/文本编辑器/Markdown 完全篇/" itemprop="url">Markdown 完全篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T00:00:00+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-文本编辑工具-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>文本编辑工具</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-文本编辑工具-b/b-Markdown-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Markdown</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/25/文本编辑器/Markdown 完全篇/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/25/文本编辑器/Markdown 完全篇/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          简述:Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。认识 MarkdownMarkdown 是一种用来写作的轻量级「标记语言」，它用简洁的语法代替排版，而不像一般我们用的字处理软件 Word 或 Pages 有大量的排版、字体设置。它使我们专心于码字，用「标记」语法，来代替常见的排版格式。例如此文从内容到格式，甚至插图，键盘就可以通通搞定了。
+使用 Markdown 的优点1 . 专注你的文字内容而不是排版样式，安心写作。2 . 轻松的导出 HTML、PDF 和本身的 .md 文件。3 . 纯文本内容，兼容所有的文本编辑器与字处理软件。4 . 随时修改你的文章版本，不必像字处理软件生成若干文件版本导致混乱。5 . 可读、直观、学习成本低。
+选用什么编辑工具?以下推荐的 Markd
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/25/文本编辑器/Markdown 完全篇/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/" itemprop="url">「Python 进阶篇」Part 1 -- 闭包</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T00:00:00+08:00">
+                2018-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Python-进阶篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Python 进阶篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Python-进阶篇-b/「Python-进阶篇」Part-1-闭包/" itemprop="url" rel="index">
+                    <span itemprop="name">「Python 进阶篇」Part 1 -- 闭包</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="/uploads/python1.jpeg" width="933" height="575" alt="python" align="center"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
     
     
     
@@ -641,8 +1917,6 @@
         
     
         
-    
-        
             
 
   
@@ -656,7 +1930,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/代码编辑器/Ubuntu 16.04 安装 Sublime-Text  3 完整篇/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -675,7 +1949,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/22/代码编辑器/Ubuntu 16.04 安装 Sublime-Text  3 完整篇/" itemprop="url">Ubuntu 16.04 安装 Sublime-Text 3 完整教程</a></h1>
+                <a class="post-title-link" href="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/" itemprop="url">Sublime-Text 3 配置中文环境</a></h1>
         
 
         <div class="post-meta">
@@ -687,8 +1961,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T00:00:00+08:00">
-                2018-10-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T00:00:00+08:00">
+                2018-10-23
               </time>
             
 
@@ -739,8 +2013,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/22/代码编辑器/Ubuntu 16.04 安装 Sublime-Text  3 完整篇/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/22/代码编辑器/Ubuntu 16.04 安装 Sublime-Text  3 完整篇/" itemprop="commentCount"></span>
+                <a href="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -770,13 +2044,13 @@
       
         
           
-          简述:Sublime-Text 3 是一款非常好用的高级文本编辑器,可运行在Linux，Windows和Mac OS 。它支持几乎所有的代码格式,并能够在编辑代码的时候给予自动提示,是一款很值得推荐的代码文编编辑器.本教程是针对 Ubuntu 和 Debian 系统,下面就让我们进入安装教程吧.1. 打开Ubuntu终端,依次输入以下命令:Install the GPG key:1wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
- Ensure apt is set up to work with https sources:1sudo apt-get install apt-transport-https
- Select the channel to use:1.Stable1echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublim
+          简述:本教程主要是配置 Sublime-Text 3 的语言环境,如果您不是使用Ubuntu 16.04 安装 Sublime-Text 3 完整教程里面的方法安装的话,可能打开的 Sublime-Text 3 界面是默认英文设置的,没关系,下面就教您怎么将界面语言设置成英文的.1. 安装 Sublime-Text 3,推荐参考如下教程,因为安装完成之后的界面默认就是中文的,就可以省略配置的过程了哈:Ubuntu 16.04 安装 Sublime-Text 3 完整教程 
+2. 终端输入如下命令打开 Sublime-Text 3:1subl
+3. 安装package control组件:按Ctrl+ `(此符号为tab按键上面的按键) 调出console(位于界面的最下方),输入此快捷键需要注意避免热键冲突.粘贴以下代码到console中,然后回车并等待(可能会出现 Sublime-Text 3 出现未响应的情况,因为是后台正在进行插件安装包的下载和安装,不用担心,继续等待即可)：1import urllib.request,os; pf = 'Package Control.subl
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/22/代码编辑器/Ubuntu 16.04 安装 Sublime-Text  3 完整篇/#more" rel="contents">
+            <a class="btn" href="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -784,1096 +2058,6 @@
         
       
     </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/12/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/12/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/" itemprop="url">「Python 番外篇」-- Python开发的10个Tips</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-12T00:00:00+08:00">
-                2018-10-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Python-番外篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Python 番外篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Python-番外篇-b/「Python-番外篇」-Python开发的10个Tips/" itemprop="url" rel="index">
-                    <span itemprop="name">「Python 番外篇」-- Python开发的10个Tips</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/12/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/12/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          对于Python，有许多学习的贴士和技巧。其中一些是初学这门语言常常会犯的错误，下面就一起来看看这10个tips,你了解多少呢？
-
-注意：假设用的是Python 3
-
-1. 列表推导式你有一个list：1bag = [1, 2, 3, 4, 5]
-现在你想让所有元素翻倍，让它看起来是这个样子：1[2, 4, 6, 8, 10]
-大多初学者，根据之前语言的经验会大概这样来做:123bag = [1, 2, 3, 4, 5] for i in range(len(bag)):     bag[i] = bag[i] * 2
-但是有更好的方法：1bag = [elem * 2 for elem in bag]
-很简洁对不对？这叫做 Python的列表推导式。
-2. 遍历列表还是上面的列表。如果可能尽量避免这样做：123bag = [1, 2, 3, 4, 5] for i in range(len(bag)):     print(bag[i])
-取而代之的应该是这样：123bag = [1, 2, 3, 4, 5] for i in bag:     print(i)
-如果x是一个列表，你
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/12/Python番外篇/「Python 番外篇」-- Python开发的10个Tips/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/06/JavaScript篇/「JavaScript篇 」闭包函数/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/06/JavaScript篇/「JavaScript篇 」闭包函数/" itemprop="url">「JavaScript篇 」闭包函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-06T00:00:00+08:00">
-                2018-10-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaScript 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/「JavaScript篇-」闭包函数/" itemprop="url" rel="index">
-                    <span itemprop="name">「JavaScript篇 」闭包函数</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/06/JavaScript篇/「JavaScript篇 」闭包函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/06/JavaScript篇/「JavaScript篇 」闭包函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          闭包函数闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因为这些变量也是该表达式的一部分。闭包函数就是外部函数被调用之后，它的变量不会消失，任然被内部函数所使用，而且所有的内部函数都拥有对外部函数的访问权限。
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/06/JavaScript篇/「JavaScript篇 」闭包函数/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/05/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(下)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/05/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(下)/" itemprop="url">「JavaScript篇 」 JavaScript基本语法(下)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-05T00:00:00+08:00">
-                2018-10-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaScript 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/「JavaScript篇-」-JavaScript基本语法-下/" itemprop="url" rel="index">
-                    <span itemprop="name">「JavaScript篇 」 JavaScript基本语法(下)</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/05/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(下)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/05/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(下)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          对象对象（Object）是面向对象编程的核心概念，它是已经命名的数据集合，也是一种比较更复杂的数据结构。
-创建对象在JavaScript中，对象是有new运算符生成的（和Java一样），生成对象的函数被称为类（或称为构造函数、对象类型）。生成的对象被称为类的实例，简称对象。（对象的创建过程和定义和Java类似）以下，分别调用几个系统的内置函数，实例化几个特殊对象：12345&lt;script&gt;        var oObj = new object();  //创建原型对象        var oDate = new Date();   //创建日期对象        var oRe = new RegExp();   //创建正则表达式对象&lt;/script&gt;
-也可以通过大括号直接定义 对象直接量 ，其用法如下：1234567&lt;script&gt;        &#123;        	name1 : value1,        	name2 : value2,        	......        &#125;&lt;/script&gt;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/05/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(下)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/JavaScript篇/「JavaScript篇 」变量作用域和封闭函数/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/03/JavaScript篇/「JavaScript篇 」变量作用域和封闭函数/" itemprop="url">「JavaScript篇 」变量作用域和封闭函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-03T00:00:00+08:00">
-                2018-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaScript 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/「JavaScript篇-」变量作用域和封闭函数/" itemprop="url" rel="index">
-                    <span itemprop="name">「JavaScript篇 」变量作用域和封闭函数</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/03/JavaScript篇/「JavaScript篇 」变量作用域和封闭函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/03/JavaScript篇/「JavaScript篇 」变量作用域和封闭函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          变量作用域变量作用域指的是变量的作用范围，javascript中的变量分为全局变量和局部变量。全局变量： 在函数之外定义的变量，为整个页面公用，函数内部外部都可以访问。局部变量： 在函数内部定义的变量，只能在定义该变量的函数内部访问，外部无法访问。全局变量和局部变量在用法上的辨识，在函数内部使用var关键字声明的就是局部变量，该变量的作用域仅限于当前函数的内部，但是如果在函数内部使用不用var关键字定义的变量就是全局变量，全部变量不论是在函数的内部还是函数外部，都是可以访问的。
-
-全局变量是牵一发而动全身，一个地方对其进行修改，所有地方的值都会发生改变，需要慎用。1234567891011121314151617181920&lt;script type="text/javascript"&gt;    //全局变量    var a = 12;        function fnAlert()    &#123;        //局部变量        var b = 23;                alert(a);        alert(b);           
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/03/JavaScript篇/「JavaScript篇 」变量作用域和封闭函数/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/" itemprop="url">「JavaScript篇 」 JavaScript基本语法(上)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T00:00:00+08:00">
-                2018-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaScript 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/「JavaScript篇-」-JavaScript基本语法-上/" itemprop="url" rel="index">
-                    <span itemprop="name">「JavaScript篇 」 JavaScript基本语法(上)</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          JavaScript简介JavaScript是一种轻量级、解释型的Web脚本语言，是运行在浏览器端的脚步语言，JavaScript主要解决的是前端与用户交互的问题，包括使用交互与数据交互。 JavaScript是浏览器解释执行的，由于所有的浏览器都已经嵌入了JavaScript引擎，所以不需要安装任何的运行环境便可对其进行开发。
-前端三大语言 
-
-HTML：页面结构，主要针对网页的内容
-CSS：页面表现，元素大小、颜色、位置、隐藏或显示、部分动画效果
-JavaScript：页面行为，部分动画效果、页面与用户的交互、页面功能
-
-JavaScript嵌入页面的方式
-行间事件（主要用于事件）,一般不推荐这样的用法，书写很容易出现错误。
-1&lt;input type="button" name="" onclick="alert('ok！');"&gt;
-
-页面script标签嵌入，可以直接将JavaScript代码直接放入网页文档中。
-123&lt;script type="text/javascript"&gt; 	alert('ok！');&lt;/script&gt;
-
-外部引入，通
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" itemprop="url">「Linux 篇」Part 2 -- 文件和目录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-25T00:00:00+08:00">
-                2018-09-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Linux-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Linux 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Linux-篇-b/「Linux-篇」Part-2-文件和目录/" itemprop="url" rel="index">
-                    <span itemprop="name">「Linux 篇」Part 2 -- 文件和目录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><blockquote class="blockquote-center">在Linux中，人们常说：<br>＂一切皆文件＂</blockquote><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
     
     
     
@@ -1915,7 +2099,7 @@ JavaScript嵌入页面的方式
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1963,7 +2147,7 @@ JavaScript嵌入页面的方式
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1974,7 +2158,7 @@ JavaScript嵌入页面的方式
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1985,7 +2169,7 @@ JavaScript嵌入页面的方式
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2052,7 +2236,7 @@ JavaScript嵌入页面的方式
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">46.7k</span>
+    <span title="Site words total count">61.8k</span>
   
 </div>
 

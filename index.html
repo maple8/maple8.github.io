@@ -282,20 +282,6 @@
   <section id="posts" class="posts-expand">
     
         
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
             
 
   
@@ -309,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/文本编辑器/Markdown 完全篇/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -328,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/25/文本编辑器/Markdown 完全篇/" itemprop="url">Markdown 完全篇</a></h1>
+                <a class="post-title-link" href="/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/" itemprop="url">「Java 篇」SimpleDateFormat 格式化日期</a></h1>
         
 
         <div class="post-meta">
@@ -340,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T00:00:00+08:00">
-                2018-10-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-22T00:00:00+08:00">
+                2019-01-22
               </time>
             
 
@@ -363,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-文本编辑工具-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>文本编辑工具</b></span>
+                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java篇</b></span>
                   </a>
                 </span>
 
@@ -374,8 +360,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-文本编辑工具-b/b-Markdown-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Markdown</b></span>
+                  <a href="/categories/b-Java篇-b/「Java-篇」SimpleDateFormat-格式化日期/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 篇」SimpleDateFormat 格式化日期</span>
                   </a>
                 </span>
 
@@ -392,8 +378,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/25/文本编辑器/Markdown 完全篇/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/25/文本编辑器/Markdown 完全篇/" itemprop="commentCount"></span>
+                <a href="/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,13 +409,241 @@
       
         
           
-          简述:Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑， Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。认识 MarkdownMarkdown 是一种用来写作的轻量级「标记语言」，它用简洁的语法代替排版，而不像一般我们用的字处理软件 Word 或 Pages 有大量的排版、字体设置。它使我们专心于码字，用「标记」语法，来代替常见的排版格式。例如此文从内容到格式，甚至插图，键盘就可以通通搞定了。
-使用 Markdown 的优点1 . 专注你的文字内容而不是排版样式，安心写作。2 . 轻松的导出 HTML、PDF 和本身的 .md 文件。3 . 纯文本内容，兼容所有的文本编辑器与字处理软件。4 . 随时修改你的文章版本，不必像字处理软件生成若干文件版本导致混乱。5 . 可读、直观、学习成本低。
-选用什么编辑工具?以下推荐的 Markd
+          SimpleDateFormatSimpleDateFormat 包含在 Java 的 java.text.SimpleDateFormat 包中。Java中的日期和时间格式由 日期和时间模式字符串 指定。在 日期和时间模式字符串 中，未加引号的字母 ‘A’ 到 ‘Z’ 和 ‘a’ 到 ‘z’ 被解释为模式字母，用来表示日期或时间字符串元素。
+常见的模式字母如下：
+G：年代标志符yyyy：年MM：月dd：日hh：1~12小时制(1-12)HH：24小时制(0-23)mm：分ss：秒S：毫秒E：星期几D：一年中的第几天 F：一月中的第几个星期(会把这个月总共过的天数除以7) w：一年中的第几个星期 W：一月中的第几星期(会根据实际情况来算，毕竟不是每个月包含的星期数都一样) a：上、下午 标记符 k：和HH差不多，表示一天24小时制(1-24) K：和hh差不多，表示一天12小时制(0-11) z：时区 
+完整的图参考：
+常用格式的  demo123456789101112131415161718import java.text.SimpleDateFormat;import java.
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/25/文本编辑器/Markdown 完全篇/#more" rel="contents">
+            <a class="btn" href="/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/Java篇/「Java 篇」JSTL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/01/Java篇/「Java 篇」JSTL/" itemprop="url">「Java 篇」JSTL</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-01T00:00:00+08:00">
+                2018-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java篇-b/「Java-篇」JSTL/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 篇」JSTL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/01/Java篇/「Java 篇」JSTL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/01/Java篇/「Java 篇」JSTL/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          JSTL技术JSTL概述JSTL（JSP Standard Tag Library)，JSP标准标签库，可以嵌入在jsp页面中使用标签的形式完成业务逻辑等功能。jstl出现的目的同el一样也是要替代jsp页面中的脚本代码，主要是逻辑代码。JSTL标准标准标签库有5个子库，但随着发展，目前常使用的是它的核心库。
+
+
+
+标签库
+标签库的URI
+前缀
+
+
+
+
+Core(常用)
+http://java.sun.com/jsp/jstl/core
+c
+
+
+I18N
+http://java.sun.com/jsp/jstl/fmt
+fmt
+
+
+SQL
+http://java.sun.com/jsp/jstl/sql
+sql
+
+
+XML
+http://java.sun.com/jsp/jstl/xml
+x
+
+
+Functions
+http://java.sun.com/jsp/jstl/functions
+fn
+
+
+
+JSTL下载与导入JSTL下载：从Apache的网站下载JSTL的JAR包。进入 http://archive.apache.org/dist/jakarta/taglibs/stan
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/01/Java篇/「Java 篇」JSTL/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -488,7 +702,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/25/Java篇/「Java 篇」EL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -507,7 +721,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="url">「Python 进阶篇」Part 2 -- 装饰器</a></h1>
+                <a class="post-title-link" href="/2018/11/25/Java篇/「Java 篇」EL/" itemprop="url">「Java 篇」EL</a></h1>
         
 
         <div class="post-meta">
@@ -519,8 +733,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T00:00:00+08:00">
-                2018-10-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-25T00:00:00+08:00">
+                2018-11-25
               </time>
             
 
@@ -542,8 +756,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Python-进阶篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Python 进阶篇</b></span>
+                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java篇</b></span>
                   </a>
                 </span>
 
@@ -553,8 +767,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Python-进阶篇-b/「Python-进阶篇」Part-2-装饰器/" itemprop="url" rel="index">
-                    <span itemprop="name">「Python 进阶篇」Part 2 -- 装饰器</span>
+                  <a href="/categories/b-Java篇-b/「Java-篇」EL/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 篇」EL</span>
                   </a>
                 </span>
 
@@ -571,8 +785,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/" itemprop="commentCount"></span>
+                <a href="/2018/11/25/Java篇/「Java 篇」EL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/25/Java篇/「Java 篇」EL/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -602,17 +816,25 @@
       
         
           
-          装饰器装饰器是程序开发中经常会用到的一个功能，用好了装饰器，开发效率如虎添翼，所以这也是Python面试中必问的问题，但对于好多初次接触这个知识点的人来讲，这个功能有点绕，所以在自学时直接绕过去了，然后去公司面试的时候问到了,嗯…, 这就很尴尬了. Python中的装饰器就类似与C++中的指针,地位是相同的,都是自类变成语言中的标志性的知识点.前面的闭包知识点中讲到了函数的引用,简单地说: 函数名仅仅是个变量，只不过指向了定义的函数而已，所以才能通过 函数名()调用，如果 函数名=xxx 被修改了，那么当在执行 函数名()时，调用的就不是之前的那个函数了,一个变量名, 我们给它什么引用,它就指向什么.
-开放封闭原则:写代码要遵循开放封闭原则，虽然这个原则是用的面向对象开发，但是也适用于函数式编程，简单来说，它规定已经实现的功能代码不允许被修改，但可以被扩展，即：
+          EL技术EL 表达式概述EL（Express Lanuage，表达式语言）表达式可以嵌入在jsp页面内部，减少jsp脚本的编写，EL出现的目的是要替代jsp页面中脚本的编写。EL只能在jsp文件中被解析，HTML文件解析不了。EL表达式在字符串中一样可以被解析。EL表达式的主要作用是简化jsp中利用Java存取数据的代码，不能进行逻辑判断，只能用于获取数据。逻辑代码的简化使用JSTL。
+EL从域中取出数据（EL最重要的作用）jsp脚本：1&lt;%=request.getAttribute(name)%&gt;
+EL表达式替换上述的脚本：1$&#123;requestScope.name&#125;
+EL最主要的作用是获得四大域中的数据，格式：${EL表达式}
 
-封闭： 已实现的功能代码块
-开放： 对扩展开发
+EL获得pageContext域中的值：
+1$&#123;pageContextScope.key&#125;;
 
-装饰器的内部执行原理1234567891011def w1(func):    def inner():        # 验证1        # 验证2        #
+EL获得request域中的值：
+1$&#123;requestScope.key&#125;;
+
+EL获得session域中的值：
+1$&#123;sessionScope.key&#125;;
+
+EL获得ap
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/25/Python进阶篇/「Python 进阶篇」Part 2 -- 装饰器/#more" rel="contents">
+            <a class="btn" href="/2018/11/25/Java篇/「Java 篇」EL/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -671,7 +893,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/Java篇/「Java 篇」JSP/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -690,7 +912,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/" itemprop="url">「Python 进阶篇」Part 1 -- 闭包</a></h1>
+                <a class="post-title-link" href="/2018/11/21/Java篇/「Java 篇」JSP/" itemprop="url">「Java 篇」JSP</a></h1>
         
 
         <div class="post-meta">
@@ -702,8 +924,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T00:00:00+08:00">
-                2018-10-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-21T00:00:00+08:00">
+                2018-11-21
               </time>
             
 
@@ -725,8 +947,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Python-进阶篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Python 进阶篇</b></span>
+                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java篇</b></span>
                   </a>
                 </span>
 
@@ -736,8 +958,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Python-进阶篇-b/「Python-进阶篇」Part-1-闭包/" itemprop="url" rel="index">
-                    <span itemprop="name">「Python 进阶篇」Part 1 -- 闭包</span>
+                  <a href="/categories/b-Java篇-b/「Java-篇」JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">「Java 篇」JSP</span>
                   </a>
                 </span>
 
@@ -754,8 +976,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/" itemprop="commentCount"></span>
+                <a href="/2018/11/21/Java篇/「Java 篇」JSP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/21/Java篇/「Java 篇」JSP/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -784,17 +1006,33 @@
 
       
         
-          <p><img src="/uploads/python1.jpeg" width="933" height="575" alt="python" align="center"><br>
+          
+          JSP技术jsp脚本和注释jsp脚本：
+
+&lt;%java代码%&gt; ： 内部的java代码翻译到service方法的内部
+&lt;%=java变量或表达式&gt; ：会被翻译成service方法内部out.write()以下三种格式都会被翻译成out.write()方法：且数据是写入out缓冲区，tomcat引擎是从response缓冲区中获取内容，所以out缓冲区的内容会刷新到response缓冲区中。
+12341.&lt;body&gt;标签中的无标签内容:&lt;body&gt;xxxxxxxxxxxxxxxxxxxxxxx&lt;/body&gt;2.out.write(“xxxxxxxxxxxxx”);3.&lt;%=”xxxxxxxxxxxxxxxxxxx”&gt;
+
+&lt;%!java代码%&gt; ：会被翻译成servlet的成员
+
+
+jsp注释： 不同的注释可见范围是不同
+
+Html注释：可见范围： jsp源码、翻译后的servlet、页面显示的HTML源码；
+1&lt;!--需要注释内容--&gt; （最不安全）
+
+java注释：可见范围： jsp源码、翻
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/24/Python进阶篇/「Python 进阶篇」Part 1 -- 闭包/#more" rel="contents">
+            <a class="btn" href="/2018/11/21/Java篇/「Java 篇」JSP/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
     
     
     
@@ -836,7 +1074,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -884,7 +1122,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -895,7 +1133,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -906,7 +1144,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -973,7 +1211,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">46.7k</span>
+    <span title="Site words total count">61.8k</span>
   
 </div>
 
