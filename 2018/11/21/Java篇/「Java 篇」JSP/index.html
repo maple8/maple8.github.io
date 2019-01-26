@@ -411,7 +411,7 @@
 <ol>
 <li>&lt;%java代码%&gt; ： 内部的java代码翻译到service方法的内部</li>
 <li><p>&lt;%=java变量或表达式&gt; ：会被翻译成service方法内部out.write()<br>以下三种格式都会被翻译成out.write()方法：且数据是写入out缓冲区，tomcat引擎是从response缓冲区中获取内容，所以out缓冲区的内容会刷新到response缓冲区中。</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.&lt;<span class="keyword">body</span>&gt;标签中的无标签内容:</span><br><span class="line">&lt;<span class="keyword">body</span>&gt;xxxxxxxxxxxxxxxxxxxxxxx&lt;/<span class="keyword">body</span>&gt;</span><br><span class="line"><span class="number">2</span>.<span class="keyword">out</span>.write(“xxxxxxxxxxxxx”);</span><br><span class="line"><span class="number">3</span>.&lt;%=”xxxxxxxxxxxxxxxxxxx”&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.<span class="tag">&lt;<span class="name">body</span>&gt;</span>标签中的无标签内容:</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>xxxxxxxxxxxxxxxxxxxxxxx<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">2.out.write(“xxxxxxxxxxxxx”);</span><br><span class="line">3.<span class="tag">&lt;<span class="name">%=”xxxxxxxxxxxxxxxxxxx”</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>&lt;%!java代码%&gt; ：会被翻译成servlet的成员</p>
 </li>
@@ -711,7 +711,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -722,7 +722,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
