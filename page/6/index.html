@@ -295,365 +295,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/Java篇/「Java 篇」线程的生命周期/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/Java篇/「Java 篇」线程的生命周期/" itemprop="url">「Java 篇」线程的生命周期</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T00:00:00+08:00">
-                2018-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/10/Java篇/「Java 篇」线程的生命周期/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/10/Java篇/「Java 篇」线程的生命周期/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Java JVM管理的运行时数据区包括以下5大块: 
-
-方法区
-堆
-虚拟机栈
-本地方法栈
-程序计数器
-
-其中,方法区和堆是所有线程共享的数据区,而虚拟机栈,本地方法栈和程序计数器都是线程隔离的数据区.Java中的每一个线程都有自己的局部变量表,程序计数器,以及声明周期等.线程的生命周期大体可以分成如下5个主要的阶段:
-
- New
-Runnable
-Running
-Blocked
-Terminated
-
-其各个阶段的转化过程如下所示:
-线程的New状态当我们使用关键字new创建一个Thread对象的时候,此时它并不处于执行状态,因为还没有调用start()方法启动线程,此时线程的状态就称为New状态.准确地说,它只是Thread对象的状态,因为在没有调用start()方法之前,该线程根本不存在,这个线程对象就和使用new关键字创建的普通对象一样.
-
-New状态通过调用start()方法进入Runnable状态.
-
-线程的Runnable状态 线程对象进入Runnable状态必须通过调用start()方法,那么此时才是真正的在JVM进程中创建了一个新线程.但是线程不是一经创建就可以执行的,
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/10/Java篇/「Java 篇」线程的生命周期/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/" itemprop="url">「Java 篇」集合Part 9 - TreeMap</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-09T00:00:00+08:00">
-                2018-09-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          TreeMapTreeMap集合底层是二叉树实现的，可以对键进行排序，所以不允许键对象是null，否则就会抛出空指针异常。TreeMap集合也是针对键的。TreeMap集合的特点：
-
-键唯一性
-键排序
-无索引
-
-TreeMap集合的使用TreeMap集合默认会对键进行排序，排序的底层是通过compareTo()方法，String类型默认已经重写了compareTo()方法，按照字典的顺序进行排序。1234567891011/**     * 对键进行排序,String格式默认的compareTo()方法是按照字典的顺序进行排序的     */    private static void method1() &#123;        TreeMap&lt;String, Integer&gt; map = new TreeMap&lt;&gt;();        map.put("Wuzi", 27);        map.put("Maple", 25);        map.put("Kyrie", 26);        System.out.println(map); 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/09/HTML篇/「HTML 篇」Part 3 -- 制作个人简历 /">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1218,17 +859,6 @@ HashMap方法HashMap的添加功能 add()：12345678910111213141516private stati
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
                     <span itemprop="name"><b>MySQL篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-MySQL篇-b/「MySQL篇」Part3-数据库常用命令速查/" itemprop="url" rel="index">
-                    <span itemprop="name">「MySQL篇」Part3-数据库常用命令速查</span>
                   </a>
                 </span>
 
@@ -2026,6 +1656,370 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
 
         
     
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/" itemprop="url">「MySQL篇」Part2-数据类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T00:00:00+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          数据完整性一个数据库就是一个完整的业务单元，可以包含多张表，数据被存储在表中。在表中为了更加准确的存储数据，保证数据的正确有效，可以在创建表的时候，为表添加一些强制性的验证，包括数据字段的类型、约束数据类型。
+
+使用数据类型的原则是：够用就行，尽量使用取值范围小的，而不用大的，这样可以更多的节省存储空间
+
+数据类型
+整数：int，bit
+小数：decimal
+字符串：varchar,char
+日期时间: date, time, datetime
+枚举类型(enum)
+
+特别说明的类型如下：
+
+decimal表示浮点数，如decimal(5,2)表示共存5位数，小数占2位
+char表示固定长度的字符串，如char(3)，如果填充’ab’时会补一个空格为’ab ‘
+varchar表示可变长度的字符串，如varchar(3)，填充’ab’时就会存储’ab’
+字符串text表示存储大文本，当字符大于4000时推荐使用
+对于图片、音频、视频等文件，不存储在数据库中，而是上传到某个服务器上，然后在表中存储这个文件的保存路径
+
+约束
+主键primary key：物理上存储的顺序
+非空not null
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/" itemprop="url">「Java 篇」集合Part 2 - ArrayList</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T00:00:00+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ArrayListArrayList集合底层是数组实现，所以查找和修改操作速度快，删除和增加操作速度慢，因为数组在内存中是连续连续存储的，查找和修改操作可以直接通过索引快速实现，时间复杂度为 O(1)，但是对于删除和增加操作，每次执行这样的操作，数组的得到长度都会发生变化，但是又要保证内存的连续存储，如果在数组中间删除或是增加了一个元素，那么其后面的所有元素都需要执行一次移位操作来保证内存的连续性，最好的情况是在数组的末尾执行删除或是增加操作，时间复杂度是 O(1)，最坏的情况是在数组的开头执行删除或是增加操作，那么所有的数组元素都要执行依次一位操作，所以这样的一次删除或是增加操作的时间复杂度就是 O(n).ArrayList底层在内存中的存储方式决定了使用场景：
+
+查找或修改操作频繁的任务
+增、删、改、查 操作都频繁的任务
+
+ArrayList特点：
+
+顺序存储：能按照元素的存入顺序进行保存和读取
+有索引：可以通过索引获取元素
+可以存储重复元素
+
+Collection类常用方法Collection类是单列集合 List 和 Set 的父类，它有的方法，子类都会继承，以下是单列集合常用
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
   </section>
 
   
@@ -2078,7 +2072,7 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2089,7 +2083,7 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2100,7 +2094,7 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

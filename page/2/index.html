@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/" itemprop="url">「JavaScript篇 」变量和函数预解析</a></h1>
+                <a class="post-title-link" href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/" itemprop="url">「JavaEE 篇」JSTL</a></h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-02T00:00:00+08:00">
-                2018-12-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-01T00:00:00+08:00">
+                2018-12-01
               </time>
             
 
@@ -349,19 +349,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaScript 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/「JavaScript篇-」变量和函数预解析/" itemprop="url" rel="index">
-                    <span itemprop="name">「JavaScript篇 」变量和函数预解析</span>
+                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JavaEE 篇</b></span>
                   </a>
                 </span>
 
@@ -378,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/" itemprop="commentCount"></span>
+                <a href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,11 +398,48 @@
       
         
           
-          JavaScript 变量和函数预解析大多数编程语言的变量和方法的使用规则都是先定义后使用，否则就会出现异常。JavaScript具有预解析的功能，能够打破这种规则，可以在变量和函数定义之前就使用该变量和函数（此时的变量值为undefined）。JavaScript 代码的解析过程分为两个阶段，先是编译阶段，然后执行阶段。在编译阶段会将用function定义的函数提前，并且将用var定义的变量 声明 提前，并将它赋值为undefined。相当于在代码一开始就创建了一个未初始化的变量（只是效果类似创建了一个变量，实际上没有创建变量）。JavaScript的预解析功能可以让开发者在定义方法之前调用方法，也可以在定义变量之前调用变量，但是变量的值为undefined。12345678910111213141516171819202122232425262728293031323334&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;!-- 变量和函数的预解析 --&gt;&lt;head&gt;    &lt;meta charset="UTF-8
+          JSTL技术JSTL概述JSTL（JSP Standard Tag Library)，JSP标准标签库，可以嵌入在jsp页面中使用标签的形式完成业务逻辑等功能。jstl出现的目的同el一样也是要替代jsp页面中的脚本代码，主要是逻辑代码。JSTL标准标准标签库有5个子库，但随着发展，目前常使用的是它的核心库。
+
+
+
+标签库
+标签库的URI
+前缀
+
+
+
+
+Core(常用)
+http://java.sun.com/jsp/jstl/core
+c
+
+
+I18N
+http://java.sun.com/jsp/jstl/fmt
+fmt
+
+
+SQL
+http://java.sun.com/jsp/jstl/sql
+sql
+
+
+XML
+http://java.sun.com/jsp/jstl/xml
+x
+
+
+Functions
+http://java.sun.com/jsp/jstl/functions
+fn
+
+
+
+JSTL下载与导入JSTL下载：从Apache的网站下载JSTL的JAR包。进入 http://archive.apache.org/dist/jakarta/taglibs/stan
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/#more" rel="contents">
+            <a class="btn" href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -583,209 +609,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/12/01/Spring 篇/「Spring 篇」导入命名空间/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/" itemprop="url">「JavaEE 篇」JSTL</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-01T00:00:00+08:00">
-                2018-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaEE 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          JSTL技术JSTL概述JSTL（JSP Standard Tag Library)，JSP标准标签库，可以嵌入在jsp页面中使用标签的形式完成业务逻辑等功能。jstl出现的目的同el一样也是要替代jsp页面中的脚本代码，主要是逻辑代码。JSTL标准标准标签库有5个子库，但随着发展，目前常使用的是它的核心库。
-
-
-
-标签库
-标签库的URI
-前缀
-
-
-
-
-Core(常用)
-http://java.sun.com/jsp/jstl/core
-c
-
-
-I18N
-http://java.sun.com/jsp/jstl/fmt
-fmt
-
-
-SQL
-http://java.sun.com/jsp/jstl/sql
-sql
-
-
-XML
-http://java.sun.com/jsp/jstl/xml
-x
-
-
-Functions
-http://java.sun.com/jsp/jstl/functions
-fn
-
-
-
-JSTL下载与导入JSTL下载：从Apache的网站下载JSTL的JAR包。进入 http://archive.apache.org/dist/jakarta/taglibs/stan
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2077,6 +1900,182 @@ JDBC 由一组Java工具类和接口组成；
 
         
     
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/" itemprop="url">「JavaEE 番外篇」外网访问tomcat项目部署</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T00:00:00+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-JavaEE-番外篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JavaEE 番外篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          内网穿透内网穿透,即NAT穿透,网络连接时的术语,计算机处于LAN（局域网或内网）下时，WAN（广域网或外网）和LAN下的计算机节点需要连接通信，有时会出现不支持内网穿透，这是百度百科对于内网穿透的解释。简单地说，就是连接内网（局域网）的计算机不能直接被外网的计算机访问到，所以利用tomcat在个人计算机上部署的Web项目也无法直接被外网的用户访问，如果想要让外网能够访问内网的计算机就需要使用到内网穿透技术。
+
+实际的项目都是部署在服务器上的，这里是针对的是本地测试Web的方法
+
+natapp就是提供内网穿透的软件，简单快捷，而且免费（既然是免费的，使用的权限就会受到限制，系统给用户的分配的域名如果被收费的VIP用于占用了，免费用户就不能使用该域名了，即使正在使用，也会被强制下线，而且免费用户的域名是系统随机分配的，也就是说每次使用该软件得到的域名都是不一样的，即用于访问部署的项目的域名是不一样的）。
+NATAPP 的使用
+在NATAPP官网注册账号并实名认证NATAPP 官网
+
+登录之后， 购买免费隧道
+
+根据需要，选择隧道协议 Web/TCP/IP，tomcat部署的项目选择Web
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
   </section>
 
   
@@ -2129,7 +2128,7 @@ JDBC 由一组Java工具类和接口组成；
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2140,7 +2139,7 @@ JDBC 由一组Java工具类和接口组成；
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2151,7 +2150,7 @@ JDBC 由一组Java工具类和接口组成；
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
