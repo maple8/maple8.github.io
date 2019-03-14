@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/08/Java篇/「Java 篇」集合Part 8 - LinkedHashMap/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/Java篇/「Java 篇」注解/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/08/Java篇/「Java 篇」集合Part 8 - LinkedHashMap/" itemprop="url">「Java 篇」集合Part 8 - LinkedHashMap</a></h1>
+                <a class="post-title-link" href="/2018/09/30/Java篇/「Java 篇」注解/" itemprop="url">「Java 篇」注解</a></h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-08T00:00:00+08:00">
-                2018-09-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-30T00:00:00+08:00">
+                2018-09-30
               </time>
             
 
@@ -349,19 +349,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java-篇」集合Part-8-LinkedHashMap/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java 篇」集合Part 8 - LinkedHashMap</span>
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
                   </a>
                 </span>
 
@@ -378,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/08/Java篇/「Java 篇」集合Part 8 - LinkedHashMap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/08/Java篇/「Java 篇」集合Part 8 - LinkedHashMap/" itemprop="commentCount"></span>
+                <a href="/2018/09/30/Java篇/「Java 篇」注解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/30/Java篇/「Java 篇」注解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,13 +398,40 @@
       
         
           
-          LinkedHashMapLinkedHashMap 是Map集合唯一能保持存取顺序的集合，但是集合元素是有要求的。从集合的名称中可以知道，LinkedHashMap底层既有链表又有哈希表，该集合只有在元素唯一的情况下能够保证存取顺序，要先使用哈希表保证集合元素的唯一性，然后才能使用链表保证存取顺序，也就是说必须是重写了equals()方法和hashCode()方法，如果没有重写这两个方法的类的实例则不能保证集合元素存取的顺序。
-1234567private static void method1() &#123;        LinkedHashMap&lt;String, Integer&gt; map = new LinkedHashMap&lt;&gt;();        map.put("Maple", 25);        map.put("Kyrie", 26);        map.put("Wuzi", 27);        System.out.println(map);    &#125;
-输出：1&#123;Maple=25, Kyrie=26, Wu
+          注解注解就是符合一定格式的语法 ，其调用格式：1@xxxx
+注解作用：
+
+注释：在阅读程序时给程序员看的，有助于提高程序的可读性。
+注解：给jvm看的，能够准确地执行底层的注解解析代码，实现注解的功能。
+
+注解的应用：注解在目前最主流的应用：代替配置文件，尤其是xml文件。
+注解相对于配置文件在开发中的优缺点：
+
+注解优点：开发效率高，成本低 
+注解缺点：耦合性大，并且不利于后期维护
+
+jdk5提供的注解
+方法重写：常用于对接口中的方法进行重写标志
+1@Override：告知编译器此方法是覆盖父类的
+
+过时：表示调用注解的对象已经过时了
+1@Deprecated：标注过时
+
+压制警告：表示在调用注解对象内部消除警告提示
+1@SuppressWarnings：压制警告
+
+
+jdk8提供的注解
+重复注解：可以在同一个对象上多次调用用一个注解1@Repeatable
+
+
+自定义注解上述注解都是JDK自带的注解，底层的注解定义和解析都是自动完成的，下面通过自定义注解实现以下注解的定义和解析的底层代码的实现原理，思想和JDK自带的注解是一样的，更便于理解。
+
+自定义注解代码：关键字：@inter
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/08/Java篇/「Java 篇」集合Part 8 - LinkedHashMap/#more" rel="contents">
+            <a class="btn" href="/2018/09/30/Java篇/「Java 篇」注解/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -474,7 +490,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/Java篇/「Java 篇」集合Part 7 - HashMap/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/Java篇/「Java 篇」动态代理 - JDK/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -493,7 +509,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/07/Java篇/「Java 篇」集合Part 7 - HashMap/" itemprop="url">「Java 篇」集合Part 7 - HashMap</a></h1>
+                <a class="post-title-link" href="/2018/09/25/Java篇/「Java 篇」动态代理 - JDK/" itemprop="url">「Java 篇」动态代理 - JDK</a></h1>
         
 
         <div class="post-meta">
@@ -505,8 +521,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-07T00:00:00+08:00">
-                2018-09-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-25T00:00:00+08:00">
+                2018-09-25
               </time>
             
 
@@ -528,19 +544,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java-篇」集合Part-7-HashMap/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java 篇」集合Part 7 - HashMap</span>
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
                   </a>
                 </span>
 
@@ -557,8 +562,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/07/Java篇/「Java 篇」集合Part 7 - HashMap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/07/Java篇/「Java 篇」集合Part 7 - HashMap/" itemprop="commentCount"></span>
+                <a href="/2018/09/25/Java篇/「Java 篇」动态代理 - JDK/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/25/Java篇/「Java 篇」动态代理 - JDK/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -588,17 +593,17 @@
       
         
           
-          HashMapHashMap集合和HashSet集合类似，都是基于哈希表的集合,其实HashSet集合的底层是HashMap集合。集合通过哈希码可以对其内部的映射关系进行快速查找。HashMap集合是针对键的，也就是侧重点是键，下面的特点也都是针对键而言的。HashMap集合的特点：
+          动态代理动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。可以用一张图来表示代理模式的含义：在调用者调用目标对象之前产生一个代理对象，而这个代理对象需要和目标对象建立代理关系，所以代理必须分成两个步骤：
 
-存取无序
-无索引
-键唯一，键值对的映射关系也唯一：不能出现相同的键，如果想集合中添加相同的键但是对应不同的值，那么会将该键的原始值弹出。
+代理对象和目标对象建立代理关系；
+实现代理对象的代理逻辑方法；
 
-HashMap方法HashMap的添加功能 add()：12345678910111213141516private static void method1() &#123;        //创建Map集合对象        Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();        //put()方法的返回值是被需要存储的值覆盖的值,相同的键不重复存储,但是如果值不一样会进行覆盖操作,并将原始值返回        Integer i1 = map.put("Maple", 26);        
+Java中有多种动态代理技术，常用的有两种：JDK和CGLIB，此处介绍的是利用JDK实现动态代理。特点：JDK动态代理技术是java.lang.reflect.*包提供的方式，它必须借助一个接口才能产生代理对象。
+动态代理的执行过程动态代理在过程中的作用如下：代理对象与接口的关系：接口代码如下：1234567public interface TargetInterface &#123;    public void method1();    public String method2();    public int method3(int
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/07/Java篇/「Java 篇」集合Part 7 - HashMap/#more" rel="contents">
+            <a class="btn" href="/2018/09/25/Java篇/「Java 篇」动态代理 - JDK/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -657,7 +662,7 @@ HashMap方法HashMap的添加功能 add()：12345678910111213141516private stati
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/Java篇/「Java 篇」集合Part 6 - TreeSet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -676,7 +681,7 @@ HashMap方法HashMap的添加功能 add()：12345678910111213141516private stati
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/06/Java篇/「Java 篇」集合Part 6 - TreeSet/" itemprop="url">「Java 篇」集合Part 6 - TreeSet</a></h1>
+                <a class="post-title-link" href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" itemprop="url">「Linux 篇」Part 2 -- 文件和目录</a></h1>
         
 
         <div class="post-meta">
@@ -688,8 +693,8 @@ HashMap方法HashMap的添加功能 add()：12345678910111213141516private stati
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-06T00:00:00+08:00">
-                2018-09-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-25T00:00:00+08:00">
+                2018-09-25
               </time>
             
 
@@ -711,19 +716,8 @@ HashMap方法HashMap的添加功能 add()：12345678910111213141516private stati
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java-篇」集合Part-6-TreeSet/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java 篇」集合Part 6 - TreeSet</span>
+                  <a href="/categories/b-Linux-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Linux 篇</b></span>
                   </a>
                 </span>
 
@@ -740,8 +734,172 @@ HashMap方法HashMap的添加功能 add()：12345678910111213141516private stati
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/06/Java篇/「Java 篇」集合Part 6 - TreeSet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/06/Java篇/「Java 篇」集合Part 6 - TreeSet/" itemprop="commentCount"></span>
+                <a href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><blockquote class="blockquote-center">在Linux中，人们常说：<br>＂一切皆文件＂</blockquote><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/Java篇/「Java 篇」反射/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/20/Java篇/「Java 篇」反射/" itemprop="url">「Java 篇」反射</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-20T00:00:00+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/20/Java篇/「Java 篇」反射/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/20/Java篇/「Java 篇」反射/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -771,13 +929,18 @@ HashMap方法HashMap的添加功能 add()：12345678910111213141516private stati
       
         
           
-          TreeSetTreeSet类不仅实现了Set接口，还实现了java.util.SortedSet接口，因此，TreeSet类实现的Set集合在遍历集合的时候按照自然顺序递增排序，也可以按照指定的比较器递增排序，即可以通过比较器对用TreeSet类实现的Set集合中的对象进行排序。 存入TreeSet类实现的Set集合的元素必须实现Compareable接口，该接口中的compareTo(object o)方法用于比较该对象与指定对象的顺序。TreeSet底层是二叉树实现的，同时也保证了元素的唯一性 。TreeSet遍历输出是二叉树的中序遍历: 左子树–&gt;根–&gt;右子树（个人认为是这样的，尚在查询资料）。
+          反射动态获取指定类以及类中的内容(成员)，并运行其内容。
+反射技术应用程序已经运行，无法在其中进行new对象的建立，就无法使用对象。这时可以根据配置文件的全类名去找对应的字节码文件，并加载进内存，并创建该类对象实例，这就需要使用反射技术完成。反射作用的位置如下图所示：简单地说就是反射可以获取代码的字节码对象，通过该字节码对象可以获取和设置信息。
+获取class对象的三种方式获取字节码对象通常有几下三种方式：
 
-TreeSet底层是二叉树,小的存储在左边(负数),大的存储在右边(正数),相等就不存(0)根据compareTo(object o)方法的返回值来确定具体的存储方式:当compareTo()方法返回0时,集合只有一个元素,不排当compareTo()方法返回正数(1)时,集合存取顺序一致,排在右边当compareTo()方法返回负数(-1)时,集合的存取顺序相反,排在左
+Class.forName（“全包名”）
+12345678//方法一: 包名.类名//"reflect.bean.Person"是Class.forName()方法特有的路径名格式: 包名.类名Class clazz1 = null;try &#123;    clazz1 = Class.forName("reflect.bean.Person");//获取Person的字节码文件&#125; catch (ClassNotFoundException e) &#123;    e.printStackTrace();&#125;
+
+每一个类型都具备一个class静态属性，通过
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/06/Java篇/「Java 篇」集合Part 6 - TreeSet/#more" rel="contents">
+            <a class="btn" href="/2018/09/20/Java篇/「Java 篇」反射/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -836,7 +999,7 @@ TreeSet底层是二叉树,小的存储在左边(负数),大的存储在右边(�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/Linux篇/「Linux 篇」Part 1 -- OS 起源 /">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -855,7 +1018,7 @@ TreeSet底层是二叉树,小的存储在左边(负数),大的存储在右边(�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /" itemprop="url">「Java 篇」集合Part 5 - LinkedHashSet</a></h1>
+                <a class="post-title-link" href="/2018/09/20/Linux篇/「Linux 篇」Part 1 -- OS 起源 /" itemprop="url">「Linux 篇」Part 1 -- OS 起源</a></h1>
         
 
         <div class="post-meta">
@@ -867,8 +1030,8 @@ TreeSet底层是二叉树,小的存储在左边(负数),大的存储在右边(�
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">
-                2018-09-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-20T00:00:00+08:00">
+                2018-09-20
               </time>
             
 
@@ -890,19 +1053,8 @@ TreeSet底层是二叉树,小的存储在左边(负数),大的存储在右边(�
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java-篇」集合Part-5-LinkedHashSet/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java 篇」集合Part 5 - LinkedHashSet</span>
+                  <a href="/categories/b-Linux-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Linux 篇</b></span>
                   </a>
                 </span>
 
@@ -919,8 +1071,172 @@ TreeSet底层是二叉树,小的存储在左边(负数),大的存储在右边(�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /" itemprop="commentCount"></span>
+                <a href="/2018/09/20/Linux篇/「Linux 篇」Part 1 -- OS 起源 /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/20/Linux篇/「Linux 篇」Part 1 -- OS 起源 /" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="/uploads/Linux.png" width="1000" height="500" alt="git" align="center"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/20/Linux篇/「Linux 篇」Part 1 -- OS 起源 /#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/Linux番外篇/Linux 关闭卡死的进程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/20/Linux番外篇/Linux 关闭卡死的进程/" itemprop="url">Linux 关闭卡死的进程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-20T00:00:00+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Linux-番外篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Linux 番外篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/20/Linux番外篇/Linux 关闭卡死的进程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/20/Linux番外篇/Linux 关闭卡死的进程/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -950,18 +1266,34 @@ TreeSet底层是二叉树,小的存储在左边(负数),大的存储在右边(�
       
         
           
-          LinkedHashSetLinkedHashSet底层是链表实现的，是set集合中唯一一个能保证存储顺序的集合对象。因为是HashSet的子类，也保证了元素的唯一性。同样的，如果是需要存储自定义对象，必须重写hashcode()和equals()方法。
-LinkedHashSet特点：
+          Linux 操作系统所有运行的应用功能程序都成为进程，在Windows操作系统中，如果有应用程序卡死，可以启动任务管理器，然后选中卡死的应用程序，强制关闭即可。以下是Linux操作系统关闭卡死进程的两种方法：
+方法一：使用系统监视器
 
-存取有序：存储和获取元素的顺序是一致的
-无索引：无法通过索引获取元素，获取元素只能通过迭代的方法
-不能存储重复元素：底层是通过hashcode()方法和equals()方法对各个对象进行比较，然后决定是否存取，所有基本数据类型的引用数据类型都重写了这两个方法，所以在作为元素进行添加的时候能够自动进行比较，如果是自定义类的实例，必须要开发者在定义类的时候重写这两个方法，否则就不能实现不重复存储的特性。
+Ctrl + Alt + T 打开终端
+输入以下命令，打开系统监视器，在显示的运行的进程中找到卡死的进程，然后点击关闭进程。1gnome-system-monitor
 
-123456789101112131415161718192021222324252627 public static void main(String[] args) &#123;//        method1();//        method2();    &#125;    //存储自定
-          ...
+
+
+上述方法有时候不是很奏效，点击关闭进程没有效果
+
+方法二：kill + 进程号
+
+Ctrl + Alt + T 打开终端
+终端输入以下命令：
+1ps -ef  | grep 进程名(如：tomcat 或 IDEA)
+
+在终端可以看到用户  和 进程编号
+
+终端输入以下命令：1kill + 进程编号
+
+
+这样就可以关闭进程了，之后操作系统的图形界面会重启，输入登录密码即可。（只是操作系统的图像界面重启，不是操作系统本身）有时候也可能会有些进程无法使用上述命令正常关闭，此时可以使用以下命令进行强制关闭：1kill -s 9 进程编号
+
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /#more" rel="contents">
+            <a class="btn" href="/2018/09/20/Linux番外篇/Linux 关闭卡死的进程/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1020,7 +1352,7 @@ LinkedHashSet特点：
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -1039,7 +1371,7 @@ LinkedHashSet特点：
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/" itemprop="url">「Java 篇」集合Part 4 - HashSet</a></h1>
+                <a class="post-title-link" href="/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/" itemprop="url">「MySQL篇」Part6-limit分页</a></h1>
         
 
         <div class="post-meta">
@@ -1051,8 +1383,8 @@ LinkedHashSet特点：
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-04T00:00:00+08:00">
-                2018-09-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-15T00:00:00+08:00">
+                2018-09-15
               </time>
             
 
@@ -1074,8 +1406,8 @@ LinkedHashSet特点：
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
                   </a>
                 </span>
 
@@ -1085,8 +1417,8 @@ LinkedHashSet特点：
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java-篇」集合Part-4-HashSet/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java 篇」集合Part 4 - HashSet</span>
+                  <a href="/categories/b-MySQL篇-b/「MySQL篇」Part6-分页/" itemprop="url" rel="index">
+                    <span itemprop="name">「MySQL篇」Part6-分页</span>
                   </a>
                 </span>
 
@@ -1103,8 +1435,8 @@ LinkedHashSet特点：
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/" itemprop="commentCount"></span>
+                <a href="/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1134,17 +1466,28 @@ LinkedHashSet特点：
       
         
           
-          HashSetHashSet集合是哈希表支持的，底层是HashMap的操作。HashSet的特点：
+          使用limit限制查询结果的数量查询数据时，可能会返回很多条记录，但是用户需要的记录可能只有一条或是其中的几条，比如实现分页功能，每页显示10条信息，每次查询就只需要查出10条记录，为此MySQL中提供了一个关键字limit，可以指定查询结从哪一条记录开始以及一共查询多少条信息。limit语法1select * from 表名 limit start,count
 
-存取无序：不保证存储和获取元素的顺序是一致的
-无索引：无法通过索引获取元素，获取元素只能通过迭代的方法
-不能存储重复元素：底层是通过hashcode方法和equals方法对各个对象进行比较，然后决定是否存取，所有基本数据类型的引用数据类型都重写了这两个方法，所以在作为元素进行添加的时候能够自动进行比较，如果是自定义类的实例，必须要开发者在定义类的时候重写这两个方法，否则就不能实现不重复存储的特性。
+start：偏移量，默认是0count：表示返回查询记录的条数简单地说：从start开始，获取count条数据
 
-HashSet常用方法HashSet存储引用数据类型HashSet也是Collection类的子类，所以集合常用的方法都是有的。如下例的代码，因为存储的是String类型的元素，而String类默认已经重写了hashcode方法和equals方法，用来确保不会重复保存元素，其他的引用数据类型也都重写了hashcode方法和equals方法。123456789101112131415161718public static void main(String[] args) &#123;    
-          ...
+查询前3行男生信息1select * from students where gender=1 limit 0,3;
+分页已知：每页显示m条数据，当前显示第n页求总页数：
+
+查询总条数为p1
+使用p1除以m得到p2
+如果整除则p2为总数页
+如果不整除则p2+1为总页数求第n页的数据第N页的数据是从(N-1)*m开始，获取m条数据
+
+1select * from students where is_delete=0 limit (n-1)*m,m
+
+分页：limit (第N页-1)×每页的个数，每页的个数
+
+
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/#more" rel="contents">
+            <a class="btn" href="/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1203,7 +1546,7 @@ HashSet常用方法HashSet存储引用数据类型HashSet也是Collection类的�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/15/Java篇/「Java 篇」类加载器/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -1222,7 +1565,7 @@ HashSet常用方法HashSet存储引用数据类型HashSet也是Collection类的�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/" itemprop="url">「Java 篇」集合Part 2 - ArrayList</a></h1>
+                <a class="post-title-link" href="/2018/09/15/Java篇/「Java 篇」类加载器/" itemprop="url">「Java 篇」类加载器</a></h1>
         
 
         <div class="post-meta">
@@ -1234,8 +1577,8 @@ HashSet常用方法HashSet存储引用数据类型HashSet也是Collection类的�
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T00:00:00+08:00">
-                2018-09-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-15T00:00:00+08:00">
+                2018-09-15
               </time>
             
 
@@ -1257,19 +1600,8 @@ HashSet常用方法HashSet存储引用数据类型HashSet也是Collection类的�
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java-篇」集合Part-2-ArrayList/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java 篇」集合Part 2- ArrayList</span>
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
                   </a>
                 </span>
 
@@ -1286,8 +1618,8 @@ HashSet常用方法HashSet存储引用数据类型HashSet也是Collection类的�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/" itemprop="commentCount"></span>
+                <a href="/2018/09/15/Java篇/「Java 篇」类加载器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/15/Java篇/「Java 篇」类加载器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1317,22 +1649,24 @@ HashSet常用方法HashSet存储引用数据类型HashSet也是Collection类的�
       
         
           
-          ArrayListArrayList集合底层是数组实现，所以查找和修改操作速度快，删除和增加操作速度慢，因为数组在内存中是连续连续存储的，查找和修改操作可以直接通过索引快速实现，时间复杂度为 O(1)，但是对于删除和增加操作，每次执行这样的操作，数组的得到长度都会发生变化，但是又要保证内存的连续存储，如果在数组中间删除或是增加了一个元素，那么其后面的所有元素都需要执行一次移位操作来保证内存的连续性，最好的情况是在数组的末尾执行删除或是增加操作，时间复杂度是 O(1)，最坏的情况是在数组的开头执行删除或是增加操作，那么所有的数组元素都要执行依次一位操作，所以这样的一次删除或是增加操作的时间复杂度就是 O(n).ArrayList底层在内存中的存储方式决定了使用场景：
+          类加载器类加载器的作用Java代码的执行过程如下：类加载器就是加载字节码文件(.class)的组件，属于JVM的一部分。Java源码经过编译器编译之后变成了字节码文件，类加载器就是将生成的字节码文件加载到内存中（jre，Java运行时环境/JDK运行时内存），并生成字节码对象。
 
-查找或修改操作频繁的任务
-增、删、改、查 操作都频繁的任务
+字节码对象是反射技术的常用对象。
 
-ArrayList特点：
+类加载器的种类类加载器有三种，不同类加载器加载不同的文件。
 
-顺序存储：能按照元素的存入顺序进行保存和读取
-有索引：可以通过索引获取元素
-可以存储重复元素
+BootStrap：引导类加载器：加载都是最基础的文件
+ExtClassLoader：扩展类加载器：加载都是基础的文件
+AppClassLoader：应用类加载器：三方jar包和自己编写java文件
 
-Collection类常用方法Collection类是单列集合 List 和 Set 的父类，它有的方法，子类都会继承，以下是单列集合常用
-          ...
+怎么获得类加载器？1ClassLoader 类加载器对象 = 字节码对象.getClassLoader();
+例如：123//获取指定类的字节码对象Class clazz = Class.forName("reflect.bean.Person");ClassLoader classLoader = clazz.getClassLoader();
+
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/#more" rel="contents">
+            <a class="btn" href="/2018/09/15/Java篇/「Java 篇」类加载器/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1391,7 +1725,7 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -1410,7 +1744,7 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/" itemprop="url">「Java 篇」集合Part 3 - LinkedArrayList</a></h1>
+                <a class="post-title-link" href="/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/" itemprop="url">「MySQL篇」Part5-聚合函数</a></h1>
         
 
         <div class="post-meta">
@@ -1422,8 +1756,8 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T00:00:00+08:00">
-                2018-09-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-12T00:00:00+08:00">
+                2018-09-12
               </time>
             
 
@@ -1445,8 +1779,8 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
                   </a>
                 </span>
 
@@ -1456,8 +1790,8 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java-篇」集合Part-3-LinkedArrayList/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java 篇」集合Part 3- LinkedArrayList</span>
+                  <a href="/categories/b-MySQL篇-b/「MySQL篇」Part5-聚合函数/" itemprop="url" rel="index">
+                    <span itemprop="name">「MySQL篇」Part5-聚合函数</span>
                   </a>
                 </span>
 
@@ -1474,8 +1808,8 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/" itemprop="commentCount"></span>
+                <a href="/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1505,17 +1839,17 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
       
         
           
-          LinkedArrayListLinkedArrayList底层是链表实现的，所以它的查找和修改操作速度慢，因为链表在内存中是不连续的，每个节点Node都有一个数据域和一个指针域(单链表一个数据域和一个指针域,数据域中存储的是该节点的数据,指针域里面是想一个节点的地址;双变量有一个数据域和两个指针域,一个指针域指向前驱,一个指针域指向后继) ,串联而成的一个线性表,如果想要查找就只能从第一个元素开始遍历,才能找到下一个元素,再找到下下一个,如此下去,所有就慢了,如果想修改,就要先找到需要修改的元素,也就慢了.最好的情况是需要查找或修改的元素是第一个元素,时间复杂度就是O(1),最坏的情况是需要查找或修改的元素是最后一个元素,时间复杂度是O(n).所以LinkedArrayList的应用场景是 增加或删除多的任务LinkedList集合特点:
-
-存取有序
-有索引
-可以存储重复元素
-
-LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法都是一样的,以下是LinkedArrayList做为链表存储结构特有的方法.1234567891011121
+          聚合函数为了快速对数据进行统计，并返回唯一值的函数，称为聚合函数。常用的5个聚合函数如下：
+总数count( )函数：表示计算总行数，括号中写星与列名，结果是相同的查询学生总数1select count(*) from students;
+最大值max( )函数：表示求此列的最大值查询女生的编号最大值1select max(id) from students where gender=2;
+最小值min( )：表示求此列的最小值查询未删除的学生最小编号1select min(id) from students where is_delete=0;
+求和sum( )：表示求此列的和查询男生的总年龄1select sum(age) from students where gender=1;
+查询男生的平均年龄1select sum(age)/count(*) from students where gender=1;
+平均值avg( )函数：表示求此列的平均值查询未删除女生的编号平均值1select avg(id) from students where is_delete=0 and g
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/#more" rel="contents">
+            <a class="btn" href="/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1574,7 +1908,7 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/Java篇/「Java 篇」集合Part 1 - 集合概述 /">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -1593,7 +1927,7 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/02/Java篇/「Java 篇」集合Part 1 - 集合概述 /" itemprop="url">「Java 篇」集合Part 1 - 集合概述</a></h1>
+                <a class="post-title-link" href="/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/" itemprop="url">「MySQL篇」Part4-数据库查询</a></h1>
         
 
         <div class="post-meta">
@@ -1605,8 +1939,8 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T00:00:00+08:00">
-                2018-09-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T00:00:00+08:00">
+                2018-09-10
               </time>
             
 
@@ -1628,8 +1962,8 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
                   </a>
                 </span>
 
@@ -1639,8 +1973,8 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java-篇」集合Part-1-集合概述/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java 篇」集合Part 1 - 集合概述</span>
+                  <a href="/categories/b-MySQL篇-b/「MySQL篇」Part4-数据库查询/" itemprop="url" rel="index">
+                    <span itemprop="name">「MySQL篇」Part4-数据库查询</span>
                   </a>
                 </span>
 
@@ -1657,8 +1991,8 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/02/Java篇/「Java 篇」集合Part 1 - 集合概述 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/02/Java篇/「Java 篇」集合Part 1 - 集合概述 /" itemprop="commentCount"></span>
+                <a href="/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1688,371 +2022,11 @@ LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法
       
         
           
-          Java.util 包中提供了一些集合类,这些集合类又被称为容器. 在基本数据类型中的数组也是一种容器,集合和数组的区别是数组的长度固定的,在创建数组的时候必须指定存储的数据类型和数组的大小,否则,JVM不知道要给该数组分配多大的内存空间,就会抛出异常,而数组的长度一旦指定便无法修改.集合就克服了数组的这个局限,集合是变长的.数组用来存储基本数据类型,集合存储引用数据类型.常见的集合有 List集合 , Set集合 和 Map集合 ,以下是各集合类即继承关系:
-Collection 集合都是单列集合: 集合中每个元素都是单个的,在内存中是以一列形式存储的;Map 集合是双列集合: 集合中每个元素都是两个,以键值对的形式存在,在内存中是以两列形式存储的;
-
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/02/Java篇/「Java 篇」集合Part 1 - 集合概述 /#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/Java篇/「Java篇」char区分中英文 /">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/01/Java篇/「Java篇」char区分中英文 /" itemprop="url">「Java篇」char区分中英文</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T00:00:00+08:00">
-                2018-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java篇-b/「Java篇」char区分中英文/" itemprop="url" rel="index">
-                    <span itemprop="name">「Java篇」char区分中英文</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/01/Java篇/「Java篇」char区分中英文 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/01/Java篇/「Java篇」char区分中英文 /" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          char类型如何区分存储的是字符是中文字符还是英文字符?123456789101112131415161718192021222324252627282930/**     * 问题: 使用Scanner从键盘输入一行,去掉其中重复的字符,然后打印各个字符.     * &lt;font color=#FF0000&gt; 引申问题: 英文字符和中文字符是怎么存储的,有什么不同点吗?  &lt;/font&gt;     * 分析:     * 1. 创建输入Scanner对象     * 2. 将键盘录入的字符串转换为字符数组 String.toCharArray()     * 3. 创建HashSet集合,并将字符数组存入集合当中     * 4. 遍历输出集合     */    public static void main(String[] args) &#123;        //创建键盘输入对象        Scanner scanner = new Scanner(System.in);        //创建HashSet集合对象        HashSet&
+          数据库数据1234567891011121314151617181920212223242526272829303132创建数据库create database java charset=utf8;使用数据库use java;students表create table students(    id int unsigned primary key auto_increment not null,    name varchar(20) default &apos;&apos;,    age tinyint unsigned default 0,    height decimal(5,2),    gender enum(&apos;男&apos;,&apos;女&apos;,&apos;中性&apos;,&apos;保密&apos;) default &apos;保密&apos;,    cls_id int unsigned default 0,    is_delete bit default 0);classes表create table classes (    id i
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/01/Java篇/「Java篇」char区分中英文 /#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/HTML篇/「HTML 篇」Part 2 -- HTML 基础语法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/01/HTML篇/「HTML 篇」Part 2 -- HTML 基础语法/" itemprop="url">「HTML 篇」Part 2 -- HTML 基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T00:00:00+08:00">
-                2018-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-HTML-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>HTML 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-HTML-篇-b/「HTML-篇」Part-2-HTML-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">「HTML 篇」Part 2 -- HTML 基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/01/HTML篇/「HTML 篇」Part 2 -- HTML 基础语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/01/HTML篇/「HTML 篇」Part 2 -- HTML 基础语法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          顾名思义,HTML称为超文本标记语言, 里面就是超链接和标签. 所以呢,在HTML的程序中充满着各种各样的标签,所以程序看以来可能会觉得很乱, 但是没关系,只要记住一个原则,所有的标签都是成对出现的, 虽然代码在格式上没有缩进的要求,但是为了方便查看,我们在编写程序的时候就应该有相应的代码缩进. 这样,后面维护代码的时候就不会乱了哈.
-HTML基础标签html注释：html文档代码中可以插入注释，注释是对代码的说明和解释，注释的内容不会显示在页面上，html代码中插入注释的方法是：1&lt;!-- 这是一段注释  --&gt;
-html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5&gt;、&lt;h6&gt;,标签可以在网页上定义6种级别的标题。6种级别的标题表示文档的6级目录层级关系，比如说：&lt;h1&gt;用作主标题，其后是&lt;h2&gt;，再其次是&lt;h3&gt;，以此类推。搜索引擎会使用标题将网页的结构和内容编制索引，所以网页上使用标题是很重要的。1234567&lt;!-- 六级标题 --&gt;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/01/HTML篇/「HTML 篇」Part 2 -- HTML 基础语法/#more" rel="contents">
+            <a class="btn" href="/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2101,7 +2075,7 @@ html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2149,7 +2123,7 @@ html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2160,7 +2134,7 @@ html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2171,7 +2145,7 @@ html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2238,7 +2212,7 @@ html标题标签通过&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.3k</span>
+    <span title="Site words total count">78.6k</span>
   
 </div>
 

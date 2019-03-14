@@ -405,7 +405,7 @@
       
 
       
-        <h3 id="JavaScript-变量和函数预解析"><a href="#JavaScript-变量和函数预解析" class="headerlink" title="JavaScript 变量和函数预解析"></a>JavaScript 变量和函数预解析</h3><p>大多数编程语言的变量和方法的使用规则都是先定义后使用，否则就会出现异常。JavaScript具有预解析的功能，能够打破这种规则，可以在变量和函数定义之前就使用该变量和函数（此时的变量值为undefined）。<br>JavaScript 代码的解析过程分为两个阶段，先是编译阶段，然后执行阶段。<br>在编译阶段会将用function定义的函数提前，并且将用var定义的变量 <strong>声明</strong> 提前，并将它赋值为undefined。相当于在代码一开始就创建了一个未初始化的变量（只是效果类似创建了一个变量，实际上没有创建变量）。<br>JavaScript的预解析功能可以让开发者在定义方法之前调用方法，也可以在定义变量之前调用变量，但是变量的值为undefined。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 变量和函数的预解析 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        //预解析会在使用变量的定义语句之前将变量的声明提前,但不会进行初始化,所以变量值是undefined.如果后续没有定义变量,那就会报错.</span></span><br><span class="line"><span class="undefined">        //预解析指将后面定义的变量提前声明一下,而不会创建变量</span></span><br><span class="line"><span class="undefined">        alert(iNum);</span></span><br><span class="line"><span class="undefined">        //预解析会将函数的声明和定义都提前.简单地说就是后续定义的方法,在方法定义之前就可以使用.</span></span><br><span class="line"><span class="undefined">        fnMyalert();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        //使用一个前后都没有创建过的变量,会出错,后面的代码都不会执行了.</span></span><br><span class="line"><span class="undefined">        // alert(iNum2);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        //变量的声明和初始化,其声明会被预解析提前,但初始化的值不会被提前.</span></span><br><span class="line"><span class="undefined">        var iNum = 12;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        //因为预解析,函数在定义之前就已经可以使用了.</span></span><br><span class="line"><span class="undefined">        function fnMyalert() &#123;</span></span><br><span class="line"><span class="undefined">            alert('Maple');</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+        <h3 id="JavaScript-变量和函数预解析"><a href="#JavaScript-变量和函数预解析" class="headerlink" title="JavaScript 变量和函数预解析"></a>JavaScript 变量和函数预解析</h3><p>大多数编程语言的变量和方法的使用规则都是先定义后使用，否则就会出现异常。JavaScript具有预解析的功能，能够打破这种规则，可以在变量和函数定义之前就使用该变量和函数（此时的变量值为undefined）。<br>JavaScript 代码的解析过程分为两个阶段，先是编译阶段，然后执行阶段。<br>在编译阶段会将用function定义的函数提前，并且将用var定义的变量 <strong>声明</strong> 提前，并将它赋值为undefined。相当于在代码一开始就创建了一个未初始化的变量（只是效果类似创建了一个变量，实际上没有创建变量）。<br>JavaScript的预解析功能可以让开发者在定义方法之前调用方法，也可以在定义变量之前调用变量，但是变量的值为undefined。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 变量和函数的预解析 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="comment">//预解析会在使用变量的定义语句之前将变量的声明提前,但不会进行初始化,所以变量值是undefined.如果后续没有定义变量,那就会报错.</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">//预解析指将后面定义的变量提前声明一下,而不会创建变量</span></span></span><br><span class="line"><span class="undefined">        alert(iNum);</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//预解析会将函数的声明和定义都提前.简单地说就是后续定义的方法,在方法定义之前就可以使用.</span></span></span><br><span class="line"><span class="undefined">        fnMyalert();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="comment">//使用一个前后都没有创建过的变量,会出错,后面的代码都不会执行了.</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// alert(iNum2);</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="comment">//变量的声明和初始化,其声明会被预解析提前,但初始化的值不会被提前.</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> iNum = <span class="number">12</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">        <span class="comment">//因为预解析,函数在定义之前就已经可以使用了.</span></span></span><br><span class="line"><span class="actionscript">        <span class="function"><span class="keyword">function</span> <span class="title">fnMyalert</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">'Maple'</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <hr>
 
       
@@ -480,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/01/Java篇/「Java 篇」JSTL/" rel="next" title="「Java 篇」JSTL">
-                <i class="fa fa-chevron-left"></i> 「Java 篇」JSTL
+              <a href="/2018/12/01/Spring 篇/「Spring 篇」导入命名空间/" rel="next" title="「Spring 篇」IDEA中导入命名空间">
+                <i class="fa fa-chevron-left"></i> 「Spring 篇」IDEA中导入命名空间
               </a>
             
           </div>
@@ -490,8 +490,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/08/Python进阶篇/「Python 进阶篇」Part 3 -- 再议装饰器/" rel="prev" title="「Python 进阶篇」Part 3 -- 再议装饰器">
-                「Python 进阶篇」Part 3 -- 再议装饰器 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/04/JavaEE篇/「JavaEE 篇」JS 原生 Ajax/" rel="prev" title="「JavaEE 篇」JS 原生 Ajax">
+                「JavaEE 篇」JS 原生 Ajax <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -574,7 +574,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -585,7 +585,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -596,7 +596,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -679,7 +679,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.3k</span>
+    <span title="Site words total count">78.6k</span>
   
 </div>
 
