@@ -12,6 +12,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码不正确,请询问博主！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -68,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Annotation,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,20 +90,16 @@
 
 
 
-<meta name="description" content="注解注解就是符合一定格式的语法 ，其调用格式：1@xxxx 注解作用：  注释：在阅读程序时给程序员看的，有助于提高程序的可读性。 注解：给jvm看的，能够准确地执行底层的注解解析代码，实现注解的功能。  注解的应用：注解在目前最主流的应用：代替配置文件，尤其是xml文件。 注解相对于配置文件在开发中的优缺点：  注解优点：开发效率高，成本低  注解缺点：耦合性大，并且不利于后期维护  jdk5提">
-<meta name="keywords" content="Annotation">
-<meta property="og:type" content="article">
-<meta property="og:title" content="「Java 篇」注解">
-<meta property="og:url" content="http://yoursite.com/2018/09/30/Java篇/「Java 篇」注解/index.html">
+<meta name="description" content="Everything is the best arrangement">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maple&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/垃圾回收/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="注解注解就是符合一定格式的语法 ，其调用格式：1@xxxx 注解作用：  注释：在阅读程序时给程序员看的，有助于提高程序的可读性。 注解：给jvm看的，能够准确地执行底层的注解解析代码，实现注解的功能。  注解的应用：注解在目前最主流的应用：代替配置文件，尤其是xml文件。 注解相对于配置文件在开发中的优缺点：  注解优点：开发效率高，成本低  注解缺点：耦合性大，并且不利于后期维护  jdk5提">
+<meta property="og:description" content="Everything is the best arrangement">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/uploads/annotation1.png">
-<meta property="og:updated_time" content="2019-02-23T04:22:31.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「Java 篇」注解">
-<meta name="twitter:description" content="注解注解就是符合一定格式的语法 ，其调用格式：1@xxxx 注解作用：  注释：在阅读程序时给程序员看的，有助于提高程序的可读性。 注解：给jvm看的，能够准确地执行底层的注解解析代码，实现注解的功能。  注解的应用：注解在目前最主流的应用：代替配置文件，尤其是xml文件。 注解相对于配置文件在开发中的优缺点：  注解优点：开发效率高，成本低  注解缺点：耦合性大，并且不利于后期维护  jdk5提">
-<meta name="twitter:image" content="http://yoursite.com/uploads/annotation1.png">
+<meta name="twitter:title" content="Maple&#39;s Blog">
+<meta name="twitter:description" content="Everything is the best arrangement">
 
 
 
@@ -122,13 +129,16 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/30/Java篇/「Java 篇」注解/">
+
+
+
+  <link rel="canonical" href="http://yoursite.com/tags/垃圾回收/">
 
 
 
 
 
-  <title>「Java 篇」注解 | Maple's Blog</title>
+  <title>Tag: 垃圾回收 | Maple's Blog</title>
   
 
 
@@ -147,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -283,296 +293,52 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>垃圾回收<small>Tag</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/Java篇/「Java 篇」注解/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2019/04/10/Java篇/「Java 篇」finalize( )/" itemprop="url">
+              
+                <span itemprop="name">「Java 篇」Object.finalize( )</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">「Java 篇」注解</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-30T00:00:00+08:00">
-                2018-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/30/Java篇/「Java 篇」注解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/30/Java篇/「Java 篇」注解/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><p>注解就是符合一定格式的语法 ，其调用格式：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@xxxx</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>注解作用：</strong></p>
-<ol>
-<li>注释：在阅读程序时给程序员看的，有助于提高程序的可读性。</li>
-<li>注解：给jvm看的，能够准确地执行底层的注解解析代码，实现注解的功能。</li>
-</ol>
-<p><strong>注解的应用：</strong><br>注解在目前最主流的应用：<br>代替配置文件，尤其是xml文件。</p>
-<p>注解相对于配置文件在开发中的优缺点：</p>
-<ul>
-<li>注解优点：开发效率高，成本低 </li>
-<li>注解缺点：耦合性大，并且不利于后期维护</li>
-</ul>
-<h4 id="jdk5提供的注解"><a href="#jdk5提供的注解" class="headerlink" title="jdk5提供的注解"></a>jdk5提供的注解</h4><ol>
-<li><p>方法重写：常用于对接口中的方法进行重写标志</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span>：告知编译器此方法是覆盖父类的</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>过时：表示调用注解的对象已经过时了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Deprecated</span>：标注过时</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>压制警告：表示在调用注解对象内部消除警告提示</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span>：压制警告</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="jdk8提供的注解"><a href="#jdk8提供的注解" class="headerlink" title="jdk8提供的注解"></a>jdk8提供的注解</h4><ol>
-<li>重复注解：可以在同一个对象上多次调用用一个注解<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repeatable</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><p>上述注解都是JDK自带的注解，底层的注解定义和解析都是自动完成的，下面通过自定义注解实现以下注解的定义和解析的底层代码的实现原理，思想和JDK自带的注解是一样的，更便于理解。</p>
-<ol>
-<li>自定义注解代码：<br>关键字：@interface<br>注解的属性：<br>语法：返回值 名称();<br>注意：如果属性的名字是value，并且注解的属性值有一个，那么在使用注解时可以省略value。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自定义注解</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyTest &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>注解属性：</strong><br>此处的自定义注解里面没有定义属性，实际中里面都是有定义属性的，不过对属性的类型会有限定：<br><strong>注解属性类型只能是以下几种</strong></p>
-<ol>
-<li>基本类型</li>
-<li>String</li>
-<li>枚举类型</li>
-<li>注解类型</li>
-<li>Class类型</li>
-<li>以上类型的一维数组类型<blockquote>
-<p>为了便于区分，定义注解属性有自己的格式，如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.METHOD, ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation &#123;</span><br><span class="line">    <span class="comment">//定义注解的属性，以示区分，使用特定的格式</span></span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//定义注解的属性，并设置默认值</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 27</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<p><strong>元注解：</strong><br>上述自定以注解中有两行代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br></pre></td></tr></table></figure></p>
-<p>这个就是元注解，它代表修饰注解的注解，其作用就是限制定义的注解的特性。<br><strong>@Target</strong><br>代表注解修饰的范围：类上使用，方法上使用，字段上使用</p>
-<ul>
-<li>FIELD：字段上可用此注解</li>
-<li>METHOD：方法上可以用此注解</li>
-<li>TYPE：类/接口上可以使用此注解</li>
-</ul>
-<p><strong>@Retention</strong><br>代表注解的可见级别，有以下三种：</p>
-<ul>
-<li>SOURCE:    注解在源码级别可见</li>
-<li>CLASS：注解在字节码文件级别可见</li>
-<li>RUNTIME：注解在整个运行阶段都可见<blockquote>
-<p>要想解析使用了注解的类 ， 那么该注解的Retention必须设置成Runtime，因为注解的解析是基于反射技术的，而反射的作用区域就是运行时环境。</p>
-</blockquote>
-</li>
-</ul>
-<p><img src="/uploads/annotation1.png" alt=""></p>
-<ol start="2">
-<li><p>使用注解<br>自定义注解的使用和JDK自带的注解是一样的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"method1..."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@MyTest</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"method2..."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@MyTest</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"method3..."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>模拟解析注解<br>没有实现直接点击运行上述调用注解的方法的功能，只实现了解析注解的核心代码，直接运行以下代码就是实现调用注解的功能。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 注解解析器的核心代码</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTestParser</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InvocationTargetException, IllegalAccessException </span>&#123;</span><br><span class="line">        <span class="comment">//获得TestMyTest</span></span><br><span class="line">        Class clazz = TestMyTest.class;</span><br><span class="line">        <span class="comment">//获取所有的方法</span></span><br><span class="line">        Method[] methods = clazz.getMethods();</span><br><span class="line">        <span class="comment">//获取所有使用@MyTest注解的方法，因为还有的方法使用的不是这个注解</span></span><br><span class="line">        <span class="keyword">if</span> (methods != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line">                <span class="comment">//判断是否使用@MyTest注解</span></span><br><span class="line">                <span class="keyword">boolean</span> annotationPresent = method.isAnnotationPresent(MyTest.class);</span><br><span class="line">                <span class="comment">//该方法使用了@MyTest注解</span></span><br><span class="line">                <span class="keyword">if</span> (annotationPresent) &#123;</span><br><span class="line">                    method.invoke(<span class="keyword">new</span> TestMyTest(), <span class="keyword">null</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	<div>
-
-    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-
-</div>
-
-
-	
-	</div>
-
-
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>感谢您的支持,我会继续努力哦!</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>Donate</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="Maple WeChat Pay">
-        <p>WeChat Pay</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-04-10T20:12:35+08:00" content="2019-04-10">
+          04-10
+        </time>
       </div>
-    
 
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/uploads/alipay.png" alt="Maple Alipay">
-        <p>Alipay</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Annotation/" rel="tag"><i class="fa fa-tag"></i> Annotation</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" rel="next" title="「Linux 篇」Part 2 -- 文件和目录">
-                <i class="fa fa-chevron-left"></i> 「Linux 篇」Part 2 -- 文件和目录
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/" rel="prev" title="「JavaScript篇 」 JavaScript基本语法(上)">
-                「JavaScript篇 」 JavaScript基本语法(上) <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -580,13 +346,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
 
         </div>
         
@@ -607,17 +366,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -634,7 +384,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -645,7 +395,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -656,7 +406,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -696,22 +446,6 @@
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#注解"><span class="nav-number">1.</span> <span class="nav-text">注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jdk5提供的注解"><span class="nav-number">1.1.</span> <span class="nav-text">jdk5提供的注解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jdk8提供的注解"><span class="nav-number">1.2.</span> <span class="nav-text">jdk8提供的注解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义注解"><span class="nav-number">2.</span> <span class="nav-text">自定义注解</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
 
@@ -739,7 +473,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">78.6k</span>
+    <span title="Site words total count">82.6k</span>
   
 </div>
 
@@ -875,10 +609,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

@@ -12,6 +12,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码不正确,请询问博主！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -117,6 +128,9 @@
     }
   };
 </script>
+
+
+
 
 
 
@@ -409,7 +423,7 @@
 <p>2)  设置Cookie在客户端的持久化时间：<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.<span class="keyword">set</span>MaxAge<span class="params">(int seconds)</span>; <span class="params">---</span>时间秒</span><br></pre></td></tr></table></figure></p>
 <p>如果不设置持久化时间，cookie会存储在浏览器的内存中，浏览器关闭cookie信息销毁（会话级别的cookie），如果设置持久化时间，cookie信息会被持久化到浏览器的磁盘文件里。<br>示例：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setMaxAge(<span class="number">10</span>*<span class="number">60</span>);</span><br></pre></td></tr></table></figure></p>
 <p>设置cookie信息在浏览器的磁盘文件中存储的时间是10分钟，过期之后，浏览器自动删除该cookie信息。</p>
-<p>3）设置Cookie的携带路径：<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setPath(String path)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>3）设置Cookie的携带路径：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setPath(<span class="built_in">String</span> path);</span><br></pre></td></tr></table></figure></p>
 <p>如果不设置携带路径，那么该cookie信息会在访问产生该cookie的web资源所在的路径下的文件时都携带cookie信息。<br>示例：<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setPath(<span class="string">"/"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <p>代表访问当前Web应用中的任何资源都携带cookie<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setPath(<span class="string">"/cookieServlet"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <p>代表访问当前Web应用中的cookieServlet时才携带cookie信息</p>
@@ -515,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/" rel="next" title="「JDBC 篇」JDBC中的事务">
-                <i class="fa fa-chevron-left"></i> 「JDBC 篇」JDBC中的事务
+              <a href="/2018/11/15/JavaEE篇/「JavaEE 篇」HttpServletResponse & HttpServletRequest/" rel="next" title="「JavaEE 篇」HttpServletResponse & HttpServletRequest">
+                <i class="fa fa-chevron-left"></i> 「JavaEE 篇」HttpServletResponse & HttpServletRequest
               </a>
             
           </div>
@@ -525,8 +539,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/21/JavaEE篇/「JavaEE 篇」JSP/" rel="prev" title="「JavaEE 篇」JSP">
-                「JavaEE 篇」JSP <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/" rel="prev" title="「JDBC 篇」JDBC中的事务">
+                「JDBC 篇」JDBC中的事务 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -609,7 +623,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -620,7 +634,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -631,7 +645,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -714,7 +728,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">78.6k</span>
+    <span title="Site words total count">82.6k</span>
   
 </div>
 

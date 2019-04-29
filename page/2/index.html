@@ -12,6 +12,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码不正确,请询问博主！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -115,6 +126,9 @@
     }
   };
 </script>
+
+
+
 
 
 
@@ -295,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -314,7 +328,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/" itemprop="url">「JavaEE 篇」JSTL</a></h1>
+                <a class="post-title-link" href="/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/" itemprop="url">「Java 篇」SimpleDateFormat 格式化日期</a></h1>
         
 
         <div class="post-meta">
@@ -326,8 +340,178 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-01T00:00:00+08:00">
-                2018-12-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-22T00:00:00+08:00">
+                2019-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          SimpleDateFormatSimpleDateFormat 包含在 Java 的 java.text.SimpleDateFormat 包中。Java中的日期和时间格式由 日期和时间模式字符串 指定。在 日期和时间模式字符串 中，未加引号的字母 ‘A’ 到 ‘Z’ 和 ‘a’ 到 ‘z’ 被解释为模式字母，用来表示日期或时间字符串元素。
+常见的模式字母如下：
+G：年代标志符yyyy：年MM：月dd：日hh：1~12小时制(1-12)HH：24小时制(0-23)mm：分ss：秒S：毫秒E：星期几D：一年中的第几天 F：一月中的第几个星期(会把这个月总共过的天数除以7) w：一年中的第几个星期 W：一月中的第几星期(会根据实际情况来算，毕竟不是每个月包含的星期数都一样) a：上、下午 标记符 k：和HH差不多，表示一天24小时制(1-24) K：和hh差不多，表示一天12小时制(0-11) z：时区 
+完整的图参考：
+常用格式的  demo123456789101112131415161718import java.text.SimpleDateFormat;import java.
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/22/Java篇/「Java 篇」SimpleDateFormat 格式化日期/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/JavaEE篇/「JavaEE 篇」json数据格式/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/10/JavaEE篇/「JavaEE 篇」json数据格式/" itemprop="url">「JavaEE 篇」json数据格式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-10T00:00:00+08:00">
+                2018-12-10
               </time>
             
 
@@ -367,8 +551,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/" itemprop="commentCount"></span>
+                <a href="/2018/12/10/JavaEE篇/「JavaEE 篇」json数据格式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/10/JavaEE篇/「JavaEE 篇」json数据格式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -398,48 +582,535 @@
       
         
           
-          JSTL技术JSTL概述JSTL（JSP Standard Tag Library)，JSP标准标签库，可以嵌入在jsp页面中使用标签的形式完成业务逻辑等功能。jstl出现的目的同el一样也是要替代jsp页面中的脚本代码，主要是逻辑代码。JSTL标准标准标签库有5个子库，但随着发展，目前常使用的是它的核心库。
+          Json数据格式json是一种与语言无关的数据交换格式，主要用于数据传递，作用：
 
+使用ajax进行前后台数据交换
+移动端与服务端的数据交换
 
+Json的格式json有以下格式：
 
-标签库
-标签库的URI
-前缀
-
-
-
-
-Core(常用)
-http://java.sun.com/jsp/jstl/core
-c
-
-
-I18N
-http://java.sun.com/jsp/jstl/fmt
-fmt
-
-
-SQL
-http://java.sun.com/jsp/jstl/sql
-sql
-
-
-XML
-http://java.sun.com/jsp/jstl/xml
-x
-
-
-Functions
-http://java.sun.com/jsp/jstl/functions
-fn
-
-
-
-JSTL下载与导入JSTL下载：从Apache的网站下载JSTL的JAR包。进入 http://archive.apache.org/dist/jakarta/taglibs/stan
+对象格式（键值对）：{“key1”:obj,”key2”:obj,”key3”:obj…}，获取属性的时候使用 . 运算符例如：
+12345678910111213141516171819202122&lt;script language="JavaScript"&gt;        /**         * 案例一,json的对象格式         *  &#123;key:value,key:value&#125;         *         * class Person&#123;         * 	  String firstname = "张";         *    String lastname = "三丰";         *    Integer age = 100;         * &#125;         *         * Person p = n
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/#more" rel="contents">
+            <a class="btn" href="/2018/12/10/JavaEE篇/「JavaEE 篇」json数据格式/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/08/JavaEE篇/「JavaEE 篇」JQuery的Ajax/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/08/JavaEE篇/「JavaEE 篇」JQuery的Ajax/" itemprop="url">「JavaEE 篇」JQuery的Ajax</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-08T00:00:00+08:00">
+                2018-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JavaEE 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/08/JavaEE篇/「JavaEE 篇」JQuery的Ajax/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/08/JavaEE篇/「JavaEE 篇」JQuery的Ajax/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Jquery的Ajax技术jquery是javascript封装的框架。jquery是一个优秀的js框架，自然对js原生的ajax进行了封装，封装后的ajax的操作方法更简洁，功能更强大，与ajax操作相关的jquery方法有如下几种，但开发中经常使用的有三种：
+
+$.get(url, [data], [callback], [type])例如：
+123456789101112function function1() &#123;    //get异步访问,传输的数据可以使用两种格式,字符串和json格式: "name=Maple&amp;age=27" 或 &#123;"name":"Maple","age":27&#125;    $.get(        "JqueryAjaxServlet",//url地址        &#123;"name": "Maple", "age": 27&#125;,//请求参数        function (data) &#123;//执行成功后的回调函数,并接收服务器端返回的数据,回调函数的参数data就是服务器端返回的数据      
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/08/JavaEE篇/「JavaEE 篇」JQuery的Ajax/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/JavaEE篇/「JavaEE 篇」JS 原生 Ajax/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/JavaEE篇/「JavaEE 篇」JS 原生 Ajax/" itemprop="url">「JavaEE 篇」JS 原生 Ajax</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T00:00:00+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JavaEE 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/JavaEE篇/「JavaEE 篇」JS 原生 Ajax/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/04/JavaEE篇/「JavaEE 篇」JS 原生 Ajax/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Ajax概述
+什么是同步，什么是异步同步现象： 客户端发送请求到服务器端，当服务器返回响应之前，客户端都处于等待卡死状态异步现象： 客户端发送请求到服务器端，无论服务器是否返回响应，客户端都可以随意做其他事情，不会被卡死
+
+Ajax的两种说法：异步；局部刷新；
+
+
+Ajax的运行原理页面发起请求，会将请求发送给浏览器内核中的Ajax引擎，Ajax引擎会提交请求到服务器端，在这段时间里，客户端可以任意进行任意操作，直到服务器端将数据返回给Ajax引擎后，会触发你设置的事件，从而执行自定义的js逻辑代码完成某种功能。
+
+
+Ajaxjs原生的Ajax其实就是围绕浏览器内内置的Ajax引擎对象进行的，要使用js原生的Ajax完成异步操作，有如下几个步骤：
+
+创建Ajax引擎对象
+为Ajax引擎对象绑定监听（监听服务器已将数据响应给引擎）
+绑定提交地址
+发送请求
+接受响应数据12345678910111213141516171819202122// 1.创建Ajax引擎对象---后续的所有操作都是通过引擎对象执行的var xmlHttp = new XMLHttpRequest();// 2.绑
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/04/JavaEE篇/「JavaEE 篇」JS 原生 Ajax/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/" itemprop="url">「JavaScript篇 」变量和函数预解析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-02T00:00:00+08:00">
+                2018-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-JavaScript-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JavaScript 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          JavaScript 变量和函数预解析大多数编程语言的变量和方法的使用规则都是先定义后使用，否则就会出现异常。JavaScript具有预解析的功能，能够打破这种规则，可以在变量和函数定义之前就使用该变量和函数（此时的变量值为undefined）。JavaScript 代码的解析过程分为两个阶段，先是编译阶段，然后执行阶段。在编译阶段会将用function定义的函数提前，并且将用var定义的变量 声明 提前，并将它赋值为undefined。相当于在代码一开始就创建了一个未初始化的变量（只是效果类似创建了一个变量，实际上没有创建变量）。JavaScript的预解析功能可以让开发者在定义方法之前调用方法，也可以在定义变量之前调用变量，但是变量的值为undefined。12345678910111213141516171819202122232425262728293031323334&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;!-- 变量和函数的预解析 --&gt;&lt;head&gt;    &lt;meta charset="UTF-8
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -609,6 +1280,209 @@ JSTL下载与导入JSTL下载：从Apache的网站下载JSTL的JAR包。进入 h
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/12/01/Spring 篇/「Spring 篇」导入命名空间/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/" itemprop="url">「JavaEE 篇」JSTL</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-01T00:00:00+08:00">
+                2018-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JavaEE 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          JSTL技术JSTL概述JSTL（JSP Standard Tag Library)，JSP标准标签库，可以嵌入在jsp页面中使用标签的形式完成业务逻辑等功能。jstl出现的目的同el一样也是要替代jsp页面中的脚本代码，主要是逻辑代码。JSTL标准标准标签库有5个子库，但随着发展，目前常使用的是它的核心库。
+
+
+
+标签库
+标签库的URI
+前缀
+
+
+
+
+Core(常用)
+http://java.sun.com/jsp/jstl/core
+c
+
+
+I18N
+http://java.sun.com/jsp/jstl/fmt
+fmt
+
+
+SQL
+http://java.sun.com/jsp/jstl/sql
+sql
+
+
+XML
+http://java.sun.com/jsp/jstl/xml
+x
+
+
+Functions
+http://java.sun.com/jsp/jstl/functions
+fn
+
+
+
+JSTL下载与导入JSTL下载：从Apache的网站下载JSTL的JAR包。进入 http://archive.apache.org/dist/jakarta/taglibs/stan
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/01/JavaEE篇/「JavaEE 篇」JSTL/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1027,178 +1901,6 @@ java注释：可见范围： jsp源码、翻
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/" itemprop="url">「JavaEE 篇」Cookie & Session</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-16T00:00:00+08:00">
-                2018-11-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaEE 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          会话技术存储客户端的状态日常生活中我们经常上网购物，那么在网站的购物系统中，用户将购买的商品信息存储到哪里呢？因为Http协议是无状态的，也就是说每个客户端访问服务器端资源时，服务器并不知道该客户端是谁，所以，就引入了会话技术来识别客户端的状态。
-
-会话技术是帮助服务器记住客户端状态（区分客户端）
-
-会话技术从打开一个浏览器访问某个站点开始，到关闭整个浏览器的过程为止，称为一次会话（可以包含很多次请求）。因为会话所用的内存是在浏览器内部开辟的，所以只有浏览器全部关闭才结束会话。会话技术就是记录这次会话中客户端的状态与数据。会话技术分为Cookie和Session，它们各有特点：Cookie： 数据存储在客户端本地，减少服务器端的存储压力，但安全性不好，客户端可以清除cookie；Session： 将数据存储到服务器端，安全性相对好，但增加服务器的压力；
-CookieCookie技术是将用户的数据存储到客户端的技术，主要介绍两个方面内容：第一：服务器端怎样将一个Cookie发送到客户端；第二：服务器端怎样接受客户端携带的Cookie；
-服务器端向客户端发送一个Cookie1)  创建Co
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1367,715 +2069,6 @@ JDBC事务操作JDBC默认是自动事务，执行sql语句：executeUpdate( )�
 
         
     
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/JavaEE篇/「JavaEE 篇」HttpServletResponse & HttpServletRequest/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/15/JavaEE篇/「JavaEE 篇」HttpServletResponse & HttpServletRequest/" itemprop="url">「JavaEE 篇」HttpServletResponse & HttpServletRequest</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T00:00:00+08:00">
-                2018-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaEE 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/15/JavaEE篇/「JavaEE 篇」HttpServletResponse & HttpServletRequest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/15/JavaEE篇/「JavaEE 篇」HttpServletResponse & HttpServletRequest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          HttpServletResponse &amp; HttpServletRequestHttpServletResponse &amp; HttpServletRequest概述创建Servlet对象时会覆盖service( )方法，或doGet( )和doPost( ),  这些方法都有两个参数，一个为代表请求的request参数和一个代表响应的response参数。service( )方法中的response的类型是ServletResponse,request的类型是ServletRequest，而doGet( )和doPost( )方法的response的类型是HttpServletResponse，request的类型是HttpServletRequest，HttpServletRequest和HttpServletResponse分别是ServletRequest和ServletResponse的子接口，功能和方法更加强大。
-response &amp; request 的运行流程
-Http响应response代表响应，所以可以通过该对象分别设置Http响应的响应行，响应
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/15/JavaEE篇/「JavaEE 篇」HttpServletResponse & HttpServletRequest/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/JavaEE篇/「JavaEE 篇」Servlet/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/JavaEE篇/「JavaEE 篇」Servlet/" itemprop="url">「JavaEE 篇」Servlet</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T00:00:00+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaEE 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/11/JavaEE篇/「JavaEE 篇」Servlet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/11/JavaEE篇/「JavaEE 篇」Servlet/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Servlet简介ServletServlet 是运行在服务器端的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端的请求,并响应给浏览器动态资源。servlet的实质就是java代码，通过java的API动态的向客户端输出内容。servlet规范：包含三个技术点
-
-servlet技术
-filter技术—过滤器
-listener技术—监听器
-
-快速实现Servlet底层的实现步骤如下：
-
-创建类实现Servlet接口
-实现接口的方法—init(),service(),destory()等方法
-在web.xml进行servlet的配置
-
-在实际开发中，我们不会直接去实现Servlet接口，因为servlet接口的方法太多，如果直接实现servlet接口，需要重写的方法太多，代码会出现冗余。所以，我们一般创建类继承HttpServlet；实际的实现步骤：（eclipse、IDEA等IDE都有servlet模板）
-
-创建类继承HttpServlet类
-覆盖doGet和doPost
-在web.xml中进行servlet的配置(eclipse中会自动配置，IDEA中也会自动配置，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/11/JavaEE篇/「JavaEE 篇」Servlet/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/10/JDBC篇/「JDBC 篇」JDBC连接MySQL/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/10/JDBC篇/「JDBC 篇」JDBC连接MySQL/" itemprop="url">「JDBC 篇」JDBC连接MySQL</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T00:00:00+08:00">
-                2018-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JDBC-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JDBC 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/10/JDBC篇/「JDBC 篇」JDBC连接MySQL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/10/JDBC篇/「JDBC 篇」JDBC连接MySQL/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          JDBCJDBC（Java DataBase Connectivity），Java数据库连接，由SUN公司推出的Java访问数据库的标准规范（接口），是连接数据库和Java应用程序的纽带。其有如下特点：
-
-JDBC 是一种用于执行SQL语句的Java API；
-JDBC 可以为多种关系数据库提供统一的访问入口；
-JDBC 由一组Java工具类和接口组成；
-
-在IDEA中JDBC的开发步骤：
-注册驱动
-建立连接
-获取语句执行
-执行sql语句
-处理结果
-释放资源
-
-导入驱动包
-下载JDBC的驱动jar包；以下是 mysql-connector-java-5.1.39-bin.jar 的百度网盘下载链接：https://pan.baidu.com/s/1j7Wr4Vz9d0VZ_WFBmIP7GQ   提取码: u9jr
-在IDEA中需要使用MySQL的项目中创建一个文件夹，一般命名为lib/libs(eclipse中是这样命名的)，然后将下载的驱动jar包拷贝到文件夹中；
-将lib文件夹中的jar包添加到项目里，类似eclipse的add to build path功能（添加成功之后会出现
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/10/JDBC篇/「JDBC 篇」JDBC连接MySQL/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/" itemprop="url">「JavaEE 番外篇」外网访问tomcat项目部署</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T00:00:00+08:00">
-                2018-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaEE-番外篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaEE 番外篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          内网穿透内网穿透,即NAT穿透,网络连接时的术语,计算机处于LAN（局域网或内网）下时，WAN（广域网或外网）和LAN下的计算机节点需要连接通信，有时会出现不支持内网穿透，这是百度百科对于内网穿透的解释。简单地说，就是连接内网（局域网）的计算机不能直接被外网的计算机访问到，所以利用tomcat在个人计算机上部署的Web项目也无法直接被外网的用户访问，如果想要让外网能够访问内网的计算机就需要使用到内网穿透技术。
-
-实际的项目都是部署在服务器上的，这里是针对的是本地测试Web的方法
-
-natapp就是提供内网穿透的软件，简单快捷，而且免费（既然是免费的，使用的权限就会受到限制，系统给用户的分配的域名如果被收费的VIP用于占用了，免费用户就不能使用该域名了，即使正在使用，也会被强制下线，而且免费用户的域名是系统随机分配的，也就是说每次使用该软件得到的域名都是不一样的，即用于访问部署的项目的域名是不一样的）。
-NATAPP 的使用
-在NATAPP官网注册账号并实名认证NATAPP 官网
-
-登录之后， 购买免费隧道
-
-根据需要，选择隧道协议 Web/TCP/IP，tomcat部署的项目选择Web
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/08/JavaEE番外篇/「JavaEE 番外篇」外网访问tomcat项目部署/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
   </section>
 
   
@@ -2128,7 +2121,7 @@ NATAPP 的使用
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2139,7 +2132,7 @@ NATAPP 的使用
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2150,7 +2143,7 @@ NATAPP 的使用
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2217,7 +2210,7 @@ NATAPP 的使用
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">78.6k</span>
+    <span title="Site words total count">82.6k</span>
   
 </div>
 

@@ -12,6 +12,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码不正确,请询问博主！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -117,6 +128,9 @@
     }
   };
 </script>
+
+
+
 
 
 
@@ -397,7 +411,7 @@
         <h4 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h4><ol>
 <li><strong>view in browser</strong><br>一个用于在浏览器打开文件的插件,支持多个浏览器版本,安装完成之后在设置里面设置默认的浏览器,如下是设置为谷歌浏览器为默认浏览器:</li>
 </ol>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"view-in-browser.customBrowser"</span>: <span class="string">"chrome"</span>,</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"view-in-browser.customBrowser"</span>: <span class="string">"chrome"</span>,</span><br></pre></td></tr></table></figure>
 <p> 该插件的默认快捷键:<br> <code>Ctrl + F1</code><br> 但是,该插件不稳定,可能会出现不能使用的情况.</p>
 <ol start="2">
 <li><strong>open in browser</strong><br>该插件相比于上一个插件来说更稳定,而且相对使用比较简单,该插件会自动设置默认的浏览器,谷歌浏览器.所以,开发者安装该插件之后便可使用,前提是计算机上已经安装chrome浏览器,如果没有安装,也可以手动设置默认浏览器.<br>该插件的默认快捷键:<br><code>Alt + B</code> : 使用默认浏览器打开文件;<br><code>Alt + Shift + B</code>: 自定义浏览器打开文件;</li>
@@ -569,7 +583,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -580,7 +594,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -591,7 +605,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -674,7 +688,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">78.6k</span>
+    <span title="Site words total count">82.6k</span>
   
 </div>
 

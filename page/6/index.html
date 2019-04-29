@@ -12,6 +12,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码不正确,请询问博主！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -115,6 +126,9 @@
     }
   };
 </script>
+
+
+
 
 
 
@@ -295,6 +309,893 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/" itemprop="url">「MySQL篇」Part6-limit分页</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-15T00:00:00+08:00">
+                2018-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          使用limit限制查询结果的数量查询数据时，可能会返回很多条记录，但是用户需要的记录可能只有一条或是其中的几条，比如实现分页功能，每页显示10条信息，每次查询就只需要查出10条记录，为此MySQL中提供了一个关键字limit，可以指定查询结从哪一条记录开始以及一共查询多少条信息。limit语法1select * from 表名 limit start,count
+
+start：偏移量，默认是0count：表示返回查询记录的条数简单地说：从start开始，获取count条数据
+
+查询前3行男生信息1select * from students where gender=1 limit 0,3;
+分页已知：每页显示m条数据，当前显示第n页求总页数：
+
+查询总条数为p1
+使用p1除以m得到p2
+如果整除则p2为总数页
+如果不整除则p2+1为总页数求第n页的数据第N页的数据是从(N-1)*m开始，获取m条数据
+
+1select * from students where is_delete=0 limit (n-1)*m,m
+
+分页：limit (第N页-1)×每页的个数，每页的个数
+
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/15/MySQL篇/「MySQL篇」Part6-分页/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/15/Java篇/「Java 篇」类加载器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/15/Java篇/「Java 篇」类加载器/" itemprop="url">「Java 篇」类加载器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-15T00:00:00+08:00">
+                2018-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/15/Java篇/「Java 篇」类加载器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/15/Java篇/「Java 篇」类加载器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          类加载器类加载器的作用Java代码的执行过程如下：类加载器就是加载字节码文件(.class)的组件，属于JVM的一部分。Java源码经过编译器编译之后变成了字节码文件，类加载器就是将生成的字节码文件加载到内存中（jre，Java运行时环境/JDK运行时内存），并生成字节码对象。
+
+字节码对象是反射技术的常用对象。
+
+类加载器的种类类加载器有三种，不同类加载器加载不同的文件。
+
+BootStrap：引导类加载器：加载都是最基础的文件
+ExtClassLoader：扩展类加载器：加载都是基础的文件
+AppClassLoader：应用类加载器：三方jar包和自己编写java文件
+
+怎么获得类加载器？1ClassLoader 类加载器对象 = 字节码对象.getClassLoader();
+例如：123//获取指定类的字节码对象Class clazz = Class.forName("reflect.bean.Person");ClassLoader classLoader = clazz.getClassLoader();
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/15/Java篇/「Java 篇」类加载器/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/" itemprop="url">「MySQL篇」Part5-聚合函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-12T00:00:00+08:00">
+                2018-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          聚合函数为了快速对数据进行统计，并返回唯一值的函数，称为聚合函数。常用的5个聚合函数如下：
+总数count( )函数：表示计算总行数，括号中写星与列名，结果是相同的查询学生总数1select count(*) from students;
+最大值max( )函数：表示求此列的最大值查询女生的编号最大值1select max(id) from students where gender=2;
+最小值min( )：表示求此列的最小值查询未删除的学生最小编号1select min(id) from students where is_delete=0;
+求和sum( )：表示求此列的和查询男生的总年龄1select sum(age) from students where gender=1;
+查询男生的平均年龄1select sum(age)/count(*) from students where gender=1;
+平均值avg( )函数：表示求此列的平均值查询未删除女生的编号平均值1select avg(id) from students where is_delete=0 and g
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/12/MySQL篇/「MySQL篇」Part5-聚合函数/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/" itemprop="url">「MySQL篇」Part4-数据库查询</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T00:00:00+08:00">
+                2018-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          数据库数据1234567891011121314151617181920212223242526272829303132创建数据库create database java charset=utf8;使用数据库use java;students表create table students(    id int unsigned primary key auto_increment not null,    name varchar(20) default &apos;&apos;,    age tinyint unsigned default 0,    height decimal(5,2),    gender enum(&apos;男&apos;,&apos;女&apos;,&apos;中性&apos;,&apos;保密&apos;) default &apos;保密&apos;,    cls_id int unsigned default 0,    is_delete bit default 0);classes表create table classes (    id i
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/10/MySQL篇/「MySQL篇」Part4-数据库查询/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/Java篇/「Java 篇」线程的生命周期/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/10/Java篇/「Java 篇」线程的生命周期/" itemprop="url">「Java 篇」线程的生命周期</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T00:00:00+08:00">
+                2018-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/10/Java篇/「Java 篇」线程的生命周期/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/10/Java篇/「Java 篇」线程的生命周期/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Java JVM管理的运行时数据区包括以下5大块: 
+
+方法区
+堆
+虚拟机栈
+本地方法栈
+程序计数器
+
+其中,方法区和堆是所有线程共享的数据区,而虚拟机栈,本地方法栈和程序计数器都是线程隔离的数据区.Java中的每一个线程都有自己的局部变量表,程序计数器,以及声明周期等.线程的生命周期大体可以分成如下5个主要的阶段:
+
+ New
+Runnable
+Running
+Blocked
+Terminated
+
+其各个阶段的转化过程如下所示:
+线程的New状态当我们使用关键字new创建一个Thread对象的时候,此时它并不处于执行状态,因为还没有调用start()方法启动线程,此时线程的状态就称为New状态.准确地说,它只是Thread对象的状态,因为在没有调用start()方法之前,该线程根本不存在,这个线程对象就和使用new关键字创建的普通对象一样.
+
+New状态通过调用start()方法进入Runnable状态.
+
+线程的Runnable状态 线程对象进入Runnable状态必须通过调用start()方法,那么此时才是真正的在JVM进程中创建了一个新线程.但是线程不是一经创建就可以执行的,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/10/Java篇/「Java 篇」线程的生命周期/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/09/HTML篇/「HTML 篇」Part 3 -- 制作个人简历 /">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -405,6 +1306,178 @@ table布局table来做整体页面的布局，布局的技巧归纳为如下几�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/09/HTML篇/「HTML 篇」Part 3 -- 制作个人简历 /#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/" itemprop="url">「Java 篇」集合Part 9 - TreeMap</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-09T00:00:00+08:00">
+                2018-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          TreeMapTreeMap集合底层是二叉树实现的，可以对键进行排序，所以不允许键对象是null，否则就会抛出空指针异常。TreeMap集合也是针对键的。TreeMap集合的特点：
+
+键唯一性
+键排序
+无索引
+
+TreeMap集合的使用TreeMap集合默认会对键进行排序，排序的底层是通过compareTo()方法，String类型默认已经重写了compareTo()方法，按照字典的顺序进行排序。1234567891011/**     * 对键进行排序,String格式默认的compareTo()方法是按照字典的顺序进行排序的     */    private static void method1() &#123;        TreeMap&lt;String, Integer&gt; map = new TreeMap&lt;&gt;();        map.put("Wuzi", 27);        map.put("Maple", 25);        map.put("Kyrie", 26);        System.out.println(map); 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/09/Java篇/「Java 篇」集合Part 9 - TreeMap/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -803,188 +1876,6 @@ HashMap方法HashMap的添加功能 add()：12345678910111213141516private stati
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/MySQL篇/「MySQL篇」Part3-数据库常用命令/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/06/MySQL篇/「MySQL篇」Part3-数据库常用命令/" itemprop="url">「MySQL篇」Part3-数据库常用命令速查</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-06T00:00:00+08:00">
-                2018-09-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>MySQL篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/06/MySQL篇/「MySQL篇」Part3-数据库常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/06/MySQL篇/「MySQL篇」Part3-数据库常用命令/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在工作中主要使用命令操作方式，要求熟练编写.
-服务器命令开启数据库服务器1sudo service mysql start
-停止服务1sudo service mysql stop
-重启服务1sudo service mysql restart
-命令行连接打开终端，运行命令:1mysql -uroot -p
-回车后 输入密码。
-退出登录1quit 和 exit 或 ctrl+d
-查看数据库版本1select version();
-显示当前时间1select now();
-操作数据库查看所有数据库1show databases;
-使用数据库1use 数据库名;
-查看当前使用的数据库1select database();
-创建数据库1create database 数据库名 charset=utf8;
-删除数据库1drop database 数据库名;
-操作数据表查看当前数据库中所有表1show tables;
-查看表结构1desc 表名;
-创建表12345678CREATE TABLE table_name(    column1 datatype ,    column2 dataty
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/06/MySQL篇/「MySQL篇」Part3-数据库常用命令/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/Java篇/「Java 篇」集合Part 6 - TreeSet/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1139,887 +2030,6 @@ TreeSet底层是二叉树,小的存储在左边(负数),大的存储在右边(�
 
         
     
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /" itemprop="url">「Java 篇」集合Part 5 - LinkedHashSet</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">
-                2018-09-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          LinkedHashSetLinkedHashSet底层是链表实现的，是set集合中唯一一个能保证存储顺序的集合对象。因为是HashSet的子类，也保证了元素的唯一性。同样的，如果是需要存储自定义对象，必须重写hashcode()和equals()方法。
-LinkedHashSet特点：
-
-存取有序：存储和获取元素的顺序是一致的
-无索引：无法通过索引获取元素，获取元素只能通过迭代的方法
-不能存储重复元素：底层是通过hashcode()方法和equals()方法对各个对象进行比较，然后决定是否存取，所有基本数据类型的引用数据类型都重写了这两个方法，所以在作为元素进行添加的时候能够自动进行比较，如果是自定义类的实例，必须要开发者在定义类的时候重写这两个方法，否则就不能实现不重复存储的特性。
-
-123456789101112131415161718192021222324252627 public static void main(String[] args) &#123;//        method1();//        method2();    &#125;    //存储自定
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/05/Java篇/「Java 篇」集合Part 5 - LinkedHashSet /#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/" itemprop="url">「Java 篇」集合Part 4 - HashSet</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-04T00:00:00+08:00">
-                2018-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          HashSetHashSet集合是哈希表支持的，底层是HashMap的操作。HashSet的特点：
-
-存取无序：不保证存储和获取元素的顺序是一致的
-无索引：无法通过索引获取元素，获取元素只能通过迭代的方法
-不能存储重复元素：底层是通过hashcode方法和equals方法对各个对象进行比较，然后决定是否存取，所有基本数据类型的引用数据类型都重写了这两个方法，所以在作为元素进行添加的时候能够自动进行比较，如果是自定义类的实例，必须要开发者在定义类的时候重写这两个方法，否则就不能实现不重复存储的特性。
-
-HashSet常用方法HashSet存储引用数据类型HashSet也是Collection类的子类，所以集合常用的方法都是有的。如下例的代码，因为存储的是String类型的元素，而String类默认已经重写了hashcode方法和equals方法，用来确保不会重复保存元素，其他的引用数据类型也都重写了hashcode方法和equals方法。123456789101112131415161718public static void main(String[] args) &#123;    
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/04/Java篇/「Java 篇」集合Part 4 - HashSet/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/" itemprop="url">「Java 篇」集合Part 3 - LinkedArrayList</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T00:00:00+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          LinkedArrayListLinkedArrayList底层是链表实现的，所以它的查找和修改操作速度慢，因为链表在内存中是不连续的，每个节点Node都有一个数据域和一个指针域(单链表一个数据域和一个指针域,数据域中存储的是该节点的数据,指针域里面是想一个节点的地址;双变量有一个数据域和两个指针域,一个指针域指向前驱,一个指针域指向后继) ,串联而成的一个线性表,如果想要查找就只能从第一个元素开始遍历,才能找到下一个元素,再找到下下一个,如此下去,所有就慢了,如果想修改,就要先找到需要修改的元素,也就慢了.最好的情况是需要查找或修改的元素是第一个元素,时间复杂度就是O(1),最坏的情况是需要查找或修改的元素是最后一个元素,时间复杂度是O(n).所以LinkedArrayList的应用场景是 增加或删除多的任务LinkedList集合特点:
-
-存取有序
-有索引
-可以存储重复元素
-
-LinkedArrayList特有方法因为LinkedArrayList是List的子类,常用的方法都是一样的,以下是LinkedArrayList做为链表存储结构特有的方法.1234567891011121
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/Java篇/「Java 篇」集合Part 3- LinkedArrayList/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/" itemprop="url">「MySQL篇」Part2-数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T00:00:00+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>MySQL篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          数据完整性一个数据库就是一个完整的业务单元，可以包含多张表，数据被存储在表中。在表中为了更加准确的存储数据，保证数据的正确有效，可以在创建表的时候，为表添加一些强制性的验证，包括数据字段的类型、约束数据类型。
-
-使用数据类型的原则是：够用就行，尽量使用取值范围小的，而不用大的，这样可以更多的节省存储空间
-
-数据类型
-整数：int，bit
-小数：decimal
-字符串：varchar,char
-日期时间: date, time, datetime
-枚举类型(enum)
-
-特别说明的类型如下：
-
-decimal表示浮点数，如decimal(5,2)表示共存5位数，小数占2位
-char表示固定长度的字符串，如char(3)，如果填充’ab’时会补一个空格为’ab ‘
-varchar表示可变长度的字符串，如varchar(3)，填充’ab’时就会存储’ab’
-字符串text表示存储大文本，当字符大于4000时推荐使用
-对于图片、音频、视频等文件，不存储在数据库中，而是上传到某个服务器上，然后在表中存储这个文件的保存路径
-
-约束
-主键primary key：物理上存储的顺序
-非空not null
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/" itemprop="url">「Java 篇」集合Part 2 - ArrayList</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T00:00:00+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Java 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ArrayListArrayList集合底层是数组实现，所以查找和修改操作速度快，删除和增加操作速度慢，因为数组在内存中是连续连续存储的，查找和修改操作可以直接通过索引快速实现，时间复杂度为 O(1)，但是对于删除和增加操作，每次执行这样的操作，数组的得到长度都会发生变化，但是又要保证内存的连续存储，如果在数组中间删除或是增加了一个元素，那么其后面的所有元素都需要执行一次移位操作来保证内存的连续性，最好的情况是在数组的末尾执行删除或是增加操作，时间复杂度是 O(1)，最坏的情况是在数组的开头执行删除或是增加操作，那么所有的数组元素都要执行依次一位操作，所以这样的一次删除或是增加操作的时间复杂度就是 O(n).ArrayList底层在内存中的存储方式决定了使用场景：
-
-查找或修改操作频繁的任务
-增、删、改、查 操作都频繁的任务
-
-ArrayList特点：
-
-顺序存储：能按照元素的存入顺序进行保存和读取
-有索引：可以通过索引获取元素
-可以存储重复元素
-
-Collection类常用方法Collection类是单列集合 List 和 Set 的父类，它有的方法，子类都会继承，以下是单列集合常用
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/Java篇/「Java 篇」集合Part 2- ArrayList/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
   </section>
 
   
@@ -2072,7 +2082,7 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2083,7 +2093,7 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2094,7 +2104,7 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2161,7 +2171,7 @@ Collection类常用方法Collection类是单列集合 List 和 Set 的父类，�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">78.6k</span>
+    <span title="Site words total count">82.6k</span>
   
 </div>
 
