@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -328,7 +328,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/" itemprop="url">「JavaEE 篇」Cookie & Session</a></h1>
+                <a class="post-title-link" href="/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/" itemprop="url">「JDBC 篇」JDBC中的事务</a></h1>
         
 
         <div class="post-meta">
@@ -363,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaEE 篇</b></span>
+                  <a href="/categories/b-JDBC-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JDBC 篇</b></span>
                   </a>
                 </span>
 
@@ -381,8 +381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/" itemprop="commentCount"></span>
+                <a href="/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -412,17 +412,27 @@
       
         
           
-          会话技术存储客户端的状态日常生活中我们经常上网购物，那么在网站的购物系统中，用户将购买的商品信息存储到哪里呢？因为Http协议是无状态的，也就是说每个客户端访问服务器端资源时，服务器并不知道该客户端是谁，所以，就引入了会话技术来识别客户端的状态。
+          事务概述一件事情有n个组成单元，这n个组成单元要不同时成功，要不就同时失败。
+mysql的事务默认事务：一条sql语句就是一个事务，MySQL默认自动开启事务并提交事务（Oracle默认是手动事务）。手动事务：
 
-会话技术是帮助服务器记住客户端状态（区分客户端）
+显式的开启一个事务（会覆盖默认的事务，在事务执行完毕之后就会恢复自动事务）：
+1start transaction；
 
-会话技术从打开一个浏览器访问某个站点开始，到关闭整个浏览器的过程为止，称为一次会话（可以包含很多次请求）。因为会话所用的内存是在浏览器内部开辟的，所以只有浏览器全部关闭才结束会话。会话技术就是记录这次会话中客户端的状态与数据。会话技术分为Cookie和Session，它们各有特点：Cookie： 数据存储在客户端本地，减少服务器端的存储压力，但安全性不好，客户端可以清除cookie；Session： 将数据存储到服务器端，安全性相对好，但增加服务器的压力；
-CookieCookie技术是将用户的数据存储到客户端的技术，主要介绍两个方面内容：第一：服务器端怎样将一个Cookie发送到客户端；第二：服务器端怎样接受客户端携带的Cookie；
-服务器端向客户端发送一个Cookie1)  创建Co
+事务提交：代表从开启事务到提交事务之间的所有sql语句都有效，真正的更新数据库。
+1commit；
+
+事务的回滚：代表从开启事务到事务回滚之间的所有sql操作都无效，数据库没有更新。
+1rollback；
+
+
+JDBC事务操作JDBC默认是自动事务，执行sql语句：executeUpdate( )每执行一次executeUpdate()方法代表事务自动提交一次.通过jdbc的API进行手动事务：开启事务（关闭自动事务）：1connection.setAutoCommit(false);
+提交事务：1connection.commit();
+回滚事务：1connection.rollback();
+执行事务操作如下：1234567891011121314151
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/#more" rel="contents">
+            <a class="btn" href="/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2184,7 +2194,7 @@ Http请求编写一个form.html的表单页面，如下：123456789101112131415&
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">82.6k</span>
+    <span title="Site words total count">82.7k</span>
   
 </div>
 

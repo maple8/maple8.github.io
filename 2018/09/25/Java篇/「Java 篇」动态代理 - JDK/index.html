@@ -90,21 +90,21 @@
 
 
 
-<meta name="description" content="动态代理动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。可以用一张图来表示代理模式的含义：在调用者调用目标对象之前产生一个代理对象，而这个代理对象需要和目标对象建立代理关系，所以代理必须分成两个步骤：  代理对象和目标对">
+<meta name="description" content="使用动态代理的目的：对目标对象（被代理对象）中的方法进行增强，功能类似于Python中的装饰器。 动态代理动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。可以用一张图来表示代理模式的含义：在调用者调用目标对象之前产生一个">
 <meta name="keywords" content="Proxy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「Java 篇」动态代理 - JDK">
 <meta property="og:url" content="http://yoursite.com/2018/09/25/Java篇/「Java 篇」动态代理 - JDK/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="动态代理动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。可以用一张图来表示代理模式的含义：在调用者调用目标对象之前产生一个代理对象，而这个代理对象需要和目标对象建立代理关系，所以代理必须分成两个步骤：  代理对象和目标对">
+<meta property="og:description" content="使用动态代理的目的：对目标对象（被代理对象）中的方法进行增强，功能类似于Python中的装饰器。 动态代理动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。可以用一张图来表示代理模式的含义：在调用者调用目标对象之前产生一个">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/uploads/agent1.png">
 <meta property="og:image" content="http://yoursite.com/uploads/agent2.png">
 <meta property="og:image" content="http://yoursite.com/uploads/agent3.png">
-<meta property="og:updated_time" content="2019-04-29T15:05:28.458Z">
+<meta property="og:updated_time" content="2019-04-30T03:10:35.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「Java 篇」动态代理 - JDK">
-<meta name="twitter:description" content="动态代理动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。可以用一张图来表示代理模式的含义：在调用者调用目标对象之前产生一个代理对象，而这个代理对象需要和目标对象建立代理关系，所以代理必须分成两个步骤：  代理对象和目标对">
+<meta name="twitter:description" content="使用动态代理的目的：对目标对象（被代理对象）中的方法进行增强，功能类似于Python中的装饰器。 动态代理动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。可以用一张图来表示代理模式的含义：在调用者调用目标对象之前产生一个">
 <meta name="twitter:image" content="http://yoursite.com/uploads/agent1.png">
 
 
@@ -412,7 +412,8 @@
       
 
       
-        <h3 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h3><p>动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。<br>可以用一张图来表示代理模式的含义：<br><img src="/uploads/agent1.png" alt=""><br>在调用者调用目标对象之前产生一个代理对象，而这个代理对象需要和目标对象建立代理关系，所以代理必须分成两个步骤：</p>
+        <p><font color="red"><strong>使用动态代理的目的：对目标对象（被代理对象）中的方法进行增强，功能类似于Python中的装饰器。</strong></font></p>
+<h3 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h3><p>动态代理的意义在于生成一个占位（又称代理对象），来代理目标对象，从而控制对目标对象的访问。动态代理不用手动编写代理对象，不需要一一编写与目标对象相同的方法，这个过程，在运行时的内存中动态生成代理对象（字节码对象级别的代理对象）。<br>可以用一张图来表示代理模式的含义：<br><img src="/uploads/agent1.png" alt=""><br>在调用者调用目标对象之前产生一个代理对象，而这个代理对象需要和目标对象建立代理关系，所以代理必须分成两个步骤：</p>
 <ol>
 <li>代理对象和目标对象建立代理关系；</li>
 <li>实现代理对象的代理逻辑方法；</li>
@@ -709,7 +710,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">82.6k</span>
+    <span title="Site words total count">82.7k</span>
   
 </div>
 
