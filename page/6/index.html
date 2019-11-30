@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/计算机操作系统/使用 ping 诊断网络/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -328,7 +328,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/" itemprop="url">Python开发的10个Tips</a></h1>
+                <a class="post-title-link" href="/2018/10/20/计算机操作系统/使用 ping 诊断网络/" itemprop="url">使用 ping 诊断网络</a></h1>
         
 
         <div class="post-meta">
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-12T00:00:00+08:00">
-                2018-10-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-20T00:00:00+08:00">
+                2018-10-20
               </time>
             
 
@@ -363,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Python-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Python 篇</b></span>
+                  <a href="/categories/b-计算机操作系统-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>计算机操作系统</b></span>
                   </a>
                 </span>
 
@@ -381,8 +381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/" itemprop="commentCount"></span>
+                <a href="/2018/10/20/计算机操作系统/使用 ping 诊断网络/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/20/计算机操作系统/使用 ping 诊断网络/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -412,22 +412,30 @@
       
         
           
-          对于Python，有许多学习的贴士和技巧。其中一些是初学这门语言常常会犯的错误，下面就一起来看看这10个tips,你了解多少呢？
+          ping 是 Windows、Unix 和 Linux 系统下的一个命令。ping 也属于一个通信协议，是 TCP/IP 协议的一部分。利用“ping”命令可以检查网络是否连通，可以很好地帮助我们分析和判定网络故障。语法格式：1ping + IP地址
+实际应用中，检查某个计算机的网络是否正常，我们常说“ping一下这个计算机”，就是使用上述方法。执行步骤如下：
 
-注意：假设用的是Python 3
+获取计算机的IP地址
 
-1. 列表推导式你有一个list：1bag = [1, 2, 3, 4, 5]
-现在你想让所有元素翻倍，让它看起来是这个样子：1[2, 4, 6, 8, 10]
-大多初学者，根据之前语言的经验会大概这样来做:123bag = [1, 2, 3, 4, 5] for i in range(len(bag)):     bag[i] = bag[i] * 2
-但是有更好的方法：1bag = [elem * 2 for elem in bag]
-很简洁对不对？这叫做 Python的列表推导式。
-2. 遍历列表还是上面的列表。如果可能尽量避免这样做：123bag = [1, 2, 3, 4, 5] for i in range(len(bag)):     print(bag[i])
-取而代之的应该是这样：123bag = [1, 2, 3, 4, 5] for i in bag:     print(i)
-如果x是一个列表，你
+
+Windows 使用 Win + R 快捷键打开运行，然后输入 cmd，打开终端，然后输入 ipconfig，便可看见计算机的连接在网络中的IP地址只有计算机连接到网络中才有IP地址，如果没有链接网络是没有IP地址的，IP地址就是唯一在网络中标识某个计算机网卡地址的存在。
+
+Linux 使用 Ctrl + Alt + T 快捷键打开终端，然后输入 ipconfig，便可看见计算机的连接在网络中的IP地址
+
+ 注意：ipconfig 和 ipconfig
+
+
+
+
+
+使用 ping 检测个人计算机网络在终端输入以下命令：1ping 192.168.1.111
+
+
+然后计算机就会接收到来自目标IP地址计算机
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/#more" rel="contents">
+            <a class="btn" href="/2018/10/20/计算机操作系统/使用 ping 诊断网络/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -600,6 +608,183 @@ JavaEE的三层架构web层： 与客户端进行交互：收集页面数据/封
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/10/12/JavaEE篇/「JavaEE 篇」开发模式/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/" itemprop="url">Python开发的10个Tips</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-12T00:00:00+08:00">
+                2018-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Python-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Python 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          对于Python，有许多学习的贴士和技巧。其中一些是初学这门语言常常会犯的错误，下面就一起来看看这10个tips,你了解多少呢？
+
+注意：假设用的是Python 3
+
+1. 列表推导式你有一个list：1bag = [1, 2, 3, 4, 5]
+现在你想让所有元素翻倍，让它看起来是这个样子：1[2, 4, 6, 8, 10]
+大多初学者，根据之前语言的经验会大概这样来做:123bag = [1, 2, 3, 4, 5] for i in range(len(bag)):     bag[i] = bag[i] * 2
+但是有更好的方法：1bag = [elem * 2 for elem in bag]
+很简洁对不对？这叫做 Python的列表推导式。
+2. 遍历列表还是上面的列表。如果可能尽量避免这样做：123bag = [1, 2, 3, 4, 5] for i in range(len(bag)):     print(bag[i])
+取而代之的应该是这样：123bag = [1, 2, 3, 4, 5] for i in bag:     print(i)
+如果x是一个列表，你
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/12/Python 篇/「Python 篇」-- Python开发的10个Tips/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1513,186 +1698,6 @@ CGLIB动态代
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/" itemprop="url">「Tomcat 篇」IDEA配置Tomcat</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T00:00:00+08:00">
-                2018-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Tomcat-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Tomcat 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Tomcat配置所需条件：Intellij IDEA 集成开发环境；JDK；Tomcat 包（在Tomcat官网上下载对应版本，然后解压即可。如果是Linux操作系统在后续的添加过程中需要对Tomcat包所在的文件夹多执行一步提升文件操作权限的操作。）；
-
-Linux中IDEA中提示Tomcat权限不够的时候在Tomcat文件下的上一层目录下输入以下终端命令即可：sudo chmod -R 777 目录名
-
-
-步骤：（第一次配置和之后的配置的过程有些不一样，第一次配置的过程稍微多一点，非第一次配置由于以前配置过有些文件已经加载，所以配置步骤更简单）
-
-创建一个项目File -&gt; New Project -&gt; 输入项目名称 -&gt; Fished。
-
-注：因为不是第一次配置，图中的 Web Application 第一次是没有的
-
-
-在创建的项目中创建一个Module在上述创建的项目名上单击鼠标右键 -&gt; New -&gt; Module输入名称 -&gt; Next -&gt; 勾选 Web Application -&gt; Finish
-
-创建好Web项目文件，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/JavaScript篇/「JavaScript篇 」 JavaScript基本语法(上)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1873,7 +1878,7 @@ JavaScript嵌入页面的方式
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maple">
@@ -1892,7 +1897,7 @@ JavaScript嵌入页面的方式
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" itemprop="url">「Linux 篇」Part 2 -- 文件和目录</a></h1>
+                <a class="post-title-link" href="/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/" itemprop="url">「Tomcat 篇」IDEA配置Tomcat</a></h1>
         
 
         <div class="post-meta">
@@ -1904,8 +1909,8 @@ JavaScript嵌入页面的方式
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-25T00:00:00+08:00">
-                2018-09-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T00:00:00+08:00">
+                2018-10-01
               </time>
             
 
@@ -1927,8 +1932,8 @@ JavaScript嵌入页面的方式
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Linux-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Linux 篇</b></span>
+                  <a href="/categories/b-Tomcat-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Tomcat 篇</b></span>
                   </a>
                 </span>
 
@@ -1945,8 +1950,8 @@ JavaScript嵌入页面的方式
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/" itemprop="commentCount"></span>
+                <a href="/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1975,17 +1980,33 @@ JavaScript嵌入页面的方式
 
       
         
-          <p><blockquote class="blockquote-center">在Linux中，人们常说：<br>＂一切皆文件＂</blockquote><br>
+          
+          Tomcat配置所需条件：Intellij IDEA 集成开发环境；JDK；Tomcat 包（在Tomcat官网上下载对应版本，然后解压即可。如果是Linux操作系统在后续的添加过程中需要对Tomcat包所在的文件夹多执行一步提升文件操作权限的操作。）；
+
+Linux中IDEA中提示Tomcat权限不够的时候在Tomcat文件下的上一层目录下输入以下终端命令即可：sudo chmod -R 777 目录名
+
+
+步骤：（第一次配置和之后的配置的过程有些不一样，第一次配置的过程稍微多一点，非第一次配置由于以前配置过有些文件已经加载，所以配置步骤更简单）
+
+创建一个项目File -&gt; New Project -&gt; 输入项目名称 -&gt; Fished。
+
+注：因为不是第一次配置，图中的 Web Application 第一次是没有的
+
+
+在创建的项目中创建一个Module在上述创建的项目名上单击鼠标右键 -&gt; New -&gt; Module输入名称 -&gt; Next -&gt; 勾选 Web Application -&gt; Finish
+
+创建好Web项目文件，
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/25/Linux篇/「Linux 篇」Part 2 -- 文件和目录/#more" rel="contents">
+            <a class="btn" href="/2018/10/01/Tomcat 篇/「Tomcat 篇」IDEA配置Tomcat/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
     
     
     
@@ -2075,7 +2096,7 @@ JavaScript嵌入页面的方式
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">93</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2164,7 +2185,7 @@ JavaScript嵌入页面的方式
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.2k</span>
+    <span title="Site words total count">98.6k</span>
   
 </div>
 

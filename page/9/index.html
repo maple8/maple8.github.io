@@ -309,6 +309,193 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/" itemprop="url">「MySQL篇」Part2-数据类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T00:00:00+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          数据完整性一个数据库就是一个完整的业务单元，可以包含多张表，数据被存储在表中。在表中为了更加准确的存储数据，保证数据的正确有效，可以在创建表的时候，为表添加一些强制性的验证，包括数据字段的类型、约束数据类型。
+
+使用数据类型的原则是：够用就行，尽量使用取值范围小的，而不用大的，这样可以更多的节省存储空间
+
+数据类型
+整数：int，bit
+小数：decimal
+字符串：varchar,char
+日期时间: date, time, datetime
+枚举类型(enum)
+
+特别说明的类型如下：
+
+decimal表示浮点数，如decimal(5,2)表示共存5位数，小数占2位
+char表示固定长度的字符串，如char(3)，如果填充’ab’时会补一个空格为’ab ‘
+varchar表示可变长度的字符串，如varchar(3)，填充’ab’时就会存储’ab’
+字符串text表示存储大文本，当字符大于4000时推荐使用
+对于图片、音频、视频等文件，不存储在数据库中，而是上传到某个服务器上，然后在表中存储这个文件的保存路径
+
+约束
+主键primary key：物理上存储的顺序
+非空not null
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/03/MySQL篇/「MySQL篇」Part2-数据类型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/Java篇/「Java 篇」集合Part 1 - 集合概述 /">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1823,172 +2010,6 @@ ChmSee 由国人开发，程序基于 GTK2+，个头十分小巧，且对中文�
 
         
     
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/02/Git 篇/「Git 篇」Part 2 -- Git 基本使用/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/02/Git 篇/「Git 篇」Part 2 -- Git 基本使用/" itemprop="url">「Git 篇」Part 2 -- Git 基本使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-02T00:00:00+08:00">
-                2018-07-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Git-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Git 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/07/02/Git 篇/「Git 篇」Part 2 -- Git 基本使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/02/Git 篇/「Git 篇」Part 2 -- Git 基本使用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Git的基本功能介绍Git 有什么作用呢? 只看它的名字”最好的分布式管理系统”,感觉挺厉害的样子,那在我们的实际中有什么优势呢?在我们的实际中,我们创建了一个文件,然后过段时间发现了某些错误,我们修改一下并另存为一个新版本, 然后又过了一段时间又觉得写得不是很好,修改并另存为一个新版本,再然后…; 我们一个文件的维护的流程大致是: 草稿版-&gt;修订版本1-&gt;修订版本2-&gt;修订版本3-&gt;…-&gt;最终版本; 就像我这边做的项目一样,一个900多行的PLC程序已经修改了将近20个版本了. 对于这20多个版本,前前后后花了一个半月,其中的哪些地方做了修改早已经不记得了. 如果有这样一个工具帮我们记录每个版本, 并且记录每个版本中修改的不同的地方,这样就会让我们再次进行修改的时候的工作显得很有条理. 而Git就是这样的一个工具. 当然这里只是结合自身的情况举了一个小例子,Git是追踪不了PLC的程序格式的哈,Git只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等,这里要说一下我们常用的微软的Word,这个是二进制的格式,所以无法利用Git进行追踪.这里
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/02/Git 篇/「Git 篇」Part 2 -- Git 基本使用/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
   </section>
 
   
@@ -2041,7 +2062,7 @@ ChmSee 由国人开发，程序基于 GTK2+，个头十分小巧，且对中文�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">93</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2130,7 +2151,7 @@ ChmSee 由国人开发，程序基于 GTK2+，个头十分小巧，且对中文�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.2k</span>
+    <span title="Site words total count">98.6k</span>
   
 </div>
 
