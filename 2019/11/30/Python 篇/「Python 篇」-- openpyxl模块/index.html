@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码不正确,请询问博主！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="openpyxl,Excel,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="openpyxl 模块名词解释： workbook：工作簿，整个Excel文件； worksheet：表单，Excel文件中的单元文件，默认第一张表单是活跃表单； row，表单的行数，从1开始，1，2，3，…； columu，表单的列数，从A开始，A，B，C，…； 单元格：表单中的某一格，通过行号和列号来确定，如：A1…； 三个重要对象：工作簿对象wb，表单对象ws，单元格对象cell；   代码">
+<meta name="keywords" content="openpyxl,Excel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openpyxl 模块">
+<meta property="og:url" content="http://yoursite.com/2019/11/30/Python 篇/「Python 篇」-- openpyxl模块/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="openpyxl 模块名词解释： workbook：工作簿，整个Excel文件； worksheet：表单，Excel文件中的单元文件，默认第一张表单是活跃表单； row，表单的行数，从1开始，1，2，3，…； columu，表单的列数，从A开始，A，B，C，…； 单元格：表单中的某一格，通过行号和列号来确定，如：A1…； 三个重要对象：工作簿对象wb，表单对象ws，单元格对象cell；   代码">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-30T02:54:20.938Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="openpyxl 模块">
+<meta name="twitter:description" content="openpyxl 模块名词解释： workbook：工作簿，整个Excel文件； worksheet：表单，Excel文件中的单元文件，默认第一张表单是活跃表单； row，表单的行数，从1开始，1，2，3，…； columu，表单的列数，从A开始，A，B，C，…； 单元格：表单中的某一格，通过行号和列号来确定，如：A1…； 三个重要对象：工作簿对象wb，表单对象ws，单元格对象cell；   代码">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/Python 篇/「Python 篇」-- openpyxl模块/">
+
+
+
+
+
+  <title>openpyxl 模块 | Maple's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Maple's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/Python 篇/「Python 篇」-- openpyxl模块/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">openpyxl 模块</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-30T10:54:20+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Python-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Python 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/30/Python 篇/「Python 篇」-- openpyxl模块/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/30/Python 篇/「Python 篇」-- openpyxl模块/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="openpyxl-模块"><a href="#openpyxl-模块" class="headerlink" title="openpyxl 模块"></a>openpyxl 模块</h2><h3 id="名词解释："><a href="#名词解释：" class="headerlink" title="名词解释："></a>名词解释：</h3><ol>
+<li>workbook：工作簿，整个Excel文件；</li>
+<li>worksheet：表单，Excel文件中的单元文件，默认第一张表单是活跃表单；</li>
+<li>row，表单的行数，从1开始，1，2，3，…；</li>
+<li>columu，表单的列数，从A开始，A，B，C，…；</li>
+<li>单元格：表单中的某一格，通过行号和列号来确定，如：A1…；</li>
+<li>三个重要对象：工作簿对象wb，表单对象ws，单元格对象cell；</li>
+</ol>
+<blockquote>
+<p>代码用例的Excel文件内容：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">工号</th>
+<th style="text-align:left">部门</th>
+<th style="text-align:left">薪水</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1001</td>
+<td style="text-align:left">开发</td>
+<td style="text-align:left">15000</td>
+</tr>
+<tr>
+<td style="text-align:left">1002</td>
+<td style="text-align:left">测试</td>
+<td style="text-align:left">14000</td>
+</tr>
+<tr>
+<td style="text-align:left">1003</td>
+<td style="text-align:left">测开</td>
+<td style="text-align:left">14500</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<hr>
+<h3 id="openpyxl-模块常见的封装成员："><a href="#openpyxl-模块常见的封装成员：" class="headerlink" title="openpyxl 模块常见的封装成员："></a>openpyxl 模块常见的封装成员：</h3><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>load_workbook(path) 方法</td>
+<td>导入，通过文件的路径加载Excel文件，得到一个工作簿对象</td>
+</tr>
+<tr>
+<td>Workbook 类</td>
+<td>工作簿类，用于创建工作簿对象</td>
+</tr>
+<tr>
+<td>get_column_letter(int col) 方法</td>
+<td>将数字的列数转换为英文的列数</td>
+</tr>
+<tr>
+<td>column_index_from_string(str col) 方法</td>
+<td>将英文的列数转换为数字的列数</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>load_workbook(path)方法，加载已经存在的Excel文件： </p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入一个工作簿文件</span></span><br><span class="line">wb = openpyxl.load_workbook(<span class="string">r'C:\Users\Maple\Desktop	\python.xlsx'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Workbook类 ，通过该类可以创建工作簿对象，需要执行工作簿的保存操作之后才能将数据保存到Excel文件中：</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个工作簿对象</span></span><br><span class="line">wb1 = openpyxl.Workbook()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>get_column_letter(int col)和column_index_from_string(str col)是openpyxl.utils包下的方法：</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 因为在表单中，行数是整型数字，列数是英文字母，两者不好直接转换，可以使用以下方法实现两者的转换</span></span><br><span class="line"><span class="keyword">from</span> openpyxl.utils <span class="keyword">import</span> get_column_letter, column_index_from_string</span><br><span class="line"></span><br><span class="line">print(get_column_letter(<span class="number">1</span>), get_column_letter(<span class="number">2</span>))</span><br><span class="line">print(column_index_from_string(<span class="string">'C'</span>), column_index_from_string(<span class="string">'D'</span>))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">A B</span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="工作簿对象-wb-的常见属性和方法："><a href="#工作簿对象-wb-的常见属性和方法：" class="headerlink" title="工作簿对象(wb)的常见属性和方法："></a>工作簿对象(wb)的常见属性和方法：</h3><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wb.sheetnames 属性</td>
+<td>以列表形式返回工作簿中的所有表单名</td>
+</tr>
+<tr>
+<td>wb.active 属性</td>
+<td>获取活跃表单，默认是第一个表单，或者使用get_sheet_by_name方法获取表单对象</td>
+</tr>
+<tr>
+<td>wb[‘表单名’] 属性</td>
+<td>通过表单名获取表单对象</td>
+</tr>
+<tr>
+<td>wb.get_sheet_by_name(‘表单名’) 方法</td>
+<td>同上，通过表单名获取表单对象</td>
+</tr>
+<tr>
+<td>wb.create_sheet(title=None, index=None) 方法</td>
+<td>在工作簿中创建一个新的表单，title参数表示表单名，index表示表单的索引</td>
+</tr>
+<tr>
+<td>wb.remove_sheet(worksheet) 方法</td>
+<td>从工作簿对象中删除表单，worksheet表示待删除的表单对象</td>
+</tr>
+<tr>
+<td>wb.save(filename) 方法</td>
+<td>保存工作簿对象到指定的Excel文件中，filename表示Excel文件名</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>wb.sheetnames 属性</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以列表返回工作簿的所有表单名，sheetnames属性</span></span><br><span class="line">print(wb.sheetnames)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wb.active 属性</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取活跃表单，默认是第一个表单，active属性</span></span><br><span class="line">ws = wb.active</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wb[‘表单名’]和wb.get_sheet_by_name(‘表单名’)</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过表单名获取表单对象,以下两种方法都可以</span></span><br><span class="line">sheet3 = wb[<span class="string">'Sheet3'</span>]</span><br><span class="line">sheet3 = wb.get_sheet_by_name(<span class="string">'Sheet3'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wb.create_sheet(title=None, index=None) 方法</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在工作簿对象wb中创建一个新的表单，该操作必须在对表单对象进行保存操作之后才能生效</span></span><br><span class="line">Mysheet = wb.create_sheet(<span class="string">'Mysheet'</span>)</span><br><span class="line">print(wb.sheetnames)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wb.remove_sheet(worksheet) 方法</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除表单,不是通过表单名删除，而是通过表单对象进行删除</span></span><br><span class="line">wb.remove_sheet(wb.get_sheet_by_name(<span class="string">'Mysheet'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wb.save(filename) 方法  </p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存工作簿对象</span></span><br><span class="line">wb.save(<span class="string">r'C:\Users\Maple\Desktop\example.xlsx'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="5">
+<li><p>工作簿对象是一个可迭代对象</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 遍历工作簿中的所有表单,title属性表示表单的名称</span></span><br><span class="line"><span class="keyword">for</span> sheet <span class="keyword">in</span> wb:</span><br><span class="line">    print(sheet.title)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="表单对象-ws-的常见属性和方法："><a href="#表单对象-ws-的常见属性和方法：" class="headerlink" title="表单对象(ws)的常见属性和方法："></a>表单对象(ws)的常见属性和方法：</h3><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ws.title 属性</td>
+<td>获取表单的名称</td>
+</tr>
+<tr>
+<td>ws.max_row 属性</td>
+<td>获取表单中使用的行数，也就是光标所到的最后一行，即使整行全是空的，也会被算入行数</td>
+</tr>
+<tr>
+<td>ws.max_column 属性</td>
+<td>获取表单中使用的列数，也就是光标所到的最后一列，即使整列全是空的，也会被算入列数</td>
+</tr>
+<tr>
+<td>ws.rows 属性</td>
+<td>获取所有行单元格的生成器对象</td>
+</tr>
+<tr>
+<td>ws.columns 属性</td>
+<td>获取所有列单元格的生成器对象</td>
+</tr>
+<tr>
+<td>ws[‘单元格的坐标’] 属性</td>
+<td>获取单元格对象，如：ws[‘A1’]，获取第一行第一列的单元格对象</td>
+</tr>
+<tr>
+<td>ws.cell(row, column) 方法</td>
+<td>通过下标获取单元格对象，行和列的下标都是从1开始</td>
+</tr>
+<tr>
+<td>ws[‘行坐标’] 属性</td>
+<td>以元组形式获取整行单元格对象，如：ws[‘2’]，获取第二行所有单元格对象</td>
+</tr>
+<tr>
+<td>ws[‘列坐标’] 属性</td>
+<td>以元组形式获取整列单元格对象，如：ws[‘A’]，获取第一列所有单元格对象</td>
+</tr>
+<tr>
+<td>ws[‘行坐标:行坐标’] 属性</td>
+<td>以元组形式获取切片单元格对象，如：ws[‘2:4’]，获取第二行到第四行的所有单元格对象</td>
+</tr>
+<tr>
+<td>ws[‘列坐标:列坐标’] 属性</td>
+<td>以元组形式获取切片单元格对象，如：ws[‘A:C’]，获取第一列到第三列的所有单元格对象</td>
+</tr>
+<tr>
+<td>ws[‘行坐标:列坐标’] 属性 <br>ws[‘列坐标:行坐标’] 属性</td>
+<td>通过切片获取贯穿行、列的多个单元格，如：ws[‘A1:C4’]，<br>获取从第一行第一列的单元格到第四行第三列的单元格之间的所有单元格对象</td>
+</tr>
+<tr>
+<td>ws.iter_rows(min_row, min_col, max_row, max_col) 方法</td>
+<td>表单生成器，获取指定行数和列数之间的所有单元格对象</td>
+</tr>
+<tr>
+<td>ws.append(row) 方法</td>
+<td>以列表的形式对单元格进行整行写入，row参数是一个列表对象</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>ws.title属性</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ws = wb.get_sheet_by_name(<span class="string">'Sheet1'</span>)</span><br><span class="line">print(ws.title)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">Sheet1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ws.max_row属性 和 ws.max_column属性  </p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取表单的列数和行数</span></span><br><span class="line">rows = ws.max_row</span><br><span class="line">cols = ws.max_column</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ws.rows属性 和 ws.columns属性  </p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 表单的rows属性，返回所有行的生成器对象</span></span><br><span class="line">print(ws.rows)</span><br><span class="line"><span class="comment"># 表单的columns属性，返回所有列的生成器对象</span></span><br><span class="line">print(ws.columns)</span><br><span class="line">print(tuple(ws.rows))</span><br><span class="line">print(tuple(ws.columns))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ws[‘单元格的坐标’] 属性 和 ws.cell(row, column) 方法</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取单元格对象</span></span><br><span class="line">cell = ws[<span class="string">'B2'</span>]</span><br><span class="line"><span class="comment"># 通过单元格的cell方法来获取单元格对象，行和列的下标都是从1开始的，该方法方便循环遍历各个单元格</span></span><br><span class="line">cell = ws.cell(row=<span class="number">2</span>, column=<span class="number">2</span>)	<span class="comment"># 获取第二行第二列的单元格对象</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, ws.max_row + <span class="number">1</span>):</span><br><span class="line">    print(i, ws.cell(row=i, column=<span class="number">2</span>).value)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ws[‘行坐标’] 属性 和 ws[‘列坐标’] 属性</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取表单的整行单元格对象，以元组的格式返回各个单元格对象</span></span><br><span class="line">row_2 = ws[<span class="string">'2'</span>]	<span class="comment"># 第二行</span></span><br><span class="line">print(row_2)</span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> row_2:</span><br><span class="line">    print(cell.value)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">(&lt;Cell <span class="string">'Sheet1'</span>.A2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C2&gt;)</span><br><span class="line"><span class="number">1001</span></span><br><span class="line">开发</span><br><span class="line"><span class="number">15000</span></span><br><span class="line">--------------------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment"># 获取表单的整列，以元组的格式返回一个列对象</span></span><br><span class="line">col_C = ws[<span class="string">'C'</span>]	<span class="comment"># 第三列</span></span><br><span class="line">print(col_C)</span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> col_C:</span><br><span class="line">    print(cell.value)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">(&lt;Cell <span class="string">'Sheet1'</span>.C1&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C3&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C4&gt;)</span><br><span class="line">薪水</span><br><span class="line"><span class="number">15000</span></span><br><span class="line"><span class="number">14000</span></span><br><span class="line"><span class="number">14500</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ws[‘列坐标:列坐标’] 属性 和 ws[‘行坐标:行坐标’] 属性</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 利用切片获取多行或多列，以元组的形式返回</span></span><br><span class="line">col_range = ws[<span class="string">'A:C'</span>]	<span class="comment"># 第一列到第三列</span></span><br><span class="line">row_range = ws[<span class="number">2</span>:<span class="number">4</span>]	<span class="comment"># 第二行到第四行</span></span><br><span class="line">print(col_range)</span><br><span class="line">print(row_range)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">((&lt;Cell <span class="string">'Sheet1'</span>.A1&gt;, &lt;Cell <span class="string">'Sheet1'</span>.A2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.A3&gt;, &lt;Cell <span class="string">'Sheet1'</span>.A4&gt;), (&lt;Cell <span class="string">'Sheet1'</span>.B1&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B3&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B4&gt;), (&lt;Cell <span class="string">'Sheet1'</span>.C1&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C3&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C4&gt;))</span><br><span class="line">((&lt;Cell <span class="string">'Sheet1'</span>.A2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C2&gt;), (&lt;Cell <span class="string">'Sheet1'</span>.A3&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B3&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C3&gt;), (&lt;Cell <span class="string">'Sheet1'</span>.A4&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B4&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C4&gt;))</span><br><span class="line">--------------------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment"># 通过列单元格对象获取整个表单的内容</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="comment"># 这个col表示每一列所有单元格对象组成的元组</span></span><br><span class="line"><span class="keyword">for</span> col <span class="keyword">in</span> col_range:</span><br><span class="line">    <span class="keyword">for</span> cell <span class="keyword">in</span> col:</span><br><span class="line">        print(cell.value, end=<span class="string">' '</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">4</span> == <span class="number">0</span>):</span><br><span class="line">            print()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">工号 <span class="number">1001</span> <span class="number">1002</span> <span class="number">1003</span> </span><br><span class="line">部门 开发 测试 测开 </span><br><span class="line">薪水 <span class="number">15000</span> <span class="number">14000</span> <span class="number">14500</span> </span><br><span class="line">--------------------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment"># 通过行单元格对象获取整个表单的内容</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="comment"># 这个row表示每一行所有单元格对象组成的元组</span></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> row_range:</span><br><span class="line">    <span class="keyword">for</span> cell <span class="keyword">in</span> row:</span><br><span class="line">        print(cell.value, end=<span class="string">' '</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span>):</span><br><span class="line">            print()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="number">1001</span> 开发 <span class="number">15000</span> </span><br><span class="line"><span class="number">1002</span> 测试 <span class="number">14000</span> </span><br><span class="line"><span class="number">1003</span> 测开 <span class="number">14500</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ws[‘行坐标:列坐标’] 属性 和 ws[‘列坐标:行坐标’] 属性  </p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 也可以通过单元格切片直接获取贯穿行、列的多个单元格</span></span><br><span class="line">cell_range = ws[<span class="string">'A1:C4'</span>]</span><br><span class="line">print(cell_range)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">((&lt;Cell <span class="string">'Sheet1'</span>.A1&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B1&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C1&gt;), (&lt;Cell <span class="string">'Sheet1'</span>.A2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B2&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C2&gt;), (&lt;Cell <span class="string">'Sheet1'</span>.A3&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B3&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C3&gt;), (&lt;Cell <span class="string">'Sheet1'</span>.A4&gt;, &lt;Cell <span class="string">'Sheet1'</span>.B4&gt;, &lt;Cell <span class="string">'Sheet1'</span>.C4&gt;))</span><br><span class="line"><span class="comment"># 从输出可以看出，先以行为顺序，后以列为顺序</span></span><br><span class="line">--------------------------------------------------------------------------------------------------</span><br><span class="line"><span class="keyword">for</span> rowOfCellObjects <span class="keyword">in</span> cell_range:</span><br><span class="line">    <span class="keyword">for</span> cellObject <span class="keyword">in</span> rowOfCellObjects:</span><br><span class="line">        print(cellObject.coordinate, cellObject.value)</span><br><span class="line">    print()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">A1 工号</span><br><span class="line">B1 部门</span><br><span class="line">C1 薪水</span><br><span class="line"></span><br><span class="line">A2 <span class="number">1001</span></span><br><span class="line">B2 开发</span><br><span class="line">C2 <span class="number">15000</span></span><br><span class="line"></span><br><span class="line">A3 <span class="number">1002</span></span><br><span class="line">B3 测试</span><br><span class="line">C3 <span class="number">14000</span></span><br><span class="line"></span><br><span class="line">A4 <span class="number">1003</span></span><br><span class="line">B4 测开</span><br><span class="line">C4 <span class="number">14500</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ws.iter_rows(min_row, min_col, max_row, max_col)方法，表单的生成器方法，通过传入方法中的四个参数来确定单元格的范围，返回的是一个生成器对象</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过表单的生成器方法iter_rows()获取多个单元格对象</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">print(type(ws.iter_rows(min_row=<span class="number">1</span>, min_col=<span class="number">1</span>, max_row=<span class="number">4</span>, max_col=<span class="number">3</span>)))</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> ws.iter_rows(min_row=<span class="number">1</span>, min_col=<span class="number">1</span>, max_row=<span class="number">4</span>, max_col=<span class="number">3</span>):</span><br><span class="line">    <span class="keyword">for</span> cell <span class="keyword">in</span> row:</span><br><span class="line">        print(cell.value, end=<span class="string">' '</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span>):</span><br><span class="line">            print()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">generator</span>'&gt;</span></span><br><span class="line"><span class="class">工号 部门 薪水 </span></span><br><span class="line"><span class="class">1001 开发 15000 </span></span><br><span class="line"><span class="class">1002 测试 14000 </span></span><br><span class="line"><span class="class">1003 测开 14500</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>单元格的写入</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 手动对单个单元格进行写入</span></span><br><span class="line">sheet[<span class="string">'A1'</span>] = <span class="string">'Maple'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以列表的形式对单元格进行整行写入</span></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">40</span>):</span><br><span class="line">    sheet.append(range(<span class="number">17</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以列表的形式对单元格进行整行写入，该方法非常方便将数据写入到Excel文件中</span></span><br><span class="line">rows = [[<span class="string">'Number'</span>, <span class="string">'Batch1'</span>, <span class="string">'Batch2'</span>],</span><br><span class="line">        [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">        [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">        [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>],</span><br><span class="line">       ]</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> rows:</span><br><span class="line">    sheet.append(row)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 以循环的方式对多个单元格依次进行写入</span></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> range(<span class="number">2</span>, <span class="number">11</span>):</span><br><span class="line">        sheet.cell(row=row, column=col, value=row)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="单元格对象-cell-的常见属性和方法："><a href="#单元格对象-cell-的常见属性和方法：" class="headerlink" title="单元格对象(cell)的常见属性和方法："></a>单元格对象(cell)的常见属性和方法：</h3><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cell.value 属性</td>
+<td>获取单元格中的值，根据单元格值得类型返回对应的python类型的数据；如果是整数返回值类型int，如果是字符串返回类型为str，空的单元格值为None。</td>
+</tr>
+<tr>
+<td>cell.row 属性</td>
+<td>获取单元格所在的行数，从1开始</td>
+</tr>
+<tr>
+<td>cell.column 属性</td>
+<td>获取单元格所在的列数，从1开始</td>
+</tr>
+<tr>
+<td>cell.coordinate 属性</td>
+<td>获取单元格的整体坐标，如：’A1’</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>cell.value 属性、cell.row 属性和cell.column 属性</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取单元格属性row(行), column（列）, value（单元格的值）</span></span><br><span class="line">print(<span class="string">'Row &#123;&#125;, Column &#123;&#125; is &#123;&#125;.'</span>.format(cell.row, cell.column, cell.value))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">Row <span class="number">2</span>, Column <span class="number">2</span> <span class="keyword">is</span> 开发.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cell.coordinate 属性，获取单元格的完整坐标</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coordinate属性直接获取单元格的整体坐标</span></span><br><span class="line">print(<span class="string">'Cell &#123;&#125; is &#123;&#125;'</span>.format(cell.coordinate, cell.value))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">Cell B2 <span class="keyword">is</span> 开发</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	<div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+
+	
+	</div>
+
+
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢您的支持,我会继续努力哦!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="Maple WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="Maple Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/openpyxl/" rel="tag"><i class="fa fa-tag"></i> openpyxl</a>
+          
+            <a href="/tags/Excel/" rel="tag"><i class="fa fa-tag"></i> Excel</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/19/微信开发篇/「微信开发篇」签名/" rel="next" title="「微信开发篇」签名">
+                <i class="fa fa-chevron-left"></i> 「微信开发篇」签名
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/solong.jpg" alt="Maple">
+            
+              <p class="site-author-name" itemprop="name">Maple</p>
+              <p class="site-description motion-element" itemprop="description">Everything is the best arrangement</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/maple8" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Maple_eitba@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#openpyxl-模块"><span class="nav-number">1.</span> <span class="nav-text">openpyxl 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#名词解释："><span class="nav-number">1.1.</span> <span class="nav-text">名词解释：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#openpyxl-模块常见的封装成员："><span class="nav-number">1.2.</span> <span class="nav-text">openpyxl 模块常见的封装成员：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作簿对象-wb-的常见属性和方法："><span class="nav-number">1.3.</span> <span class="nav-text">工作簿对象(wb)的常见属性和方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单对象-ws-的常见属性和方法："><span class="nav-number">1.4.</span> <span class="nav-text">表单对象(ws)的常见属性和方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单元格对象-cell-的常见属性和方法："><span class="nav-number">1.5.</span> <span class="nav-text">单元格对象(cell)的常见属性和方法：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Maple</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">94.4k</span>
+  
+</div>
+
+
+<!--
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'hMg5NCWeR1lTOKVL5mtI2x3v-gzGzoHsz',
+        appKey: 'gq49CSjQbQpJ1db62nBCsRkj',
+        placeholder: '说点什么吧...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

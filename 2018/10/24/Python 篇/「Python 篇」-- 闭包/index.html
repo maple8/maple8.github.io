@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="Maple&#39;s Blog">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/uploads/python1.jpeg">
-<meta property="og:updated_time" content="2019-11-15T00:29:13.533Z">
+<meta property="og:updated_time" content="2019-11-15T00:59:30.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「Python 篇」 -- 闭包">
 <meta name="twitter:image" content="http://yoursite.com/uploads/python1.jpeg">
@@ -422,8 +422,9 @@
 <pre><code>4
 44
 </code></pre><p>在上述例子中,函数line_int()和变量a,b构成闭包.在创建闭包的时候,我们通过line_out()的参数a,b确定了两个变量的取值,这样我们就确定了闭包函数的最终形式: y = x + 2 和 y = 11 x + 22. 我们只需要修改参数a,b的值,就可以获得不同的直线方程.由此,我们可以知道闭包具有提高代码的复用性的功能.<br>如果没有闭包,那么我们每次创建直线函数的时候都需要说明三个变量a,b,x. 这样的话,我们就需要更多的参数传递,也降低了代码的可移植性.</p>
-<h5 id="外部函数变量"><a href="#外部函数变量" class="headerlink" title="外部函数变量"></a>外部函数变量</h5><p>闭包中说的外部函数的变量,对于内部函数来说这个变量就是一个全局变量,对于全局变量,如果需要对其进行操作的话,需要使用关键字<code>global</code>,否侧结果只是在函数中创建了一个和全部变量同名的局部变量而已. 因此,对于外部函数的变量,如果想要对其进行修改的话,也有关键字: <code>nonlocal</code>(这个关键字只有Python3里面才有); 下面看一段代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">counter</span><span class="params">(start=<span class="number">0</span>)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">incr</span><span class="params">()</span>:</span></span><br><span class="line">    	<span class="comment"># 表示是外部函数变量</span></span><br><span class="line">        <span class="keyword">nonlocal</span> start</span><br><span class="line">        start += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> start</span><br><span class="line">    <span class="keyword">return</span> incr</span><br><span class="line"></span><br><span class="line">c1 = counter(<span class="number">5</span>)</span><br><span class="line">print(c1())</span><br><span class="line">print(c1())</span><br><span class="line"></span><br><span class="line">c2 = counter(<span class="number">50</span>)</span><br><span class="line">print(c2())</span><br><span class="line">print(c2())</span><br><span class="line"></span><br><span class="line">print(c1())</span><br><span class="line">print(c1())</span><br><span class="line"></span><br><span class="line">print(c2())</span><br><span class="line">print(c2())</span><br></pre></td></tr></table></figure></p>
+<h5 id="外部函数变量"><a href="#外部函数变量" class="headerlink" title="外部函数变量"></a>外部函数变量</h5><p>闭包中说的外部函数的变量,对于内部函数来说这个变量就是一个全局变量,对于全局变量,如果需要对其进行操作的话,需要使用关键字<code>global</code>,否侧结果只是在函数中创建了一个和全部变量同名的局部变量而已. 因此,对于外部函数的变量,如果想要对其进行修改的话,也有关键字: <code>nonlocal</code>(这个关键字只有Python3里面才有); 下面看一段代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">counter</span><span class="params">(start=<span class="number">0</span>)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">incr</span><span class="params">()</span>:</span></span><br><span class="line">    	<span class="comment"># 表示是外部函数变量</span></span><br><span class="line">        <span class="keyword">nonlocal</span> start</span><br><span class="line">        start += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> start</span><br><span class="line">    <span class="keyword">return</span> incr</span><br><span class="line"></span><br><span class="line">c1 = counter(<span class="number">5</span>)</span><br><span class="line">print(c1())</span><br><span class="line">print(c1())</span><br><span class="line"><span class="comment"># 也可以直接使用counter(5)()</span></span><br><span class="line"></span><br><span class="line">c2 = counter(<span class="number">50</span>)</span><br><span class="line">print(c2())</span><br><span class="line">print(c2())</span><br><span class="line"></span><br><span class="line">print(c1())</span><br><span class="line">print(c1())</span><br><span class="line"></span><br><span class="line">print(c2())</span><br><span class="line">print(c2())</span><br></pre></td></tr></table></figure></p>
 <p>输出结果:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">51</span></span><br><span class="line"><span class="number">52</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">53</span></span><br><span class="line"><span class="number">54</span></span><br></pre></td></tr></table></figure></p>
+<p>在Python3之前没有<code>nonlocal</code>关键字时，只能间接地使用容器类型来存放，因为容器类型不是放在栈中，所以不会被’屏蔽’掉；如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funx</span><span class="params">()</span>:</span></span><br><span class="line">    x = [<span class="number">5</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">funy</span><span class="params">()</span>:</span></span><br><span class="line">        x[<span class="number">0</span>] *= x[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> x[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> funy</span><br><span class="line"></span><br><span class="line">print(funx()())</span><br></pre></td></tr></table></figure></p>
 <h4 id="闭包的优缺点"><a href="#闭包的优缺点" class="headerlink" title="闭包的优缺点"></a>闭包的优缺点</h4><h5 id="优点"><a href="#优点" class="headerlink" title="优点:"></a>优点:</h5><p>1 . 闭包具有提高代码的复用性的优点;<br>2 . 占用的内存空间少;</p>
 <h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h5><p>1 . 只能实现一些简单的功能,不能进行大型的开发;<br>2 . 由于闭包引用了外部函数的局部变量,导致外部函数的局部变量没有及时的释放,消耗内存;<br><strong>闭包一般不会单独的使用,就像上面说的,闭包并不能进行大型的开发,所以呢,它一般都是作为基础和装饰器一起使用的。</strong></p>
 <hr>
@@ -504,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/23/代码编辑器/Sublime-Text 3 配置中文环境/" rel="next" title="Sublime-Text 3 配置中文环境">
-                <i class="fa fa-chevron-left"></i> Sublime-Text 3 配置中文环境
+              <a href="/2018/10/23/代码编辑器/Sublime - Text 3 无法输入中文解决方案/" rel="next" title="Sublime-Text 3 无法输入中文解决方案">
+                <i class="fa fa-chevron-left"></i> Sublime-Text 3 无法输入中文解决方案
               </a>
             
           </div>
@@ -514,8 +515,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/25/文本编辑器/Markdown 完全篇/" rel="prev" title="Markdown 的使用">
-                Markdown 的使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/25/Python 篇/「Python 篇」-- 装饰器/" rel="prev" title="「Python 篇」 -- 装饰器">
+                「Python 篇」 -- 装饰器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -598,7 +599,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -609,7 +610,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -620,7 +621,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -703,7 +704,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">91.6k</span>
+    <span title="Site words total count">94.4k</span>
   
 </div>
 
