@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Maple&#39;s Blog">
 <meta property="og:description" content="在服务器之间实现MySQL数据库的迁移数据备份mysqldump是MySQL数据库自带的一个很好用的备份命令，它实现的是逻辑备份，通过命令导出结果的是SQL语句，也就是把数据从MySQL库中以逻辑的SQL语句的形式直接输出并生成备份文件的过程。 mysqldump 备份使用方法1、备份命令 默认备份单个数据库中的所有数据表 命令格式： 1mysqldump [-h主机名] [-P端口] -u用户名">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-20T07:46:33.919Z">
+<meta property="og:updated_time" content="2019-12-20T07:51:39.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据库迁移">
 <meta name="twitter:description" content="在服务器之间实现MySQL数据库的迁移数据备份mysqldump是MySQL数据库自带的一个很好用的备份命令，它实现的是逻辑备份，通过命令导出结果的是SQL语句，也就是把数据从MySQL库中以逻辑的SQL语句的形式直接输出并生成备份文件的过程。 mysqldump 备份使用方法1、备份命令 默认备份单个数据库中的所有数据表 命令格式： 1mysqldump [-h主机名] [-P端口] -u用户名">
@@ -338,7 +338,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-20T15:46:33+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-20T15:51:39+08:00">
                 2019-12-20
               </time>
             
@@ -445,7 +445,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u&lt;username&gt; -p&lt;password&gt; &lt;数据库名&gt; &lt; 文件名.sql   #库必须保留，空库也可</span><br></pre></td></tr></table></figure>
 <p>例如：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -pnba106118 --database mybatis &lt; /home/mybatis.sql</span><br></pre></td></tr></table></figure>
-<h4 id="方法二：使用source实现恢复"><a href="#方法二：使用source实现恢复" class="headerlink" title="方法二：使用source实现恢复"></a>方法二：使用source实现恢复</h4><p>因为mysqldump是逻辑备份，其备份结果就是一些sql脚本，所以也可以通过MySQL的<code>source</code>实现恢复备份，需要先登录MySQL账户，在MySQL中执行以下命令实现恢复，格式：</p>
+<h4 id="方法二：使用source实现恢复"><a href="#方法二：使用source实现恢复" class="headerlink" title="方法二：使用source实现恢复"></a>方法二：使用source实现恢复</h4><p>因为mysqldump是逻辑备份，其备份结果就是一些sql脚本，所以也可以通过MySQL的<code>source</code>实现恢复备份，需要先登录MySQL账户，并选择指定的数据库，然后在指定的数据库中执行以下命令实现恢复，格式：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source 文件名.sql</span><br></pre></td></tr></table></figure>
 <h3 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h3><p>在服务器之间将备份的数据库文件进行远程文件传输到指定服务器，然后对备份文件进行恢复，这样就实现了数据库文件的迁移，简单地说：</p>
 <p><strong>数据库迁移 = 数据库文件备份 + 文件传输 + 数据库文件恢复</strong></p>
