@@ -309,6 +309,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/Java篇/「Java 篇」当 finally 遇见 return/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/16/Java篇/「Java 篇」当 finally 遇见 return/" itemprop="url">「Java 篇」当 finally 遇见 return</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T00:00:00+08:00">
+                2019-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-Java-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>Java 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/16/Java篇/「Java 篇」当 finally 遇见 return/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/16/Java篇/「Java 篇」当 finally 遇见 return/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          try…catch…finally 和 return典型的异常处理结构：try…catch…finallytry：可能发生异常的代码catch：发生异常之后会执行的代码finally：必须执行的代码
+finally 的这个必须到底有多强悍？强悍到连 return 都要让它三分。return有两个作用：
+
+返回方法的返回值
+退出方法，归还CPU的执行权
+
+一般情况下，任何方法里面，一旦遇见return，便会立即退出。但是，finally的“必须”让return也做出了让步。finally一定会执行，当finally遇见return时，有三种情况：
+
+try/catch中没有return语句，finally中有return语句此时，和正常的try…catch…finally一样，执行到finally中的return语句之后返回
+try/catch中有return语句用于返回值，finally中没有return语句此时，try/catch中return语句将需要返回的值保存起来，然后去执行finally中的语句，即使操作的是try/catch中return返回的元素，也不会改变返回值，因为已
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/16/Java篇/「Java 篇」当 finally 遇见 return/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/JavaScript篇/「JavaScript篇 」DOM中常用方法 /">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1656,172 +1831,6 @@ Ajaxjs原生的Ajax其实就是围绕浏览器内内置的Ajax引擎对象进行
 
         
     
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/" itemprop="url">「JavaScript篇 」变量和函数预解析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-02T00:00:00+08:00">
-                2018-12-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaScript-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaScript 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          JavaScript 变量和函数预解析大多数编程语言的变量和方法的使用规则都是先定义后使用，否则就会出现异常。JavaScript具有预解析的功能，能够打破这种规则，可以在变量和函数定义之前就使用该变量和函数（此时的变量值为undefined）。JavaScript 代码的解析过程分为两个阶段，先是编译阶段，然后执行阶段。在编译阶段会将用function定义的函数提前，并且将用var定义的变量 声明 提前，并将它赋值为undefined。相当于在代码一开始就创建了一个未初始化的变量（只是效果类似创建了一个变量，实际上没有创建变量）。JavaScript的预解析功能可以让开发者在定义方法之前调用方法，也可以在定义变量之前调用变量，但是变量的值为undefined。12345678910111213141516171819202122232425262728293031323334&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;!-- 变量和函数的预解析 --&gt;&lt;head&gt;    &lt;meta charset="UTF-8
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/02/JavaScript篇/「JavaScript篇 」变量和函数预解析/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
   </section>
 
   
@@ -1874,7 +1883,7 @@ Ajaxjs原生的Ajax其实就是围绕浏览器内内置的Ajax引擎对象进行
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1896,7 +1905,7 @@ Ajaxjs原生的Ajax其实就是围绕浏览器内内置的Ajax引擎对象进行
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1963,7 +1972,7 @@ Ajaxjs原生的Ajax其实就是围绕浏览器内内置的Ajax引擎对象进行
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">98.6k</span>
+    <span title="Site words total count">99.4k</span>
   
 </div>
 

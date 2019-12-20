@@ -309,6 +309,183 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/20/MySQL篇/「MySQL篇」MySQL数据库迁移/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/20/MySQL篇/「MySQL篇」MySQL数据库迁移/" itemprop="url">MySQL数据库迁移</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-20T15:46:33+08:00">
+                2019-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-MySQL篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>MySQL篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/20/MySQL篇/「MySQL篇」MySQL数据库迁移/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/20/MySQL篇/「MySQL篇」MySQL数据库迁移/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          在服务器之间实现MySQL数据库的迁移数据备份mysqldump是MySQL数据库自带的一个很好用的备份命令，它实现的是逻辑备份，通过命令导出结果的是SQL语句，也就是把数据从MySQL库中以逻辑的SQL语句的形式直接输出并生成备份文件的过程。
+mysqldump 备份使用方法1、备份命令
+默认备份单个数据库中的所有数据表
+命令格式：
+1mysqldump [-h主机名] [-P端口] -u用户名 -p密码 --database 数据库名 &gt; 文件名.sql
+例如： 
+1mysqldump [-h 192.168.1.100][-p 3306] -uroot -pnba106118 --database mybatis &gt; /home/mybatis.sql
+2、备份压缩
+如果导出的数据比较大，不方便传输到远程服务器，此时可以考虑对备份进行压缩操作。压缩命令格式：
+1mysqldump [-h主机名] [-P端口] -u用户名 -p密码 --database 数据库名 | gzip &gt; 文件名.sql.gz
+例如： 
+1mysqldump [-h192.168.1.1
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/20/MySQL篇/「MySQL篇」MySQL数据库迁移/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/Python 篇/Python操作Excel之openpyxl/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1870,177 +2047,6 @@ OAuth协议的应用场景是什么?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 
         
     
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Git 篇/「Git 篇」 在IDEA中使用Git（三） -- 团队开发/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/03/Git 篇/「Git 篇」 在IDEA中使用Git（三） -- 团队开发/" itemprop="url">「Git 篇」 在IDEA中使用Git（三） -- 团队开发</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-03T09:42:52+08:00">
-                2019-06-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-Git-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>Git 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/03/Git 篇/「Git 篇」 在IDEA中使用Git（三） -- 团队开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/03/Git 篇/「Git 篇」 在IDEA中使用Git（三） -- 团队开发/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          硬件平台:Ubuntu 16.04Git 2.7.4Intellij IDEA Ultimate
-
-Git 团队开发Git 的团队开发就是多人开发同一个项目。
-
-首先，在码云中的仓库中添加另外的开发者：打开仓库 –&gt; 管理 –&gt; 仓库成员管理 –&gt; 开发者 –&gt; 添加仓库成员 –&gt; 直接添加然后在码云用户框中直接输入需要添加的码云用户名称提交开发邀请这样被邀请的用于就是称为了该项目的开发者，可以同时进行开发项目了。
-在进行多人开发的时候，每次在进行开发之前，先对打开的项目进行update，以实现同步更新团队其他成员开发的代码，然后在开发完成之后将项目push到码云中，以便团队其他成员更新获取你开发的代码。如果团队中多人同时对项目中的同一个文件进行了开发，那么在多人提交的时候可能会出现提交冲突，此时IDEA会提示“Remote changes need to be merged before pushing.”，就是需要先通过合并解决代码冲突，所以，一般团队开发的流程就是：update project –&gt; 开发 –&gt; push projectU
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/03/Git 篇/「Git 篇」 在IDEA中使用Git（三） -- 团队开发/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
   </section>
 
   
@@ -2093,7 +2099,7 @@ Git 团队开发Git 的团队开发就是多人开发同一个项目。
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2115,7 +2121,7 @@ Git 团队开发Git 的团队开发就是多人开发同一个项目。
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2182,7 +2188,7 @@ Git 团队开发Git 的团队开发就是多人开发同一个项目。
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">98.6k</span>
+    <span title="Site words total count">99.4k</span>
   
 </div>
 
