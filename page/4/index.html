@@ -1388,6 +1388,178 @@ java注释：可见范围： jsp源码、翻
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/solong.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maple's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/" itemprop="url">「JavaEE 篇」Cookie & Session</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-16T00:00:00+08:00">
+                2018-11-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
+                    <span itemprop="name"><b>JavaEE 篇</b></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          会话技术存储客户端的状态日常生活中我们经常上网购物，那么在网站的购物系统中，用户将购买的商品信息存储到哪里呢？因为Http协议是无状态的，也就是说每个客户端访问服务器端资源时，服务器并不知道该客户端是谁，所以，就引入了会话技术来识别客户端的状态。
+
+会话技术是帮助服务器记住客户端状态（区分客户端）
+
+会话技术从打开一个浏览器访问某个站点开始，到关闭整个浏览器的过程为止，称为一次会话（可以包含很多次请求）。因为会话所用的内存是在浏览器内部开辟的，所以只有浏览器全部关闭才结束会话。会话技术就是记录这次会话中客户端的状态与数据。会话技术分为Cookie和Session，它们各有特点：Cookie： 数据存储在客户端本地，减少服务器端的存储压力，但安全性不好，客户端可以清除cookie；Session： 将数据存储到服务器端，安全性相对好，但增加服务器的压力；
+CookieCookie技术是将用户的数据存储到客户端的技术，主要介绍两个方面内容：第一：服务器端怎样将一个Cookie发送到客户端；第二：服务器端怎样接受客户端携带的Cookie；
+服务器端向客户端发送一个Cookie1)  创建Co
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	
+	</div>
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1512,178 +1684,6 @@ JDBC事务操作JDBC默认是自动事务，执行sql语句：executeUpdate( )�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/11/16/JDBC篇/「JDBC 篇」JDBC中的事务/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-	<div>
-	
-	</div>
-
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Maple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/solong.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Maple's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/" itemprop="url">「JavaEE 篇」Cookie & Session</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-16T00:00:00+08:00">
-                2018-11-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/b-JavaEE-篇-b/" itemprop="url" rel="index">
-                    <span itemprop="name"><b>JavaEE 篇</b></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          会话技术存储客户端的状态日常生活中我们经常上网购物，那么在网站的购物系统中，用户将购买的商品信息存储到哪里呢？因为Http协议是无状态的，也就是说每个客户端访问服务器端资源时，服务器并不知道该客户端是谁，所以，就引入了会话技术来识别客户端的状态。
-
-会话技术是帮助服务器记住客户端状态（区分客户端）
-
-会话技术从打开一个浏览器访问某个站点开始，到关闭整个浏览器的过程为止，称为一次会话（可以包含很多次请求）。因为会话所用的内存是在浏览器内部开辟的，所以只有浏览器全部关闭才结束会话。会话技术就是记录这次会话中客户端的状态与数据。会话技术分为Cookie和Session，它们各有特点：Cookie： 数据存储在客户端本地，减少服务器端的存储压力，但安全性不好，客户端可以清除cookie；Session： 将数据存储到服务器端，安全性相对好，但增加服务器的压力；
-CookieCookie技术是将用户的数据存储到客户端的技术，主要介绍两个方面内容：第一：服务器端怎样将一个Cookie发送到客户端；第二：服务器端怎样接受客户端携带的Cookie；
-服务器端向客户端发送一个Cookie1)  创建Co
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/16/JavaEE篇/「JavaEE 篇」Cookie & Session/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2219,7 +2219,7 @@ listener技术—监听器
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">100.1k</span>
+    <span title="Site words total count">100.3k</span>
   
 </div>
 
