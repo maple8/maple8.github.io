@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Maple&#39;s Blog">
 <meta property="og:description" content="安装Ubuntu16.04安装Typora有两种方法:： 第一种：官网下载，然后找到启动文件，双击启动；该方法可以很方便的启动Typora应用程序，也可以将启动图标锁定到快捷启动栏，快捷方便。但是，该方式不能直接在需要打开的markdown文件上右键，选择使用Typora打开，所以每次在打开Typora之后，都是一个空文件或者是上次打开的目录和文件（重新启动时默认打开的是什么文件可以在偏好设置里面">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-29T03:55:17.312Z">
+<meta property="og:updated_time" content="2019-12-29T04:00:40.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu16.04安装和启动Typora">
 <meta name="twitter:description" content="安装Ubuntu16.04安装Typora有两种方法:： 第一种：官网下载，然后找到启动文件，双击启动；该方法可以很方便的启动Typora应用程序，也可以将启动图标锁定到快捷启动栏，快捷方便。但是，该方式不能直接在需要打开的markdown文件上右键，选择使用Typora打开，所以每次在打开Typora之后，都是一个空文件或者是上次打开的目录和文件（重新启动时默认打开的是什么文件可以在偏好设置里面">
@@ -338,7 +338,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-29T11:55:17+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-29T12:00:40+08:00">
                 2019-12-29
               </time>
             
@@ -411,7 +411,7 @@
         <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Ubuntu16.04安装Typora有两种方法:：</p>
 <h4 id="第一种：官网下载，然后找到启动文件，双击启动；"><a href="#第一种：官网下载，然后找到启动文件，双击启动；" class="headerlink" title="第一种：官网下载，然后找到启动文件，双击启动；"></a>第一种：官网下载，然后找到启动文件，双击启动；</h4><p>该方法可以很方便的启动Typora应用程序，也可以将启动图标锁定到快捷启动栏，快捷方便。但是，该方式不能直接在需要打开的markdown文件上右键，选择使用Typora打开，所以每次在打开Typora之后，都是一个空文件或者是上次打开的目录和文件（重新启动时默认打开的是什么文件可以在偏好设置里面进行设置），想要打开指定的文件，还需要在<code>文件</code>的<code>打开</code>下拉选项中继续找到想要打开的文件。如此这样操作过程比较繁琐。</p>
 <h4 id="第二种：使用终端命令安装；"><a href="#第二种：使用终端命令安装；" class="headerlink" title="第二种：使用终端命令安装；"></a>第二种：使用终端命令安装；</h4><p>根据Typora官方博客推荐，安装命令如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> optional, but recommended</span><br><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> add Typora's repository</span><br><span class="line">sudo add-apt-repository 'deb http://typora.io linux/'</span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> install typora</span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> optional, but recommended</span></span><br><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> add Typora<span class="string">'s repository</span></span></span><br><span class="line">sudo add-apt-repository 'deb http://typora.io linux/'</span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> install typora</span></span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
 <p>安装Typora后，软件包由apt-get管理，需要执行apt-get命令来更新软件包。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure></p>
 <p>这样安装完成之后，在终端就可以通过输入：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typora</span><br></pre></td></tr></table></figure></p>
 <p>打开默认设置的Typora应用程序；或者使用：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typora 文件名.md</span><br></pre></td></tr></table></figure></p>
@@ -426,8 +426,8 @@
 <li>个人的个性配置打开方式<br>配置文件保存在<code>~/.local/share/applications/mimeapps.list</code><br>笔者使用的是个人的个性配置打开方式，打开配置文件如下：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Default Applications]</span><br><span class="line">text/html=google-chrome.desktop</span><br><span class="line">x-scheme-handler/http=google-chrome.desktop</span><br><span class="line">x-scheme-handler/https=google-chrome.desktop</span><br><span class="line">x-scheme-handler/about=google-chrome.desktop</span><br><span class="line">x-scheme-handler/unknown=google-chrome.desktop</span><br><span class="line">x-scheme-handler/jetbrains=jetbrains-toolbox.desktop</span><br><span class="line">x-scheme-handler/postman=Postman.desktop</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>修改<code>mimeapps.list</code> 配置文件，在文件末尾添加<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text/markdown=typora.desktop</span><br></pre></td></tr></table></figure></p>
-<p>这样就完成了配置。</p>
+<p>​    修改<code>mimeapps.list</code> 配置文件，在文件末尾添加<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text/markdown=typora.desktop</span><br></pre></td></tr></table></figure></p>
+<p>这样就完成了配置，将Typora设置为默认打开<code>text/markdown</code>格式的文件应用程序，在想要打开的markdown文件上直接双击就可以打开了，也可以在文件上右键，然后选择使用Typora打开。</p>
 
       
     </div>
@@ -696,7 +696,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">100k</span>
+    <span title="Site words total count">100.1k</span>
   
 </div>
 
