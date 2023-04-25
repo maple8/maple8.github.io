@@ -4,13 +4,25 @@
   
     
     <entry>
-      <title>测试</title>
-      <link href="/maple/2023/04/25/%E6%B5%8B%E8%AF%95/"/>
-      <url>/maple/2023/04/25/%E6%B5%8B%E8%AF%95/</url>
+      <title>二进制枚举</title>
+      <link href="/maple/2023/04/25/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9E%9A%E4%B8%BE/"/>
+      <url>/maple/2023/04/25/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9E%9A%E4%B8%BE/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="二进制枚举"><a href="#二进制枚举" class="headerlink" title="二进制枚举"></a>二进制枚举</h2><p><img src="2.jpg"></p><p><img src="1.jpg"></p>]]></content>
       
       
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 枚举 </tag>
+            
+        </tags>
       
     </entry>
     
