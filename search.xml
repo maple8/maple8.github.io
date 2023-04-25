@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Maple Test</title>
-      <link href="/maple/2023/04/25/Maple-Test/"/>
-      <url>/maple/2023/04/25/Maple-Test/</url>
+      <title>测试</title>
+      <link href="/maple/2023/04/25/%E6%B5%8B%E8%AF%95/"/>
+      <url>/maple/2023/04/25/%E6%B5%8B%E8%AF%95/</url>
       
-        <content type="html"><![CDATA[<p>Demo:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">      System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">      </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p><img src="1.jpg"></p><p>测试</p><p><img src="2.jpg"></p><p>测试测试</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       
@@ -17,11 +17,11 @@
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/maple/2023/04/22/Hello-World/"/>
-      <url>/maple/2023/04/22/Hello-World/</url>
+      <title>Maple Test</title>
+      <link href="/maple/2023/04/25/Maple-Test/"/>
+      <url>/maple/2023/04/25/Maple-Test/</url>
       
-        <content type="html"><![CDATA[<p><img src="1.jpg"></p><p>Demo:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">      System.out.println(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">      </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>Demo:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">      System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">      </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p><img src="1.jpg"></p><p>测试</p><p><img src="2.jpg"></p><p>测试测试</p>]]></content>
       
       
       
