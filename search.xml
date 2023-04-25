@@ -8,7 +8,7 @@
       <link href="/maple/2023/04/25/Maple-Test/"/>
       <url>/maple/2023/04/25/Maple-Test/</url>
       
-        <content type="html"><![CDATA[<p>Demo:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">      System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">      </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p><img src="1.jpg"></p><p><img src="2.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p>Demo:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">      System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">      </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p><img src="1.jpg"></p><p>测试</p><p><img src="2.jpg"></p><p>测试测试</p>]]></content>
       
       
       
