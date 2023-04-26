@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>防盗链</title>
+      <link href="/maple/2023/04/26/%E9%98%B2%E7%9B%97%E9%93%BE/"/>
+      <url>/maple/2023/04/26/%E9%98%B2%E7%9B%97%E9%93%BE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h2><h3 id="防盗链的定义"><a href="#防盗链的定义" class="headerlink" title="防盗链的定义"></a>防盗链的定义</h3><p><strong>防盗链</strong>其实就是在网络服务器端进行个性化编程，通过URL过滤技术实现对目标资源控制访问。</p><p><strong>比如：</strong></p><p><code>file.maple.com/test.jpg</code>这个图片地址，如果没有装防盗链，那么任意用户都能通过该URL轻而易举的在他的网站上引用这个图片。如果对<code>file.maple.com</code> 这个地址进行服务器端编程，如给URL拼接参数，得到<code>file.maple.com/test.jpg?authcode=xxx&amp;ip=127.0.0.1</code>，自动拼接了ip参数，然后在对URL路由时针对IP参数进行个性化判断，就能实现只有<code>127.0.0.1</code>来访问这个链接，而其它的IP地址则无法访问该链接。</p><h3 id="防盗链的产生"><a href="#防盗链的产生" class="headerlink" title="防盗链的产生"></a>防盗链的产生</h3><p>一般我们在浏览网页时，一个完整的页面并不是客户端通过一次HTTP请求就将全部资源从服务器上拉取下来的，而是会分成很多次HTTP请求。如果客户端所浏览的页面带有图片或其它功能性信息，那么客户端的第一个HTTP请求就是想资源服务器端请求这个页面的文本信息，然后通过客户端的浏览器对服务器返回的数据进行解析，如果发现其中包含图片地址URL，那么客户端的浏览器会自动针对该图片URL再一次发送HTTP请求去获取目标图片并将其放置到目标位置，就这样一个完整的网络页面内部经过多次HTTP请求才能完整的展现出来。</p><p>基于此机制，就会产生盗链的问题。</p><blockquote><p><strong>个人理解</strong></p><p>盗链：全称应该是 盗取网络链接地址。</p></blockquote><p>如果一个网站中没有其页面中的图片信息，那么它完全可以链接访问到其他网站的图片信息。这样，没有任何资源的网站利用了其他网站的资源来展示给浏览者，提高了自己站点的访问量，而大部分浏览者又不会很容易地发现内部资源的调用过程，这样显然对于那些被利用了资源的网站是不公平的。一些不良网站为了不增加成本而扩充自己站点内容，经常盗用其他网站的链接。</p><h3 id="防盗链的实现"><a href="#防盗链的实现" class="headerlink" title="防盗链的实现"></a>防盗链的实现</h3><p>要实现防盗链，首先要理解盗链的实现原理，提到防盗链的实现原理就不得不从HTTP协议说起，在HTTP协议中，有一个表头字段叫 <code>referer</code>，其采用URL的格式来表示从哪儿链接到当前的网页或文件。换句话说，通过referer，网站可以检测到目标网页访问的来源网页，如果是资源文件，则可以跟踪到显示它的网页地址。有了<code>referer</code>跟踪来源就好办了，这时就可以通过技术手段来进行处理，一旦检测到来源不是期望的URL地址，那么就进行拦截或者返回降级页面和资源。 </p><p><strong>HTTP Headers</strong></p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">:authority: g.csdnimg.cn</span><br><span class="line">:method: GET</span><br><span class="line">:path: /static/logo/favicon32.ico</span><br><span class="line">:scheme: https</span><br><span class="line">accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</span><br><span class="line">accept-encoding: gzip, deflate, br</span><br><span class="line">accept-language: zh-CN,zh;q=0.9,en;q=0.8</span><br><span class="line">if-modified-since: Mon, 24 Apr 2023 09:23:28 GMT</span><br><span class="line">if-none-match: &quot;64464a90-10be&quot;</span><br><span class="line">referer: https://blog.csdn.net/qq_44543508/article/details/123557819</span><br><span class="line">sec-ch-ua: &quot;Chromium&quot;;v=&quot;112&quot;, &quot;Google Chrome&quot;;v=&quot;112&quot;, &quot;Not:A-Brand&quot;;v=&quot;99&quot;</span><br><span class="line">sec-ch-ua-mobile: ?1</span><br><span class="line">sec-ch-ua-platform: &quot;Android&quot;</span><br><span class="line">sec-fetch-dest: image</span><br><span class="line">sec-fetch-mode: no-cors</span><br><span class="line">sec-fetch-site: cross-site</span><br><span class="line">user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36</span><br></pre></td></tr></table></figure><p>如果想对自己的网站进行防盗链保护，需要针对不同的情况进行区别对待。如果网站服务器用的是apache，那么使用apache自带Url Rewrite插件就可以很轻松实现各种防盗链，其原理是检查HTTP请求头中的refer属性值，如果refer的信息来自非目标站点则重定向到指定图片或网页上。还有很多其他的防盗链实现机制，总体上都换汤不换药，都是基于<code>refer</code>属性值进行个性化过滤。</p><hr><p><strong>参考文档：</strong></p><p><a href="http://www.zzbaike.com/wiki/%E9%98%B2%E7%9B%97%E9%93%BE">防盗链</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 防盗链 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Auth 2.0 协议</title>
       <link href="/maple/2023/04/25/Auth-2-0-%E5%8D%8F%E8%AE%AE/"/>
       <url>/maple/2023/04/25/Auth-2-0-%E5%8D%8F%E8%AE%AE/</url>
