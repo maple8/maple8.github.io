@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>「Spring Cloud - 1」-- 浅析分布式架构和微服务架构 | Maple's Blog</title><meta name="author" content="Maple"><meta name="copyright" content="Maple"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="浅析分布式架构和微服务架构分布式架构在《分布式系统原理与范型》一书中有如下定义：  “分布式系统是若干独立计算机的集合，这些计算机对于用户来说就像单个相关系统”；  分布式系统是由一组通过网络进行通信、为了完成共同的任务而协调工作的计算机节点组成的系统。分布式系统的出现是为了用廉价的、普通的机器完成单个计算机无法完成的计算、存储等任务。其目的是利用更多的机器，处理更多的数据。 分布式系统（dist">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构">
+<meta property="og:url" content="https://maple_eitba.gitee.io/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="浅析分布式架构和微服务架构分布式架构在《分布式系统原理与范型》一书中有如下定义：  “分布式系统是若干独立计算机的集合，这些计算机对于用户来说就像单个相关系统”；  分布式系统是由一组通过网络进行通信、为了完成共同的任务而协调工作的计算机节点组成的系统。分布式系统的出现是为了用廉价的、普通的机器完成单个计算机无法完成的计算、存储等任务。其目的是利用更多的机器，处理更多的数据。 分布式系统（dist">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img0.baidu.com/it/u=171555148,2578235690&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500">
+<meta property="article:published_time" content="2023-05-15T16:53:29.000Z">
+<meta property="article:modified_time" content="2023-05-16T06:29:04.386Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="分布式，微服务">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img0.baidu.com/it/u=171555148,2578235690&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500"><link rel="shortcut icon" href="/maple/img/favicon.jpg"><link rel="canonical" href="https://maple_eitba.gitee.io/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/maple/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/maple/',
+  algolia: undefined,
+  localSearch: {"path":"/maple/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":22,"languages":{"author":"作者: Maple","link":"链接: ","source":"来源: Maple's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '「Spring Cloud - 1」-- 浅析分布式架构和微服务架构',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-16 14:29:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/maple_background.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/maple/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img0.baidu.com/it/u=171555148,2578235690&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=800&amp;h=500')"><nav id="nav"><span id="blog-info"><a href="/maple/" title="Maple's Blog"><span class="site-name">Maple's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">「Spring Cloud - 1」-- 浅析分布式架构和微服务架构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-15T16:53:29.000Z" title="发表于 2023-05-16 00:53:29">2023-05-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-16T06:29:04.386Z" title="更新于 2023-05-16 14:29:04">2023-05-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/maple/categories/Spring-Cloud/">Spring Cloud</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="浅析分布式架构和微服务架构"><a href="#浅析分布式架构和微服务架构" class="headerlink" title="浅析分布式架构和微服务架构"></a>浅析分布式架构和微服务架构</h1><h2 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h2><p>在《分布式系统原理与范型》一书中有如下定义：</p>
+<blockquote>
+<p>“分布式系统是若干独立计算机的集合，这些计算机对于用户来说就像单个相关系统”；</p>
+</blockquote>
+<p>分布式系统是由一组通过网络进行通信、为了完成共同的任务而协调工作的计算机节点组成的系统。分布式系统的出现是为了用廉价的、普通的机器完成单个计算机无法完成的计算、存储等任务。其目的是利用更多的机器，处理更多的数据。</p>
+<p><strong>分布式系统（distributed system）是建立在网络之上的软件系统。</strong></p>
+<p>首先需要明确的是，只有当单个节点的处理能力无法满足日益增长的计算、存储任务的时候，且硬件的提升（加内存、加磁盘、提升CPU核数）无法明显改善时，应用程序也无法进一步优化的场景，我们才需要考虑分布式系统。因为，分布式系统要解决的问题本身是和单机系统一样的，而由于分布式系统多节点、通过网络通信的拓扑结构，会引入很多单机系统没有的问题，为了解决这些问题又会引入更多的机制、协议，带来更多的问题。</p>
+<p>因此，随着互联网的发展，网站应用的规模不断扩大，常规的垂直应用架构已无法应对，分布式服务架构以及流动计算架构势在必行，急需一个治理系统确保架构有条不紊的演进。</p>
+<blockquote>
+<p>分布式的典型代表：Dubbo。当然了，Dubbo现在也提供了微服务的生态。</p>
+</blockquote>
+<h2 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h2><p>任何技术的演进都是有迹可循的，任何新技术的出现都是为了解决原有技术无法解决的需求，所以，微服务的出现就是因为原来单体应用架构已经无法满足当前互联网产品的技术需求。微服务的设计就是为了解决不因为某个模块的升级和BUG影响整体的系统业务。</p>
+<p><strong>微服务架构，核心就是为了解决应用微服务化之后的服务治理问题。</strong></p>
+<p>在微服务架构之前还有一个概念：SOA（Service-Oriented Architecture）– 面向服务的体系架构。</p>
+<p>微服务的特征：</p>
+<p>单一职责的。一个微服务应该都是单一职责的，这才是“微”的体现，一个微服务解决一个业务问题（注意是一个业务问题而不是一个接口）。<br>面向服务的。将自己的业务能力封装并对外提供服务，这是继承SOA的核心思想，一个微服务本身也可能使用到其它微服务的能力。</p>
+<p>应用微服务化之后，会出现一些问题：</p>
+<ul>
+<li>服务发现问题。一个微服务如何发现其他微服务呢？最简单的方式就是每个微服务里面配置其他微服务的地址，但是当微服务数量众多的时候，这样做明显不现实。所以需要使用到微服务架构中的一个最重要的组件：服务注册中心，所有服务都注册到服务注册中心，同时利用服务发现机制可以从服务注册中心获取当前可用的服务清单。</li>
+<li>服务配置管理的问题。当服务数量超过一定程度之后，如果需要在每个服务里面分别维护每一个服务的配置文件，运维人员估计要哭了。那么，就需要用到微服务架构里面第二个重要的组件：配置中心。</li>
+<li>服务治理问题，当客户端或外部应用调用服务的时候怎么处理呢？服务A可能有多个节点，服务A、服务B和服务C的服务地址都不同，服务授权验证在哪里做？这时，就需要使用到服务网关提供统一的服务入口，最终形成典型微服务架构：</li>
+</ul>
+<img src="springcloud1.png" style="zoom:67%;">
+
+<p>这便是一个典型的微服务架构，当然微服务的服务治理还涉及很多内容，比如：</p>
+<ul>
+<li>通过熔断、限流等机制保证高可用；</li>
+<li>微服务之间调用的负载均衡；</li>
+<li>分布式事务（2PC、3PC、TCC、LCN等）；</li>
+<li>服务调用链跟踪等等。</li>
+</ul>
+<p><font color="red"><strong>服务治理主要作用是改变运行时服务的行为和选址逻辑、限流熔断、负载权重、配置读写、日志追踪等目的。</strong></font></p>
+<h2 id="分布式和微服务的区别"><a href="#分布式和微服务的区别" class="headerlink" title="分布式和微服务的区别"></a>分布式和微服务的区别</h2><p>分布式和微服的架构很相似，只是部署的方式不一样而已。分布式服务架构与微服务架构概念的区别与联系：</p>
+<h3 id="分布式-–-分散压力"><a href="#分布式-–-分散压力" class="headerlink" title="分布式 – 分散压力"></a>分布式 – 分散压力</h3><ul>
+<li>不同模块部署在不同服务器上;<ul>
+<li>作用：分布式解决网站高并发带来性能问题；</li>
+</ul>
+</li>
+<li>集群：相同的服务；<ul>
+<li>多台服务器部署相同应用构成一个集群；</li>
+<li>作用：通过负载均衡设备共同对外提供服务；</li>
+</ul>
+</li>
+<li>SOA［组装服务/ESB企业服务总线］;<ul>
+<li>业务系统分解为多个组件，让每个组件都独立提供离散，自治，可复用的服务能力;</li>
+<li>通过服务的组合和编排来实现上层的业务流程;</li>
+<li>作用：简化维护，降低整体风险，伸缩灵活;</li>
+</ul>
+</li>
+</ul>
+<h3 id="微服务-–-分散能力"><a href="#微服务-–-分散能力" class="headerlink" title="微服务 – 分散能力"></a>微服务 – 分散能力</h3><ul>
+<li>架构设计概念：各服务间隔离（分布式也是隔离），自治（分布式依赖整体组合），其它特性（单一职责，边界，异步通信，独立部署），是分布式概念更加严格的执行;</li>
+<li>作用：各服务可独立应用，组合服务也可系统应用（巨石应用［monolith］的简化实现策略 – 平台思想）.</li>
+</ul>
+<blockquote>
+<p>将所有功能都部署在一个web容器中运行的系统就叫做<strong>巨石应用</strong>。</p>
+</blockquote>
+<p><font color="red"><strong>核心：分布式重在资源共享与加快计算机计算速度。 分布式:分散压力。微服务:分散能力。</strong></font></p>
+<blockquote>
+<p><strong>问题：分布式是否属于微服务？</strong></p>
+<p>关于这个问题，搜罗了蛮多博文，答案也不完全一致，有属于也有不属于。</p>
+<p>个人理解：如果不对微服务的’微’字太较真，或者分布式节点上部署的应用业务粒度足够小，那可以认为分布式属于微服务。</p>
+<p>但是反过来就不成立了。因为微服务就是将业务模块拆分成一个独立的服务单元，然后基于网络通信通过接口来实现数据的交互，微服务不一定是分布式，因为微服务的应用不一定是分散在多个服务器上，它可以是同一个服务器。这也是分布式和微服务的一个细微差别。</p>
+</blockquote>
+<h2 id="微服务架构的理解"><a href="#微服务架构的理解" class="headerlink" title="微服务架构的理解"></a>微服务架构的理解</h2><p>在应用的初始阶段，单体架构无论是在开发速度、运维难度上，还是服务器的成本上都有着显著的优势。在一个产品的前景不明确的初始阶段，使用单体架构是非常明智的选择。随着应用业务的发展和业务复杂度的提高，这种架构明显存在很多的不足，主要体现在以下 3 个方面: </p>
+<ol>
+<li>业务越来越复杂，单体应用的代码量越来越大，代码的可读性、可维护性和可扩展性下降， 新人接手代码所需的时间成倍增加，业务扩展带来的代价越来越大。</li>
+<li>随着用户越来越多，程序承受的并发越来越高，单体应用的并发能力有限。</li>
+<li>测试的难度越来越大，单体应用的业务都在同个程序中，随着业务的扩张、复杂度的增加， 单体应用修改业务或者增加业务或许会给其他业务带来定的影响，导致测试难度增加。</li>
+</ol>
+<p>微服务（不是一个框架 而是一种架构思想），是著名的 oo （面向对象， Object Oriented ）专家 Martin Fowler 提出来的，它是用来描述将软件应用程序设计为独立部署的服务的种特殊方式。微服务架将业务整体构按领域划分为独立的服务单元，有自动化运维、容错、快速演进的特点，它能够解决传统单体架构系统的痛点，同时也能满足越来越复杂的业务需求。</p>
+<blockquote>
+<p>Martin Fowler 对微服务的理解：</p>
+<p>简而言之，微服务架构的风格，就是将单一程序开发成一个微服务， 每个微服务运行在自己的进程中，并使用轻量级通信机制，通常是 HTTP RESTFUL API 。这些服务围绕业务能力来划分构建的，并通过完全自动化部署机制来独立部署这些服务可以使用不同的编程语言，以及不同数据存储技术，以保证最低限度的集中式管理。</p>
+</blockquote>
+<h2 id="微服务的特点"><a href="#微服务的特点" class="headerlink" title="微服务的特点"></a>微服务的特点</h2><h3 id="微服务单元基于业务划分"><a href="#微服务单元基于业务划分" class="headerlink" title="微服务单元基于业务划分"></a>微服务单元基于业务划分</h3><p>微服务的“微”到底需要定义到什么样的程度，这是个非常难以界定的概念，可以从几个方面来界定: </p>
+<ul>
+<li>是根据代码量来定义，根据代码的多少来判断程序的大小: </li>
+<li>是根据开发时间的长短来判断；</li>
+<li>是根据业务粒度的大小来划分；</li>
+</ul>
+<p>根据 Martin Fowler 的定义，<strong>微服务的“微”是按照业务来划分的</strong> 。一个大的业务可以拆分成若干小的业务， 小的业务又可以拆分成若干更小的业务，业务到底怎么拆分才算合适，这需要开发人员根据领域划分和职责划分自己去决定。</p>
+<h3 id="微服务基于HTTP协议进行通信"><a href="#微服务基于HTTP协议进行通信" class="headerlink" title="微服务基于HTTP协议进行通信"></a>微服务基于HTTP协议进行通信</h3><p>按照业务划分的微服务单元独立部署并运行在各自的进程中。微服务单元之间的通信方般倾向于使用 HTTP 这种简单的通信机制，更多的时候是使用 RESTfulAPI 。这种接受请求、处理业务逻辑、返回数据的 HTTP 模式非常高效，并且这种通机制与平台和语言无关。</p>
+<h3 id="微服务的数据库独立"><a href="#微服务的数据库独立" class="headerlink" title="微服务的数据库独立"></a>微服务的数据库独立</h3><p>在单体架构中，所有的业务都共用一个数据库。随着业务量的增加，数据库的表的数量越来越多，难以管理和维护，并且数据量的增加会导致数据库服务器压力越来越大，查询速度越来越慢。 微服务的特点就是按业务划分服务，服务与服务之间无耦合，就数据库也是独立的，典型的微服务架构就是每个微服务都有自己独立的数据库，数据库之间没有何联系，这样做的好处在于随着业务的不断扩张，服务与服务之间不需要提供数据库集成，而是提供 API 接口相互调用，还有个好处是数据库独立，单业务的数据量少，易于维护，数据库性能有着明显的优势，数据库的迁移也很方便。</p>
+<h3 id="微服务的自动化部署-CI-CD-持续集成-持续交付"><a href="#微服务的自动化部署-CI-CD-持续集成-持续交付" class="headerlink" title="微服务的自动化部署(CI /CD)(持续集成 持续交付)"></a>微服务的自动化部署(CI /CD)(持续集成 持续交付)</h3><p>在微服务架构中，系统会被拆分为若干个微服务，每个微服务又是一个独立的应用程序。单体架构的应用程序只需要部署一次，而微服务架构有多少个服务就需要部署多少次。随着服务数量的增加，如果微服务按照单体架构的部署方式，部署的难度会呈指数增加。业务的粒度划分得越细，微服务的数量就越多，这时需要更稳定的部署机制。随着技术的发展，尤其是 Docker 容器技术的推进，以及自动化部署工具（例如开源组件 Jenkins）的出现，微服务的自动化部署(CI持续集成 /CD持续交付)变得越来越简单。 自动化部署可以提高部署的效率，减少人为的控制，部署过程中出现错误的概率降低，部署过程的每一步自动化，提高软件的质量。构建一个自动化部署的系统，虽然在前期需要开发人员或者运维人员的学习，但对于整个软件系统来说是一个全新的概念。在软件系统的整个生命周期之中，每一步是由程序控制的，而不是人为控制，软件的质量提高到了一个新的高度。随着 DevOps 这种全新概念的推进，自动化部署必然会成为微服务部署的优配方式。</p>
+<h3 id="微服务的集中化管理"><a href="#微服务的集中化管理" class="headerlink" title="微服务的集中化管理"></a>微服务的集中化管理</h3><p>微服务系统是按业务单元来划分服务的，服务数量越多，管理起来就越复杂，因此微服务必须使用集中化管理。目前流行的微服务框架中，例如： Spring Cloud 采用 Eureka、Nacos 等来进行注册服务和服务发现，另外， Zookeeper、 Consul 等业都是非常优秀的服务集中化管理框架。只不过基于CAP理论，这个开源框架的侧重点不同，开发者可以视业务场景选择合适的框架。</p>
+<h3 id="熔断机制"><a href="#熔断机制" class="headerlink" title="熔断机制"></a>熔断机制</h3><p>为了防止“雪崩效应”事件的发生，分布式系统采用了熔断机制。在用 SpringCloud 构建的微服务系统中，采用了熔断器（即 Hystrix 组件的 Circuit Breaker）去做熔断。</p>
+<h2 id="微服务的优劣势"><a href="#微服务的优劣势" class="headerlink" title="微服务的优劣势"></a>微服务的优劣势</h2><h3 id="微服务的优势"><a href="#微服务的优势" class="headerlink" title="微服务的优势"></a>微服务的优势</h3><p>相对于单体服务来说，微服务具有很多的优势，主要体现在以下方面。</p>
+<ol>
+<li>将一个复杂的业务分解成若干小的业务，每个业务拆分成一个服务，服务的边界明确，将复杂的问题简单化。服务按照业务拆分，代码也是按照业务来拆分，代码的可读性和可扩展性增加。</li>
+<li>服务与服务之间没有耦合，随着业务的增加，可以根据业务再拆分服务，具有极强的横向扩展能力。随着应用的用户量的增加，井发量增加，可以将微服务集群化部署，从而增加系统的负载能力。简而言之，微服务系统的微服务单元具有很强的横向扩展能力。</li>
+<li>服务与服务通过HTT网络通信协议来交互，单个微服务内部高度内聚，服务与服务之间完全独立，无耦合。这使得微服务可以采用任何的开发语言和技术来实现。开发人员不再被强迫使用公司以前的技术或者已经过时的技术，而是可以自由选择最适合业务场景的或者最适合自己的开发语言和技术，提高开发效率、降低开发成本。</li>
+<li>如果是一个单体的应用，由于业务的复杂性、代码的耦合性，以及可能存在的历史问题。 在重写一个单体应用时，要求重写的应用的人员了解所有的业务，所以重写单体应用是非常困难的，并且重写风险也较高。如果是微服务系统，由于微服务系统是按照业务的进行拆分的，并且有坚实的服务边界，所以重写某个服务就相当于重写某一个业务的代码。</li>
+<li>微服务在 CAP 理论中采用的是 AP 架构，即具有高可用和分区容错的特点。高可用主要体现在系统 7 x 24 小时不间断的服务，它要求系统有大量的服务器集群，从而提高了系统 的负载能力。另外，分区容错也使得系统更加健壮。</li>
+</ol>
+<h3 id="微服务的不足"><a href="#微服务的不足" class="headerlink" title="微服务的不足"></a>微服务的不足</h3><p>凡事都有两面性，微服务也不例外，微服务相对于单体应用来说具有很多的优势，当然也有它 的不足，主要体现在如下方面:</p>
+<ol>
+<li>微服务的复杂度</li>
+<li>分布式事务问题。</li>
+<li>服务的划分（按照功能划分还是按照组件来划分呢）分工 ，领域模型划分。</li>
+<li>服务的部署（是否是自动化部署）。</li>
+</ol>
+<p>在微服务架构中，有三大难点，那就是<font color="cornflowerblue"><strong>服务故障的传播性(熔断)、服务划分 和 分布式事务</strong></font>。在微服务设计时，一定要考虑清楚这三个场景，从而选择合适的框架。目前比较流行的微服务框架有 Spring 社区的 Spring Cloud、 Google 公司的 Kubemetes 等。</p>
+<ul>
+<li>为了解决服务故障的传播性，一般的微服务框架都有熔断机制组件，如：Hystrix、Sentinel等。</li>
+<li>服务的划分是标准的划分方案的，一般来说根据业务来划分服务，领域驱动设计具有指导作用。</li>
+<li>分布式事务一般的解决办法就是两阶段提交或者三阶段提 交，不管使用哪一种都存在事务失败导致数据不一致的情况，关键时刻还得人工去恢复数据。</li>
+</ul>
+<p> 总之，微服务的设计一定是渐进式的，并且是随着业务的发展而发展的。</p>
+<h2 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h2><p>Spring Cloud 作为 Java 语言的微服务框架，它依赖于 Spring Boot，有快速开发、持续交付和容易部署等特点。 Spring Cloud 的组件非常多，涉及微服务的方方面面，井在开源社区 Spring 和 Netflix、 Pivotal 两大公司的推动下越来越完善，如今 alibaba 也加入到其中。Spring Cloud 在开发部署上继承了Spring Boot 的一些优点，提高其在开发和部署上的效率。 Spring Cloud 的首要目标就是通过提供一系列开发组件和框架，帮助开发者迅速搭建一个分布式的微服务系统。 Spring Cloud 是通过包装其他技术框架来实现的，其提供了开发分布式微服务系统的一些常用组件，例如：服务注册和发现、 配置中心、熔断器、远程调用，路由、微代理、控制总线、全局锁、分布式会话等。</p>
+<h3 id="SpringCloud-常用组件表"><a href="#SpringCloud-常用组件表" class="headerlink" title="SpringCloud 常用组件表"></a>SpringCloud 常用组件表</h3><table>
+<thead>
+<tr>
+<th>组件功能</th>
+<th>组件名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>服务的注册和发现</td>
+<td>Eureka、Nacos、Consul</td>
+</tr>
+<tr>
+<td>服务的负载均衡</td>
+<td>Ribbon – 负载均衡 + 服务调用 <br> Dubbo（严格的说，Dubbo只是内部集成了LoadBalance的能力，一般并不会作为负载均衡器使用）</td>
+</tr>
+<tr>
+<td>服务的相互调用</td>
+<td>OpenFeign – 基于Controller的restful风格的HTTP协议进行网络通信 <br>Dubbo – 基于Netty进行网络通信</td>
+</tr>
+<tr>
+<td>服务的容错</td>
+<td>Hystrix、Sentinel</td>
+</tr>
+<tr>
+<td>服务网关</td>
+<td>Gateway、Zuul</td>
+</tr>
+<tr>
+<td>服务配置的统一管理</td>
+<td>Config-server、Nacos、Apollo</td>
+</tr>
+<tr>
+<td>服务消息总线</td>
+<td>Bus</td>
+</tr>
+<tr>
+<td>服务安全组件</td>
+<td>Security、Oauth2.0</td>
+</tr>
+<tr>
+<td>服务监控</td>
+<td>Admin、jvm</td>
+</tr>
+<tr>
+<td>链路追踪</td>
+<td>Sleuth、Zipkin</td>
+</tr>
+</tbody></table>
+<p>SpringCloud 只是微服务架构的一种具体实现方式，目前开发中常用的落地实现有三种:</p>
+<ul>
+<li>Dubbo + Zookeeper 半自动化的微服务实现架构</li>
+<li>SpringCloud Netflix 一站式微服务架构</li>
+<li>SpringCloud Alibaba 新的一站式微服务架构</li>
+</ul>
+<hr>
+<p><strong>参考文档：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43842093/article/details/122612285">分布式和微服务是什么？二者的区别又是什么？</a></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/">https://maple_eitba.gitee.io/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple_eitba.gitee.io/maple" target="_blank">Maple's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/maple/tags/%E5%88%86%E5%B8%83%E5%BC%8F%EF%BC%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1/">分布式，微服务</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/maple/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/maple/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/" title="浅析CAP理论&amp;Base理论"><img class="cover" src="/maple/top_img/capbase.png" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">浅析CAP理论&amp;Base理论</div></div></a></div><div class="next-post pull-right"><a href="/maple/2023/05/15/Spring%20Cloud3-Ribbon/" title="Ribbon"><img class="cover" src="/maple/top_img/ribbon.jpeg" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Ribbon</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/maple/img/avatar.jpg" onerror="this.onerror=null;this.src='/maple/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">原创&引用博客,记录并分享学习经验...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%85%E6%9E%90%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">浅析分布式架构和微服务架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">分布式架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">微服务架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.3.</span> <span class="toc-text">分布式和微服务的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F-%E2%80%93-%E5%88%86%E6%95%A3%E5%8E%8B%E5%8A%9B"><span class="toc-number">1.3.1.</span> <span class="toc-text">分布式 – 分散压力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E2%80%93-%E5%88%86%E6%95%A3%E8%83%BD%E5%8A%9B"><span class="toc-number">1.3.2.</span> <span class="toc-text">微服务 – 分散能力</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">1.4.</span> <span class="toc-text">微服务架构的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.5.</span> <span class="toc-text">微服务的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83%E5%9F%BA%E4%BA%8E%E4%B8%9A%E5%8A%A1%E5%88%92%E5%88%86"><span class="toc-number">1.5.1.</span> <span class="toc-text">微服务单元基于业务划分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%9F%BA%E4%BA%8EHTTP%E5%8D%8F%E8%AE%AE%E8%BF%9B%E8%A1%8C%E9%80%9A%E4%BF%A1"><span class="toc-number">1.5.2.</span> <span class="toc-text">微服务基于HTTP协议进行通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E7%8B%AC%E7%AB%8B"><span class="toc-number">1.5.3.</span> <span class="toc-text">微服务的数据库独立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2-CI-CD-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90-%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98"><span class="toc-number">1.5.4.</span> <span class="toc-text">微服务的自动化部署(CI &#x2F;CD)(持续集成 持续交付)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E9%9B%86%E4%B8%AD%E5%8C%96%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.5.</span> <span class="toc-text">微服务的集中化管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%86%94%E6%96%AD%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.6.</span> <span class="toc-text">熔断机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BC%98%E5%8A%A3%E5%8A%BF"><span class="toc-number">1.6.</span> <span class="toc-text">微服务的优劣势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">1.6.1.</span> <span class="toc-text">微服务的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%B8%8D%E8%B6%B3"><span class="toc-number">1.6.2.</span> <span class="toc-text">微服务的不足</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Cloud"><span class="toc-number">1.7.</span> <span class="toc-text">Spring Cloud</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringCloud-%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6%E8%A1%A8"><span class="toc-number">1.7.1.</span> <span class="toc-text">SpringCloud 常用组件表</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/" title="浅析CAP理论&amp;Base理论"><img src="/maple/top_img/capbase.png" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="浅析CAP理论&amp;Base理论"/></a><div class="content"><a class="title" href="/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/" title="浅析CAP理论&amp;Base理论">浅析CAP理论&amp;Base理论</a><time datetime="2023-05-16T07:20:25.000Z" title="发表于 2023-05-16 15:20:25">2023-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构"><img src="https://img0.baidu.com/it/u=171555148,2578235690&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=800&amp;h=500" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构"/></a><div class="content"><a class="title" href="/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构">「Spring Cloud - 1」-- 浅析分布式架构和微服务架构</a><time datetime="2023-05-15T16:53:29.000Z" title="发表于 2023-05-16 00:53:29">2023-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/15/Spring%20Cloud3-Ribbon/" title="Ribbon"><img src="/maple/top_img/ribbon.jpeg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Ribbon"/></a><div class="content"><a class="title" href="/maple/2023/05/15/Spring%20Cloud3-Ribbon/" title="Ribbon">Ribbon</a><time datetime="2023-05-15T15:58:24.000Z" title="发表于 2023-05-15 23:58:24">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/15/Java-SPI/" title="Java SPI"><img src="/maple/top_img/spi.png" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Java SPI"/></a><div class="content"><a class="title" href="/maple/2023/05/15/Java-SPI/" title="Java SPI">Java SPI</a><time datetime="2023-05-15T02:13:13.000Z" title="发表于 2023-05-15 10:13:13">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/12/Git/" title="Git命令"><img src="https://static.is26.com/wp-image/2013/09/git_wallpaper_clean_by_black_pixel-d5wmjnw.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Git命令"/></a><div class="content"><a class="title" href="/maple/2023/05/12/Git/" title="Git命令">Git命令</a><time datetime="2023-05-12T09:10:02.000Z" title="发表于 2023-05-12 17:10:02">2023-05-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/maple/js/utils.js"></script><script src="/maple/js/main.js"></script><script src="/maple/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/maple/js/search/local-search.js"></script></div></div></body></html>

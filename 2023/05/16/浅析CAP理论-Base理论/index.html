@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>浅析CAP理论&amp;Base理论 | Maple's Blog</title><meta name="author" content="Maple"><meta name="copyright" content="Maple"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="浅析CAP理论&amp;Base理论CAP理论CAP理论是分布式应用的理论基础，虽然所有的分布式系统在设计时都会向其看齐，但事实上的所有分布式系统都不可能同时满足CAP三种特性： 一致性 [C: Consistency]在分布式环境中，一致性是指数据在多个副本（分布式节点）之间能否保持数据强一致的特性。在一致性的要求下，当一个系统在数据一致状态下执行更新操作后，应该保证系统的数据仍然处于一致状态。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅析CAP理论&amp;Base理论">
+<meta property="og:url" content="https://maple_eitba.gitee.io/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="浅析CAP理论&amp;Base理论CAP理论CAP理论是分布式应用的理论基础，虽然所有的分布式系统在设计时都会向其看齐，但事实上的所有分布式系统都不可能同时满足CAP三种特性： 一致性 [C: Consistency]在分布式环境中，一致性是指数据在多个副本（分布式节点）之间能否保持数据强一致的特性。在一致性的要求下，当一个系统在数据一致状态下执行更新操作后，应该保证系统的数据仍然处于一致状态。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://maple_eitba.gitee.io/maple/top_img/capbase.png">
+<meta property="article:published_time" content="2023-05-16T07:20:25.000Z">
+<meta property="article:modified_time" content="2023-05-16T07:43:09.735Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="CAP">
+<meta property="article:tag" content="Base">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maple_eitba.gitee.io/maple/top_img/capbase.png"><link rel="shortcut icon" href="/maple/img/favicon.jpg"><link rel="canonical" href="https://maple_eitba.gitee.io/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/maple/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/maple/',
+  algolia: undefined,
+  localSearch: {"path":"/maple/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":22,"languages":{"author":"作者: Maple","link":"链接: ","source":"来源: Maple's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '浅析CAP理论&Base理论',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-16 15:43:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/maple_background.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/maple/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/maple/top_img/capbase.png')"><nav id="nav"><span id="blog-info"><a href="/maple/" title="Maple's Blog"><span class="site-name">Maple's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">浅析CAP理论&amp;Base理论</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-16T07:20:25.000Z" title="发表于 2023-05-16 15:20:25">2023-05-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-16T07:43:09.735Z" title="更新于 2023-05-16 15:43:09">2023-05-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/maple/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="浅析CAP理论&amp;Base理论"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="浅析CAP理论-amp-Base理论"><a href="#浅析CAP理论-amp-Base理论" class="headerlink" title="浅析CAP理论&amp;Base理论"></a>浅析CAP理论&amp;Base理论</h1><h2 id="CAP理论"><a href="#CAP理论" class="headerlink" title="CAP理论"></a>CAP理论</h2><p><strong>CAP理论是分布式应用的理论基础，虽然所有的分布式系统在设计时都会向其看齐，但事实上的所有分布式系统都不可能同时满足CAP三种特性：</strong></p>
+<h3 id="一致性-C-Consistency"><a href="#一致性-C-Consistency" class="headerlink" title="一致性 [C: Consistency]"></a>一致性 [C: Consistency]</h3><p>在分布式环境中，一致性是指数据在多个副本（分布式节点）之间能否保持数据强一致的特性。在一致性的要求下，当一个系统在数据一致状态下执行更新操作后，应该保证系统的数据仍然处于一致状态。</p>
+<h3 id="可用性-A-Available"><a href="#可用性-A-Available" class="headerlink" title="可用性 [A: Available]"></a>可用性 [A: Available]</h3><p>可用性是指系统提供的服务必须一直处于可用的状态，对用户的每一个请求操作总是能够在有限时间内返回结果。好的可用性主要是指系统能够很好的为用户服务，不出现用户操作失败或者访问超时等用户体验不好的情况。</p>
+<h3 id="分区容错性-P-Partition-Tolerance"><a href="#分区容错性-P-Partition-Tolerance" class="headerlink" title="分区容错性 [P: Partition Tolerance]"></a>分区容错性 [P: Partition Tolerance]</h3><p>分布式系统在遇到任何网络分区故障的时候，仍然能够保证对外提供满足一致性或者可用性的服务，除非是整个网络环境都发生了故障。分区容错性要求应用虽然是一个分布式系统，但看上去是在一个可以运转正常的整体。比如现在的分布式系统中有某一个或者几个机器宕掉了，其他剩下的机器还能够正常运转满足系统需求，对于用户而言并没有什么体验上的影响。</p>
+<p>这三个基本需求，任何一个分布式系统最多只能同时满足其中的两项，其中<strong>P是必须的，所以往往选择实现CP或者AP。</strong></p>
+<p>此处的一致性表示实时的强一致性，而不是最终一致性；例如：Redis的主从集群只能保持最终一致性，在发生网络分区时，主从同步的过程中会出现数据不一致的场景，但是等网络恢复之后，从节点会进行一系列操作去追赶主节点的数据变更，数据最终会达到数据一致性，在此期间Redis集群整体依然能够提供服务（可用性），所以，<strong>Redi主从集群是AP！</strong></p>
+<p>Zookeeper集群是数据强一致性的，如果发生网络分区，Zookeeper集群针对写请求（事务请求）无法完成半数机制场景下，Zookeeper集群是不可用的（即无法保证可用性），所以，<strong>Zookeeper集群是CP！</strong></p>
+<blockquote>
+<p><strong>Zookeeper不可用场景：</strong></p>
+<ul>
+<li>Zookeeper不能保证每次服务请求的可用性。(在极端环境下，Zookeeper可能会丢失一些请求，消费者程序需要重新请求才能获取结果)，所以说Zookeeper不能保证服务的持续可用性；</li>
+<li>进行Leader选举时，整个集群都是不可用的。</li>
+</ul>
+</blockquote>
+<h3 id="取舍策略"><a href="#取舍策略" class="headerlink" title="取舍策略"></a>取舍策略</h3><p>CAP三个特性只能满足其中两个，那么取舍的策略就共有三种：</p>
+<img src="image1.png" style="zoom: 25%;">
+
+<blockquote>
+<p>图中指示Redis是CP是针对单机而言的 – Redis单机是CP，Redis主从集群是AP。</p>
+</blockquote>
+<p><strong>CA without P</strong>：如果不要求P（不允许网络分区），则C（强一致性）和A（可用性）是可以保证的。但放弃P的同时也就意味着放弃了系统的扩展性，也就是分布式节点受限，没办法部署子节点，这是违背分布式系统设计的初衷的。也就是节点应用。</p>
+<p><strong>CP without A</strong>：如果不要求A（可用），相当于每个请求都需要在服务器之间保持强一致，而P（分区）会导致同步时间无限延长(也就是等待数据同步完才能正常访问服务)，一旦发生网络故障或者消息丢失等情况，就要牺牲用户的体验，等待所有数据全部一致了之后再让用户访问系统，在此期间集群整体是不可用的。</p>
+<p><strong>AP wihtout C</strong>：要高可用并允许分区，则需放弃一致性。一旦分区发生，节点之间可能会失去联系，为了高可用，每个节点只能用本地数据提供服务，而这样会导致全局数据的不一致性。典型的应用就如某米的抢购手机场景，可能前几秒你浏览商品的时候页面提示是有库存的，当你选择完商品准备下单的时候，系统提示你下单失败，商品已售完。这其实就是先在 A（可用性）方面保证系统可以正常的服务，然后在数据的一致性方面做了些牺牲，虽然多少会影响一些用户体验，但也不至于造成用户购物流程的严重阻塞。</p>
+<p>根据 CAP 原理将 NoSQL 数据库分成了满足 CA 原则、满足 CP 原则和满足 AP 原则三 大类：</p>
+<ul>
+<li>CA - 单点集群，满足一致性，可用性的系统，通常在可扩展性上不太强大。</li>
+<li>CP - 满足一致性，分区容忍性的系统，通常性能不是特别高。</li>
+<li>AP - 满足可用性，分区容忍性的系统，通常可能对一致性要求低一些。</li>
+</ul>
+<h1 id="Base理论"><a href="#Base理论" class="headerlink" title="Base理论"></a>Base理论</h1><p>BASE是Basically Available（基本可用）、Soft state（软状态）和 Eventually consistent（最终一致性）三个短语的缩写。BASE理论是对CAP中一致性和可用性权衡的结果，其来源于对大规模互联网系统分布式实践的总结， 是基于CAP定理逐步演化而来的。BASE理论的核心思想是：即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性。接下来看一下BASE中的三要素：</p>
+<h3 id="基本可用-Basically-Available"><a href="#基本可用-Basically-Available" class="headerlink" title="基本可用 | Basically Available"></a>基本可用 | Basically Available</h3><p>基本可用是指分布式系统在出现不可预知故障的时候，允许损失部分可用性 — 注意，这绝不等价于系统不可用。比如：</p>
+<p>（1）响应时间上的损失。正常情况下，一个在线搜索引擎需要在0.5秒之内返回给用户相应的查询结果，但由于出现故障，查询结果的响应时间增加了1~2秒；</p>
+<p>（2）系统功能上的损失。正常情况下，在一个电子商务网站上进行购物的时候，消费者几乎能够顺利完成每一笔订单，但是在一些节日大促购物高峰的时候，由于消费者的购物行为激增，为了保护购物系统的稳定性，部分消费者可能会被引导到一个降级页面；</p>
+<h3 id="软状态-Soft-state"><a href="#软状态-Soft-state" class="headerlink" title="软状态 | Soft state"></a>软状态 | Soft state</h3><p>软状态指允许系统中的数据存在中间状态，并认为该中间状态的存在不会影响系统的整体可用性，即允许系统在不同节点的数据副本之间进行数据同步的过程存在延时；</p>
+<h3 id="最终一致性-Eventually-consistent"><a href="#最终一致性-Eventually-consistent" class="headerlink" title="最终一致性 | Eventually consistent"></a>最终一致性 | Eventually consistent</h3><p>最终一致性强调的是所有的数据副本，在经过一段时间的同步之后，最终都能够达到一个一致的状态。因此，最终一致性的本质是需要系统保证最终数据能够达到一致，而不需要实时保证系统数据的强一致性。总的来说，BASE理论面向的是大型高可用可扩展的分布式系统，和传统的事物ACID特性是相反的，它完全不同于ACID的强一致性模型，而是通过牺牲强一致性来获得可用性，并允许数据在一段时间内是不一致的，但最终达到一致状态。但同时，在实际的分布式场景中，不同业务单元和组件对数据一致性的要求是不同的，因此在具体的分布式系统架构设计过程中，ACID特性和BASE理论往往又会结合在一起。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于分布式系统的项目，使用中没有强制要求一定是CAP中要达到某几种，具体根据各自业务场景所需来制定相应的策略而选择适合的产品服务等。例如：支付订单场景中，由于分布式本身就在数据一致性上面很难保证，从A服务到B服务的订单数据有可能由于服务宕机或其他原因而造成数据不一致性。因此此类场景会酌情考虑：AP，不强制保证数据一致性，但保证数据最终一致性。</p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/">https://maple_eitba.gitee.io/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple_eitba.gitee.io/maple" target="_blank">Maple's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/maple/tags/CAP/">CAP</a><a class="post-meta__tags" href="/maple/tags/Base/">Base</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/maple/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/maple/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构"><img class="cover" src="https://img0.baidu.com/it/u=171555148,2578235690&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=800&amp;h=500" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">「Spring Cloud - 1」-- 浅析分布式架构和微服务架构</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/maple/img/avatar.jpg" onerror="this.onerror=null;this.src='/maple/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">原创&引用博客,记录并分享学习经验...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-amp-Base%E7%90%86%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">浅析CAP理论&amp;Base理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CAP%E7%90%86%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text">CAP理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7-C-Consistency"><span class="toc-number">1.1.1.</span> <span class="toc-text">一致性 [C: Consistency]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7-A-Available"><span class="toc-number">1.1.2.</span> <span class="toc-text">可用性 [A: Available]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%8C%BA%E5%AE%B9%E9%94%99%E6%80%A7-P-Partition-Tolerance"><span class="toc-number">1.1.3.</span> <span class="toc-text">分区容错性 [P: Partition Tolerance]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%96%E8%88%8D%E7%AD%96%E7%95%A5"><span class="toc-number">1.1.4.</span> <span class="toc-text">取舍策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Base%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">Base理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8F%AF%E7%94%A8-Basically-Available"><span class="toc-number">2.0.1.</span> <span class="toc-text">基本可用 | Basically Available</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E7%8A%B6%E6%80%81-Soft-state"><span class="toc-number">2.0.2.</span> <span class="toc-text">软状态 | Soft state</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E4%B8%80%E8%87%B4%E6%80%A7-Eventually-consistent"><span class="toc-number">2.0.3.</span> <span class="toc-text">最终一致性 | Eventually consistent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.1.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/" title="浅析CAP理论&amp;Base理论"><img src="/maple/top_img/capbase.png" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="浅析CAP理论&amp;Base理论"/></a><div class="content"><a class="title" href="/maple/2023/05/16/%E6%B5%85%E6%9E%90CAP%E7%90%86%E8%AE%BA-Base%E7%90%86%E8%AE%BA/" title="浅析CAP理论&amp;Base理论">浅析CAP理论&amp;Base理论</a><time datetime="2023-05-16T07:20:25.000Z" title="发表于 2023-05-16 15:20:25">2023-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构"><img src="https://img0.baidu.com/it/u=171555148,2578235690&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=800&amp;h=500" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构"/></a><div class="content"><a class="title" href="/maple/2023/05/16/Spring%20Cloud1-%E5%88%86%E5%B8%83%E5%BC%8Fvs%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="「Spring Cloud - 1」-- 浅析分布式架构和微服务架构">「Spring Cloud - 1」-- 浅析分布式架构和微服务架构</a><time datetime="2023-05-15T16:53:29.000Z" title="发表于 2023-05-16 00:53:29">2023-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/15/Spring%20Cloud3-Ribbon/" title="Ribbon"><img src="/maple/top_img/ribbon.jpeg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Ribbon"/></a><div class="content"><a class="title" href="/maple/2023/05/15/Spring%20Cloud3-Ribbon/" title="Ribbon">Ribbon</a><time datetime="2023-05-15T15:58:24.000Z" title="发表于 2023-05-15 23:58:24">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/15/Java-SPI/" title="Java SPI"><img src="/maple/top_img/spi.png" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Java SPI"/></a><div class="content"><a class="title" href="/maple/2023/05/15/Java-SPI/" title="Java SPI">Java SPI</a><time datetime="2023-05-15T02:13:13.000Z" title="发表于 2023-05-15 10:13:13">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/05/12/Git/" title="Git命令"><img src="https://static.is26.com/wp-image/2013/09/git_wallpaper_clean_by_black_pixel-d5wmjnw.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Git命令"/></a><div class="content"><a class="title" href="/maple/2023/05/12/Git/" title="Git命令">Git命令</a><time datetime="2023-05-12T09:10:02.000Z" title="发表于 2023-05-12 17:10:02">2023-05-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/maple/js/utils.js"></script><script src="/maple/js/main.js"></script><script src="/maple/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/maple/js/search/local-search.js"></script></div></div></body></html>
