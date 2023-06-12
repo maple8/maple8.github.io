@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>「Sentinel - 6」-- 系统自适应保护 &amp; 来源控制 | Maple's Blog</title><meta name="author" content="Maple"><meta name="copyright" content="Maple"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="系统自适应保护Sentinel 系统自适应保护从整体维度对应用入口流量进行控制，结合应用的 Load、总体平均 RT、入口 QPS 和线程数等几个维度的监控指标，让系统的入口流量和系统的负载达到一个平衡，让系统尽可能跑在最大吞吐量的同时保证系统整体的稳定性。 背景在开始之前，先回顾一下 Sentinel 做系统自适应保护的目的：  保证系统不被拖垮 在系统稳定的前提下，保持系统的吞吐量  长期以来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Sentinel - 6」-- 系统自适应保护 &amp; 来源控制">
+<meta property="og:url" content="https://maple_eitba.gitee.io/maple/2023/06/07/Sentinel6-%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E4%BF%9D%E6%8A%A4/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="系统自适应保护Sentinel 系统自适应保护从整体维度对应用入口流量进行控制，结合应用的 Load、总体平均 RT、入口 QPS 和线程数等几个维度的监控指标，让系统的入口流量和系统的负载达到一个平衡，让系统尽可能跑在最大吞吐量的同时保证系统整体的稳定性。 背景在开始之前，先回顾一下 Sentinel 做系统自适应保护的目的：  保证系统不被拖垮 在系统稳定的前提下，保持系统的吞吐量  长期以来">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2.baidu.com/it/u=3576658838,828136920&fm=253&fmt=auto&app=138&f=PNG?w=500&h=288">
+<meta property="article:published_time" content="2023-06-07T09:40:33.000Z">
+<meta property="article:modified_time" content="2023-06-07T09:44:58.166Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="Sentinel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2.baidu.com/it/u=3576658838,828136920&fm=253&fmt=auto&app=138&f=PNG?w=500&h=288"><link rel="shortcut icon" href="/maple/img/favicon.jpg"><link rel="canonical" href="https://maple_eitba.gitee.io/maple/2023/06/07/Sentinel6-%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E4%BF%9D%E6%8A%A4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/maple/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/maple/',
+  algolia: undefined,
+  localSearch: {"path":"/maple/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":22,"languages":{"author":"作者: Maple","link":"链接: ","source":"来源: Maple's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '「Sentinel - 6」-- 系统自适应保护 & 来源控制',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-07 17:44:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/maple_background.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/maple/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img2.baidu.com/it/u=3576658838,828136920&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=288')"><nav id="nav"><span id="blog-info"><a href="/maple/" title="Maple's Blog"><span class="site-name">Maple's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">「Sentinel - 6」-- 系统自适应保护 &amp; 来源控制</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-07T09:40:33.000Z" title="发表于 2023-06-07 17:40:33">2023-06-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-07T09:44:58.166Z" title="更新于 2023-06-07 17:44:58">2023-06-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/maple/categories/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E6%A1%86%E6%9E%B6/">流量控制框架</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="「Sentinel - 6」-- 系统自适应保护 &amp; 来源控制"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="系统自适应保护"><a href="#系统自适应保护" class="headerlink" title="系统自适应保护"></a>系统自适应保护</h1><p>Sentinel 系统自适应保护从整体维度对应用入口流量进行控制，结合应用的 Load、总体平均 RT、入口 QPS 和线程数等几个维度的监控指标，让系统的入口流量和系统的负载达到一个平衡，让系统尽可能跑在最大吞吐量的同时保证系统整体的稳定性。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在开始之前，先回顾一下 Sentinel 做系统自适应保护的目的：</p>
+<ul>
+<li>保证系统不被拖垮</li>
+<li>在系统稳定的前提下，保持系统的吞吐量</li>
+</ul>
+<p>长期以来，系统自适应保护的思路是根据硬指标，即系统的负载 (load1) 来做系统过载保护。当系统负载高于某个阈值，就禁止或者减少流量的进入；当 load 开始好转，则恢复流量的进入。这个思路给我们带来了不可避免的两个问题：</p>
+<ul>
+<li>load 是一个“果”，如果根据 load 的情况来调节流量的通过率，那么就始终有延迟性。也就意味着通过率的任何调整，都会过一段时间才能看到效果。当前通过率是使 load 恶化的一个动作，那么也至少要过 1 秒之后才能观测到；同理，如果当前通过率调整是让 load 好转的一个动作，也需要 1 秒之后才能继续调整，这样就浪费了系统的处理能力。所以我们看到的曲线，总是会有抖动。</li>
+<li>恢复慢。想象一下这样的一个场景（真实），出现了这样一个问题，下游应用不可靠，导致应用 RT 很高，从而 load 到了一个很高的点。过了一段时间之后下游应用恢复了，应用 RT 也相应减少。这个时候，其实应该大幅度增大流量的通过率；但是由于这个时候 load 仍然很高，通过率的恢复仍然不高。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_BBR">TCP BBR</a> 的思想给了我们一个很大的启发。我们应该根据系统能够处理的请求，和允许进来的请求，来做平衡，而不是根据一个间接的指标（系统 load）来做限流。最终我们追求的目标是 <strong>在系统不被拖垮的情况下，提高系统的吞吐率，而不是 load 一定要到低于某个阈值</strong>。如果我们还是按照固有的思维，超过特定的 load 就禁止流量进入，系统 load 恢复就放开流量，这样做的结果是无论我们怎么调参数，调比例，都是按照果来调节因，都无法取得良好的效果。</p>
+<p>Sentinel 在系统自适应保护的做法是，用 load1 作为启动控制流量的值，而允许通过的流量由处理请求的能力，即请求的响应时间以及当前系统正在处理的请求速率来决定。</p>
+<h2 id="系统规则"><a href="#系统规则" class="headerlink" title="系统规则"></a>系统规则</h2><p>系统保护规则是从应用级别的入口流量进行控制，从单台机器的总体 Load、RT、入口 QPS 和线程数四个维度监控应用数据，让系统尽可能跑在最大吞吐量的同时保证系统整体的稳定性。</p>
+<p>系统保护规则是应用整体维度的，而不是资源维度的，并且<strong>仅对入口流量生效</strong>。入口流量指的是进入应用的流量（<code>EntryType.IN</code>），比如 Web 服务或 Dubbo 服务端接收的请求，都属于入口流量。</p>
+<p>系统规则支持以下的阈值类型：</p>
+<ul>
+<li><strong>Load</strong>（仅对 Linux/Unix-like 机器生效）：当系统 load1 超过阈值，且系统当前的并发线程数超过系统容量时才会触发系统保护。系统容量由系统的 <code>maxQps * minRt</code> 计算得出。设定参考值一般是 <code>CPU cores * 2.5</code>。</li>
+<li><strong>CPU usage</strong>（1.5.0+ 版本）：当系统 CPU 使用率超过阈值即触发系统保护（取值范围 0.0-1.0）。</li>
+<li><strong>RT</strong>：当单台机器上所有入口流量的平均 RT 达到阈值即触发系统保护，单位是毫秒。</li>
+<li><strong>线程数</strong>：当单台机器上所有入口流量的并发线程数达到阈值即触发系统保护。</li>
+<li><strong>入口 QPS</strong>：当单台机器上所有入口流量的 QPS 达到阈值即触发系统保护。</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>先用经典图来镇楼:</p>
+<p><img src="50813887-bff10300-1352-11e9-9201-437afea60a5a.png" alt="TCP-BBR-pipe"></p>
+<p>我们把系统处理请求的过程想象为一个水管，到来的请求是往这个水管灌水，当系统处理顺畅的时候，请求不需要排队，直接从水管中穿过，这个请求的RT是最短的；反之，当请求堆积的时候，那么处理请求的时间则会变为：排队时间 + 最短处理时间。</p>
+<ul>
+<li>推论一: 如果我们能够保证水管里的水量，能够让水顺畅的流动，则不会增加排队的请求；也就是说，这个时候的系统负载不会进一步恶化。</li>
+</ul>
+<p>我们用 T 来表示(水管内部的水量)，用RT来表示请求的处理时间，用P来表示进来的请求数，那么一个请求从进入水管道到从水管出来，这个水管会存在 <code>P * RT</code>　个请求。换一句话来说，当 <code>T ≈ QPS * Avg(RT)</code> 的时候，我们可以认为系统的处理能力和允许进入的请求个数达到了平衡，系统的负载不会进一步恶化。</p>
+<p>接下来的问题是，水管的水位是可以达到了一个平衡点，但是这个平衡点只能保证水管的水位不再继续增高，但是还面临一个问题，就是在达到平衡点之前，这个水管里已经堆积了多少水。如果之前水管的水已经在一个量级了，那么这个时候系统允许通过的水量可能只能缓慢通过，RT会大，之前堆积在水管里的水会滞留；反之，如果之前的水管水位偏低，那么又会浪费了系统的处理能力。</p>
+<ul>
+<li>推论二:　当保持入口的流量使水管出来的流量达到最大值的时候，可以最大利用水管的处理能力。</li>
+</ul>
+<p>然而，和 TCP BBR 的不一样的地方在于，还需要用一个系统负载的值（load1）来激发这套机制启动。</p>
+<blockquote>
+<p>注：这种系统自适应算法对于低 load 的请求，它的效果是一个“兜底”的角色。<strong>对于不是应用本身造成的 load 高的情况（如其它进程导致的不稳定的情况），效果不明显。</strong></p>
+</blockquote>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>我们提供了系统自适应限流的示例：<a target="_blank" rel="noopener" href="https://gitee.com/maple_eitba/maple-sentinel-1.8.1/blob/master/sentinel-demo/sentinel-demo-basic/src/main/java/com/alibaba/csp/sentinel/demo/system/SystemGuardDemo.java">SystemGuardDemo</a>。</p>
+<h1 id="来源访问控制（黑白名单）"><a href="#来源访问控制（黑白名单）" class="headerlink" title="来源访问控制（黑白名单）"></a>来源访问控制（黑白名单）</h1><p>很多时候，我们需要根据调用方来限制资源是否通过，这时候可以使用 Sentinel 的黑白名单控制的功能。黑白名单根据资源的请求来源（<code>origin</code>）限制资源是否通过，若配置白名单则只有请求来源位于白名单内时才可通过；若配置黑名单则请求来源位于黑名单时不通过，其余的请求通过。</p>
+<blockquote>
+<p>调用方信息通过 <code>ContextUtil.enter(resourceName, origin)</code> 方法中的 <code>origin</code> 参数传入。</p>
+</blockquote>
+<h2 id="规则配置"><a href="#规则配置" class="headerlink" title="规则配置"></a>规则配置</h2><p>黑白名单规则（<code>AuthorityRule</code>）非常简单，主要有以下配置项：</p>
+<ul>
+<li><code>resource</code>：资源名，即限流规则的作用对象</li>
+<li><code>limitApp</code>：对应的黑名单/白名单，不同 origin 用 <code>,</code> 分隔，如 <code>appA,appB</code></li>
+<li><code>strategy</code>：限制模式，<code>AUTHORITY_WHITE</code> 为白名单模式，<code>AUTHORITY_BLACK</code> 为黑名单模式，默认为白名单模式</li>
+</ul>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><p>比如我们希望控制对资源 <code>test</code> 的访问设置白名单，只有来源为 <code>appA</code> 和 <code>appB</code> 的请求才可通过，则可以配置如下白名单规则：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">AuthorityRule</span> <span class="variable">rule</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AuthorityRule</span>();</span><br><span class="line">rule.setResource(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">rule.setStrategy(RuleConstant.AUTHORITY_WHITE);</span><br><span class="line">rule.setLimitApp(<span class="string">&quot;appA,appB&quot;</span>);</span><br><span class="line">AuthorityRuleManager.loadRules(Collections.singletonList(rule));</span><br></pre></td></tr></table></figure>
+
+<p>详细示例请参考 <a target="_blank" rel="noopener" href="https://gitee.com/maple_eitba/maple-sentinel-1.8.1/blob/master/sentinel-demo/sentinel-demo-basic/src/main/java/com/alibaba/csp/sentinel/demo/authority/AuthorityDemo.java">AuthorityDemo</a>.</p>
+<hr>
+<p><strong>参考文档：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://sentinelguard.io/zh-cn/docs/system-adaptive-protection.html">Sentinel官方文档</a></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple/2023/06/07/Sentinel6-%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E4%BF%9D%E6%8A%A4/">https://maple_eitba.gitee.io/maple/2023/06/07/Sentinel6-%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E4%BF%9D%E6%8A%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple_eitba.gitee.io/maple" target="_blank">Maple's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/maple/tags/Sentinel/">Sentinel</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/maple/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/maple/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/maple/2023/06/08/Sentinel7-%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE%E6%8C%81%E4%B9%85%E5%8C%96/" title="「Sentinel - 7」-- 规则配置持久化"><img class="cover" src="https://img2.baidu.com/it/u=3576658838,828136920&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=288" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">「Sentinel - 7」-- 规则配置持久化</div></div></a></div><div class="next-post pull-right"><a href="/maple/2023/06/07/Sentinel5-%E7%86%94%E6%96%AD%E9%99%8D%E7%BA%A7/" title="「Sentinel - 5」-- 熔断降级"><img class="cover" src="https://img2.baidu.com/it/u=3576658838,828136920&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=288" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">「Sentinel - 5」-- 熔断降级</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/maple/2023/06/07/Sentinel2-Sentinel%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="「Sentinel - 2」-- Sentinel基本使用"><img class="cover" src="https://img2.baidu.com/it/u=3576658838,828136920&fm=253&fmt=auto&app=138&f=PNG?w=500&h=288" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-07</div><div class="title">「Sentinel - 2」-- Sentinel基本使用</div></div></a></div><div><a href="/maple/2023/06/07/Sentinel5-%E7%86%94%E6%96%AD%E9%99%8D%E7%BA%A7/" title="「Sentinel - 5」-- 熔断降级"><img class="cover" src="https://img2.baidu.com/it/u=3576658838,828136920&fm=253&fmt=auto&app=138&f=PNG?w=500&h=288" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-07</div><div class="title">「Sentinel - 5」-- 熔断降级</div></div></a></div><div><a href="/maple/2023/06/08/Sentinel7-%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE%E6%8C%81%E4%B9%85%E5%8C%96/" title="「Sentinel - 7」-- 规则配置持久化"><img class="cover" src="https://img2.baidu.com/it/u=3576658838,828136920&fm=253&fmt=auto&app=138&f=PNG?w=500&h=288" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-08</div><div class="title">「Sentinel - 7」-- 规则配置持久化</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/maple/img/avatar.jpg" onerror="this.onerror=null;this.src='/maple/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">原创&引用博客,记录并分享学习经验...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E4%BF%9D%E6%8A%A4"><span class="toc-number">1.</span> <span class="toc-text">系统自适应保护</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%A7%84%E5%88%99"><span class="toc-number">1.2.</span> <span class="toc-text">系统规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%EF%BC%88%E9%BB%91%E7%99%BD%E5%90%8D%E5%8D%95%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">来源访问控制（黑白名单）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE"><span class="toc-number">2.1.</span> <span class="toc-text">规则配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">示例</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/08/Sentinel7-%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE%E6%8C%81%E4%B9%85%E5%8C%96/" title="「Sentinel - 7」-- 规则配置持久化"><img src="https://img2.baidu.com/it/u=3576658838,828136920&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=288" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="「Sentinel - 7」-- 规则配置持久化"/></a><div class="content"><a class="title" href="/maple/2023/06/08/Sentinel7-%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE%E6%8C%81%E4%B9%85%E5%8C%96/" title="「Sentinel - 7」-- 规则配置持久化">「Sentinel - 7」-- 规则配置持久化</a><time datetime="2023-06-08T14:30:22.000Z" title="发表于 2023-06-08 22:30:22">2023-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/07/Sentinel6-%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E4%BF%9D%E6%8A%A4/" title="「Sentinel - 6」-- 系统自适应保护 &amp; 来源控制"><img src="https://img2.baidu.com/it/u=3576658838,828136920&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=288" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="「Sentinel - 6」-- 系统自适应保护 &amp; 来源控制"/></a><div class="content"><a class="title" href="/maple/2023/06/07/Sentinel6-%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E4%BF%9D%E6%8A%A4/" title="「Sentinel - 6」-- 系统自适应保护 &amp; 来源控制">「Sentinel - 6」-- 系统自适应保护 &amp; 来源控制</a><time datetime="2023-06-07T09:40:33.000Z" title="发表于 2023-06-07 17:40:33">2023-06-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/07/Sentinel5-%E7%86%94%E6%96%AD%E9%99%8D%E7%BA%A7/" title="「Sentinel - 5」-- 熔断降级"><img src="https://img2.baidu.com/it/u=3576658838,828136920&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=288" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="「Sentinel - 5」-- 熔断降级"/></a><div class="content"><a class="title" href="/maple/2023/06/07/Sentinel5-%E7%86%94%E6%96%AD%E9%99%8D%E7%BA%A7/" title="「Sentinel - 5」-- 熔断降级">「Sentinel - 5」-- 熔断降级</a><time datetime="2023-06-07T09:14:40.000Z" title="发表于 2023-06-07 17:14:40">2023-06-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/07/Sentinel4-%E7%83%AD%E7%82%B9%E5%8F%82%E6%95%B0%E9%99%90%E6%B5%81/" title="「Sentinel - 4」-- 热点参数限流"><img src="https://img2.baidu.com/it/u=3576658838,828136920&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=288" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="「Sentinel - 4」-- 热点参数限流"/></a><div class="content"><a class="title" href="/maple/2023/06/07/Sentinel4-%E7%83%AD%E7%82%B9%E5%8F%82%E6%95%B0%E9%99%90%E6%B5%81/" title="「Sentinel - 4」-- 热点参数限流">「Sentinel - 4」-- 热点参数限流</a><time datetime="2023-06-07T08:12:29.000Z" title="发表于 2023-06-07 16:12:29">2023-06-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/07/Sentinel3-%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6/" title="「Sentinel - 3 」-- 流量控制&amp;规则"><img src="https://img2.baidu.com/it/u=3576658838,828136920&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=288" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="「Sentinel - 3 」-- 流量控制&amp;规则"/></a><div class="content"><a class="title" href="/maple/2023/06/07/Sentinel3-%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6/" title="「Sentinel - 3 」-- 流量控制&amp;规则">「Sentinel - 3 」-- 流量控制&amp;规则</a><time datetime="2023-06-07T07:42:11.000Z" title="发表于 2023-06-07 15:42:11">2023-06-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/maple/js/utils.js"></script><script src="/maple/js/main.js"></script><script src="/maple/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/maple/js/search/local-search.js"></script></div></div></body></html>
