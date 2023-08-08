@@ -1,0 +1,601 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>浅析加密、签名和数字证书 | Maple's  Blog</title><meta name="author" content="Maple"><meta name="copyright" content="Maple"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="浅析加密、数字签名和数字证书 Q:  非对称加密中公私钥都可以加密，那么什么时候用公钥”加密”，什么时候用私钥“加密” ？ 什么是数字签名，数字签名的作用是什么？ 为什么要对数据的摘要进行签名，而不是直接计算原始数据的数字签名？ 什么是数字证书，数字证书解决了什么问题？   什么是加密加密就是对明文数据按某种特殊算法进行处理，使其成为不可读的一段代码，通常称为“密文”。 密文通过”密钥”解密后还原">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅析加密、签名和数字证书">
+<meta property="og:url" content="https://maple_eitba.gitee.io/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/index.html">
+<meta property="og:site_name" content="Maple&#39;s  Blog">
+<meta property="og:description" content="浅析加密、数字签名和数字证书 Q:  非对称加密中公私钥都可以加密，那么什么时候用公钥”加密”，什么时候用私钥“加密” ？ 什么是数字签名，数字签名的作用是什么？ 为什么要对数据的摘要进行签名，而不是直接计算原始数据的数字签名？ 什么是数字证书，数字证书解决了什么问题？   什么是加密加密就是对明文数据按某种特殊算法进行处理，使其成为不可读的一段代码，通常称为“密文”。 密文通过”密钥”解密后还原">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://maple_eitba.gitee.io/maple/top_img/sign.jpg">
+<meta property="article:published_time" content="2023-06-29T11:40:23.000Z">
+<meta property="article:modified_time" content="2023-08-08T07:29:59.828Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="加密、签名、数字证书">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maple_eitba.gitee.io/maple/top_img/sign.jpg"><link rel="shortcut icon" href="/maple/img/favicon.jpg"><link rel="canonical" href="https://maple_eitba.gitee.io/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/maple/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/maple/',
+  algolia: undefined,
+  localSearch: {"path":"/maple/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":22,"languages":{"author":"作者: Maple","link":"链接: ","source":"来源: Maple's  Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '浅析加密、签名和数字证书',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-08 15:29:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/maple_background.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/maple/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/maple/top_img/sign.jpg')"><nav id="nav"><span id="blog-info"><a href="/maple/" title="Maple's  Blog"><span class="site-name">Maple's  Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">浅析加密、签名和数字证书</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-29T11:40:23.000Z" title="发表于 2023-06-29 19:40:23">2023-06-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-08T07:29:59.828Z" title="更新于 2023-08-08 15:29:59">2023-08-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/maple/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>18分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="浅析加密、数字签名和数字证书"><a href="#浅析加密、数字签名和数字证书" class="headerlink" title="浅析加密、数字签名和数字证书"></a>浅析加密、数字签名和数字证书</h1><blockquote>
+<p><strong>Q:</strong></p>
+<ol>
+<li>非对称加密中公私钥都可以加密，那么什么时候用公钥”加密”，什么时候用私钥“加密” ？</li>
+<li>什么是数字签名，数字签名的作用是什么？</li>
+<li>为什么要对数据的摘要进行签名，而不是直接计算原始数据的数字签名？</li>
+<li>什么是数字证书，数字证书解决了什么问题？</li>
+</ol>
+</blockquote>
+<h2 id="什么是加密"><a href="#什么是加密" class="headerlink" title="什么是加密"></a>什么是加密</h2><p>加密就是<strong>对明文数据按某种特殊算法进行处理，使其成为不可读的一段代码，通常称为“密文”。</strong> 密文通过”密钥”解密后还原出原来的明文，通过这样的途径可以达到保护数据不被非法人窃取、阅读的目的。</p>
+<p>考虑以下哪些属于加密方法：</p>
+<ul>
+<li><strong>AES</strong></li>
+<li><strong>DES</strong></li>
+<li><strong>RSA</strong></li>
+<li>SM4</li>
+<li>SHA</li>
+<li>MD5</li>
+<li>BASE64</li>
+</ul>
+<p>这几种都是日常开发中常用的<strong>数据编码技术</strong>，但是<strong>只有 AES、RSA、SM4 才能算是加密算法</strong>。</p>
+<p>为什么呢？</p>
+<p><strong>一个区分的简单方法就是****看编码后的数据是否能还原，能还原的才是加密算法。</strong></p>
+<p>MD5 实际上是对数据进行<strong>有损压缩</strong>，无论数据有多长，1KB、1Mb 还是 1G，都会<strong>生成****固定 128 位的散列值（实际开发中会为以32位的十六进制字符串进行显示）</strong>，并且 MD5 理论上是不可能对编码后的数据进行还原的，即<strong>不可逆</strong>。MD5 因其具有不可逆性、单向恒定性[幂等性]（相同的数据多次计算值不变）被广泛应用于文件完整性验证、口令加密以及接下来会讲到的数字签名中。</p>
+<p>SHA和MD5算法类似，SHA (Security Hash Algorithm) 安全哈希算法也是一种信息摘要生成算法。</p>
+<p>使用非对称加密时的签名，使用私钥对摘要进行签名，这个过程称为数字签名 – 数字签名是专门针对使用非对称加密的场景。</p>
+<p>如果不使用非对称加密，直接使用MD5和SHA1来实现签名和验签操作也是OK的。</p>
+<p>至于 BASE64 是否算做加密方法，仁者见仁。在这里不下结论，因为 BASE64 编码不需要密钥，且编码后的字符串任何人都可以解码出原串，所以一般不认为是加密方法。<strong>BASE64 常用来做转码（重编码）</strong>，如: 把二进制字节序列转化为Base64字符序列。BASE64是一种编码格式。</p>
+<p>Base64是网络上最常见的用于传输8Bit<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AD%97%E8%8A%82%E7%A0%81/9953683?fromModule=lemma_inlink">字节码</a>的编码方式之一，Base64就是一种基于64个可打印字符来表示<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BA%8C%E8%BF%9B%E5%88%B6/361457?fromModule=lemma_inlink">二进制</a>数据的方法。可查看RFC2045～RFC2049，上面有MIME的详细规范。Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3<em>8 = 4</em>6 = 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1/3（代码Demo已验证）。</p>
+<p>关于这个编码的规则：</p>
+<ol>
+<li>把3个字节变成4个字节。</li>
+<li>每76个字符加一个换行符。</li>
+<li>最后的结束符也要处理。</li>
+</ol>
+<p>Base64编码是从二进制到字符的过程，可用于在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/HTTP?fromModule=lemma_inlink">HTTP</a>环境下传递较长的标识信息。采用Base64编码具有不可读性，需要解码后才能阅读。</p>
+<p>加密算法得出的加密字符串使用的是ASCII码字符集，ASCII码字符集有128个字符，其中96个为可见字符，剩下的为不可见字符。所以在使用加密算法进行加密的时候得到的加密字符串中可能会出现不可见的字符，这样会导致调用方无法正确的解析密文。因此在使用加密算法加密数据之后通常都会使用BASE64进行编码，确保密文的组成字符都是可见字符。</p>
+<h3 id="BASE64转换表"><a href="#BASE64转换表" class="headerlink" title="BASE64转换表"></a>BASE64转换表</h3><table>
+<thead>
+<tr>
+<th><strong>索引</strong></th>
+<th><strong>对应字符</strong></th>
+<th><strong>索引</strong></th>
+<th><strong>对应字符</strong></th>
+<th><strong>索引</strong></th>
+<th><strong>对应字符</strong></th>
+<th><strong>索引</strong></th>
+<th><strong>对应字符</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td><strong>A</strong></td>
+<td>17</td>
+<td><strong>R</strong></td>
+<td>34</td>
+<td><strong>i</strong></td>
+<td>51</td>
+<td><strong>z</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td>18</td>
+<td><strong>S</strong></td>
+<td>35</td>
+<td><strong>j</strong></td>
+<td>52</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>C</strong></td>
+<td>19</td>
+<td><strong>T</strong></td>
+<td>36</td>
+<td><strong>k</strong></td>
+<td>53</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>D</strong></td>
+<td>20</td>
+<td><strong>U</strong></td>
+<td>37</td>
+<td><strong>l</strong></td>
+<td>54</td>
+<td><strong>2</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>E</strong></td>
+<td>21</td>
+<td><strong>V</strong></td>
+<td>38</td>
+<td><strong>m</strong></td>
+<td>55</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>F</strong></td>
+<td>22</td>
+<td><strong>W</strong></td>
+<td>39</td>
+<td><strong>n</strong></td>
+<td>56</td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>G</strong></td>
+<td>23</td>
+<td><strong>X</strong></td>
+<td>40</td>
+<td><strong>o</strong></td>
+<td>57</td>
+<td><strong>5</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>H</strong></td>
+<td>24</td>
+<td><strong>Y</strong></td>
+<td>41</td>
+<td><strong>p</strong></td>
+<td>58</td>
+<td><strong>6</strong></td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>I</strong></td>
+<td>25</td>
+<td><strong>Z</strong></td>
+<td>42</td>
+<td><strong>q</strong></td>
+<td>59</td>
+<td><strong>7</strong></td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>J</strong></td>
+<td>26</td>
+<td><strong>a</strong></td>
+<td>43</td>
+<td><strong>r</strong></td>
+<td>60</td>
+<td><strong>8</strong></td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>K</strong></td>
+<td>27</td>
+<td><strong>b</strong></td>
+<td>44</td>
+<td><strong>s</strong></td>
+<td>61</td>
+<td><strong>9</strong></td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>L</strong></td>
+<td>28</td>
+<td><strong>c</strong></td>
+<td>45</td>
+<td><strong>t</strong></td>
+<td>62</td>
+<td><strong>+</strong></td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>M</strong></td>
+<td>29</td>
+<td><strong>d</strong></td>
+<td>46</td>
+<td><strong>u</strong></td>
+<td>63</td>
+<td><strong>/</strong></td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>N</strong></td>
+<td>30</td>
+<td><strong>e</strong></td>
+<td>47</td>
+<td><strong>v</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>O</strong></td>
+<td>31</td>
+<td><strong>f</strong></td>
+<td>48</td>
+<td><strong>w</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>P</strong></td>
+<td>32</td>
+<td><strong>g</strong></td>
+<td>49</td>
+<td><strong>x</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td><strong>Q</strong></td>
+<td>33</td>
+<td><strong>h</strong></td>
+<td>50</td>
+<td><strong>y</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="加密算法的分类"><a href="#加密算法的分类" class="headerlink" title="加密算法的分类"></a>加密算法的分类</h3><p>加密算法按照加解密使用的密钥是否相同，可分为：</p>
+<ul>
+<li><p><strong>对称加密（Symmetric Cryptography）</strong></p>
+</li>
+<li><ul>
+<li><strong>秘钥相同</strong></li>
+<li><strong>AES，DES</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>AES和DES算法的主要区别</strong></p>
+<p>AES与DES之间的主要区别在于加密过程。在DES中，将明文分为两半，然后再进行进一步处理；而在AES中，整个块不进行除法，整个块一起处理以生成密文。相对而言，AES比DES快得多，与DES相比，AES能够在几秒钟内加密大型文件。</p>
+<p>由于DES中使用的共享密钥的比特大小较小，因此它被认为不如AES安全。DES被认为更容易受到暴力攻击，而到目前为止，尚未遇到任何严重攻击的AES。</p>
+<p>在灵活性的基础上评估算法的实现，AES比DES更具灵活性，因为它允许包括128、192、256位在内的各种长度的文本，而DES允许对64位固定文本进行加密。</p>
+<p>DES回合处理中使用的功能是扩展，置换和替换，具有回合键的XOR操作，而AES回合中使用的功能是子字节，移位行，混合列和添加回合键。AES实际上在硬件和软件实现上都是高效的，而DES最初只在硬件上有效。</p>
+<p><strong>DES算法缺点：</strong></p>
+<p>分组比较短、密钥太短、密码生命周期短、运算速度较慢。</p>
+<p><strong>DES算法优点：</strong></p>
+<p>DES算法具有极高安全性，到目前为止，除了用穷举搜索法对DES算法进行攻击外，还没有发现更有效的办法。</p>
+<p><strong>AES算法缺点：</strong></p>
+<p>目前尚未存在对AES 算法完整版的成功攻击，但已经提出对其简化算法的攻击。</p>
+<p><strong>AES算法优点：</strong></p>
+<p>1、运算速度快，对内存的需求非常低，适合于受限环境。</p>
+<p>2、分组长度和密钥长度设计灵活， AES标准支持可变分组长度，分组长度可设定为32比特的任意倍数，最小值为128比特，最大值为256比特。</p>
+<p>3、 AES的密钥长度比DES大，它也可设定为32比特的任意倍数，最小值为128比特，最大值为256比特，所以用穷举法是不可能破解的。</p>
+<p>4、具有很好的抵抗差分密码分析及线性密码分析的能力。</p>
+<p><strong>总而言之，AES和DES算法之间的区别就是加密过程，这两种算法都有自己的优缺点，相对来说，AES比DES安全性高，运算速度快。</strong></p>
+<ul>
+<li><p><strong>非对称加密（Asymmetric Cryptography）</strong></p>
+</li>
+<li><ul>
+<li><strong>秘钥不同</strong></li>
+<li><strong>RSA</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><p>对称加密是指加密和解密时使用同一个密钥。</p>
+<img src="image-20230629194658600.png" alt="image-20230629194658600" style="zoom: 33%;">
+
+<h3 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h3><p>非对称加密是指加密和解密使用不同的密钥，这两个密钥分别叫做「公钥」、「私钥」。</p>
+<p>公钥是可以公开给所有人的，而私钥需要自己保密的。公钥加密的数据只能用私钥解密。</p>
+<img src="image-20230629194750698.png" alt="image-20230629194750698" style="zoom:33%;">
+
+<p>同理，私钥“加密”的数据只能用公钥“解密”：</p>
+<img src="image-20230629194830702.png" alt="image-20230629194830702" style="zoom:33%;">
+
+<p>大家注意到没， <strong>私钥“加密”</strong> 这里打了引号，为什么呢？</p>
+<p>因为私钥不是用来加密的，准确的说法应该是 <font color="red"><strong>「私钥签名，公钥验签」</strong></font>。</p>
+<p>这个问题很多同学都存在误解，认为公私钥都可以用于加密。实际上不是的，至于为什么，后面会解释的。</p>
+<p>这么看来，非对称加密的公私钥就有两种玩法了，如下两种场景:</p>
+<ul>
+<li><strong>加密场景</strong><ul>
+<li><font color="green">公钥加密 –&gt; 私钥解密</font></li>
+</ul>
+</li>
+<li><strong>数字签名场景</strong><ul>
+<li><font color="green">私钥签名（也就是加密操作，只是称呼不一样） –&gt; 公钥验签（也就是解密操作，称呼不一样）</font></li>
+</ul>
+</li>
+</ul>
+<p>接下来引入一个小故事继续后续内容。</p>
+<p><strong>故事开始</strong></p>
+<p><strong>第一回合</strong></p>
+<p>Bob 想约 Alice 出来玩，于是给 Alice 发了一封邮件：</p>
+<img src="image-20230629195514420.png" alt="image-20230629195514420" style="zoom:33%;">
+
+<p>但我们都知道网络是不可信的，并且由于消息在网络中是明文传输的，所以黑客可以轻易的截获、篡改甚至冒充 Bob。来，我们看看黑客 Eve 是怎么干的：</p>
+<img src="image-20230629195550962.png" alt="image-20230629195550962" style="zoom:33%;">
+
+<p>瞧，Eve 轻易的拿到了邮件内容 （<strong>窃听</strong>），并且修改了邮件内容 （<strong>篡改</strong>），甚至说他可以随时冒充 Bob 给 Alice 发送邮件 （伪装）。如果上图中 Eve 伪造的内容被 Alice 接收到了，那么后果可想而知。现实世界中，我们每天都在通过网络进行聊天、转账、浏览不存在网站。如果都是这样明文传输数据，显然毫无安全感。</p>
+<p><strong>第二回合</strong></p>
+<p>既然我们不能明文传输，那么 Bob 和 Alice 提前商量好密钥，使用对称加密对邮件内容加密不就好了~</p>
+<img src="image-20230629195626990.png" alt="image-20230629195626990" style="zoom:33%;">
+
+<p>现在 Bob 发送的邮件都使用和 Alice 提前商量好的密钥加密后再传输。由于没有密钥，Eve 就算截获到数据也无法获取邮件的内容，也没法篡改和冒充 Bob。因为篡改后的数据必须使用密钥再次加密 Alice 才能正确解密。那么只要 Bob 和 Alice 能够保证密钥不泄露，整个通信就是安全的。如果密钥泄露，被中间人截获，那么就等同于明文通信。所以我们不能把安全性寄托在人上面[这也是开发中需要规避的问题，相当于不要依赖调用方的入参不发生错误]。并且这里也存在一个问题，如果两个人不能线下见面， 如何在网上安全的交换密钥呢？</p>
+<p>这似乎是无解的，因为交换密钥的时候我们必须明文通信，不然对方根本看不懂。但是明文交换即意味着可能泄露。但是别忘了我们的密码学工具箱里还有一个好东西 — 「非对称加密」。</p>
+<p>Bob 和 Alice 各自生成一对公私钥，因为公钥本来就是公开的，可以被任何人获取，所以可以通过网络明文交换公钥。然后使用公钥加密邮件内容后发送给对方，接收者使用自己的私钥即可解密。完美~</p>
+<p><strong>第三回合</strong></p>
+<p>来看看，在非对称加密体系下，Bob 如何给 Alice 发消息的。</p>
+<p>首先 Alice 需要先生成一对公私钥，私钥只能 Alice 自己知道，公钥是可以让任何人都知道的，因此可将公钥直接发送给 Bob，就算被截获也无所谓。</p>
+<img src="image-20230629195714586.png" alt="image-20230629195714586" style="zoom:33%;">
+
+<p>Bob 使用 Alice 的公钥加密邮件内容，加密后的内容只能由 Alice 的私钥解密，所以就算 Eve 截获也是徒劳。反之，如果 Alice 想给 Bob 回信，就需要用 Bob 的公钥加密后发送。这就解决了密钥交换问题，也保证了邮件内容不会泄露。也就是说现在可以防窃听。</p>
+<p><strong>如何证明 Bob 是 Bob</strong></p>
+<p>不知道你注意到没有，这里也存在另外一个问题：Eve 也可以使用 Alice 的公钥冒充 Bob 给 Alice 发邮件啊，因为 Alice 的公钥本来就是公开的，任何人都可以获得。由于 Eve 也可以获得 Alice 公钥，所以没法防止 Eve 伪装和篡改，并且对于 Alice 而言，她无法分辨出邮件到底是 Eve 发的还是 Bob。所以这个问题的本质就是 「Alice 如何确认邮件来自于 Bob」。</p>
+<p>那么在生活中，我们如何做这件事呢？</p>
+<p>那就是让 Bob 在纸上签名并且按手印，因为指纹和字迹是 Bob 独有的，其它人很难伪造。所以我们需要在计算机中引入类似的机制：即只有 Bob 自己能够产生的独一无二的标志，并且其它人能够验证这个标志确实是属于 Bob的。</p>
+<p>这就是我们今天要讲的主题—<font color="red">「<strong>数字签名</strong>」</font>。</p>
+<p>还记得什么是 Bob 独有的吗？</p>
+<p>对，就是 Bob 自己的私钥，Bob 用自己的私钥对邮件内容计算一个「签名」，将「签名」和邮件内容一起发送出去，接受者 Alice 可以使用 Bob 的公钥验证这个签名是否正确，这就叫「验签」。如果不是 Bob 的私钥计算的签名，那么 Alice 用 Bob 公钥验签将会出错。</p>
+<img src="image-20230629195851532.png" alt="image-20230629195851532" style="zoom:33%;">
+
+<p>可以看到， Eve 试图使用自己的私钥计算签名然后发送给 Alice， 但是 Alice 使用 Bob的公钥进行验签时将会出错！</p>
+<p>那么 Eve 可能篡改内容并冒充 Bob 的签名吗？不可能！因为内容发生改变时，对应的签名也需要重新计算，而签名的生成依赖于私钥，只要 Bob 的私钥不泄露，签名就不会被冒充。啊啥？你说万一私钥泄露了怎么办？那就当我没说…</p>
+<p>所以<strong>使用数字签名，我们能够鉴别消息的发送者</strong>，也就是说黑客无法伪装发送者进行发送数据，也无法篡改。</p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>可以看出我们这里数据是明文传输的，存在窃听风险。这是我们为了阐述数字签名机制是如何运转的，故意将保证信息机密性的机制省略了。<strong>如果想要保证数据的机密性，我们常见的做法是，通信双方通过非对称加密安全交换对称加密的密钥，后续通信过程的数据都使用对称加密保证数据机密性。</strong>并且「签名」的作用本身也不是用来保证数据的机密性，而是用于验证数据来源的防止数据被篡改的，也就是确认发送者的身份。</p>
+</blockquote>
+<p>一般而言，我们不会直接对数据本身直接计算数字签名，为什么呢？</p>
+<p>因为数字签名属于非对称加密，非对称加密依赖于复杂的数学运算，包括大数乘法、大数模等等，耗时比较久。如果数据量大的时候计算数字签名将会比较耗时，所以一般做法是先将原数据进行 Hash 运算，得到的 Hash 值就叫做「摘要」。</p>
+<p>「摘要」就像人的指纹一样，可以代表一个人，只要内容发生了改变，计算出来的摘要也应该变化。</p>
+<p>「摘要」最好是不可逆转的，一般使用开头提到的 MD5 作为 Hash 函数，MD5 输出的结果固定位 128 位。</p>
+<blockquote>
+<p><strong>为什么「摘要」最好是不可逆转的？</strong></p>
+<p>因为既然 Alice 可以用 Bob 公钥解开签名，那么理论上其它人，比如 Eve 也可以使用 Bob 公钥解开签名拿到数据。所以我们最好对数据的「摘要」进行签名，这样，Eve 就算解开签名，拿到的也是「摘要」，如果摘要是不可逆转的，也就是无法从摘要反推出原文，也就达到了保密的作用。</p>
+</blockquote>
+<p>发送者使用私钥对「摘要」计算数字签名。那么接收者如何验证呢？</p>
+<img src="image-20230629195948011.png" alt="image-20230629195948011" style="zoom:33%;">
+
+<ol>
+<li>接受者 Alice 收到后，取下数字签名，同时用 Bob 的公钥解密，得到「摘要1」，<strong>证明确实是 Bob 发的</strong>。*( 画外音：如果使用 Bob 的公钥验证签名出错，那么签名一定不是 Bob 的私钥生成的）*</li>
+<li>再对邮件内容使用相同的散列函数计算「摘要2」，与上面得到的「摘要1」进行对比，<strong>两者一致就说明信息未被篡改。</strong>这样两步分别证明发送者身份和保证数据未被篡改。</li>
+</ol>
+<p><strong>这就够了吗？</strong></p>
+<p>Bob 和 Alice 现在可以依赖于对称加密进行保密通信，也可以依赖于数字签名验证消息是否是对方发送的。<strong>但是这一切的根基是建立在 Alice 持有的公钥确实是 Bob的，反之亦然。</strong></p>
+<p>什么意思呢？</p>
+<p>试想，<strong>Eve 如果将自己的公钥冒充 Bob 发送给 Alice，然后 Alice 保存了下来，那以后凡是 Bob 发送的消息，反而会验证签名失败，被当做冒充者。</strong>那你可能会问，为什么 Eve 可以将自己的公钥发送给 Alice，而 Alice 毫不知情呢？</p>
+<img src="image-20230629200026445.png" alt="image-20230629200026445" style="zoom:33%;">
+
+<p>看！我们又回到了最初的起点，只不过这次被篡改的是公钥，之前是消息本身。因为 Bob 的公钥是直接通过网络发送给 Alice的，所以 Eve 才可以在这一步做手脚，进行篡改，将自己的公钥冒充 Bob 发送给 Alice，也就是发送公钥这一步没有做到：</p>
+<ul>
+<li><strong>防篡改</strong></li>
+<li><strong>防冒充</strong></li>
+</ul>
+<p>防篡改怎么和防冒充怎么实现的呢？我们前面讲了，就是靠数字签名！ 但是数字签名需要接受者持有发送者公钥，才能进行验签。<strong>而我们现在处理的是分发公钥这一步，所以…死锁了。这像是先有鸡还是先有蛋的问题。</strong></p>
+<p>现在的问题就是「Bob 无法证明它自己是 Bob」。</p>
+<p>这个是不是似曾相识，以前去办事的时候经常被要求出具「我妈是我妈」这类证明。但是我们自己说“我妈就是我妈”，人家根本不会信呀，需要一个可信第三方出具证明，比如派出所。</p>
+<p>那么「Alice 如何才能确认 Bob 发送给自己的公钥确实是 Bob 的，而没有被篡改？」在只有 Alice 和 Bob 两人的情况下是没法验证的。所以，我们这里也需要一个第三方帮 Bob证明 「Bob 的公钥就是 Bob 的公钥」，有点绕口令那感觉了~</p>
+<h2 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h2><p>为了解决这个问题，就引入了「数字证书」，什么叫数字证书呢？</p>
+<p>百度百科：</p>
+<p>数字证书是指在互联网通讯中标志通讯各方身份信息的一个数字认证，人们可以在网上用它来识别对方的身份。</p>
+<p>因此数字证书又称为数字标识。数字证书对网络用户在交流中的信息和数据等以加密或解密的形式保证了信息和数据的完整性和安全性。</p>
+<p>看了这个描述，是不是感觉还是云里雾里，还是我用大白话来说吧~</p>
+<p><strong>只要你理解了前面的数字签名，就能理解这里的数字证书，因为我把数字证书叫做「<strong><strong>公钥的数字签名</strong></strong>」。</strong></p>
+<p>为什么呢？我们引入数字证书的目的是为了保证公钥不被篡改，即使被篡改了也能识别出来。</p>
+<p>而防篡改的方法就是数字签名，但是这个签名不能我们自己做，原因说过了，因为我们的公钥还没分发出去，别人无法验证。所以只能找可信的第三方来帮我们签名，即证书颁布机构（CA），CA 会将：证书的颁布机构、有效期、公钥、持有者(subject)等信息用 CA 的私钥进行签名。并且将签名结果和这些信息放在一起，这就叫做「数字证书」。</p>
+<p>这样，Bob 就可以去 CA 申请一个证书，然后将自己的证书发给 Alice，那么 Alice 如何验证这个证书确实是 Bob的呢？</p>
+<p>当然是使用 CA 的公钥进行验签。</p>
+<p><strong>注意：</strong></p>
+<p>CA 的公钥也是需要使用证书来分发的，所以 Alice 的电脑必须安装 CA 的证书，证书里包含了 CA 的公钥。</p>
+<p>收到 Bob 发过来的数字证书后，Alice 使用 CA 的公钥进行验证，验证通过即证明这确实是 Bob 证书，也就可以使用证书中包含的 Bob 的公钥，按照之前讨论的流程进行通信。</p>
+<p>那么 Eve 是否可以在中途篡改 Bob 的证书呢？</p>
+<p>答案：不行，因为证书的信息使用 CA 的私钥进行签名，只要 Eve 修改了任何一个 Bit 都会导致最后签名验证不通过。</p>
+<p>那 Eve 可不可以修改证书信息后自己重新计算一次证书的数字签名呢？</p>
+<p>也不行，因为证书的数字签名计算依赖于 CA 的私钥，Eve 是拿不到 CA 的私钥的。</p>
+<p>如果拿到了，说明什么？整个世界都是不可信的。</p>
+<p><strong>数字证书长啥样</strong></p>
+<p>这是我电脑中的自带的证书：</p>
+<img src="image-20230629200113061.png" alt="image-20230629200113061" style="zoom:33%;">
+
+<p>可以看到，包含了证书持有人的公钥和证书的签名。另外，证书颁发机构是有层级关系的，下级 CA 的证书是需要由上级 CA 签名的。</p>
+<p>换句话说一定存在根证书颁发机构，那么他们的证书是由谁签名的呢？</p>
+<p>答案是自签，自己给自己认证。</p>
+<p>这是我电脑中的一个自签的根证书颁发机构：</p>
+<img src="image-20230629200156426.png" alt="image-20230629200156426" style="zoom:33%;">
+
+<p>为什么根证书可以自签，谁来保证安全？</p>
+<p>你把钱存在银行，你会担心吗？我们基于对国家的信任，才信任银行，这就是信任链的基础！我们思考问题应该是分层的，如果不认可一个统一的基础，一直套娃下去，那么问题就无解。</p>
+<p>那还有个问题，如何保证根证书的可靠性？</p>
+<p>这是操作系统和浏览器预装的，由微软、苹果等操作系统厂商来选择根证书。</p>
+<p><strong>证书不可信？</strong></p>
+<p>那么什么情况下浏览器会提示 “证书不可信” 呢？</p>
+<p>根据我们上面的分析，下面是可能的原因：</p>
+<ul>
+<li>证书不是权威 CA 颁发</li>
+</ul>
+<p>有些企业为了贪图便宜使用盗版的证书，没有经过 CA 认证。也就是无法使用浏览器内置 CA 公钥进行验证。</p>
+<ul>
+<li>证书过期</li>
+</ul>
+<p>上面说了，证书里有一项就是有效期，一般就是一年或者两年的时间。如果证书过期，那么浏览器就会提示“证书不可信”</p>
+<ul>
+<li>证书部署错误</li>
+</ul>
+<p>可能是服务器证书部署出错，比如证书与域名不匹配，因为证书里有一项是持有人信息的。</p>
+<p>好了，饶了一大圈，Bob 终于可以安全的向 Alice 发出前往红树林的邀请了~</p>
+<blockquote>
+<p><strong>QA</strong></p>
+<p>现在我们来回答文章开头提出的一些问题：</p>
+<ol>
+<li><p>非对称加密中公私钥都可以加密，那么什么时候用公钥加密，什么时候用私钥“加密” ？</p>
+</li>
+<li><ol>
+<li>加密场景，那么肯定希望只有我才能解密，别人只能加密。即<strong>公钥加密，私钥解密。</strong></li>
+<li>签名场景，既然是签名，就希望只能我才能签名，别人只能验证。即<strong>私钥签名，公钥验签</strong></li>
+</ol>
+</li>
+<li><p>什么是数字签名，数字签名的作用是什么？</p>
+</li>
+<li><ol>
+<li>数字签名就是使用私钥对数据摘要进行签名，并附带和数据一起发送。</li>
+<li>可以起到防篡改、防伪装、防否认的作用。</li>
+</ol>
+</li>
+<li><p>为什么要对数据的摘要进行签名，而不是直接计算原始数据的数字签名？</p>
+</li>
+<li><ol>
+<li>数据可能比较大，签名是使用非对称加密算法，比较耗时。</li>
+<li>防止第三方使用公钥解开签名后，拿到原始数据。</li>
+</ol>
+</li>
+<li><p>什么是数字证书，数字证书存在解决了什么问题？</p>
+</li>
+<li><ol>
+<li>数字证书就是由 CA 机构使用自己私钥，对证书申请者的公钥进行签名认证。</li>
+<li>数字证书解决了如何安全分发公钥的问题，也奠定了信任链的基础。</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<hr>
+<p><strong>参考:</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/TheSkyLee/article/details/108699243">一文彻底搞懂加密、数字签名和数字证书</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/469646140">什么是数字签名</a></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">https://maple_eitba.gitee.io/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple_eitba.gitee.io/maple" target="_blank">Maple's  Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/maple/tags/%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E3%80%81%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">加密、签名、数字证书</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/maple/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/maple/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/" title="优雅对接第三方API"><img class="cover" src="/maple/top_img/api.jpg" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">优雅对接第三方API</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/maple/img/avatar.jpg" onerror="this.onerror=null;this.src='/maple/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">原创&引用博客,记录并分享学习经验...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6"><span class="toc-number">1.</span> <span class="toc-text">浅析加密、数字签名和数字证书</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">什么是加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BASE64%E8%BD%AC%E6%8D%A2%E8%A1%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">BASE64转换表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text">加密算法的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">对称加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.4.</span> <span class="toc-text">非对称加密</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6"><span class="toc-number">1.2.</span> <span class="toc-text">数字证书</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" title="浅析加密、签名和数字证书"><img src="/maple/top_img/sign.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="浅析加密、签名和数字证书"/></a><div class="content"><a class="title" href="/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" title="浅析加密、签名和数字证书">浅析加密、签名和数字证书</a><time datetime="2023-06-29T11:40:23.000Z" title="发表于 2023-06-29 19:40:23">2023-06-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/" title="优雅对接第三方API"><img src="/maple/top_img/api.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="优雅对接第三方API"/></a><div class="content"><a class="title" href="/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/" title="优雅对接第三方API">优雅对接第三方API</a><time datetime="2023-06-28T07:48:07.000Z" title="发表于 2023-06-28 15:48:07">2023-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/27/Threadlocal/" title="ThreadLocal"><img src="https://dingyue.nosdn.127.net/qpMfBuru2TGel0KmOQSIpFm6s189sBG0y0hvbyPtKegoA1530494422737compressflag.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="ThreadLocal"/></a><div class="content"><a class="title" href="/maple/2023/06/27/Threadlocal/" title="ThreadLocal">ThreadLocal</a><time datetime="2023-06-27T10:24:55.000Z" title="发表于 2023-06-27 18:24:55">2023-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/27/%E9%92%A9%E5%AD%90%E6%96%B9%E6%B3%95/" title="钩子方法"><img src="https://img1.baidu.com/it/u=3452134191,3177875868&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=500" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="钩子方法"/></a><div class="content"><a class="title" href="/maple/2023/06/27/%E9%92%A9%E5%AD%90%E6%96%B9%E6%B3%95/" title="钩子方法">钩子方法</a><time datetime="2023-06-27T10:12:05.000Z" title="发表于 2023-06-27 18:12:05">2023-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/26/Lombok/" title="Lombok"><img src="/maple/top_img/lombok.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Lombok"/></a><div class="content"><a class="title" href="/maple/2023/06/26/Lombok/" title="Lombok">Lombok</a><time datetime="2023-06-26T09:05:21.000Z" title="发表于 2023-06-26 17:05:21">2023-06-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/maple/js/utils.js"></script><script src="/maple/js/main.js"></script><script src="/maple/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/maple/js/search/local-search.js"></script></div></div></body></html>

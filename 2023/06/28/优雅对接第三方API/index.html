@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>优雅对接第三方API | Maple's  Blog</title><meta name="author" content="Maple"><meta name="copyright" content="Maple"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="优雅对接第三方API前言在日常的开发中，我们难免会遇见需要和第三方系统进行交互的需求，此时如何设计优雅地对第三方暴露的API就很重要了，不然就可以能会出现接口被刷、数据泄露等安全问题。  非技术对接需要注意的点：  ​    与第三方平台对接的时候，一定要积极和谐友善沟通，要是自己沟通不融洽，对自己的开发进度以及整体团队的对接进度就得往后延期了。  ​    沟通方向要在同个频道，不然可能带来的影">
+<meta property="og:type" content="article">
+<meta property="og:title" content="优雅对接第三方API">
+<meta property="og:url" content="https://maple_eitba.gitee.io/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/index.html">
+<meta property="og:site_name" content="Maple&#39;s  Blog">
+<meta property="og:description" content="优雅对接第三方API前言在日常的开发中，我们难免会遇见需要和第三方系统进行交互的需求，此时如何设计优雅地对第三方暴露的API就很重要了，不然就可以能会出现接口被刷、数据泄露等安全问题。  非技术对接需要注意的点：  ​    与第三方平台对接的时候，一定要积极和谐友善沟通，要是自己沟通不融洽，对自己的开发进度以及整体团队的对接进度就得往后延期了。  ​    沟通方向要在同个频道，不然可能带来的影">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://maple_eitba.gitee.io/maple/top_img/api.jpg">
+<meta property="article:published_time" content="2023-06-28T07:48:07.000Z">
+<meta property="article:modified_time" content="2023-06-29T11:37:10.077Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="对接第三方API">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maple_eitba.gitee.io/maple/top_img/api.jpg"><link rel="shortcut icon" href="/maple/img/favicon.jpg"><link rel="canonical" href="https://maple_eitba.gitee.io/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/maple/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/maple/',
+  algolia: undefined,
+  localSearch: {"path":"/maple/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":22,"languages":{"author":"作者: Maple","link":"链接: ","source":"来源: Maple's  Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '优雅对接第三方API',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-29 19:37:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/maple_background.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/maple/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/maple/top_img/api.jpg')"><nav id="nav"><span id="blog-info"><a href="/maple/" title="Maple's  Blog"><span class="site-name">Maple's  Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">优雅对接第三方API</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-28T07:48:07.000Z" title="发表于 2023-06-28 15:48:07">2023-06-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-29T11:37:10.077Z" title="更新于 2023-06-29 19:37:10">2023-06-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/maple/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">架构设计</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="优雅对接第三方API"><a href="#优雅对接第三方API" class="headerlink" title="优雅对接第三方API"></a>优雅对接第三方API</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在日常的开发中，我们难免会遇见需要和第三方系统进行交互的需求，此时如何设计优雅地对第三方暴露的API就很重要了，不然就可以能会出现接口被刷、数据泄露等安全问题。</p>
+<blockquote>
+<p><strong>非技术对接需要注意的点：</strong></p>
+<ul>
+<li><p>​    与第三方平台对接的时候，一定要积极和谐友善沟通，要是自己沟通不融洽，对自己的开发进度以及整体团队的对接进度就得往后延期了。</p>
+</li>
+<li><p>​    沟通方向要在同个频道，不然可能带来的影响就是：自己写完api文档之后，发给对方之后，发现写得完全就不在方向上，这就很尴尬了。</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>技术对接需要注意的点：</strong></p>
+<p><strong>1. 网络协议方面</strong></p>
+<p>尽量规范对方使用https协议，因为https是http协议的升级版本，可通过对网络浏览器和网络服务器中间传输的数据进行加密，安全性方面还是比http协议高很多的，从谷歌规范来说，也是使用https协议的。</p>
+<p><strong>2.接口请求方面</strong></p>
+<p>接口请求类型看具体业务场景规定好，以及入参的数据类型要规定好，这里如果使用POST请求的时候，基本是规定数据传参格式为：<code>application/json</code> , Json格式的入参可以支持参数值拓展，对于之后的业务迭代还是友好的。</p>
+<p><strong>3.接口签名校验</strong></p>
+<p>对接口的参数进行加密，然后被调用系统可以使用双方规定好的解密方式校验接口的参数是否有效，这样能够大有利的避免许多不必要的麻烦，假如人家知道你的明文参数，拿着这样的数据压测你的接口的话，对系统是能造成极大伤害的，服务器连接数一直在被消耗着。</p>
+<p>在加密解密方面，有对称加密以及非对称加密两种方式。从对比上来说，非对称加密总体安全性比较高，但是效率相对对称加密要低一些。</p>
+<p><strong>4.日志记录</strong></p>
+<p>对于我们接口接收到的数据，以及解析之后的参数值，都要用日志记录下来，以防在线上服务器出问题的时候，我们找不到对应的入参数据去排查线上问题。</p>
+<p><strong>5.幂等校验</strong></p>
+<p>在日常的系统api调用中，会可能由于网络波动等原因，同一个数据会调用多几次接口，我们要在实现具体业务操作之前，加一个幂等校验，例如可以对该数据中的唯一值做记录，要是先查到，就不继续实现具体业务操作，而是返回响应成功（注意：这里幂等校验要查找到该数据已经有成功调用过了，就直接返回响应成功，而不是响应失败等其他提示信息）。</p>
+<p><strong>常见的幂等校验实现方式：</strong></p>
+<ul>
+<li>分布式锁实现并发的幂等校验</li>
+<li>数据库层select实现前置幂等校验</li>
+<li>基于缓存+MD5实现可控时间窗口的幂等校验</li>
+</ul>
+<p><strong>6.重试机制</strong></p>
+<p>比如在电商系统中，由于大促等促销活动有可能随时产生非常大的并发，要这时候要是第三方系统刚好调用我们系统的api接口，我们的服务器刚好短暂宕机，那这可能会造成大量的数据丢失。这中间是涉及到钱的，要真的发生了，可能狗头不保，直接GG。为了保住狗头，还是需要让对方去做接口的重试机制，要是接口响应不成功，可以规定之后一定的频率回调我们的接口，比如每隔3分钟重新发起一次调用，直到累积到10次都不成功，就认为，要是最后一次也是调用不成功的话，基本是要把调用不成功的接口信息落库，存到mysql、redis、或者es等数据源，等事后人工干预。</p>
+<p><strong>7.防伪机制</strong></p>
+<p>为了更安全的系统对接，我们还可以让调用我们接口的第三方，提供多一个接口，去校验一段时间内回传给我们的数据，他们那边是否存在。如果有数据不存在，就要开始排查是不是哪里出问题了~</p>
+<p><strong>8.安全机制</strong></p>
+<p>到了对接的业务上线之后，接口加密的数据有可能是会被不明第三方抓包以及破译的，这时候更加需要从其他方面去提升安全等级，例如：定期更换密钥。除了防住黑的一方，也有白的一方需要防范，白是谁，当然是指我们这些本身开发这块业务的开发者，这个怎么防范，只能提高自己本身的职业素质了</p>
+<hr>
+<h2 id="Java-后端开发常用的-10-种第三方服务"><a href="#Java-后端开发常用的-10-种第三方服务" class="headerlink" title="Java 后端开发常用的 10 种第三方服务"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qing-gee/p/13651693.html">Java 后端开发常用的 10 种第三方服务</a></h2><p>严格意义上说，所有软件的第三方服务都可以自己开发，不过从零到一是需要时间和金钱成本的。就像我们研发芯片，投入了巨大的成本，但仍然没有取得理想的成绩，有些事情并不是一朝一夕，投机取巧就能完成的。</p>
+<p>Java 后端开发通常会涉及到很多第三方服务，那么都有哪些成熟的方案可供直接上手使用呢？</p>
+<img src="image-20230628155349797.png" alt="image-20230628155349797" style="zoom:67%;">
+
+<p><strong>1）IaaS</strong></p>
+<p>IaaS 的英文全称是 Infrastructure as a Service，即基础设施服务，指把 IT 基础设施作为一种服务通过网络对外提供，并根据用户对资源的实际使用量或占用量进行计费的一种服务模式。IaaS 可根据需求快速纵向扩缩，用户无需购买和管理自己的实体服务器和其他数据中心基础结构，从而避免了相应的开支和复杂操作。</p>
+<p>用户通过 IaaS 可以完成的典型事项包括：</p>
+<ul>
+<li>测试和开发。</li>
+<li>网站托管。</li>
+<li>存储、备份和恢复。</li>
+<li>Web 应用。</li>
+<li>高性能计算。</li>
+<li>大数据分析。</li>
+</ul>
+<p>基本上所有的云服务商都提供了 IaaS 服务，国内最强大的云服务商当属阿里云。</p>
+<p><strong>2）PaaS</strong></p>
+<p>PaaS 的英文全称是 Platform as a Service，只需要提交代码到指定运行环境，代码打包、部署、IP 绑定都由平台完成。与 IaaS 相比，用户不需要管理与控制云端基础设施（包含网络、服务器、操作系统或存储），但需要控制上层的应用程序部署与应用托管的环境。</p>
+<p><strong>3）SaaS</strong></p>
+<p>SaaS 的英文全称是 Software as a Service，用户在这种模式下，不需要经过传统的安装步骤就可以通过网络使用软件。SaaS 最大的特色在于软件本身并没有被下载到用户的硬盘，而是存储在提供商的云端或者服务器。</p>
+<p>怎么区分 IaaS、PaaS 和 SaaS 呢？来看下面这张图。</p>
+<img src="image-20230628155501417.png" alt="image-20230628155501417" style="zoom:67%;">
+
+<p>如果我们开发了一个网站，按照传统的方式，我们需要买专业的服务器（连接网络），并在上面安装服务器软件，然后再把编写好的网站部署上去。</p>
+<p>如果采用 IaaS 服务的话，就不需要自己购买服务器了，直接在租用的云服务器上安装服务器软件并且部署网站即可。</p>
+<p>如果采用 PaaS 服务的话，不需要购买服务器，也不需要安装服务器软件，只需要部署网站即可。</p>
+<p>如果采用 SaaS 服务的话，网站也不需要自己开发了，直接使用服务商开发好的网站，后期的升级、维护都交由服务商来负责。</p>
+<p>阮一峰的网络日志上这样解释三者之间的关系。假如你想做披萨生意，有三种方案。</p>
+<p>方案一，IaaS。</p>
+<p>他人提供厨房、炉子、煤气，你使用这些基础设施，来烤你的披萨。</p>
+<p>方案二，PaaS。</p>
+<p>除了基础设施，他人还提供披萨饼皮。你只需要把自己的配料洒在饼皮上，至于是牛肉味的还是奥尔良鸡翅味的，你来决定。</p>
+<p>方案三，SaaS。</p>
+<p>他人直接做好了披萨，你拿到手就是一个成品。你要做的就是把披萨卖出去，最好印上自己的 Logo。</p>
+<p><strong>4）域名</strong></p>
+<p>有了可以提供服务的应用后，还需要一个能够让人记得住的域名，最好越简单越好。拿维基百科来说，wikipedia.org 是一个域名，和 IP 地址 208.80.152.2 相对应，用户可以直接访问 wikipedia.org 来代替 IP 地址，域名系统（DNS）会将域名转化成便于机器识别的 IP 地址。</p>
+<p><strong>5）CDN</strong></p>
+<p>CDN 的全称是 Content Delivery Network，即<strong>内容分发网络</strong>，一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、影片、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。比较有名的 CDN 服务商有：</p>
+<ul>
+<li>Cloudflare，提供的免费版解决方案足以保护小网站免受 DDoS 之灾，也可以隐藏网站的真实 IP 地址。在海外有着极好的响应速度，国内好像不咋滴。</li>
+<li>腾讯云，资源储备遍布全球 50+ 国家与地区，全网带宽 120Tbps+。国内 1100+ 加速节点，覆盖移动、联通、电信及十几家中小型运营商。</li>
+<li>阿里云，全球 2800+ 节点，130T 带宽能力，六大洲覆盖，国内主流运营商支持。</li>
+<li>七牛云，全球 2000 节点，20+ 运营商覆盖，访问提速 80%，应用场景包括音视频点播、大文件下载、Web 加速服务等。</li>
+<li>又拍云，全球 1100+ 节点，10Tbps 带宽储备，国内主流运营商支持。</li>
+</ul>
+<p><strong>6）邮件发送</strong></p>
+<p>基本上每个应用都离不开邮件发送，最常用的邮件服务器就是腾讯邮箱和网易邮箱。常用的电子邮件协议包括 SMTP、POP3 和 IMAP，不过，邮件的创建和发送只需要用到 SMTP 协议就可以了。</p>
+<p>Java 官方提供了对电子邮件协议封装的 Java 类库，就是 JavaMail，但并没有包含在标准的 JDK 中，GitHub 地址如下：</p>
+<p><a target="_blank" rel="noopener" href="https://javaee.github.io/javamail/">https://javaee.github.io/javamail/</a></p>
+<p>记得之前接到过这样一个需求，要求发送的邮件不能到垃圾邮箱里，还挺难做的。因为邮件服务器，比如说腾讯和网易，都做了邮件的过滤器，会识别一些邮件，自动放到垃圾邮箱里。</p>
+<p><strong>7）短信发送</strong></p>
+<p>使用短信发送验证码几乎是每个应用必不可少的一部分，仿佛手机号码就代表了一个人，所以丢手机是一件非常危险的事情——需要立即挂失。短信是需要运营商支持的，所以基本上都需要依赖第三方代理。市面上有很多短信网关代理，阿里云通信是比较常用的一个，以前叫阿里大于。</p>
+<img src="image-20230628155554996.png" alt="image-20230628155554996" style="zoom:67%;">
+
+<p>阿里云通信的价格是每条短信 0.036 元，市面上还有一些其他的服务商，有些价格更低，但稳定性我个人没有测评过。我的技术交流群里就潜藏了不少做短信的商户人员。应用接入阿里云通信并不复杂，我之前在 CSDN 上分享过一个博客，很详细，图文并茂，还带源码实例，需要的小伙伴可以去围观下。</p>
+<p><a target="_blank" rel="noopener" href="https://qingmiaogu.blog.csdn.net/article/details/78751698">https://qingmiaogu.blog.csdn.net/article/details/78751698</a></p>
+<p><strong>8）消息推送</strong></p>
+<p>消息推送（Push）指运营人员通过自己的产品或第三方工具对用户移动设备进行的主动消息推送。用户可以在移动设备锁定屏幕和通知栏看到 push 消息通知，通知栏点击可唤起 APP 并去往相应页面。</p>
+<p>移动应用上，推送已经成为一个标配功能。</p>
+<p>iOS 在系统层面与苹果 APNs（Apple Push Notification service）服务器建立连接，应用通过观察者模式向 iOS 系统注册关注的消息，系统收到 APNs Server 消息后转发到相应的应用程序。</p>
+<p>Android 的 C2DM（Android Cloud to Device Messaging）采取与 iOS 类似的机制，都是由系统层面来支持消息推送，但是由于 Google 的服务在国内不能稳定的访问，此方案对于国内用户来说基本是无法使用的。</p>
+<p>鉴于 Android 平台 C2DM 推送的不可用性，国内涌现出大量的第三方推送服务提供商，目前应用最为广泛的第三方推送服务提供商包括个推、极光、友盟、小米、华为、BAT 等，我之前用个推做过一个小程序的推送 Demo，API 调用起来很简单，感觉还挺好用的。</p>
+<p><strong>9）开放平台</strong></p>
+<p>通过开放平台，可以使用 OAuth 等协议获取用户在第三方平台上的信息以实现第三方平台登录。比如用户想要登录 A 网站，A 网站让用户提供第三方网站的数据，证明自己的身份。获取第三方网站的身份数据，就需要 OAuth 授权。</p>
+<p>国内的微博、微信、QQ 是最常见的第三方登录方式，阿里系的产品可以通过支付宝授权登录，还有一些网站绑定了 GitHub 登录。</p>
+<p>阮一峰的网络日志上有一篇 GitHub OAuth 第三方登录示例教程：</p>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/04/github-oauth.html">https://www.ruanyifeng.com/blog/2019/04/github-oauth.html</a></p>
+<p><strong>10）支付接口</strong></p>
+<p>目前，接入最多的支付接口就是支付宝和微信。</p>
+<p>支付宝提供了当面付、APP 支付、手机网站支付、电脑网站支付等支付接口。</p>
+<p>提供的文档很齐全，还有 Java、PHP、.NET 等版本的 Demo。</p>
+<p><a target="_blank" rel="noopener" href="https://opendocs.alipay.com/open/270">https://opendocs.alipay.com/open/270</a></p>
+<p>微信支付的话，我推荐使用开源工具库 WxJava：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Wechat-Group/WxJava">https://github.com/Wechat-Group/WxJava</a></p>
+<p>我们公司的网站就用的这个，支持包括微信支付、开放平台、小程序、企业微信/企业号和公众号等的后端开发，很齐全。</p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/">https://maple_eitba.gitee.io/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple_eitba.gitee.io/maple" target="_blank">Maple's  Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/maple/tags/%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/">对接第三方API</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/maple/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/maple/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" title="浅析加密、签名和数字证书"><img class="cover" src="/maple/top_img/sign.jpg" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">浅析加密、签名和数字证书</div></div></a></div><div class="next-post pull-right"><a href="/maple/2023/06/27/Threadlocal/" title="ThreadLocal"><img class="cover" src="https://dingyue.nosdn.127.net/qpMfBuru2TGel0KmOQSIpFm6s189sBG0y0hvbyPtKegoA1530494422737compressflag.jpg" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ThreadLocal</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/maple/img/avatar.jpg" onerror="this.onerror=null;this.src='/maple/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">原创&引用博客,记录并分享学习经验...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API"><span class="toc-number">1.</span> <span class="toc-text">优雅对接第三方API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%9A%84-10-%E7%A7%8D%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.</span> <span class="toc-text">Java 后端开发常用的 10 种第三方服务</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" title="浅析加密、签名和数字证书"><img src="/maple/top_img/sign.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="浅析加密、签名和数字证书"/></a><div class="content"><a class="title" href="/maple/2023/06/29/%E6%B5%85%E6%9E%90%E5%8A%A0%E5%AF%86%E3%80%81%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" title="浅析加密、签名和数字证书">浅析加密、签名和数字证书</a><time datetime="2023-06-29T11:40:23.000Z" title="发表于 2023-06-29 19:40:23">2023-06-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/" title="优雅对接第三方API"><img src="/maple/top_img/api.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="优雅对接第三方API"/></a><div class="content"><a class="title" href="/maple/2023/06/28/%E4%BC%98%E9%9B%85%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9API/" title="优雅对接第三方API">优雅对接第三方API</a><time datetime="2023-06-28T07:48:07.000Z" title="发表于 2023-06-28 15:48:07">2023-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/27/Threadlocal/" title="ThreadLocal"><img src="https://dingyue.nosdn.127.net/qpMfBuru2TGel0KmOQSIpFm6s189sBG0y0hvbyPtKegoA1530494422737compressflag.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="ThreadLocal"/></a><div class="content"><a class="title" href="/maple/2023/06/27/Threadlocal/" title="ThreadLocal">ThreadLocal</a><time datetime="2023-06-27T10:24:55.000Z" title="发表于 2023-06-27 18:24:55">2023-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/27/%E9%92%A9%E5%AD%90%E6%96%B9%E6%B3%95/" title="钩子方法"><img src="https://img1.baidu.com/it/u=3452134191,3177875868&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=500" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="钩子方法"/></a><div class="content"><a class="title" href="/maple/2023/06/27/%E9%92%A9%E5%AD%90%E6%96%B9%E6%B3%95/" title="钩子方法">钩子方法</a><time datetime="2023-06-27T10:12:05.000Z" title="发表于 2023-06-27 18:12:05">2023-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/06/26/Lombok/" title="Lombok"><img src="/maple/top_img/lombok.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Lombok"/></a><div class="content"><a class="title" href="/maple/2023/06/26/Lombok/" title="Lombok">Lombok</a><time datetime="2023-06-26T09:05:21.000Z" title="发表于 2023-06-26 17:05:21">2023-06-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/maple/js/utils.js"></script><script src="/maple/js/main.js"></script><script src="/maple/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/maple/js/search/local-search.js"></script></div></div></body></html>
