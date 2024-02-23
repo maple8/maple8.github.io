@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据库E-R模式设计 | Maple's  Blog</title><meta name="author" content="Maple"><meta name="copyright" content="Maple"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据库E-R模式设计1 数据库设计概述1.1何为数据库设计？数据库设计是指对于一个给定的应用环境，构造最优的数据库模式，建立数据库及其应用系统，使之能够有效地存储数据，满足各种用户的应用需求（信息要求和处理要求）。 数据库是信息系统的核心和基础，它把信息系统中大量的数据按一定的模型组织起来，并提供存储、维护、检索数据的功能，最终使信息系统可以方便、及时、准确地从数据库中获得所需的信息。即数据库的设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库E-R模式设计">
+<meta property="og:url" content="https://maple_eitba.gitee.io/maple/2023/12/05/E-R-Model/index.html">
+<meta property="og:site_name" content="Maple&#39;s  Blog">
+<meta property="og:description" content="数据库E-R模式设计1 数据库设计概述1.1何为数据库设计？数据库设计是指对于一个给定的应用环境，构造最优的数据库模式，建立数据库及其应用系统，使之能够有效地存储数据，满足各种用户的应用需求（信息要求和处理要求）。 数据库是信息系统的核心和基础，它把信息系统中大量的数据按一定的模型组织起来，并提供存储、维护、检索数据的功能，最终使信息系统可以方便、及时、准确地从数据库中获得所需的信息。即数据库的设">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://maple_eitba.gitee.io/maple/top_img/er.jpg">
+<meta property="article:published_time" content="2023-12-05T03:00:27.000Z">
+<meta property="article:modified_time" content="2023-12-10T15:38:43.436Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="E-R">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maple_eitba.gitee.io/maple/top_img/er.jpg"><link rel="shortcut icon" href="/maple/img/favicon.jpg"><link rel="canonical" href="https://maple_eitba.gitee.io/maple/2023/12/05/E-R-Model/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/maple/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/maple/',
+  algolia: undefined,
+  localSearch: {"path":"/maple/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":22,"languages":{"author":"作者: Maple","link":"链接: ","source":"来源: Maple's  Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库E-R模式设计',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-10 23:38:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/maple_background.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+
+preloader.initLoading()
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/maple/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/maple/top_img/er.jpg')"><nav id="nav"><span id="blog-info"><a href="/maple/" title="Maple's  Blog"><span class="site-name">Maple's  Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据库E-R模式设计</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-05T03:00:27.000Z" title="发表于 2023-12-05 11:00:27">2023-12-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-10T15:38:43.436Z" title="更新于 2023-12-10 23:38:43">2023-12-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/maple/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">8.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>24分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数据库E-R模式设计"><a href="#数据库E-R模式设计" class="headerlink" title="数据库E-R模式设计"></a>数据库E-R模式设计</h1><h2 id="1-数据库设计概述"><a href="#1-数据库设计概述" class="headerlink" title="1 数据库设计概述"></a>1 数据库设计概述</h2><h3 id="1-1何为数据库设计？"><a href="#1-1何为数据库设计？" class="headerlink" title="1.1何为数据库设计？"></a>1.1何为数据库设计？</h3><p>数据库设计是指对于一个给定的应用环境，构造最优的数据库模式，建立数据库及其应用系统，使之能够有效地存储数据，满足各种用户的应用需求（信息要求和处理要求）。</p>
+<p>数据库是信息系统的核心和基础，它把信息系统中大量的数据按一定的模型组织起来，并提供存储、维护、检索数据的功能，最终使信息系统可以方便、及时、准确地从数据库中获得所需的信息。即数据库的设计目标是：为用户和各种应用系统提供一个信息基础设施和高效率的运行环境，这里的高效率代表的是冗余少、易维护和便于使用。</p>
+<h4 id="数据库设计的全流程"><a href="#数据库设计的全流程" class="headerlink" title="数据库设计的全流程"></a>数据库设计的全流程</h4><img src="image-20231029111613780.png" alt="image-20231029111613780" style="zoom: 45%;">
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/blknemo/p/12416395.html#top">数据库三级模式二级映射</a></p>
+</blockquote>
+<p>数据库设计大致可分为如下几个阶段：</p>
+<p><font color="red">需求分析 → <strong>概念设计</strong> → <strong>逻辑设计</strong> → <strong>物理设计</strong> → 数据库实施 → 运行与维护阶段</font></p>
+<p><img src="v2-a7a07f6418d1d5fdc67d62982bd7bd31_1440w.webp" alt="img"></p>
+<p>设计数据库核心三个步骤</p>
+<ol>
+<li>把现实世界的实体模型，通过建模转换成信息世界的E-R模型 – 概念结构设计；</li>
+<li>信息世界的E-R模型，经过模型转化，得到数据库世界的数据模型 – 逻辑结构设计；</li>
+<li>把数据模型进一步规范化，得到最终的数据库结构模型 – 物理结构设计；</li>
+</ol>
+<img src="image-20231205193612914.png" alt="image-20231205193612914" style="zoom:40%;">
+
+<blockquote>
+<p>数据库世界的数据模型按数据的组织形式而分为三种类型</p>
+<ul>
+<li>关系模型（在关系数据库设计中）</li>
+<li>层次模型</li>
+<li>网状模型</li>
+</ul>
+</blockquote>
+<h3 id="1-2-必须要明确的几个概念"><a href="#1-2-必须要明确的几个概念" class="headerlink" title="1.2 必须要明确的几个概念"></a>1.2 必须要明确的几个概念</h3><p>本文主要讨论分析的数据库设计为关系型数据库，在正式开始了解数据库设计阶段之前先来明确几个关系型数据库的重要概念。</p>
+<ul>
+<li><strong>关系</strong> ：关系型数据库关系的数据结构就是一张二维表，通俗的讲，二维表名称就是关系名。</li>
+<li><strong>属性</strong> ：二维表中的列称为属性（字段），每个属性都有一个属性名。</li>
+<li><strong>域</strong> ：二维表中属性的取值范围称为域，每个属性都有一个域。</li>
+<li><strong>关系模式</strong> ：二维表的结构称为关系模式。设关系名为 R，其属性为 A1，A2，…，An，则关系模式可以表示为：R(A1,A2,…,An)，一个具体的例子：职工（职工号，姓名，性别，部门）。</li>
+<li><strong>候选码</strong> ：如果一个属性集的值能唯一标识一个关系的元组而又不含多余的属性，则称该属性集为候选码。在一个关系上可以有多个候选码。</li>
+<li><strong>主属性</strong> ：包含在任一候选码中的属性。</li>
+<li><strong>非主属性</strong> ：不包含在任一候选码中的属性。</li>
+<li><strong>主键</strong> ：有时一个关系有多个候选码，可以选择其中一个作为主键。每个关系有且只有一个主键。</li>
+<li><strong>外键</strong> ：如果关系模式 R 中的属性 K 是其他关系模式的主键，那么 K 在关系模式 R 中称为外键。</li>
+</ul>
+<h2 id="2-需求分析"><a href="#2-需求分析" class="headerlink" title="2 需求分析"></a>2 需求分析</h2><p>需求分析的主要任务就是要通过详细调查现实世界中要处理的对象，来充分了解明确用户的各种需求，最终确定系统的功能，并且必须充分考虑系统在今后可能的扩充和改变，不能仅仅按当前应用需求来设计数据库。需求分析阶段的最终产物是要有明确的系统需求分析报告，一般会包括数据流图、功能模块图、数据字典等内容，并且它是指导开展数据库设计后续阶段活动的重要依据。</p>
+<h2 id="3-概念设计"><a href="#3-概念设计" class="headerlink" title="3 概念设计"></a>3 概念设计</h2><h3 id="3-1-现实世界向机器世界的过渡"><a href="#3-1-现实世界向机器世界的过渡" class="headerlink" title="3.1 现实世界向机器世界的过渡"></a>3.1 现实世界向机器世界的过渡</h3><p>概念设计是设计形成一个独立于 DBMS 的概念数据模型，用来表述数据与数据之间的联系，它直接面向现实世界，因而很容易被用户所理解，方便用于数据库设计者与用户的交流。该阶段先设计与用户具体应用相关的数据结构——用户视图，然后再不断对视图进行集成修改，最终得到一个能正确、完整地反应该单位数据及联系并满足各种处理要求的数据模型，之后再把概念模型转换成具体机器上 DBMS 支持的数据模型。</p>
+<p>概念设计的阶段的主要描述工具就是 E-R 模型（Entity-Relationship Model）。</p>
+<h3 id="3-2-E-R-Model"><a href="#3-2-E-R-Model" class="headerlink" title="3.2 E-R Model"></a>3.2 E-R Model</h3><p>E-R模型（Entity-Relationship Model）是一种用于数据库设计的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B&spm=1001.2101.3001.7020">概念模型</a>。它提供了一种描述现实世界中的数据组织和关联的图形化方法，用于表示 <strong>实体</strong>、<strong>属性</strong> 和 <strong>联系</strong> 之间的关系，简而言之，将现实世界的 <font color="red"><strong>实体模型通过建模转换为信息世界的概念模型</strong></font>，这个<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B&spm=1001.2101.3001.7020">概念模型</a>就是<strong>E-R模型</strong>。</p>
+<h4 id="3-2-1-为什么要引入E-R图？"><a href="#3-2-1-为什么要引入E-R图？" class="headerlink" title="3.2.1 为什么要引入E-R图？"></a>3.2.1 为什么要引入E-R图？</h4><p>使用E-R模型有以下几个主要原因：</p>
+<ul>
+<li><strong>数据建模</strong>：E-R模型提供了一种直观且易于理解的方法来建模现实世界中的数据。通过将实体、属性和关系抽象成图形化符号，可以更好地捕捉和表示数据之间的关系和结构。</li>
+<li><strong>数据可视化</strong>：E-R模型允许将数据的组织和关联可视化。通过图形表示，可以清晰地展示实体之间的关系、属性的特征以及它们之间的连接方式。</li>
+<li><strong>数据完整性</strong>：E-R模型有助于确保数据的完整性。通过定义实体之间的关系和约束条件，可以确保数据在插入、更新和删除时保持一致性和正确性。</li>
+<li><strong>查询优化</strong>：E-R模型可以帮助优化数据库查询。通过了解实体之间的关系，可以设计出更有效的查询和连接方式，提高查询性能和响应时间。E-R模型还可以指导索引的创建，以支持常见的查询操作。</li>
+</ul>
+<p>总的来说，E-R模型提供了一种直观和规范的方法来描述和设计数据库。它有助于提高数据库设计的质量、数据的完整性和查询的性能，从而提升整个数据库系统的效率和可靠性。</p>
+<h4 id="3-2-2-E-R图的构成"><a href="#3-2-2-E-R图的构成" class="headerlink" title="3.2.2 E-R图的构成"></a>3.2.2 E-R图的构成</h4><ul>
+<li><p><strong>实体</strong>（Entity）：实体表示现实世界中的一个独立对象，可以是人、物、地点、概念等。在E-R图中，实体用矩形框表示，框内写上实体的名称。</p>
+</li>
+<li><p><strong>属性</strong>（Attribute）：属性是描述实体特征的信息。每个实体可以有多个属性，例如一个人实体可以有姓名、年龄、性别等属性。属性以椭圆形状表示，并与相应的实体相连。<strong>其中能够唯一标识实体的属性称为主键</strong>。</p>
+<blockquote>
+<p>实体和属性的划分原则：为了简化E-R图的的处理，现实世界中能作为属性的尽量作为属性值。属性如果还有对应的属性进行描述，那就可以将该属性上升为实体。</p>
+</blockquote>
+<img src="v2-8f3b6cd1d600a3c30a809b1d78532641_1440w.webp" alt="img" style="zoom:67%;">
+
+<p>这张图描述了一个教师的实体对象以及它拥有的姓名、性别等属性，是对现实世界信息的直观描述。</p>
+<p>某些属性还可以划分具有独立意义的子属性，那这类属性就称为<strong>复合属性</strong>。例如人的姓名可划分为“姓”和“名”；地址属性可以划分为邮政编码、省名、市名、区名和街道这些子属性，而街道又可划分为街道名和门牌号，其层次结构如下：</p>
+<img src="v2-6796c23a620b58fef1161a0a81ea876f_1440w.webp" alt="img" style="zoom:67%;">
+
+<p>复合属性的用途有两个：</p>
+<ul>
+<li>准确模拟现实世界的复合信息结构；</li>
+<li>当用户需要把复合属性作为一个整体使用又需要单独使用各子属性时，属性的复合结构就显得十分重要。</li>
+</ul>
+<p>例如发邮件时称呼对方可能只需要复合属性“姓名”中的“姓”就足够了。</p>
+<p>属性按照取值的个数还可以分为<strong>单值属性</strong>和<strong>多值属性</strong>。单值属性是指此属性对于同一个实体只能取一个值，大多数的属性都属于单值属性，例如同一个人只能具有一个年龄和一种性别。但是在某些情况下，实体的属性可能取多个值，这时候的属性就称为多值属性，例如人的联系方式信息就是一个多值的，有的人有 1 个电话，有的人有 2 个或者 3 个等等，或者可以分为移动电话联系方式、固定电话联系方式和邮件联系方式等。</p>
+<p>注意：多值属性的描述与单值属性不一致，它采用双线椭圆表示，并且在实际开发过程中，如果有多值属性出现，一般要将其另归为实体或联系。</p>
+<img src="image-20231205181632978.png" alt="image-20231205181632978" style="zoom:40%;">
+
+<p>实体属性之间可能具有某种联系，例如人的年龄属性和出生日期有一种相互依赖关系，根据出生日期可以推导出人的年龄，我们就称年龄为<strong>导出属性</strong>或派生属性。导出属性不仅可以从另外的属性中导出，也可以从相关的实体导出。例如一个公司实体的员工数量属性的值可以通过累计该公司所有员工数得到。</p>
+<p>还有一种属性称为<strong>可选属性</strong>，即并不是所有的属性都必须有值，有些属性的可以没有值，这就是可选属性，在椭圆的文字后用“（O）”来表示。</p>
+</li>
+<li><p><strong>关系</strong>（Relationship）：关系表示实体之间的相互作用或联系。关系可以是一对一、一对多或多对多的。在E-R图中，关系用菱形表示，并与相关的实体相连。关系还可以具有属性，用于描述与关系相关的信息。</p>
+</li>
+<li><p><strong>主键</strong>（Primary Key）：用于唯一标识实体的属性，通常在实体框内用下划线或加粗表示。主键属性的值在整个实体集合中必须是唯一的，用于区分不同的实体。</p>
+</li>
+</ul>
+<h3 id="3-2-3-实体间的联系"><a href="#3-2-3-实体间的联系" class="headerlink" title="3.2.3 实体间的联系"></a><strong>3.2.3 实体间的联系</strong></h3><p><strong>（1）联系的种类</strong></p>
+<p>现实世界中，事物内部或事物之间总是有联系的，联系反映了实体内部或实体之间的关系。</p>
+<p>联系的度数指的是一个联系所涉及的实体数。比如：<strong>单实体联系</strong>、<strong>两实体联系</strong>和<strong>多实体联系</strong>。</p>
+<p>比较常见的为两实体联系，两个实体之间可能存在以下联系：</p>
+<ul>
+<li>一对一联系（1 : 1），例如部门和负责人之间的联系，一个部门有一个负责人，一个负责人负责一个部门；</li>
+<li>一对多联系（1 : n），例如部门和员工之间的联系，一个部门有多个员工，而每个员工只属于一个部门；</li>
+<li>多对多联系（m : n），例如项目和员工之间的联系，一个项目可以需要多个员工参加，而一个员工也可以参加多个项目。</li>
+</ul>
+<p>联系一般使用菱形来进行描述，上面的这几种联系可用如下 E-R 图来表示。</p>
+<img src="v2-e021393b3ea29c9893bf6fd9e7a6c800_1440w.webp" alt="img" style="zoom:70%;">
+
+<p>在E-R图中，<font color="red">关系也可以具有与之相关的属性</font>，用于描述与该关系相关的信息。这些属性可以提供更详细的关系描述，以补充关系本身无法完全表达的信息。 比如职工与部门的工作关系，这个关系可以具有属性，如工作时间、工作性质。通过关系的属性以便于更好的描述职工在部门中的工作情况。</p>
+<img src="image-20231205144615307.png" alt="image-20231205144615307" style="zoom:25%;">
+
+<blockquote>
+<p>我们通过一个例子来加深印象：</p>
+<p>让我们来设计一个简单的 E-R 图来表示学生和课程之间的关系。假设我们有两个实体：学生（Student）和课程（Course）。一个学生可以注册多门课程，而一门课程可以有多名学生。</p>
+<p>设计过程如下：</p>
+<ol>
+<li>确定实体（Entities）：<ol>
+<li>学生（Student）：属性包括学生ID（Student ID）、姓名（Name）、年级（Grade）等。</li>
+<li>课程（Course）：属性包括课程ID（Course ID）、课程名称（Course Name）、学分（Credit）等。</li>
+</ol>
+</li>
+<li>确定关系（Relationship）：<ol>
+<li>注册（Enrollment）：学生和课程之间的关系。这是一个多对多的关系，因为一个学生可以注册多门课程，而一门课程可以有多名学生。此关系可以具有属性，如选课日期（Enrollment Date）。</li>
+</ol>
+</li>
+<li>确定主键（Primary Key）：<ol>
+<li>学生实体的主键为学生ID（Student ID）。</li>
+<li>课程实体的主键为课程ID（Course ID）。</li>
+</ol>
+</li>
+</ol>
+<p>E-R图如下：</p>
+<img src="image-20231205144943835.png" alt="image-20231205144943835" style="zoom:50%;">
+</blockquote>
+<p>E-R图进阶<br>4.1弱实体<br>想象一下，在数据库中，实体就像是人或物体，而属性就像是这些人或物体的特征。通常情况下，一个实体具有自己的标识，例如一个人有独特的身份证号码，一个产品有独特的产品编号。</p>
+<p>然而，有时候存在一种情况，某个实体的标识依赖于与其相关联的另一个实体。这时，我们称这个实体为弱实体。弱实体没有自己的唯一标识，它的标识需要依赖于与其相关联的另一个实体（强实体）。</p>
+<p>在 E-R 图中，弱实体通常用双矩形框表示。</p>
+<blockquote>
+<p>我们来举一个例子：</p>
+<p>订单小票和订单项（也就是小票上面的每个商品多少钱的那一项）之间的E-R图。</p>
+<img src="image-20231205145123708.png" alt="image-20231205145123708" style="zoom:50%;">
+
+<p>订单项并不是一个单独存在的实体，而是基于订单小票才会产生的一个实体，所以我们把它划分为弱实体。</p>
+</blockquote>
+<h3 id="4-2部分键"><a href="#4-2部分键" class="headerlink" title="4.2部分键"></a>4.2部分键</h3><p>在 E-R 图中，弱实体通常没有自己的唯一标识，因此需要使用弱实体的<strong>部分键</strong>来唯一标识不同的实例。弱实体的部分键是通过指定其中一个属性与父实体的键结合从而形成相应弱实体的键，弱实体的这个属性称为弱实体的部分键。部分键用虚线标识。</p>
+<blockquote>
+<p>我们来举一个例子：</p>
+<p>还是订单小票和订单项（也就是小票上面的每个商品多少钱的那一项）之间的E-R图。</p>
+<img src="image-20231205145236301.png" alt="image-20231205145236301" style="zoom:50%;">
+
+<p>这是我们上面的图片，我们基于这个进行一个拓展，把订单项这个弱实体中的部分键标识出来。</p>
+<img src="image-20231205145459734.png" alt="image-20231205145459734" style="zoom:50%;">
+
+<p>我们只有通过商品ID与订单ID结合才能找到某一个订单项。 所以我们可以把商品ID定为部分键。</p>
+</blockquote>
+<h3 id="3-5-E-R-模型的集成"><a href="#3-5-E-R-模型的集成" class="headerlink" title="3.5 E-R 模型的集成"></a><strong>3.5 E-R 模型的集成</strong></h3><p>由于局部 E-R 模型反映的只是局部子功能对应的数据视图，且局部 E-R 图之间可能存在不一致之处，还不能作为逻辑设计的依据，此时可以进行 E-R 模型的集成，去掉不一致和重复的地方，最终合并为全局视图。局部 E-R 模型的集成方法有如下两种：</p>
+<ul>
+<li>多元集成法：一次性将多个局部 E-R 图合并为一个全局 E-R 图；</li>
+<li>二元集成法：用累加的方式一次集成两个局部 E-R 图。</li>
+</ul>
+<p>在实际应用中一般根据系统的复杂程度选择集成的方法，也可以混合使用。无论采用哪种集成方法，每次集成都分为两个阶段：</p>
+<ol>
+<li>合并：消除局部 E-R 图之间的冲突，生成初步 E-R 图；</li>
+<li>优化（修改与重构）：消除（或减少）数据冗余，生成全局 E-R 图。</li>
+</ol>
+<img src="image-20231206161938959.png" alt="image-20231206161938959" style="zoom:40%;">
+
+<h3 id="3-5-1-合并"><a href="#3-5-1-合并" class="headerlink" title="3.5.1 合并"></a><strong>3.5.1 合并</strong></h3><p>由于各个局部应用所面临的问题不同，且通常是由不同的设计人员进行局部 E-R 图的设计，这就导致各个局部 E-R 图之间必定存在许多不一致的地方，即存在冲突。冲突主要分为三类：<strong>属性冲突</strong>、<strong>命名冲突</strong>和<strong>结构冲突</strong>。</p>
+<p><strong>（1）属性冲突</strong></p>
+<ol>
+<li><strong>属性域冲突，即属性值的类型、取值范围不一致</strong>。例如，员工的工号是使用数值型还是字符型。</li>
+<li><strong>属性取值冲突</strong>。例如，学生的成绩有的以百分制计，有的以五分制计。</li>
+</ol>
+<blockquote>
+<p>这类冲突是由于用户在业务上的约定而引起，必须由用户协商解决。</p>
+</blockquote>
+<p><strong>（2）命名冲突</strong></p>
+<ol>
+<li><strong>同名异义：不同意义的对象在不同的局部应用中具有相同的名字</strong>。例如，“单位”既可以表示人员所在部门，也可以作为长度、重量等度量的属性。</li>
+<li><strong>异名同义：同一意义的对象在不同的局部应用中具有不同的名字</strong>。例如学校的“系别”与“学院”实际上是同一实体。</li>
+</ol>
+<blockquote>
+<p>命名冲突可能发生在实体、属性和联系上，常见的为属性冲突，这类冲突通常可以采取行政手段进行协商解决。</p>
+</blockquote>
+<p><strong>（3）结构冲突</strong></p>
+<ol>
+<li><p><strong>同一对象在不同局部应用中具有不同的身份</strong>。例如：局部模型A中的某实体在另一局部模型 B 中被设计为属性，这就造成了结构上的冲突。</p>
+<p>解决方法：将实体转化为属性或将属性转化为实体，保持结构的统一。</p>
+</li>
+<li><p><strong>同一对象在不同局部应用中的属性组成不完全相同</strong>。例如，对同一类“员工”这一对象，在局部模型 A 中其属性为工号、姓名、性别、年龄4个属性，而在另一局部模型 B 中的属性为工号、姓名、所在部门 3 个属性组成。</p>
+<p>解决方法：对实体的属性取其在不同局部应用中的并集，并适当设计好属性的次序。</p>
+</li>
+<li><p><strong>相同实体之间的联系在不同局部模型中不一致</strong>。例如，在局部应用 A 中实体 E1 和 E2 是一对多联系，而在局部应用 B 中却是多对多联系。</p>
+<p>解决方法：根据应用语义对实体联系的类型进行综合或调整。</p>
+</li>
+</ol>
+<p><strong>Demo</strong>：将E-R1和E-R2进行合并。</p>
+<img src="image-20231206164149673.png" alt="image-20231206164149673" style="zoom:40%;">
+
+<p>将E-R1图中产品-零件的关系平移到E-R2图中，出现“数量”这个属性的命名冲突（同名异义），分别对其进行重命名为“数量1”和“数量2”。</p>
+<h3 id="3-5-2-优化"><a href="#3-5-2-优化" class="headerlink" title="3.5.2 优化"></a><strong>3.5.2 优化</strong></h3><p><font color="red"><strong>数据冗余</strong></font> 和 <font color="red"><strong>联系冗余</strong></font> 是 E-R 模型的主要冗余问题，<font color="cornflowerblue">能被其他数据推导（派生）出来的数据就是冗余数据</font>，<font color="cornflowerblue">能被其他联系推导（派生）出来的联系就是冗余联系</font>。例如，员工实体同时具有“出生年月”和“年龄”属性，“年龄”可以从“出生年月”中推导出来，因此是冗余数据。</p>
+<p>冗余的存在容易破坏数据的完整性，造成数据库的维护困难，应予以消除。可以利用多种方法来消除冗余，在关系型数据库中更常用规范化理论来进行分析。</p>
+<p><strong>Demo</strong>：如图，Q3 = Q1 * Q2，Q4 = ∑Q5，所以Q3和Q4是冗余数据，可以删除。并且由于Q3删除，产品与材料间的m:n的冗余关系也应删除。</p>
+<blockquote>
+<p>在实际开发中，并不一定要严格删除冗余，而应该以业务场景为准，有时适当的冗余可以提升业务代码的性能和数据的可读性，并且可以降低数据库层代码复杂度。</p>
+</blockquote>
+<img src="image-20231206170002065.png" alt="image-20231206170002065" style="zoom:35%;">
+
+<h2 id="4-逻辑结构设计"><a href="#4-逻辑结构设计" class="headerlink" title="4 逻辑结构设计"></a>4 逻辑结构设计</h2><p>逻辑结构设计即将E-R图转换为关系模式。</p>
+<p>关系模型<br>3.1 常用概念</p>
+<ul>
+<li>关系：可以理解为一张二维表，每个关系都具有一个关系名，也就是通常说的表名（table）；</li>
+<li>元组：可以理解为二维表中的一行，在数据库中经常被称为记录（record）；</li>
+<li>属性：可以理解为二维表中的一列，在数据库中经常被称为字段（colum）；</li>
+<li>域：属性的取值范围，也就是数据库中某一列的取值限制；</li>
+<li>关键字：一组可以唯一标识元组的属性，数据库中常称为主键，由一个或多个列组成（key）；</li>
+<li>关系模式：指对关系的描述，其格式为：关系名(属性1,属性2,……,属性N)，在数据库中成为表结构；</li>
+</ul>
+<h3 id="3-2-E-R图转关系模式"><a href="#3-2-E-R图转关系模式" class="headerlink" title="3.2 E-R图转关系模式"></a>3.2 E-R图转关系模式</h3><p>对于E-R图中每个<code>实体</code>，都应转换为一个<code>关系</code>（table）。</p>
+<p>该关系应包括<strong>对应实体的全部属性</strong>，并应根据关系所表达的语义确定哪个属性或哪几个属性组作为<code>关键字</code>，关键字用下划线标识；</p>
+<h4 id="3-2-1-一对一关系"><a href="#3-2-1-一对一关系" class="headerlink" title="3.2.1 一对一关系"></a>3.2.1 一对一关系</h4><p>比如：一个班级对应一个正班长，就是<code>1:1</code>联系</p>
+<img src="image-20231205202553302.png" alt="image-20231205202553302" style="zoom:30%;">
+
+<p>则可以创建两个关系（表），一个班级关系（表），一个学生关系（表）；然后我们需要一个联系（关联）来连接这两个关系（表）。有两种方案：</p>
+<ol>
+<li><strong>联系不单独对应一个关系（表）</strong>：<font color="red">联系的属性和一端实体的主键加入另一端实体的关系模式中</font>。<br>不单独创建一个关系（表）来存储联系，通俗讲就是在一个表中冗余一个字段存另外一个表的主键。<br>比如：在学生关系（表）中添加一个班级编号属性，用来存储班级关系中的班级编号属性值，或者在班级关系（表）中添加一个学号属性，用来存储学生关系中的学号属性值。</li>
+<li><strong>联系单独对应一个关系</strong>：<font color="red">由联系的属性和两端实体主键构成新关系模式，选择任一端实体的主键作为主键</font>。<br>单独创建一个关系（表）来存储联系，通俗讲就是创建一个中间表用来存储两个或多个表的主键。<br>比如：创建一个联系关系（表）来存储<u>班级编号</u>属性和<u>学号</u>属性，并选择一个主键（班级编号或学号）作为联系关系的主键。</li>
+</ol>
+<p>3.2.2 一對多关系<br>班级关系和学生关系之间的联系是1:n。</p>
+<img src="image-20231205203501864.png" alt="image-20231205203501864" style="zoom:35%;">
+
+<p>同样地也有两种关系模式:</p>
+<ol>
+<li><strong>联系不单独对应一个关系</strong>：<font color="red">将联系的属性和<code>1端</code>的主键加入<code>n端</code>的实体对应的关系模式中</font>。<br>在这种1:n的关系模式中，一般都是将<code>1端</code>的主键加入<code>n端</code>关系中，即在学生关系（表）中增加一个班级属性，存储对应的班级属性值。</li>
+<li><strong>联系单独对应一个关系</strong>：<font color="red">由联系的属性和两端实体主键构成新关系模式，<code>n端</code>的主键作为该关系模式的主键</font>。<br>单独创建一个联系关系（表）来存储<u>班级编号</u>属性和<u>学号</u>属性，并选择<code>n端</code>的主键（<u>学号</u>）作为联系关系的主键。</li>
+</ol>
+<p>多对多关系<br>学生关系和课程关系之间的联系是m:n</p>
+<img src="image-20231205204433994.png" alt="image-20231205204433994" style="zoom:30%;">
+
+<p>这种<code>m:n</code>的关系只有一种关系模式：</p>
+<ul>
+<li><strong>联系单独对应一个关系</strong>：<font color="red">由联系的属性和参与联系的各个实体的主键属性构成新关系模式，该关系模式的主键由各实体的主键共同组成</font>。<br>单独创建一个联系关系（表）来存储<u>课程号</u>属性和<u>学号</u>属性和成绩属性，联系关系的主键是<u>课程号</u>和<u>学号</u>组成的联合主键。</li>
+</ul>
+<h4 id="逻辑结构设计Demos"><a href="#逻辑结构设计Demos" class="headerlink" title="逻辑结构设计Demos"></a>逻辑结构设计Demos</h4><p>Demo1：将教学管理<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ER%E5%9B%BE&spm=1001.2101.3001.7020">ER图</a>转换为关系模式</p>
+<p><img src="20150728110504289.jpeg" alt="img"><br>(1)把三个实体类型转换成三个模式：<br>　　 ①系（系编号，系名，电话）<br>　　 ②教师（教工号，姓名，性别，职称）<br>　　 ③课程（课程号，课程名，学分）<br>(2)对于1:1联系“主管”，可以在“系”模式中加入教工号（教工号为外键）。对于1:N联系“聘任”，可以在“教师”模式中加入系编号（系编号为外键）。对于1:N联系“开设”，可以在“课程”模式中加入系编号（系编号为外键）。</p>
+<ul>
+<li>　　 ①系（系编号，系名，电话，主管人的教工号）</li>
+<li>　　 ②教师（教工号，姓名，性别，职称，系编号）</li>
+<li>​    ③课程（课程号，课程名，学分，系编号）</li>
+</ul>
+<p>(3)第三步：对于M:N联系“任教”，则生成一个新的关系模式：<br>　　 ①任教（教工号，课程号，教材）<br>(4)这样，转换成的四个关系模式如下：<br>　　 ①系（系编号，系名，电话，主管人的教工号）<br>　　 ②教师（教工号，姓名，性别，职称，系编号）<br>　　 ③课程（课程号，课程名，学分，系编号）<br>　　 ④任教（教工号，课程号，教材）</p>
+<p>Demo2：一元联系类型ER图结构转换为关系模式</p>
+<p><img src="20150728110526893.jpeg" alt="img"><br>(1)运动员名次之间存在着1:1联系<br>　　 ①运动员（编号，姓名，性别，名次，上一名次编号）<br>(2)职工之间存在上下级联系，即1:N联系<br>　　 ①职工（工号，姓名，年龄，性别，经理工号）<br>(3)工厂的零件之间存在着组合关系（M:N联系）<br>　　 ①零件（零件号，零件名，规格）<br>　　 ②组成（零件号，子零件号，数量）</p>
+<p>Demo3：三元联系的ER图结构转换为关系模式</p>
+<p><img src="20150911234021180.jpeg" alt="img"><br>　　 ①仓库（仓库号，仓库名，地址）<br>　　 ②商店（商店号，商店名）<br>　　 ③商品（商品号，商品名）<br>　　 ④进货（商店号，商品号，仓库号，日期，数量）</p>
+<h2 id="5-数据库设计规范化"><a href="#5-数据库设计规范化" class="headerlink" title="5 数据库设计规范化"></a>5 数据库设计规范化</h2><blockquote>
+<p>数据库三大范式包含：1、第一范式(1NF)；2、第二范式(2NF)；3、第三范式(3NF)。其中，第一范式(1NF)的要求是属性不可分割;第二范式(2NF)的要求是满足第一范式，且不存在部分依赖；第三范式(3NF)的要求是满足第二范式，且不存在传递依赖。</p>
+</blockquote>
+<p><strong>明确一点：数据库设计时不是说遵循的范式等级越好就越好，范式越好就越牺牲数据库的性能，应该是实际业务场景为准。</strong></p>
+<h4 id="1、第一范式-1NF"><a href="#1、第一范式-1NF" class="headerlink" title="1、第一范式(1NF)"></a>1、第一范式(1NF)</h4><p>所谓第一范式（1NF）是指在关系模型中，对于添加的一个规范要求，所有的域都应该是原子性的，即<font color="cornflowerblue">数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项</font>。即实体中的某个属性有多个值时，必须拆分为不同的属性。在符合第一范式（1NF）表中的每个域值只能是实体的一个属性或一个属性的一部分。简而言之，第一范式就是无重复的域。</p>
+<blockquote>
+<p>在任何一个关系数据库中，第一范式（1NF）是对关系模式的设计基本要求，一般设计中都必须满足第一范式（1NF）。不过有些关系模型中突破了1NF的限制，这种称为非1NF的关系模型。换句话说，是否必须满足1NF的最低要求，主要依赖于所使用的关系模型。</p>
+</blockquote>
+<p>特点：属性不可分割，即<font color="red">每个属性都是不可分割的原子项</font>。(实体的属性即表中的列)</p>
+<p>Demo如下图中的Address属性就不满足第一范式，可以将Address拆分为Country和Address属性。</p>
+<img src="image-20231205210959289.png" alt="image-20231205210959289" style="zoom:25%;">
+
+<h4 id="2、第二范式-2NF"><a href="#2、第二范式-2NF" class="headerlink" title="2、第二范式(2NF)"></a>2、第二范式(2NF)</h4><p>在1NF的基础上，非码属性必须完全依赖于候选码（在1NF基础上消除非主属性对主码的部分函数依赖）。</p>
+<blockquote>
+<p>能够唯一表示实体的属性集称为码，主码即主键。</p>
+</blockquote>
+<p>第二范式（2NF）是在第一范式（1NF）的基础上建立起来的，即满足第二范式（2NF）必须先满足第一范式（1NF）。第二范式（2NF）<font color="cornflowerblue">要求实体的属性完全依赖于主关键字</font>。<strong>所谓完全依赖是指不能存在仅依赖主关键字一部分的属性，如果存在，那么这个属性和主关键字的这一部分应该分离出来形成一个新的实体，新实体与原实体之间是一对多的关系。</strong>为实现区分通常需要为表加上一个列，以存储各个实例的唯一标识。简而言之，第二范式就是在第一范式的基础上属性完全依赖于主键。</p>
+<p><strong>教材定义：在满足第一范式的条件下，每一个非主属性完全函数依赖于任何一个候选码。</strong></p>
+<p>特点：</p>
+<ul>
+<li>满足第一范式；</li>
+<li>第二范式需要确保数据表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言），<font color="red">每张表只描述一件事情</font>；</li>
+<li><font color="red">消除部分依赖，要求表中的每一列都完全依赖于主键（针对于组合主键），也就是不会出现某一列只和部分主键相关</font>。</li>
+</ul>
+<p>Demo1：“学分”字段完全依赖于“课程名称”字段，而不是依赖于主键“学号”字段，所以不符合第二范式，将“学分”字段删除之后就符合了。</p>
+<img src="image-20231205213614147.png" alt="image-20231205213614147" style="zoom:55%;">
+
+<p>Demo2：每个表只描述一件事。</p>
+<p>原始订单表中的“产品名称”和“规格”是依赖“产品编号”字段的，不符合第二范式，对其进行拆分为订单表和产品表，订单表中只有订单相关信息，产品表中只有产品相关信息，让每一个表只描述一件事情。</p>
+<img src="image-20231205214852663.png" alt="image-20231205214852663" style="zoom:40%;">
+
+<h4 id="3、第三范式-3NF"><a href="#3、第三范式-3NF" class="headerlink" title="3、第三范式(3NF)"></a>3、第三范式(3NF)</h4><p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）。</p>
+<p>第三范式（3NF）是第二范式（2NF）的一个子集，即满足第三范式（3NF）必须满足第二范式（2NF）。第三范式（3NF）<font color="red">要求一个关系中不包含已在其它关系已包含的非主关键字信息。</font>例如，存在一个部门信息表，其中每个部门有部门编号（dept_id）、部门名称、部门简介等信息。那么在员工信息表中列出部门编号后就不能再将部门名称、部门简介等与部门有关的信息再加入员工信息表中。如果不存在部门信息表，则根据第三范式（3NF）也应该构建它，否则就会有大量的数据冗余。简而言之，第三范式就是任意属性不依赖于其它非主属性，也就是在满足2NF的基础上，任何非主属性不得传递依赖于主属性。</p>
+<p><strong>教材定义：在满足第二范式的条件下，每一个非主属性既不依赖传递于码，也不部分依赖于码</strong>。</p>
+<p>特点：</p>
+<ul>
+<li>前提：满足第一范式和第二范式；</li>
+<li>第三范式需要确保数据表中的每一列数据表和主键直接相关，而不能间接相关；</li>
+<li>消除传递依赖，要求一张表中的每一列都和主键是直接依赖的，不是间接依赖，即任何两个非主键字段数值之间不存在函数依赖关系。</li>
+</ul>
+<p>Demo：订单表中的“总金额字段” = “单价” * “数量”，不符合第三范式，去掉“总金额”字段才符合。</p>
+<blockquote>
+<p>PS：其实这个订单表不符合第二范式，“单价”字段是依赖于“产品编号”字段，而不是主键“订单编号”。</p>
+</blockquote>
+<img src="image-20231205220043287.png" alt="image-20231205220043287" style="zoom:40%;">
+
+<blockquote>
+<h4 id="巴斯-科德范式（BCNF）"><a href="#巴斯-科德范式（BCNF）" class="headerlink" title="巴斯-科德范式（BCNF）"></a>巴斯-科德范式（BCNF）</h4><p>3NF基础上，任何主属性不能对主键子集依赖（在3NF基础上消除主属性对主码子集的依赖）。巴斯-科德范式（BCNF）是第三范式（3NF）的一个子集，即满足巴斯-科德范式（BCNF）必须满足第三范式（3NF）。通常情况下，巴斯-科德范式被认为没有新的设计规范加入，只是对第二范式与第三范式中设计规范要求更强，因而被认为是修正第三范式，也就是说，它事实上是对第三范式的修正，使数据库冗余度更小。这也是BCNF不被称为第四范式的原因。某些书上，根据范式要求的递增性将其称之为第四范式是不规范，也是更让人不容易理解的地方。而真正的第四范式，则是在设计规范中添加了对多值及依赖的要求。</p>
+</blockquote>
+<hr>
+<p><strong>参考文档：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_63006478/article/details/130952118">一文讲透实体-联系模型（E-R图）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_31856061/article/details/134558146">E-R图与关系模式</a></p>
+<p><a target="_blank" rel="noopener" href="https://worktile.com/kb/ask/30501.html">数据库三大范式</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Flora_SM/article/details/84645752?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-4-84645752-blog-134558146.235%5Ev39%5Epc_relevant_3m_sort_dl_base2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-4-84645752-blog-134558146.235%5Ev39%5Epc_relevant_3m_sort_dl_base2&utm_relevant_index=5">E-R图向关系模型的转换实例详解</a></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple/2023/12/05/E-R-Model/">https://maple_eitba.gitee.io/maple/2023/12/05/E-R-Model/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple_eitba.gitee.io/maple" target="_blank">Maple's  Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/maple/tags/E-R/">E-R</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/maple/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/maple/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/maple/2023/12/18/MySQL%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="MySQL之隐式类型转换"><img class="cover" src="https://mobiledev.tw/wp-content/uploads/2015/11/hour-of-code-logo-2-1024x528.png" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MySQL之隐式类型转换</div></div></a></div><div class="next-post pull-right"><a href="/maple/2023/11/07/Maven/" title="Maven"><img class="cover" src="/maple/top_img/maven.jpg" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Maven</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/maple/img/avatar.jpg" onerror="this.onerror=null;this.src='/maple/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">原创&引用博客,记录并分享学习经验...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93E-R%E6%A8%A1%E5%BC%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">数据库E-R模式设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1 数据库设计概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E4%BD%95%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%EF%BC%9F"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1何为数据库设计？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%85%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">数据库设计的全流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%BF%85%E9%A1%BB%E8%A6%81%E6%98%8E%E7%A1%AE%E7%9A%84%E5%87%A0%E4%B8%AA%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 必须要明确的几个概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">2 需求分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%A6%82%E5%BF%B5%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.</span> <span class="toc-text">3 概念设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%8E%B0%E5%AE%9E%E4%B8%96%E7%95%8C%E5%90%91%E6%9C%BA%E5%99%A8%E4%B8%96%E7%95%8C%E7%9A%84%E8%BF%87%E6%B8%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 现实世界向机器世界的过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-E-R-Model"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 E-R Model</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BC%95%E5%85%A5E-R%E5%9B%BE%EF%BC%9F"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">3.2.1 为什么要引入E-R图？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-E-R%E5%9B%BE%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">3.2.2 E-R图的构成</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%E5%AE%9E%E4%BD%93%E9%97%B4%E7%9A%84%E8%81%94%E7%B3%BB"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.2.3 实体间的联系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%E9%83%A8%E5%88%86%E9%94%AE"><span class="toc-number">1.3.4.</span> <span class="toc-text">4.2部分键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-E-R-%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%9B%86%E6%88%90"><span class="toc-number">1.3.5.</span> <span class="toc-text">3.5 E-R 模型的集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-1-%E5%90%88%E5%B9%B6"><span class="toc-number">1.3.6.</span> <span class="toc-text">3.5.1 合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-2-%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.7.</span> <span class="toc-text">3.5.2 优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.</span> <span class="toc-text">4 逻辑结构设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-E-R%E5%9B%BE%E8%BD%AC%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">3.2 E-R图转关系模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E4%B8%80%E5%AF%B9%E4%B8%80%E5%85%B3%E7%B3%BB"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">3.2.1 一对一关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1Demos"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">逻辑结构设计Demos</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%8C%96"><span class="toc-number">1.5.</span> <span class="toc-text">5 数据库设计规范化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-1NF"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">1、第一范式(1NF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F-2NF"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">2、第二范式(2NF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F-3NF"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">3、第三范式(3NF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%B4%E6%96%AF-%E7%A7%91%E5%BE%B7%E8%8C%83%E5%BC%8F%EF%BC%88BCNF%EF%BC%89"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">巴斯-科德范式（BCNF）</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/12/28/%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/" title="调用接口超时处理"><img src="/maple/img/codeonce.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="调用接口超时处理"/></a><div class="content"><a class="title" href="/maple/2023/12/28/%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/" title="调用接口超时处理">调用接口超时处理</a><time datetime="2023-12-28T03:05:51.000Z" title="发表于 2023-12-28 11:05:51">2023-12-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/12/28/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="用户中心的设计与实践"><img src="https://p3.itc.cn/images01/20201026/7b654ea012344b228921f291cf3bedc4.jpeg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="用户中心的设计与实践"/></a><div class="content"><a class="title" href="/maple/2023/12/28/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="用户中心的设计与实践">用户中心的设计与实践</a><time datetime="2023-12-28T02:53:57.000Z" title="发表于 2023-12-28 10:53:57">2023-12-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/12/18/MySQL%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="MySQL之隐式类型转换"><img src="https://mobiledev.tw/wp-content/uploads/2015/11/hour-of-code-logo-2-1024x528.png" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="MySQL之隐式类型转换"/></a><div class="content"><a class="title" href="/maple/2023/12/18/MySQL%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="MySQL之隐式类型转换">MySQL之隐式类型转换</a><time datetime="2023-12-18T09:53:10.000Z" title="发表于 2023-12-18 17:53:10">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/12/05/E-R-Model/" title="数据库E-R模式设计"><img src="/maple/top_img/er.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="数据库E-R模式设计"/></a><div class="content"><a class="title" href="/maple/2023/12/05/E-R-Model/" title="数据库E-R模式设计">数据库E-R模式设计</a><time datetime="2023-12-05T03:00:27.000Z" title="发表于 2023-12-05 11:00:27">2023-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/11/07/Maven/" title="Maven"><img src="/maple/top_img/maven.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Maven"/></a><div class="content"><a class="title" href="/maple/2023/11/07/Maven/" title="Maven">Maven</a><time datetime="2023-11-07T06:16:17.000Z" title="发表于 2023-11-07 14:16:17">2023-11-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/maple/js/utils.js"></script><script src="/maple/js/main.js"></script><script src="/maple/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/maple/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>用户中心的设计与实践 | Maple's  Blog</title><meta name="author" content="Maple"><meta name="copyright" content="Maple"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="亿级用户中心的设计与实践用户中心是互联网最为基础的核心系统，随着业务和用户的增长，势必会带来不断的挑战。如何在亿级的情况下保证系统的高可用，高性能以及高安全，本文能够给你一套实践方案。  本文讨论的是微服务框架下的用户中心，不涉及授权等功能；  用户中心，顾名思义就是管理用户的地方，几乎是所有互联网公司最为核心的子系统之一。它的核心功能是登录与注册，主要功能是修改密码、换绑手机号码、获取用户信息、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用户中心的设计与实践">
+<meta property="og:url" content="https://maple_eitba.gitee.io/maple/2023/12/28/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:site_name" content="Maple&#39;s  Blog">
+<meta property="og:description" content="亿级用户中心的设计与实践用户中心是互联网最为基础的核心系统，随着业务和用户的增长，势必会带来不断的挑战。如何在亿级的情况下保证系统的高可用，高性能以及高安全，本文能够给你一套实践方案。  本文讨论的是微服务框架下的用户中心，不涉及授权等功能；  用户中心，顾名思义就是管理用户的地方，几乎是所有互联网公司最为核心的子系统之一。它的核心功能是登录与注册，主要功能是修改密码、换绑手机号码、获取用户信息、">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p3.itc.cn/images01/20201026/7b654ea012344b228921f291cf3bedc4.jpeg">
+<meta property="article:published_time" content="2023-12-28T02:53:57.000Z">
+<meta property="article:modified_time" content="2024-02-07T15:06:11.478Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="用户中心设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p3.itc.cn/images01/20201026/7b654ea012344b228921f291cf3bedc4.jpeg"><link rel="shortcut icon" href="/maple/img/favicon.jpg"><link rel="canonical" href="https://maple_eitba.gitee.io/maple/2023/12/28/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/maple/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/maple/',
+  algolia: undefined,
+  localSearch: {"path":"/maple/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":22,"languages":{"author":"作者: Maple","link":"链接: ","source":"来源: Maple's  Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '用户中心的设计与实践',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-07 23:06:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/maple_background.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+
+preloader.initLoading()
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/maple/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://p3.itc.cn/images01/20201026/7b654ea012344b228921f291cf3bedc4.jpeg')"><nav id="nav"><span id="blog-info"><a href="/maple/" title="Maple's  Blog"><span class="site-name">Maple's  Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/maple/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/maple/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/maple/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/maple/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/maple/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/maple/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">用户中心的设计与实践</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-28T02:53:57.000Z" title="发表于 2023-12-28 10:53:57">2023-12-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-07T15:06:11.478Z" title="更新于 2024-02-07 23:06:11">2024-02-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/maple/categories/%E6%9E%B6%E6%9E%84/">架构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="亿级用户中心的设计与实践"><a href="#亿级用户中心的设计与实践" class="headerlink" title="亿级用户中心的设计与实践"></a>亿级用户中心的设计与实践</h1><p>用户中心是互联网最为基础的核心系统，随着业务和用户的增长，势必会带来不断的挑战。如何在亿级的情况下保证系统的高可用，高性能以及高安全，本文能够给你一套实践方案。</p>
+<blockquote>
+<p>本文讨论的是微服务框架下的用户中心，不涉及授权等功能；</p>
+</blockquote>
+<p>用户中心，顾名思义就是管理用户的地方，几乎是所有互联网公司最为核心的子系统之一。它的核心功能是登录与注册，主要功能是修改密码、换绑手机号码、获取用户信息、修改用户信息和一些延伸服务，同时还有登录之后生成Token以及校验Token的功能。下面我们从几个维度来拆解用户中心。</p>
+<h2 id="服务架构"><a href="#服务架构" class="headerlink" title="服务架构"></a>服务架构</h2><p>用户中心既需要为用户提供服务，也会承担其他业务的频繁调用；既然需要为用户提供服务，它就会自带一些业务逻辑，比如用户在登录过程中需要风控或短信的校验，那么就会存在不可用的风险。而比如获取用户信息的接口，则没有那么多的依赖，可能只需要调用数据库或者缓存就可以。获取用户信息接口要求稳定，而核心的登录注册接口也需要稳定，但是当我们在接口层面加一些策略或者修改的时候，不希望因为上线问题导致整个服务不可用，而且上线后，需要对整个服务功能做全量的回归，导致资源严重浪费。</p>
+<p>因此，基于业务特性，我们可以将用户中心拆成3个独立的微服务: 网关服务，核心服务，异步消费者服务。网关服务，提供http服务，聚合了各种业务逻辑和服务调用，比如登录时候需要校验的风控或者短信；核心服务，处理简单的业务逻辑以及数据存储，核心服务处在调用链路的终端，几乎不依赖调用其他服务，比如校验Token或者获取用户信息，他们就只依赖于redis或者数据库；而异步消费者服务，则处理并消费异步消息。下文会详细介绍。</p>
+<img src="image-20231228105854049.png" alt="image-20231228105854049" style="zoom:50%;">
+
+<p>这样的设计之后，当有新功能上线时，核心服务和异步消费服务几乎不需要重新发布，只需要发布网关服务，依赖我们核心服务的第三方非常放心，层级也非常的清晰。当然，这样做的代价就是服务的调用链路变长了。由于涉及到网关和核心服务，就需要发布两个服务，而且要做兼容性测试。</p>
+<h2 id="接口设计"><a href="#接口设计" class="headerlink" title="接口设计"></a>接口设计</h2><p>用户中心的接口涉及到用户的核心信息，安全性要求高；同时，承接了较多第三方的调用，可用性要求也高。因此，对用户中心的接口做以下设计：</p>
+<p>首先，接口可以拆分为面向Web和面向App的接口。Web接口需要做到跨域情况下的单点登录，加密、验签和token校验的方式也同App端的不一样。</p>
+<p>其次，对核心接口做特殊处理。比如登录接口，在逻辑和链路上做了一些优化。为什么要对这些接口做特殊处理呢？假如用户不能登录，用户会非常恐慌，客诉量会立马上来。</p>
+<p>那怎么做呢？</p>
+<p>一方面，我们将用户核心信息表做简单。用户的信息当中会包含userId、手机号码、密码、头像、昵称等字段，假如把用户的这些所有信息都保存在一张表中，那么这张表将会异常庞大，变更字段变得异常困难。因此，需要将用户表拆分（垂直分表），将核心的信息保存在用户表中，比如userId、username、手机号码、密码、盐值（随机生成）等；而一些如性别，头像，昵称等信息保存在用户资料表中。</p>
+<p>另一方面，我们需要将登录的核心链路做短，短到只依赖于读库。一般情况下，用户登录后，需要记录用户登录信息，调用风控或者短信等服务。对于登录链路来说，任何一个环节出现问题都有可能导致用户无法登录，那么怎么样才能做到最短的链路呢？方法就是依赖的服务可自动降级。比如说反欺诈校验出问题了，那么它自动降级后使用它的默认策略，极端情况下只做密码校验，主库挂了之后还能到从库读取用户信息。</p>
+<p>最后就是接口的安全性校验。对App接口我们需要做防重放和验签。验签可能大家比较熟悉，但是对防重放这个概念可能相对陌生。防重放，顾名思义就是防止请求重复发送。用户请求在特定时间段内只能请求一次。即使用户请求被攻击者挟持，在一段时间内也无法重复请求。如果攻击者想要篡改用户请求再发送，对不起，请求不会通过。得益于大数据的支持，结合终端，我们还可以把每个用户行为画像存储在系统中（或者调用第三方服务）。用户发起请求后，我们的接口会根据用户画像对用户进行诸如手机号码校验、实名认证、人脸或者活体校验。</p>
+<p><img src="640.png" alt="图片"></p>
+<h2 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h2><p>随着用户的增长，数据超过了1亿，怎么办？常见的办法就是分库分表。我们来分析一下用户中心常见的一些表结构：用户信息表，第三方登录关联表，用户事件表（操作日志表，登录日志表）。从上述表中可以看出来，用户相关的数据表增长相对缓慢，因为用户增长是有天花板的。用户事件表的增长是呈指数级增长，因为每个用户登录、变更等密码及变更手机号码等操作是不限次数。</p>
+<p>因此，首先我们可以先把用户信息表垂直切分。正如上面说的，将用户ID、密码、手机号、盐值等常见字段从用户信息表中拆分，其他用户相关的信息用单独一张表。另外，把用户事件表迁移至其他库中。相比于水平切分，垂直切分的代价相对较少，操作起来相对简单。用户核心信息表由于数据量相对较少，即使是亿级别的数据，利用数据库缓存的机制，也能够解决性能问题。</p>
+<p>其次，我们可以利用前后台业务的特性采用不同的方式来区别对待。对于用户侧前台访问：用户通过username/mobile登录或者通过uid来查询用户信息。用户侧信息的访问通常是单条数据的查询，我们可以通过索引多次查询来解决一致性和高可用问题。对于运营侧后台访问：根据年龄、性别、登录时间段、注册时间段等来进行查询，基本上都是批量分页查询。但是由于是内部系统，查询量低，对一致性要求低。如果用户侧和运营侧的查询采用同一个数据库，那么运营侧的排序查询会导致整个库的CPU上升，查询效率下降，影响到用户侧。因此，运营侧使用的数据库可以是和用户侧同样的MySQL离线库，如果想要增加运营侧的查询效率，可以采用ES非关系型数据库。ES支持分片与复制，方便水平分割和扩展，复制保证了ES的高可用与高吞吐，同时能够满足运营侧的查询需求。</p>
+<p>简单的理解：就是用户的请求和后台运营的请求，读取的数据库不一样，因为后台运营一般都是批量查询，会导致数据库的压力或者慢查询，可以考虑将其分开，使用MySQL离线库或者从库提供后台查询操作。</p>
+<p>最后，如果还是要水平切分来保证系统的性能，那么我们采取什么样的切分方式呢？常见的方法有索引表法和基因法。索引表法的思路主要是UID能够直接定位到库，但是手机号码或者username是无法直接定位到库的，需要建立一个索引表来记录mobile与UID或者username与UID的映射关系的方式来解决这个问题。通常这类数据比较少，可以不用分库分表，但是相比直接查询，多了一次数据库查询的同时，在新增数据的时候还多了一次映射关系的插入，事务变大。基因法的思路是我们将username或者mobile融入到UID中。具体做法如下：</p>
+<ol>
+<li>用户注册时，根据用户的手机号码，利用函数生成N bit的基因mobile_gen，使得mobile_gen=f(mobile);</li>
+<li>生成M bit全局唯一的id，作为用户标识；</li>
+<li>拼接M和N，作为UID赋给用户；</li>
+<li>根据N bit来取余来插入到特定数据库；</li>
+<li>查找用户数据的时候，将用户UID的后N bit取余来落到最终的库中。</li>
+</ol>
+<p>从上述过程中看，基因法只适用于某类经常查询的场景，比如用手机号码登录，如果用户使用username登录就比较麻烦了。因此大家也可以根据自己的业务场景来选择不同的方式水平切分。</p>
+<h2 id="Token之柔性降级"><a href="#Token之柔性降级" class="headerlink" title="Token之柔性降级"></a>Token之柔性降级</h2><p>用户登录之后，另一个重要的事情就是Token的生成与校验。用户的Token分为两类， 一类是web端登陆生成的Token， 这个Token可以和Cookie结合， 达到单点登陆的效果，在此不细说了。另外一类就是APP端登录生成的Token。用户在我们的APP输入用户名密码之后，服务端会对用户的用户名密码进行校验，成功之后从系统配置中心获取加密算法的版本以及秘钥，并按照一定的格式排列用户ID，手机号、随机码以及过期时间，经过一系列的加密之后，生成了Token之后并将其存入Redis缓存。而Token的校验就是把用户ID和Token组合并校验是否在Redis中存在。那么假如Redis不可用了怎么办呢？这里有一个高可用和自动降级的设计。当Redis不可用的时候， 服务端会生成一个特殊格式的Token。当校验Token的时候，会对Token的格式进行一个判断。</p>
+<p><img src="640-20231228111427761.png" alt="图片"></p>
+<p>假如判断为Redis不可用时生成的Token，那么服务端会对Token进行解密，而Token的生成是由用户ID，手机号、随机码和过期时间等数据按照特定顺序排列并加密而来的， 那么解密出来的数据中也包含了ID，手机号码，随机码和过期时间。服务端会根据获取到的数据查询数据库， 比对之后告诉用户是否登录成功。由于内存缓存redis和数据库缓存性能的差距，在redis不可用的情况下，降级有可能会导致数据库无法及时响应，因此需要在降级的方法上加入限流。</p>
+<p><img src="640-20231228111437617.png" alt="图片"></p>
+<p>此处的柔性降级为采用数据库来作为备用数据源。不过在高并发场景下，数据库不一定能够hold得住，可以考虑使用其他的缓存数据库来作为备数据源，Redis或者MongoDB等等。</p>
+<h2 id="数据安全"><a href="#数据安全" class="headerlink" title="数据安全"></a>数据安全</h2><p>数据安全对用户中心来说非常重要。敏感数据需要脱敏处理，对密码更是要做多重的加密处理。应用虽然有自己的安全策略，但如果把黑客限制在登录之前，那应用的安全性将得到大幅度的提升。互联网上用户明文数据遭到泄露的案件屡屡发生，因此各大企业对数据安全的认识也提到了前所未有的高度。而即使使用了MD5和salt的加密方式，依然可以使用彩虹表的方式来破解。那么用户中心对用户信息是怎么保存的呢？</p>
+<p>首先，正如上文中提到的用户密码、手机号等登录信息和其他的信息分离，而且在不同的数据库中。其次，对用户设置的密码进行黑名单校验，只要符合条件的弱密码，都会拒绝提交，因为不管使用了什么加密方式的弱密码，都极其容易破解。为什么呢？因为人的记性很差，大部分人总是最倾向于选择生日，单词等来当密码。6位纯数字可以生成100万个不同的密码，8位小写字母和数字的组合大概可以生成2.8万亿个不同的密码。一个规模为7.8万亿的密码库足以覆盖大部分用户的密码，对于不同的加密算法都可以拥有这样一个密码库，这也就是为什么大部分网站都建议用户使用8位以上数字加字母密码的原因。当然，如果一方面加了盐值，另一方面对密钥分开保管，破解难度会指数级增加。</p>
+<p>最后，可以用bcrypt/scrypt的方式来加密。bcrypt算法是基于Blowfish块密钥算法来实现的，bcrypt内部实现了随机加盐处理，使用bcrypt之后每次加密后的密文都不一样，同时还会使用内存初始化hash过程。由于使用内存，虽然在CPU上运行很快，但是在GPU上并行运算并不快。随着新的FPGA集成了大型RAM，解决了内存密集IO的问题，但是破解难度依然不小。而scrypt算法弥补了bcrypt算法的不足，它将CPU计算与内存使用开销都指数级提升了。bcrypt和scrypt算法能够有效抵御彩虹表，但是安全性的提升带来了用户登录性能的下降。用户登录注册并不是一个高并发的接口，所以影响并不会特别大。因此在安全和性能方面需要依据业务类型和大小来做平衡，并不是所有的应用都需要使用这种加密方式来保护用户密码。</p>
+<h2 id="异步消费设计"><a href="#异步消费设计" class="headerlink" title="异步消费设计"></a>异步消费设计</h2><p>此处的异步消费，就是上文提到的异步消费服务。用户在做完登录注册等操作后，需要记录用户的操作日志。同时，用户注册登录完毕后，下游业务需要对用户增加积分，赠送礼券等奖励操作。这些系统如果都同步依赖于用户中心，那么整个用户中心将异常庞大，链路非常冗长，也不符合业内的“大系统做小“的原则。依赖的服务不可用之后将会造成用户无法登录注册。因此，用户中心在用户操作完之后，将用户事件入库后发送至MQ，第三方业务监听用户事件。用户中心和下游业务解耦，同时用户操作事件入库后，在MQ不可用或者消息丢失的时候可做补偿处理。用户的画像数据也在很大程度上来源于此处的数据。</p>
+<h2 id="灵活多样的监控"><a href="#灵活多样的监控" class="headerlink" title="灵活多样的监控"></a>灵活多样的监控</h2><p>用户中心涉及到用户的登录注册更改密码等核心功能，能否及时发现系统的问题成为关键指标，因此对业务的监控显得尤为重要。需要对用户中心重要接口的QPS、机器的内存使用量、垃圾回收的时间、服务的调用时间等做详细的监控。当某个接口的调用量下降的时候，监控会及时发出报警。除了这些监控之外，还有对数据库Binlog的写入，前端组件，以及基于ZipKin全链路调用时间的监控，实现从用户发起端到结束端的全面监控，哪怕出现一点问题，监控随时会告诉你哪里出问题了。比如运营互动推广注册量下降的时候，用户中心就会发出报警，可以及时通知业务方改正问题，挽回损失。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文从服务架构设计，接口设计，token降级，数据安全和监控等方面介绍了亿级用户中心的设计，当然用户中心的设计远不止这些，还会包含用户数据的分库分表，熔断限流，第三方登录等，在本文中就不一一赘述。尽管本文中设计的用户中心能够满足大部分公司的需求，但是还存在一些比较大的挑战：在鉴权服务增长的情况下，如何平滑的从用户中心剥离；监控的侵入性以及监控的粒度的完善；另外服务的安全性、可用性、性能的提升永远都没有尽头，也是我们孜孜追求的目标。在未来的日子里，希望能够通过大家的努力，使用户中心的技术体系更上一层楼。</p>
+<hr>
+<p><strong>参考文档：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/hshFKM2mJSmmp7hPruXXEQ">亿级用户中心的设计与实践</a></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple_eitba.gitee.io/maple/2023/12/28/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5/">https://maple_eitba.gitee.io/maple/2023/12/28/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple_eitba.gitee.io/maple" target="_blank">Maple's  Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/maple/tags/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E8%AE%BE%E8%AE%A1/">用户中心设计</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/maple/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/maple/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/maple/2023/12/28/%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/" title="调用接口超时处理"><img class="cover" src="/maple/img/codeonce.jpg" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">调用接口超时处理</div></div></a></div><div class="next-post pull-right"><a href="/maple/2023/12/18/MySQL%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="MySQL之隐式类型转换"><img class="cover" src="https://mobiledev.tw/wp-content/uploads/2015/11/hour-of-code-logo-2-1024x528.png" onerror="onerror=null;src='/maple/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MySQL之隐式类型转换</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/maple/img/avatar.jpg" onerror="this.onerror=null;this.src='/maple/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/maple/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/maple/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/maple/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">原创&引用博客,记录并分享学习经验...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%BF%E7%BA%A7%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.</span> <span class="toc-text">亿级用户中心的设计与实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">服务架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.2.</span> <span class="toc-text">接口设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8"><span class="toc-number">1.3.</span> <span class="toc-text">分库分表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Token%E4%B9%8B%E6%9F%94%E6%80%A7%E9%99%8D%E7%BA%A7"><span class="toc-number">1.4.</span> <span class="toc-text">Token之柔性降级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8"><span class="toc-number">1.5.</span> <span class="toc-text">数据安全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%B6%88%E8%B4%B9%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.6.</span> <span class="toc-text">异步消费设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%B5%E6%B4%BB%E5%A4%9A%E6%A0%B7%E7%9A%84%E7%9B%91%E6%8E%A7"><span class="toc-number">1.7.</span> <span class="toc-text">灵活多样的监控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.8.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/12/28/%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/" title="调用接口超时处理"><img src="/maple/img/codeonce.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="调用接口超时处理"/></a><div class="content"><a class="title" href="/maple/2023/12/28/%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/" title="调用接口超时处理">调用接口超时处理</a><time datetime="2023-12-28T03:05:51.000Z" title="发表于 2023-12-28 11:05:51">2023-12-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/12/28/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="用户中心的设计与实践"><img src="https://p3.itc.cn/images01/20201026/7b654ea012344b228921f291cf3bedc4.jpeg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="用户中心的设计与实践"/></a><div class="content"><a class="title" href="/maple/2023/12/28/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="用户中心的设计与实践">用户中心的设计与实践</a><time datetime="2023-12-28T02:53:57.000Z" title="发表于 2023-12-28 10:53:57">2023-12-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/12/18/MySQL%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="MySQL之隐式类型转换"><img src="https://mobiledev.tw/wp-content/uploads/2015/11/hour-of-code-logo-2-1024x528.png" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="MySQL之隐式类型转换"/></a><div class="content"><a class="title" href="/maple/2023/12/18/MySQL%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="MySQL之隐式类型转换">MySQL之隐式类型转换</a><time datetime="2023-12-18T09:53:10.000Z" title="发表于 2023-12-18 17:53:10">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/12/05/E-R-Model/" title="数据库E-R模式设计"><img src="/maple/top_img/er.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="数据库E-R模式设计"/></a><div class="content"><a class="title" href="/maple/2023/12/05/E-R-Model/" title="数据库E-R模式设计">数据库E-R模式设计</a><time datetime="2023-12-05T03:00:27.000Z" title="发表于 2023-12-05 11:00:27">2023-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/maple/2023/11/07/Maven/" title="Maven"><img src="/maple/top_img/maven.jpg" onerror="this.onerror=null;this.src='/maple/img/404.jpg'" alt="Maven"/></a><div class="content"><a class="title" href="/maple/2023/11/07/Maven/" title="Maven">Maven</a><time datetime="2023-11-07T06:16:17.000Z" title="发表于 2023-11-07 14:16:17">2023-11-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/maple/js/utils.js"></script><script src="/maple/js/main.js"></script><script src="/maple/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/maple/js/search/local-search.js"></script></div></div></body></html>
