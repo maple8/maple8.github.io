@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://maple8.github.io/top_img/mysql.jpg">
 <meta property="article:published_time" content="2024-07-25T09:53:10.000Z">
-<meta property="article:modified_time" content="2024-07-26T03:07:58.287Z">
+<meta property="article:modified_time" content="2024-07-29T01:58:39.284Z">
 <meta property="article:author" content="Maple">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://maple8.github.io/top_img/mysql.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://maple8.github.io/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
@@ -56,7 +56,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-07-26 11:07:58'
+  postUpdate: '2024-07-29 09:58:39'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -177,7 +177,7 @@ window.addEventListener('load',()=> { preloader.endLoading() })
 if (false) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar1.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-running"></i><span> 体育</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/yuqiu/"><i class="fa-fw fas fa-volleyball-ball"></i><span> 羽毛球</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/top_img/mysql.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Maple's  Blog"><span class="site-name">Maple's  Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-running"></i><span> 体育</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/yuqiu/"><i class="fa-fw fas fa-volleyball-ball"></i><span> 羽毛球</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MySql-深入理解InnoDB数据结构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-25T09:53:10.000Z" title="发表于 2024-07-25 17:53:10">2024-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-26T03:07:58.287Z" title="更新于 2024-07-26 11:07:58">2024-07-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="MySQL-深入理解InnoDB数据结构"><a href="#MySQL-深入理解InnoDB数据结构" class="headerlink" title="MySQL-深入理解InnoDB数据结构"></a>MySQL-深入理解InnoDB数据结构</h1><h2 id="InnoDB行格式"><a href="#InnoDB行格式" class="headerlink" title="InnoDB行格式"></a>InnoDB行格式</h2><h3 id="行格式-Row-Format简介"><a href="#行格式-Row-Format简介" class="headerlink" title="行格式/Row Format简介"></a>行格式/Row Format简介</h3><p>我们平时是以记录为单位来向表中插入数据的，这些记录在磁盘上的存放方式也被称为 行格式 或者 记录格式 。</p>
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar1.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-running"></i><span> 体育</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/yuqiu/"><i class="fa-fw fas fa-volleyball-ball"></i><span> 羽毛球</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/top_img/mysql.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Maple's  Blog"><span class="site-name">Maple's  Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-blog"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-mug-hot"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 摄影</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-running"></i><span> 体育</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/yuqiu/"><i class="fa-fw fas fa-volleyball-ball"></i><span> 羽毛球</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MySql-深入理解InnoDB数据结构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-25T09:53:10.000Z" title="发表于 2024-07-25 17:53:10">2024-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-29T01:58:39.284Z" title="更新于 2024-07-29 09:58:39">2024-07-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="MySQL-深入理解InnoDB数据结构"><a href="#MySQL-深入理解InnoDB数据结构" class="headerlink" title="MySQL-深入理解InnoDB数据结构"></a>MySQL-深入理解InnoDB数据结构</h1><h2 id="InnoDB行格式"><a href="#InnoDB行格式" class="headerlink" title="InnoDB行格式"></a>InnoDB行格式</h2><h3 id="行格式-Row-Format简介"><a href="#行格式-Row-Format简介" class="headerlink" title="行格式/Row Format简介"></a>行格式/Row Format简介</h3><p>我们平时是以<strong>记录</strong>为单位来向表中插入数据的，这些<strong>记录在磁盘上的存放方式也被称为 行格式 或者 记录格式 。</strong></p>
 <p>InnooDB目前有四种行格式：</p>
 <ul>
 <li><strong>compact（简洁的）</strong></li>
@@ -188,11 +188,9 @@ if (false) {
 <p>创建表时可以指定它的 行格式 ：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> record_format_demo (</span><br><span class="line">  c1 <span class="type">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">  c2 <span class="type">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  c3 <span class="type">CHAR</span>(<span class="number">10</span>),</span><br><span class="line">  c4 <span class="type">VARCHAR</span>(<span class="number">10</span>)</span><br><span class="line">) CHARSET <span class="operator">=</span> ascii ROW_FORMAT <span class="operator">=</span> COMPACT;</span><br></pre></td></tr></table></figure>
 
-<h4 id="COMPACT行格式"><a href="#COMPACT行格式" class="headerlink" title="COMPACT行格式"></a>COMPACT行格式</h4><p>废话不多说，直接看图：</p>
-<p>COMPACT行格式<br>废话不多说，直接看图：</p>
-<img src="0d397bc09e2077608315c0e679868ef3.png" alt="image-20221026171111339" style="zoom:40%;">
+<h4 id="COMPACT行格式"><a href="#COMPACT行格式" class="headerlink" title="COMPACT行格式"></a>COMPACT行格式</h4><img src="0d397bc09e2077608315c0e679868ef3.png" alt="image-20221026171111339" style="zoom:40%;">
 
-<p>一条完整的记录其实可以被分为 <strong>记录的额外信息</strong> 和 <strong>记录的真实数据</strong> 两大部分。</p>
+<p>Compact行格式中，一条完整的记录可以被分为 <strong>记录的额外信息</strong> 和 <strong>记录的真实数据</strong> 两大部分。</p>
 <p><strong>变长字段长度列表</strong><br>MySQL 支持一些变长的数据类型，比如 VARCHAR(M) 、 VARBINARY(M) 、各种 TEXT 类型，各种 BLOB 类型，变长字段中存储多少字节的数据是不固定的，所以我们在存储真实数据的时候需要顺便把这些数据占用的字节数也存起来，这样才不至于把 MySQL 服务器搞懵。</p>
 <p>在 Compact 行格式中，把所有变长字段的真实数据占用的字节长度都存放在记录的开头部位，从而形成一个变长字段长度列表，各变长字段数据占用的字节数按照列的顺序逆序存放，我们再次强调一遍，是<strong>逆序存放</strong>！</p>
 <img src="44db9739e0b8b5bdf96f57e747f2ecb0-20240725152318369.png" alt="image-20221026171932292" style="zoom:50%;">
@@ -201,7 +199,7 @@ if (false) {
 <img src="e0fce94a08f70c6d0c533ea741bbd4d7.png" alt="image-20221026172026887" style="zoom:40%;">
 
 <p>另外需要注意的一点是，<strong>变长字段长度列表中只存储值为 非NULL 的列内容占用的长度，值为 NULL 的列的长度是不储存的 。</strong></p>
-<p><strong>NULL值列表</strong><br>如果表中没有允许存储 NULL 的列，则 NULL值列表 也不存在了，否则将每个允许存储 NULL 的列对应一个二进制位，二进制位按照列的顺序逆序排列，二进制位表示的意义如下：</p>
+<p><strong>NULL值列表</strong><br>如果表中没有允许存储 NULL 的列，则 NULL值列表 也不存在了，否则将每个允许存储 NULL 的列对应一个二进制位，<strong>二进制位按照列的顺序逆序排列</strong>，二进制位表示的意义如下：</p>
 <ul>
 <li>二进制位的值为 1 时，代表该列的值为 NULL 。</li>
 <li>二进制位的值为 0 时，代表该列的值不为 NULL 。</li>
@@ -219,26 +217,28 @@ if (false) {
 <img src="b51854a8924299ff9fe1f6447f3674c5.png" alt="image-20221026175507943" style="zoom:67%;">
 
 <p>这些二进制位代表的详细信息如下表：（只需要看一遍混个脸熟，等之后用到这些属性的时候我们再回过头来看）</p>
-<img src="1fade18678a12826913b4143e1910f0c.png" alt="image-20221026175558963" style="zoom:50%;">
+<img src="a0a0f760c496848f621f212a98ed42f8.png" alt="image-20221101222608679" style="zoom:45%;">
 
-<h5 id="记录的真实数据"><a href="#记录的真实数据" class="headerlink" title="记录的真实数据"></a>记录的真实数据</h5><p>对于 record_format_demo 表来说， 记录的真实数据 除了 c1 、 c2 、 c3 、 c4 这几个我们自己定义的列的数据以外， MySQL 会为每个记录默认的添加一些列（也称为 <strong>隐藏列</strong> ），具体的列如下：</p>
-<img src="292da1d6fb645eab251dac34edb11d5d.png" alt="image-20221026175711411" style="zoom:60%;">
+<p><strong>记录的真实数据</strong></p>
+<p>对于 record_format_demo 表来说， 记录的真实数据 除了 c1 、 c2 、 c3 、 c4 这几个我们自己定义的列的数据以外， <strong>MySQL 会为每个记录默认的添加一些列（也称为 隐藏列 ）</strong>，具体的列如下：</p>
+<img src="292da1d6fb645eab251dac34edb11d5d.png" alt="image-20221026175711411" style="zoom:50%;">
 
+<blockquote>
 <p><strong>InnoDB 表对主键的生成策略</strong><br><strong>优先使用用户自定义的主键作为主键，如果用户没有定义主键，则选取一个 Unique 键作为主键，如果表中连 Unique 键都没有定义的话，则 InnoDB 会为表默认添加一个名为row_id 的隐藏列作为主键。</strong></p>
+</blockquote>
 <p>因为表 record_format_demo 并没有定义主键，所以 MySQL 服务器会为每条记录增加上述的3个列。现在看一下加上 记录的真实数据 的两个记录长什么样吧：</p>
 <img src="ffb9524072145767a25ba2ad2d3cbcb2.png" alt="image-20221026175843625" style="zoom:67%;">
 
-<p><strong>CHAR(M)列的存储格式</strong><br>record_format_demo 表的 c1 、 c2 、 c4 列的类型是 VARCHAR(10) ，而 c3 列的类型是 CHAR(10) ，我们说在Compact 行格式下只会把变长类型的列的长度逆序存到 变长字段长度列表 中。</p>
-<p>但是这只是因为我们的 record_format_demo 表采用的是 ascii 字符集，这个字符集是一个定长字符集，也就是说表示一个字符采用固定的一个字节，如果采用变长的字符集（也就是表示一个字符需要的字节数不确定，比如gbk 表示一个字符要12个字节、 utf8 表示一个字符要13个字节等）的话， c3 列的长度也会被存储到 变长字段长度列表 中。</p>
-<img src="a161a952409b6db46e24362d72b288ec.png" alt="image-20221026181815967" style="zoom: 50%;">
+<p><strong>CHAR(M)列的存储格式</strong><br>record_format_demo 表的 c1 、 c2 、 c4 列的类型是 VARCHAR(10) ，而 c3 列的类型是 CHAR(10) ，我们说在Compact 行格式下只会把变长类型的列的长度逆序存到 变长字段长度列表 中。但是这只是因为我们的 record_format_demo 表采用的是 ascii 字符集，这个字符集是一个定长字符集，也就是说表示一个字符采用固定的一个字节，如果采用变长的字符集（也就是表示一个字符需要的字节数不确定，比如gbk 表示一个字符要12个字节、 utf8 表示一个字符要13个字节等）的话， c3 列的长度也会被存储到 变长字段长度列表 中。</p>
+<img src="a161a952409b6db46e24362d72b288ec.png" alt="image-20221026181815967" style="zoom: 45%;">
 
 <img src="ccb39b9a4e6ac3ca2ff798c4118e1d58.png" alt="image-20221026181821951" style="zoom:50%;">
 
-<p>这就意味着：对于 CHAR(M) 类型的列来说，当列采用的是定长字符集时，该列占用的字节数不会被加到变长字段长度列表，而如果采用变长字符集时，该列占用的字节数也会被加到变长字段长度列表。</p>
-<p>另外有一点还需要注意，变长字符集的 CHAR(M) 类型的列要求至少占用 M 个字节，而VARCHAR(M) 却没有这个要求。比方说对于使用 utf8 字符集的 CHAR(10) 的列来说，该列存储的数据字节长度的范围是10～30个字节。即使我们向该列中存储一个空字符串也会占用 10 个字节，这是怕将来更新该列的值的字节长度大于原有值的字节长度而小于10个字节时，可以在该记录处直接更新，而不是在存储空间中重新分配一个新的记录空间，导致原有的记录空间成为所谓的碎片。</p>
+<p>这就意味着：对于 CHAR(M) 类型的列来说，当列采用的是定长字符集时，该列占用的字节数不会被加到变长字段长度列表中，而如果采用变长字符集时，该列占用的字节数也会被加到变长字段长度列表中。</p>
+<p>另外有一点还需要注意，变长字符集的 CHAR(M) 类型的列要求至少占用 M 个字节，而VARCHAR(M) 却没有这个要求。比方说<strong>对于使用 utf8 字符集的 CHAR(10) 的列来说，该列存储的数据字节长度的范围是10～30个字节，即使我们向该列中存储一个空字符串也会占用 10 个字节。这是因为怕将来更新该列的值的字节长度大于原有值的字节长度而小于10个字节时，可以在该记录处直接更新，而不是在存储空间中重新分配一个新的记录空间，导致原有的记录空间成为所谓的碎片。</strong></p>
 <h4 id="Redundant行格式"><a href="#Redundant行格式" class="headerlink" title="Redundant行格式"></a>Redundant行格式</h4><p>其实知道了 Compact 行格式之后，其他的行格式就是依葫芦画瓢了。Redundant 行格式是MySQL5.0 之前用的一种行格式，也就是说它已经非常老了，此处就不做介绍了。</p>
 <h4 id="Dynamic和Compressed行格式"><a href="#Dynamic和Compressed行格式" class="headerlink" title="Dynamic和Compressed行格式"></a>Dynamic和Compressed行格式</h4><p>下边要介绍另外两个行格式， Dynamic 和 Compressed 行格式，我现在使用的 MySQL 版本是 5.7，它的默认行格式就是 Dynamic ，这俩行格式和 Compact 行格式挺像，只不过在处理 行溢出 数据时有点儿分歧，它们不会在记录的真实数据处存储字段真实数据的前 768 个字节，而是把所有的字节都存储到其他页面中，只在记录的真实数据处存储其他页面的地址，就像这样：</p>
-<img src="9dd191cde47ad01dc85a23baf53c5e55.png" alt="image-20221026182813125" style="zoom:50%;">
+<img src="9dd191cde47ad01dc85a23baf53c5e55.png" alt="image-20221026182813125" style="zoom:35%;">
 
 <p>Compressed 行格式和 Dynamic 不同的一点是， Compressed 行格式会采用压缩算法对页面进行压缩，以节省空间。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
@@ -254,15 +254,15 @@ if (false) {
 </li>
 </ol>
 </li>
-<li><p>一个页一般是 16KB ，当记录中的数据太多，当前页放不下的时候，会把多余的数据存储到其他页中，这种现象称为 行溢出 。</p>
+<li><p><strong>一个页一般是 16KB ，当记录中的数据太多，当前页放不下的时候，会把多余的数据存储到其他页中，这种现象称为 行溢出 。</strong></p>
 </li>
 </ol>
-<h2 id="InnoDB页简介"><a href="#InnoDB页简介" class="headerlink" title="InnoDB页简介"></a>InnoDB页简介</h2><p>InnoDB 是一个将表中的数据存储到磁盘上的存储引擎，所以即使关机后重启我们的数据还是存在的。而真正处理数据的过程是发生在内存中的，所以需要把磁盘中的数据加载到内存中，如果是处理写入或修改请求的话，还需要把内存中的内容刷新到磁盘上。而我们知道读写磁盘的速度非常慢，和内存读写在速度上差了几个数量级，所以当我们想从表中获取某些记录时， InnoDB 存储引擎需要一条一条的把记录从磁盘上读出来么？</p>
+<h2 id="InnoDB数据页"><a href="#InnoDB数据页" class="headerlink" title="InnoDB数据页"></a>InnoDB数据页</h2><p>InnoDB 是一个将表中的数据存储到磁盘上的存储引擎，所以即使关机后重启我们的数据还是存在的。而真正处理数据的过程是发生在内存中的，所以需要把磁盘中的数据加载到内存中，如果是处理写入或修改请求的话，还需要把内存中的内容刷新到磁盘上。而我们知道读写磁盘的速度非常慢，和内存读写在速度上差了几个数量级，所以当我们想从表中获取某些记录时， InnoDB 存储引擎需要一条一条的把记录从磁盘上读出来么？</p>
 <p>不，那样会慢死，InnoDB 采取的方式是：<strong>将数据划分为若干个页，以页作为磁盘和内存之间交互的基本单位，InnoDB中页的大小一般为 16 KB。</strong>也就是在一般情况下，一次最少从磁盘中读取16KB的内容到内存中，一次最少把内存中的16KB内容刷新到磁盘中。</p>
 <p>数据页代表的这块 16KB 大小的存储空间可以被划分为多个部分，不同部分有不同的功能，各个部分如图所示：</p>
-<img src="8b127532213ece405928035df49af51e.png" alt="image-20221101220324116" style="zoom:50%;">
+<img src="8b127532213ece405928035df49af51e.png" alt="image-20221101220324116" style="zoom:45%;">
 
-<p>从图中可以看出，一个 InnoDB 数据页的存储空间大致被划分成了 7 个部分，有的部分占用的字节数是确定的，有的部分占用的字节数是不确定的。下边我们用表格的方式来大致描述一下这7个部分都存储一些啥内容（快速的瞅一眼就行了）：</p>
+<p>从图中可以看出，一个 InnoDB 数据页的存储空间大致被划分成了 7 个部分，有的部分占用的字节数是确定的，有的部分占用的字节数是不确定的。下边我们用表格的方式来大致描述一下这7个部分都存储一些啥内容：</p>
 <img src="7f3c0986b9f8e367f199044f16de668d.png" alt="image-20221101220439530" style="zoom:67%;">
 
 <h3 id="记录在页中的存储"><a href="#记录在页中的存储" class="headerlink" title="记录在页中的存储"></a>记录在页中的存储</h3><ul>
@@ -272,7 +272,8 @@ if (false) {
 </ul>
 <img src="29365666f75d75e1b4389ea4bb316dd6.png" alt="image-20221101220811539" style="zoom:67%;">
 
-<h4 id="记录头信息的秘密"><a href="#记录头信息的秘密" class="headerlink" title="记录头信息的秘密"></a>记录头信息的秘密</h4><p>为了故事的顺利发展，我们先创建一个表：</p>
+<p><strong>记录头信息的秘密</strong></p>
+<p>我们先创建一个表：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> page_demo(</span><br><span class="line">  c1 <span class="type">INT</span>,</span><br><span class="line">  c2 <span class="type">INT</span>,</span><br><span class="line">  c3 <span class="type">VARCHAR</span>(<span class="number">10000</span>),</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (c1)</span><br><span class="line">) CHARSET <span class="operator">=</span> ascii ROW_FORMAT <span class="operator">=</span> Compact;</span><br></pre></td></tr></table></figure>
 
 <p>这个新创建的 page_demo 表有3个列，其中 c1 和 c2 列是用来存储整数的， c3 列是用来存储字符串的。需要注意的是，我们把 c1 列指定为主键，所以在具体的行格式中InnoDB就没必要为我们去创建那个所谓的 row_id 隐藏列了。而且我们为这个表指定了 ascii 字符集以及 Compact 的行格式。所以这个表中记录的行格式示意图就是这样的：</p>
@@ -285,62 +286,151 @@ if (false) {
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> page_demo <span class="keyword">VALUES</span>(<span class="number">1</span>, <span class="number">100</span>, <span class="string">&#x27;aaaa&#x27;</span>), (<span class="number">2</span>, <span class="number">200</span>, <span class="string">&#x27;bbbb&#x27;</span>), (<span class="number">3</span>, <span class="number">300</span>, <span class="string">&#x27;cccc&#x27;</span>), (<span class="number">4</span>, <span class="number">400</span>, <span class="string">&#x27;dddd&#x27;</span>); </span><br></pre></td></tr></table></figure>
 
 <p>为了方便分析这些记录在 页 的 User Records 部分中是怎么表示的，把记录中头信息和实际的列数据都用十进制表示出来了（其实是一堆二进制位），所以这些记录的示意图就是：</p>
-<img src="1f9c34a6ccebb4744acf290baa8e97c5.png" alt="image-20221101222910182" style="zoom:50%;">
+<img src="1f9c34a6ccebb4744acf290baa8e97c5.png" alt="image-20221101222910182" style="zoom:60%;">
 
 <p>看这个图的时候需要注意一下，各条记录在 User Records 中存储的时候并没有空隙，这里只是为了大家观看方便才把每条记录单独画在一行中。我们对照着这个图来看看<strong>记录头信息</strong>中的各个属性是啥意思：</p>
 <ul>
-<li><p>delete_mask：</p>
+<li><p><strong>delete_mask：</strong></p>
 <ul>
-<li>这个属性标记着当前记录是否被删除，占用1个二进制位，值为 0 的时候代表记录并没有被删除，为 1 的时候代表记录被删除掉了。</li>
-<li>被删除的记录还在 页 中么？是的，你以为它删除了，可它还在真实的磁盘上。这些被删除的记录之所以不立即从磁盘上移除，是因为移除它们之后把其他的记录在磁盘上重新排列需要性能消耗，所以只是打一个删除标记而已，所有被删除掉的记录都会组成一个所谓的 垃圾链表 ，在这个链表中的记录占用的空间称之为所谓的 可重用空间 ，之后如果有新记录插入到表中的话，可能把这些被删除的记录占用的存储空间覆盖掉。</li>
+<li><p>这个属性标记着当前记录是否被删除，占用1个二进制位，<strong>值为 0 代表记录并没有被删除，为 1 代表记录被删除掉了。</strong></p>
+</li>
+<li><p><strong>被删除的记录还在 页 中么？</strong></p>
+<p><strong>是的，你以为它删除了，可它还在真实的磁盘上。这些被删除的记录之所以不立即从磁盘上移除，是因为移除它们之后把其他的记录在磁盘上重新排列需要性能消耗，所以只是打一个删除标记而已，所有被删除掉的记录都会组成一个所谓的 垃圾链表 ，在这个链表中的记录占用的空间称之为所谓的 可重用空间 ，之后如果有新记录插入到表中的话，可能把这些被删除的记录占用的存储空间覆盖掉。</strong></p>
+</li>
 </ul>
 </li>
-<li><p>min_rec_mask：</p>
-<ul>
-<li>B+树的每层非叶子节点中的最小记录都会添加该标记。</li>
-</ul>
+<li><p><strong>min_rec_mask：</strong></p>
+</li>
+<li><p>B+树的每层非叶子节点中的最小记录都会添加该标记。</p>
 </li>
 <li><p>n_owned ：这个暂时保密，稍后它就是主角～</p>
 </li>
-<li><p>heap_no：</p>
+<li><p><strong>heap_no：</strong></p>
 <ul>
-<li>这个属性表示当前记录在本页中的位置，从图中可以看出来，我们插入的4条记录在本 页 中的位置分别是： 2 、 3 、 4 、 5 。是不是少了点啥？是的，怎么不见 heap_no 值为 0 和 1 的记录呢？<br>这其实是设计 InnoDB 者的一个小把戏，他们自动给每个页里边儿加了两个记录，由于这两个记录并不是我们自己插入的，所以有时候也称为 伪记录 或者 虚拟记录 。这两个伪记录一个代表 最小记录 ，一个代表 最大记录 。</li>
-</ul>
-</li>
-</ul>
-<img src="1831956c0942982c35bcf060a5871963.png" alt="image-20221101223918314" style="zoom:33%;">
-
-<p>一下哈~，记录可以比大小么？是的，记录也可以比大小，对于一条完整的记录来说，比较记录的大小就是比较 主键 的大小。比方说我们插入的4行记录的主键值分别是： 1 、 2 、 3 、 4 ，这也就意味着这4条记录的大小从小到大依次递增。<br>由于这两条记录不是我们自己定义的记录，所以它们并不存放在 页 的 User Records 部分，他们被单独放在一个称为 Infimum + Supremum 的部分，如图所示：</p>
-<img src="402e7694f6ce11b952cf06760afcb65c.png" alt="image-20221101224028919" style="zoom:67%;">
-
-<ul>
+<li><p>这个属性表示当前记录在本页中的位置，从图中可以看出来，我们插入的4条记录在本 页 中的位置分别是： 2 、 3 、 4 、 5 。是不是少了点啥？是的，怎么不见 heap_no 值为 0 和 1 的记录呢？<br>这其实是设计 InnoDB 者的一个小把戏，他们<strong>自动给每个页里边儿加了两个记录</strong>，由于这两个记录并不是我们自己插入的，所以有时候也称为 <strong>伪记录</strong> 或者 <strong>虚拟记录</strong> 。<strong>这两个伪记录一个代表 最小记录 ，一个代表 最大记录 。</strong></p>
+<img src="1831956c0942982c35bcf060a5871963.png" alt="image-20221101223918314" style="zoom:33%;"></li>
+<li><p>记录可以比大小么？</p>
+<p>是的，记录也可以比大小，<strong>对于一条完整的记录来说，比较记录的大小就是比较 主键 的大小。</strong>比方说我们插入的4行记录的主键值分别是： 1 、 2 、 3 、 4 ，这也就意味着这4条记录的大小从小到大依次递增。<br>由于这两条记录不是我们自己定义的记录，所以它们并不存放在 页 的 User Records 部分，他们被单独放在一个称为 Infimum + Supremum 的部分，如图所示：</p>
+<img src="402e7694f6ce11b952cf06760afcb65c.png" alt="image-20221101224028919" style="zoom:60%;"></li>
 <li><p>从图中我们可以看出来，最小记录和最大记录的 heap_no 值分别是 0 和 1 ，也就是说它们的位置最靠前。</p>
 </li>
-<li><p>record_type：</p>
-<p>这个属性表示当前记录的类型，一共有4种类型的记录：<br>0 表示普通记录<br>1 表示B+树非叶节点记录<br>2 表示最小记录<br>3 表示最大记录<br>从图中我们也可以看出来，我们自己插入的记录就是普通记录，它们的record_type 值都是 0 ，而最小记录和最大记录的 record_type 值分别为 2 和 3 。</p>
+</ul>
+</li>
+<li><p><strong>record_type：</strong></p>
+<p>这个属性表示当前记录的类型，一共有4种类型的记录：</p>
+<ul>
+<li>0 表示普通记录</li>
+<li>1 表示B+树非叶节点记录</li>
+<li>2 表示最小记录</li>
+<li>3 表示最大记录</li>
+</ul>
+<p>从图中我们也可以看出来，我们自己插入的记录就是普通记录，它们的record_type 值都是 0 ，而最小记录和最大记录的 record_type 值分别为 2 和 3 。</p>
+</li>
+<li><p><strong>next_record：</strong></p>
+<p>它表示从当前记录的真实数据到下一条记录的真实数据的地址偏移量。<br>比方说第一条记录的 next_record 值为 32 ，意味着从第一条记录的真实数据的地址处向后找 32 个字节便是下一条记录的真实数据。如果你熟悉数据结构的话，就立即明白了，这其实是个链表 ，可以通过一条记录找到它的下一条记录。<strong>下一条记录 是按照主键值由小到大的顺序的下一条记录。</strong>而且<strong>规定 Infimum记录（也就是最小记录） 的下一条记录就是本页中主键值最小的用户记录，而本页中主键值最大的用户记录的下一条记录就是 Supremum记录（也就是最大记录）。</strong></p>
 </li>
 </ul>
-<p>next_record：</p>
-<p>它表示从当前记录的真实数据到下一条记录的真实数据的地址偏移量。<br>比方说第一条记录的 next_record 值为 32 ，意味着从第一条记录的真实数据的地址处向后找 32 个字节便是下一条记录的真实数据。如果你熟悉数据结构的话，就立即明白了，这其实是个链表 ，可以通过一条记录找到它的下一条记录。<br>下一条记录 是按照主键值由小到大的顺序的下一条记录。而且规定 Infimum记录（也就是最小记录） 的下一条记录就是本页中主键值最小的用户记录，而本页中主键值最大的用户记录的下一条记录就是 Supremum记录（也就是最大记录）</p>
-<img src="fd3b00f40c2b6d0968498ad617aa9a35.png" alt="image-20221101224819448" style="zoom:67%;">
+<img src="fd3b00f40c2b6d0968498ad617aa9a35.png" alt="image-20221101224819448" style="zoom:55%;">
 
-<ul>
-<li>如果从中删除掉一条记录，这个链表也是会跟着变化的，比如我们把第2条记录删掉：</li>
-<li><img src="384a6819fb01d521de8ec19d9bd04313.png" alt="image-20221101225158276"></li>
-</ul>
+<p>​    如果从中删除掉一条记录，这个链表也是会跟着变化的，比如我们把第2条记录删掉：</p>
+<img src="384a6819fb01d521de8ec19d9bd04313.png" alt="image-20221101225158276" style="zoom:90%;">
+
 <p>从图中可以看出来，删除第2条记录前后主要发生了这些变化： 第2条记录并没有从存储空间中移除，而是把该条记录的delete_mask值设置为1。 第2条记录的next_record值变为了0，意味着该记录没有下一条记录了。 第1条记录的next_record指向了第3条记录。 还有一点你可能忽略了，就是最大记录的n_owned值从5变成了4，关于这一点的变化我们稍后会详细说明的。</p>
+<p>如果我们再次把这条记录插入到表中的话：</p>
+<img src="1cf0a5223fd9965581f11e64378930cb.png" alt="image-20221101225324511" style="zoom: 50%;">
+
+<p>从图中可以看到，InnoDB并没有因为新记录的插入而为它申请新的存储空间，而是直接复用了原来被删除记录的存储空间（可重用空间）。当数据页中存在多条被删除掉的记录时，这些记录的next_record属性将会把这些被删除掉的记录组成一个垃圾链表，以备之后重用这部分存储空间。</p>
+<h3 id="Page-Directory（页目录）"><a href="#Page-Directory（页目录）" class="headerlink" title="Page Directory（页目录）"></a>Page Directory（页目录）</h3><p>现在我们了解了<strong>记录在页中按照主键值由小到大顺序串联成一个单链表</strong>，那如果我们想根据主键值查找页中的某条记录该咋办呢？</p>
+<p>比如说这样的查询语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> page_demo <span class="keyword">WHERE</span> c1 <span class="operator">=</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Innodb查找方案：</strong><br>我们平常想从一本书中查找某个内容的时候，一般会先看目录，找到需要查找的内容对应的书的页码，然后到对应的页码查看内容。 InnoDB 设计者们为我们的记录也制作了一个类似的目录，他们的制作过程是这样的：</p>
+<ol>
+<li>将所有正常的记录（包括最大和最小记录，不包括标记为已删除的记录）划分为几个组。</li>
+<li>每个组的最后一条记录（也就是组内最大的那条记录）的头信息中的 n_owned 属性表示该记录拥有多少条记录，也就是该组内共有几条记录。</li>
+<li>将每个组的最后一条记录的地址偏移量单独提取出来按顺序存储到靠近 页 的尾部的地方，这个地方就是所谓的 Page Directory ，也就是 页目录 。页面目录中的这些地址偏移量被称为 槽 （英文名： Slot ），所以这个页面目录就是由 槽 组成的。</li>
+</ol>
+<p>比方说现在的 page_demo 表中正常的记录共有6条， InnoDB 会把它们分成两组，第一组中只有一个最小记录，第二组中是剩余的5条记录，看下边的示意图：</p>
+<img src="f80a48f6be52834ac92d65b4b9f675d9.png" alt="image-20221101225810821" style="zoom: 50%;">
+
+<p>从这个图中我们需要注意这么几点：</p>
 <ul>
-<li><p>如果我们再次把这条记录插入到表中的话</p>
+<li><p>注意最小和最大记录的头信息中的n_owned属性 最小记录的n_owned值为1，这就代表着以最小记录结尾的这个分组中只有1条记录，也就是最小记录本身。 最大记录的n_owned值为5，这就代表着以最大记录结尾的这个分组中只有5条记录，包括最大记录本身还有我们自己插入的4条记录。</p>
 </li>
-<li><img src="1cf0a5223fd9965581f11e64378930cb.png" alt="image-20221101225324511" style="zoom:67%;"></li>
-<li><p>从图中可以看到，InnoDB并没有因为新记录的插入而为它申请新的存储空间，而是直接复用了原来被删除记录的存储空间。</p>
+<li><p>所以 最小记录的 n_owned 是 1， 当前最大记录的 n_owned 是 5</p>
+<img src="680138f6daeb51294aa687956bca06e9.png" alt="image-20221101230038607" style="zoom:50%;"></li>
+<li><p>之后每插入一条记录，都会从页目录中找到主键值比本记录的主键值大并且差值最小的槽，然后把该槽对应的记录的n_owned值加1，表示本组内又添加了一条记录，直到该组中的记录数等于8个。</p>
 </li>
-<li><p>当数据页中存在多条被删除掉的记录时，这些记录的next_record属性将会把这些被删除掉的记录组成一个垃圾链表，以备之后重用这部分存储空间。</p>
+<li><p>在一个组中的记录数等于8个后再插入一条记录时，会将组中的记录拆分成两个组，一个组中4条记录，另一个5条记录。这个过程会在页目录中新增一个槽来记录这个新增分组中最大的那条记录的偏移量。</p>
+</li>
+<li><p>再次添加12条数据</p>
+<img src="2ce4905df2c52a4d1284b6741b4c9bff.png" alt="image-20221101230109464" style="zoom:50%;"></li>
+<li><p>比方说我们想找主键值为6的记录</p>
+<ol>
+<li>计算中间槽的位置：(0+4)/2=2，所以查看槽2对应记录的主键值为8，又因为8 &gt; 6，所以设置high=2，low保持不变。</li>
+<li>重新计算中间槽的位置：(0+2)/2=1，所以查看槽1对应的主键值为4，又因为4 &lt; 6，所以设置low=1，high保持不变。</li>
+<li>因为high - low的值为1，所以确定主键值为6的记录在槽2对应的组中。此刻我们需要找到槽2中主键值最小的那条记录，然后沿着单向链表遍历槽2中的记录。</li>
+<li>我们可以拿到槽1对应的记录(主键值为4)，该条记录的下一条记录就是槽2中主键值最小的记录，该记录的主键值为5。所以我们可以从这条主键值为5的记录出发，遍历槽2中的各条记录，直到找到主键值为6的那条记录即可。<strong>由于一个组中包含的记录条数只能是1~8条，所以遍历一个组中的记录的代价是很小的。</strong></li>
+</ol>
+</li>
+<li><p><strong>所以在一个数据页中查找指定主键值的记录的过程分为两步：</strong></p>
+<ol>
+<li>通过二分法确定该记录所在的槽，并找到该槽中主键值最小的那条记录。</li>
+<li>通过记录的 next_record 属性遍历该槽所在的组中的各个记录，找到目标记录。</li>
+</ol>
 </li>
 </ul>
+<h3 id="Page-Header（页面头部）"><a href="#Page-Header（页面头部）" class="headerlink" title="Page Header（页面头部）"></a>Page Header（页面头部）</h3><p>为了能得到一个数据页中存储的记录的状态信息，比如本页中已经存储了多少条记录，第<br>一条记录的地址是什么，页目录中存储了多少个槽等等，特意在页中定义了一个叫 Page Header 的部分，它是页 结构的第二部分，这个部分占用固定的 56 个字节，专门存储各种状态信息，具体各个字节都是干嘛的看下表：</p>
+<img src="7e9c31e4c4c934f86516405031b8bfc2.png" alt="image-20221101230621617" style="zoom: 67%;">
+
+<h3 id="File-Header（文件头部）"><a href="#File-Header（文件头部）" class="headerlink" title="File Header（文件头部）"></a>File Header（文件头部）</h3><p>Page Header 是专门针对 数据页 记录的各种状态信息，比方说页里头有多少个记录了呀，有多少个<br>槽了呀。我们现在描述的 File Header 针对各种类型的页都通用，也就是说不同类型的页都会以 File Header 作为第一个组成部分，它描述了一些针对各种页都通用的一些信息，比方说这个页的编号是多少，它的上一个页、下一个页是谁。 这个部分占用固定的 38 个字节，是由下边这些内容组成的：</p>
+<img src="3008e77bd1141077fd515bc7c890fa75.png" alt="image-20221101230727633" style="zoom:67%;">
+
+<p>对照着这个表格，我们看几个目前比较重要的部分：</p>
+<ul>
+<li><p>FIL_PAGE_SPACE_OR_CHKSUM</p>
+<p>这个代表当前页面的校验和（checksum）。啥是个校验和？就是对于一个很长很长的字节串来说，我们会通过某种算法来计算一个比较短的值来代表这个很长的字节串，这个比较短的值就称为 校验和 。这样在比较两个很长的字节串之前先比较这两个长字节串的校验和，如果校验和都不一样两个长字节串肯定是不同的，所以省去了直接比较两个比较长的字节串的时间损耗。</p>
+</li>
+<li><p>FIL_PAGE_OFFSET</p>
+<p>每一个页都有一个单独的页号，就跟你的身份证号码一样， InnoDB 通过页号来可以唯一定位一个页。</p>
+</li>
+<li><p>FIL_PAGE_TYPE</p>
+<p>这个代表当前 页 的类型，我们前边说过， InnoDB 为了不同的目的而把页分为不同的类型，我们上边介绍的其实都是存储记录的 数据页 ，其实还有很多别的类型的页。<br>我们存放记录的数据页的类型其实是 FIL_PAGE_INDEX ，也就是所谓的 索引页 。</p>
+</li>
+<li><p>FIL_PAGE_PREV 和 FIL_PAGE_NEXT</p>
+<p>FIL_PAGE_PREV 和 FIL_PAGE_NEXT就分别代表本页的上一个和下一个页的页号。这样通过建立一个双向链表把许许多多的页就都串联起来了，而无需这些页在物理上真正连着。需要注意的是，并不是所有类型的页都有上一个和下一个页的属性，不过数据页 是有这两个属性的，所以所有的数据页其实是一个双链表，就像这样：</p>
+<img src="145b1261f8eda70134935593d688b6f4.png" alt="image-20221101231039843" style="zoom: 50%;"></li>
+</ul>
+<h3 id="File-Trailer"><a href="#File-Trailer" class="headerlink" title="File Trailer"></a>File Trailer</h3><p>我们知道 InnoDB 存储引擎会把数据存储到磁盘上，但是磁盘速度太慢，需要以 页 为单位把数据加载到内存中处理，如果该页中的数据在内存中被修改了，那么在修改后的某个时间需要把数据同步到磁盘中。但是在同步了一半的时候中断电了咋办，这不是莫名尴尬么？为了检测一个页是否完整（也就是在同步的时候有没有发生只同步一半的尴尬情况），设计 InnoDB 的大叔们在每个页的尾部都加了一个 File Trailer 部分，这个部分由 8 个字节组成，可以分成2个小部分：</p>
+<ul>
+<li><p>前4个字节代表页的校验和</p>
+<p>这个部分是和 File Header 中的校验和相对应的。每当一个页面在内存中修改了，在同步之前就要把它的校验和算出来，因为 File Header 在页面的前边，所以校验和会被首先同步到磁盘，当完全写完时，校验和也会被写到页的尾部，如果完全同步成功，则页的首部和尾部的校验和应该是一致的。如果写了一半儿断电了，那么在 File Header 中的校验和就代表着已经修改过的页，而在 File Trialer 中的校验和代表着原先的页，二者不同则意味着同步中间出了错。</p>
+</li>
+<li><p>后4个字节代表页面被最后修改时对应的日志序列位置（LSN）</p>
+</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>InnoDB为了不同的目的而设计了不同类型的页，我们把用于存放记录的页叫做 数据页 。一个数据页可以被大致划分为7个部分，分别是：<ul>
+<li>File Header ，表示页的一些通用信息，占固定的38字节。</li>
+<li>Page Header ，表示数据页专有的一些信息，占固定的56个字节。</li>
+<li>Infimum + Supremum ，两个虚拟的伪记录，分别表示页中的最小和最大记录，占固定的 26 个字节。</li>
+<li>User Records ：真实存储我们插入的记录的部分，大小不固定。</li>
+<li>Free Space ：页中尚未使用的部分，大小不确定。</li>
+<li>Page Directory ：页中的某些记录相对位置，也就是各个槽在页面中的地址偏移量，大小不固定，插入的记录越多，这个部分占用的空间越多。</li>
+<li>File Trailer ：用于检验页是否完整的部分，占用固定的8个字节。</li>
+</ul>
+</li>
+<li>每个记录的头信息中都有一个 next_record 属性，从而使页中的所有记录串联成一个 单链表 。</li>
+<li>InnoDB 会为把页中的记录划分为若干个组，每个组的最后一个记录的地址偏移量作为一个 槽 ，存放在Page Directory 中，所以在一个页中根据主键查找记录是非常快的，分为两步：<ol>
+<li>通过二分法确定该记录所在的槽。</li>
+<li>通过记录的next_record属性遍历该槽所在的组中的各个记录。</li>
+</ol>
+</li>
+<li>每个数据页的 File Header 部分都有上一个和下一个页的编号，所以所有的数据页会组成一个 双链表。为保证从内存中同步到磁盘的页的完整性，在页的首部和尾部都会存储页中数据的校验和和页面最后修改时对应的 LSN 值，如果首部和尾部的校验和和 LSN 值校验不成功的话，就说明同步过程出现了问题。</li>
+</ol>
 <hr>
 <p><strong>参考文档：</strong></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_63566550/article/details/127538092">【MySQL进阶】深入理解InnoDB记录结构</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_63566550/article/details/127643475">【MySQL进阶】深入理解InnoDB数据页结构</a></p>
 <hr>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple8.github.io">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple8.github.io/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">https://maple8.github.io/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple8.github.io" target="_blank">Maple's  Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/26/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3B-%E6%A0%91%E7%B4%A2%E5%BC%95/" title="MySql-深入理解B+树索引"><img class="cover" src="/top_img/mysql.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MySql-深入理解B+树索引</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%B9%B3%E6%BB%91%E7%9A%84%E8%8A%82%E7%82%B9%E6%89%A9%E5%AE%B9%E6%96%B9%E6%A1%88/" title="数据库-平滑的节点扩容方案"><img class="cover" src="/top_img/table.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数据库-平滑的节点扩容方案</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar1.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">MySQL-深入理解InnoDB数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#InnoDB%E8%A1%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">InnoDB行格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E6%A0%BC%E5%BC%8F-Row-Format%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">行格式&#x2F;Row Format简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#COMPACT%E8%A1%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">COMPACT行格式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E7%9A%84%E7%9C%9F%E5%AE%9E%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">记录的真实数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Redundant%E8%A1%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Redundant行格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dynamic%E5%92%8CCompressed%E8%A1%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">Dynamic和Compressed行格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#InnoDB%E9%A1%B5%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">InnoDB页简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E5%9C%A8%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">记录在页中的存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E5%A4%B4%E4%BF%A1%E6%81%AF%E7%9A%84%E7%A7%98%E5%AF%86"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">记录头信息的秘密</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/26/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3B-%E6%A0%91%E7%B4%A2%E5%BC%95/" title="MySql-深入理解B+树索引"><img src="/top_img/mysql.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql-深入理解B+树索引"/></a><div class="content"><a class="title" href="/2024/07/26/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3B-%E6%A0%91%E7%B4%A2%E5%BC%95/" title="MySql-深入理解B+树索引">MySql-深入理解B+树索引</a><time datetime="2024-07-26T03:10:35.000Z" title="发表于 2024-07-26 11:10:35">2024-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="MySql-深入理解InnoDB数据结构"><img src="/top_img/mysql.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql-深入理解InnoDB数据结构"/></a><div class="content"><a class="title" href="/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="MySql-深入理解InnoDB数据结构">MySql-深入理解InnoDB数据结构</a><time datetime="2024-07-25T09:53:10.000Z" title="发表于 2024-07-25 17:53:10">2024-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%B9%B3%E6%BB%91%E7%9A%84%E8%8A%82%E7%82%B9%E6%89%A9%E5%AE%B9%E6%96%B9%E6%A1%88/" title="数据库-平滑的节点扩容方案"><img src="/top_img/table.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库-平滑的节点扩容方案"/></a><div class="content"><a class="title" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%B9%B3%E6%BB%91%E7%9A%84%E8%8A%82%E7%82%B9%E6%89%A9%E5%AE%B9%E6%96%B9%E6%A1%88/" title="数据库-平滑的节点扩容方案">数据库-平滑的节点扩容方案</a><time datetime="2024-07-23T09:13:51.000Z" title="发表于 2024-07-23 17:13:51">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A8%E5%B1%80%E8%A1%A8/" title="数据库-全局表"><img src="/top_img/table.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库-全局表"/></a><div class="content"><a class="title" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A8%E5%B1%80%E8%A1%A8/" title="数据库-全局表">数据库-全局表</a><time datetime="2024-07-23T07:50:44.000Z" title="发表于 2024-07-23 15:50:44">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%9D%83%E8%A1%A1%E8%8C%83%E5%BC%8F%E4%B8%8E%E5%8F%8D%E8%8C%83%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="数据库-权衡范式与反范式设计"><img src="/top_img/table.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库-权衡范式与反范式设计"/></a><div class="content"><a class="title" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%9D%83%E8%A1%A1%E8%8C%83%E5%BC%8F%E4%B8%8E%E5%8F%8D%E8%8C%83%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="数据库-权衡范式与反范式设计">数据库-权衡范式与反范式设计</a><time datetime="2024-07-23T02:06:08.000Z" title="发表于 2024-07-23 10:06:08">2024-07-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://maple8.github.io">Maple</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://maple8.github.io/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">https://maple8.github.io/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple8.github.io" target="_blank">Maple's  Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/26/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3B-%E6%A0%91%E7%B4%A2%E5%BC%95/" title="MySql-深入理解B+树索引"><img class="cover" src="/top_img/mysql.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MySql-深入理解B+树索引</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%B9%B3%E6%BB%91%E7%9A%84%E8%8A%82%E7%82%B9%E6%89%A9%E5%AE%B9%E6%96%B9%E6%A1%88/" title="数据库-平滑的节点扩容方案"><img class="cover" src="/top_img/table.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数据库-平滑的节点扩容方案</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar1.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Maple</div><div class="author-info__description">一 切 都 是 最 好 的 安 排 !</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://maple8.github.io/" target="_blank" title="Old Version Blog"><i class="fas fa-blog"></i></a><a class="social-icon" href="https://gitee.com/maple_eitba" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maple_eitba@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=790379323&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">MySQL-深入理解InnoDB数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#InnoDB%E8%A1%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">InnoDB行格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E6%A0%BC%E5%BC%8F-Row-Format%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">行格式&#x2F;Row Format简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#COMPACT%E8%A1%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">COMPACT行格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Redundant%E8%A1%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Redundant行格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dynamic%E5%92%8CCompressed%E8%A1%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">Dynamic和Compressed行格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#InnoDB%E6%95%B0%E6%8D%AE%E9%A1%B5"><span class="toc-number">1.2.</span> <span class="toc-text">InnoDB数据页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E5%9C%A8%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">记录在页中的存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Page-Directory%EF%BC%88%E9%A1%B5%E7%9B%AE%E5%BD%95%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">Page Directory（页目录）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Page-Header%EF%BC%88%E9%A1%B5%E9%9D%A2%E5%A4%B4%E9%83%A8%EF%BC%89"><span class="toc-number">1.2.3.</span> <span class="toc-text">Page Header（页面头部）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File-Header%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%B4%E9%83%A8%EF%BC%89"><span class="toc-number">1.2.4.</span> <span class="toc-text">File Header（文件头部）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File-Trailer"><span class="toc-number">1.2.5.</span> <span class="toc-text">File Trailer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">1.2.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/26/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3B-%E6%A0%91%E7%B4%A2%E5%BC%95/" title="MySql-深入理解B+树索引"><img src="/top_img/mysql.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql-深入理解B+树索引"/></a><div class="content"><a class="title" href="/2024/07/26/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3B-%E6%A0%91%E7%B4%A2%E5%BC%95/" title="MySql-深入理解B+树索引">MySql-深入理解B+树索引</a><time datetime="2024-07-26T03:10:35.000Z" title="发表于 2024-07-26 11:10:35">2024-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="MySql-深入理解InnoDB数据结构"><img src="/top_img/mysql.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql-深入理解InnoDB数据结构"/></a><div class="content"><a class="title" href="/2024/07/25/MySql-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3InnoDB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="MySql-深入理解InnoDB数据结构">MySql-深入理解InnoDB数据结构</a><time datetime="2024-07-25T09:53:10.000Z" title="发表于 2024-07-25 17:53:10">2024-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%B9%B3%E6%BB%91%E7%9A%84%E8%8A%82%E7%82%B9%E6%89%A9%E5%AE%B9%E6%96%B9%E6%A1%88/" title="数据库-平滑的节点扩容方案"><img src="/top_img/table.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库-平滑的节点扩容方案"/></a><div class="content"><a class="title" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%B9%B3%E6%BB%91%E7%9A%84%E8%8A%82%E7%82%B9%E6%89%A9%E5%AE%B9%E6%96%B9%E6%A1%88/" title="数据库-平滑的节点扩容方案">数据库-平滑的节点扩容方案</a><time datetime="2024-07-23T09:13:51.000Z" title="发表于 2024-07-23 17:13:51">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A8%E5%B1%80%E8%A1%A8/" title="数据库-全局表"><img src="/top_img/table.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库-全局表"/></a><div class="content"><a class="title" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A8%E5%B1%80%E8%A1%A8/" title="数据库-全局表">数据库-全局表</a><time datetime="2024-07-23T07:50:44.000Z" title="发表于 2024-07-23 15:50:44">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%9D%83%E8%A1%A1%E8%8C%83%E5%BC%8F%E4%B8%8E%E5%8F%8D%E8%8C%83%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="数据库-权衡范式与反范式设计"><img src="/top_img/table.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库-权衡范式与反范式设计"/></a><div class="content"><a class="title" href="/2024/07/23/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%9D%83%E8%A1%A1%E8%8C%83%E5%BC%8F%E4%B8%8E%E5%8F%8D%E8%8C%83%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="数据库-权衡范式与反范式设计">数据库-权衡范式与反范式设计</a><time datetime="2024-07-23T02:06:08.000Z" title="发表于 2024-07-23 10:06:08">2024-07-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Maple</div><div class="footer_custom_text">一 切 都 是 最 好 的 安 排 !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
